@@ -2,18 +2,18 @@
   'use strict';
 
   angular
-    .module('lubyconWebApp')
-    .config(routerConfig);
+  .module('lubyconWebApp')
+  .config(routerConfig);
 
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+    .state('home', {
+      url: '/',
+      templateUrl: 'app/pages/main/main.html',
+      controller: 'MainController',
+      controllerAs: 'main'
+    });
 
     $urlRouterProvider.otherwise('/');
   }
