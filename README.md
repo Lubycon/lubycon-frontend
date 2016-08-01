@@ -69,7 +69,7 @@ cd application/mamp-5.5.28-0/apache2/htdocs/lubycon-web-app-front
 
 **3. install local npm and bower**
 
-- npm and bower will install pakages in pakage.json and bower json to your local directory.
+- npm and bower will install pakages in pakage.json and bower.json to your local directory.
 
 
 ```
