@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lubyconWebApp')
+    .module('app')
     .factory('githubContributor', githubContributor);
 
   /** @ngInject */

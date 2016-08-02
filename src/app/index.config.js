@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lubyconWebApp')
+    .module('app')
     .config(config);
 
   /** @ngInject */
