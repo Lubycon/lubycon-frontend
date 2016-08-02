@@ -1,0 +1,33 @@
+
+<!-- THIS IS MAIN HEADER COMPONENT -->
+
+<nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <img ng-if="!vm.isMobile" src="assets/images/logo/svg/logo_title_white.svg" />
+        <img ng-if="vm.isMobile" src="assets/images/logo/svg/title_white.svg" />
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li>
+                <span uib-dropdown on-toggle="vm.contentToggle">
+                    <a href id="simple-dropdown" uib-dropdown-toggle>Contents</a>
+                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li ng-repeat="choice in vm.testMenu">
+                            <a href>{{choice}}</a>
+                        </li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span uib-dropdown on-toggle="vm.CommunityToggle">
+                    <a href id="simple-dropdown" uib-dropdown-toggle>Contents</a>
+                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li ng-repeat="choice in vm.testMenu2">
+                            <a href>{{choice}}</a>
+                        </li>
+                    </ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+</nav>
