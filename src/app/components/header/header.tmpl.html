@@ -1,26 +1,33 @@
 
 <!-- THIS IS MAIN HEADER COMPONENT -->
-
 <nav class="navbar navbar-inverse">
-    <div class="navbar-header">
+    <div class="navbar-header pull-left">
         <img ng-if="!vm.isMobile" src="assets/images/logo/svg/logo_title_white.svg" />
         <img ng-if="vm.isMobile" src="assets/images/logo/svg/title_white.svg" />
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse pull-right">
         <ul class="nav navbar-nav">
             <li>
-                <span uib-dropdown on-toggle="vm.contentToggle">
-                    <a href id="simple-dropdown" uib-dropdown-toggle>Contents</a>
+                <span class="btn" uib-dropdown on-toggle="vm.contentToggle">
+                    <a href="" uib-dropdown-toggle>Contents</a>
                     <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
                         <li ng-repeat="choice in vm.testMenu">
                             <a href>{{choice}}</a>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="">More</a>
+                            <ul class="dropdown-menu">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
                         </li>
                     </ul>
                 </span>
             </li>
             <li>
-                <span uib-dropdown on-toggle="vm.CommunityToggle">
-                    <a href id="simple-dropdown" uib-dropdown-toggle>Contents</a>
+                <span class="btn" uib-dropdown on-toggle="vm.CommunityToggle">
+                    <a href="" uib-dropdown-toggle>Community</a>
                     <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
                         <li ng-repeat="choice in vm.testMenu2">
                             <a href>{{choice}}</a>

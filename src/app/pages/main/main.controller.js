@@ -8,12 +8,13 @@
     /** @ngInject */
     function MainController($timeout, toastr, toastrConfig) {
         var vm = this;
-        console.log(toastrConfig);
+
+
         vm.testText = "Hello, Lubycon!";
-        vm.clickme = "Click me!";
-        vm.checker = 0;
+        vm.testText2 = "This is Test Grid";
+        
         vm.testToast = function(){
-            console.log(toastr);
+            toastr.success('ng-click is enabled!');
             toastr.info('Thanks! Welcome to Lubycon :)','Test Alert');
             // success, info, error, warning
         };

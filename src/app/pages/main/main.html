@@ -1,7 +1,27 @@
 
 <main-header></main-header>
 <div class="container">
-    {{ vm.testText }}
-    <button ng-click="vm.testToast()">{{ vm.clickme }}</button>
-    <span>{{vm.checker}}</span>
+    <div class="row">
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">{{vm.testText}}</div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">{{vm.testText2}}</div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">{{vm.testText}}</div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card"><button class="btn" ng-click="vm.testToast()">Toast</button></div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">{{vm.testText}}</div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card"><button class="btn" ng-click="vm.testToast()">Toast</button></div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card">{{vm.testText2}}</div>
+        </div>
+    </div>
 </div>
