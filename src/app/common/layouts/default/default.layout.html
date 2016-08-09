@@ -1,0 +1,9 @@
+
+<div ui-view="header" ng-if="layout.header"></div>
+<div class="container">
+    <div class="row">
+        <div ui-view="aside"></div>
+        <div ui-view="content"></div>
+    </div>
+</div>
+<div ui-view="footer" ng-if="layout.footer"></div>

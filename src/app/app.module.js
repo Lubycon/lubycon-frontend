@@ -3,6 +3,9 @@
 
   angular
     .module('app', [
+        'common',
+        'components',
+        'app.pages',
         'ngAnimate',
         'ngCookies',
         'ngTouch',

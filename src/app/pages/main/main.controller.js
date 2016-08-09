@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('app.pages.main')
         .controller('MainController', MainController);
 
     /** @ngInject */
@@ -12,7 +12,7 @@
 
         vm.testText = "Hello, Lubycon!";
         vm.testText2 = "This is Test Grid";
-        
+
         vm.testToast = function(){
             toastr.success('ng-click is enabled!');
             toastr.info('Thanks! Welcome to Lubycon :)','Test Alert');

@@ -8,15 +8,6 @@
     /** @ngInject */
     function routerConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
-        .state('home', {
-            url: '/',
-            templateUrl: 'app/pages/main/main.html',
-            controller: 'MainController',
-            controllerAs: 'vm',
-            data: {
-                css: 'app/pages/main/main.sass'
-            }
-        })
         .state('404', {
             url: '/404',
             templateUrl: '404.tmpl.html',
@@ -40,7 +31,7 @@
             }
         });
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/main');
     }
 
 })();
