@@ -3,6 +3,7 @@
 
     angular
         .module('common', [
-            'common.layouts', 'ui.router'
+            'common.layouts',
+            'ui.router'
         ]);
 })();
