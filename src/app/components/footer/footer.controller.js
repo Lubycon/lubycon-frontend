@@ -10,6 +10,5 @@
         $rootScope, $scope, $location, $state, Restangular, $timeout
     ) {
         var vm = this;
-
     }
 })();

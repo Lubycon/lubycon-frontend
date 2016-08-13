@@ -2,24 +2,24 @@
     'use strict';
 
     angular
-        .module('app.pages.contents')
+        .module('app.pages.community')
         .config(moduleConfig);
 
     /* @ngInject */
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('common.default.contents', {
-                url: '/contents/:category',
-                templateUrl: 'app/pages/contents/contents.tmpl.html',
-                controller: 'ContentsController',
+            .state('common.default.community', {
+                url: '/community/:category',
+                templateUrl: 'app/pages/community/community.tmpl.html',
+                controller: 'CommunityController',
                 controllerAs: 'vm',
                 params: {
                     category: null
                 },
                 resolve: {
-                    // getContentRsv: function($stateParams, Restangular) {
-                    //     var api = Restangular.all('contents/'+ $stateParams.category);
+                    // getCommunityRsv: function($stateParams, Restangular) {
+                    //     var api = Restangular.all('community/'+ $stateParams.category);
                     //     return api.customGET().then();
                     // }
                 }

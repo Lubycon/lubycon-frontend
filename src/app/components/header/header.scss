@@ -1,8 +1,74 @@
+// HEADER IS FIXED -> BODY PADDING-TOP 70px
+body {
+    padding-top: 70px;
+}
+
+// NAVBAR START
 .navbar {
     border-radius: 0;
 }
-.navbar-header{
-    img{
+
+// BRAND IMAGE
+#main-logo {
+    position: absolute;
+    top: 8px;
+}
+@media (max-width: 767px) {
+    #main-logo {
+        width: 120px;
+    }
+}
+@media (min-width: 768px) {
+    #main-logo {
         width: 170px;
     }
+}
+
+// ALIGN FOR MENU LISTS
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+.collapse.navbar-collapse {
+    text-align: center;
+}
+
+// DESIGN FOR MENU BUTTONS
+.navbar-inverse .navbar-nav .navbar-menu a {
+    color: #ffffff;
+    i {
+        margin-right: 10px;
+    }
+}
+
+// DROPDOWN MENU OPENED
+.navbar-inverse .navbar-nav > .navbar-menu.open > a {
+    background-color: #444444;
+}
+.navbar-menu:hover {
+    background-color: #444444;
+}
+
+// DESIGN FOR MENU LISTS
+.main-nav-menu {
+    border: none;
+    border-radius: 0;
+    background-color: #444444;
+    margin-top: 1px;
+    left: -1px;
+}
+
+// MENU LISTS HOVER, FOCUS
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #48cfad;
+    color: #ffffff;
+}
+
+// MEMEBER MENU
+.navbar-header.nav-member {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    color: #ffffff;
 }

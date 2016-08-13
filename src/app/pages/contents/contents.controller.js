@@ -9,6 +9,12 @@
     function ContentsController($rootScope,$scope) {
         var vm = this;
 
-
+        vm.contents = [ //DUMMY DATA
+            {
+                code : 1,
+                title: "TEST CARD",
+                category: ""
+            }
+        ]
     }
 })();
