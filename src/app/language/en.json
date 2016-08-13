@@ -1,0 +1,6 @@
+{
+    "ERROR" :{
+        "404" : "Page is not found",
+        "500" : "Server Error"
+    }
+}

@@ -49,6 +49,18 @@
                     }
                 }
             })
+
+
+
+            .state('full', {
+                abstract: true,
+                templateUrl: 'app/common/layouts/default/default.layout.html',
+                controller: 'DefaultLayoutController',
+                controllerAs: 'layout',
+                resolve: {
+
+                }
+            })
             .state('full.default', {
                 abstract: true,
                 views: {

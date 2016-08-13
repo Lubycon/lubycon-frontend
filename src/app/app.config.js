@@ -4,16 +4,22 @@
     angular
         .module('app')
         .config(config)
+        .config(toastSetting)
+        .config(locationProvider)
         .config(restangularProvider)
         .config(cookiesProvider)
         .run(run);
 
     /** @ngInject */
-    function config($logProvider, toastrConfig) {
-        // Enable log
-        $logProvider.debugEnabled(true);
+    function config($logProvider) {
+    // GLOBAL SETTING...
 
-        // Set options third-party lib
+        // LOG IS ON
+        $logProvider.debugEnabled(true);
+    }
+
+    function toastSetting(toastrConfig) {
+        //Set options third-party lib
         toastrConfig.allowHtml = true;
         toastrConfig.timeOut = 2000;
         toastrConfig.positionClass = 'toast-top-right';
@@ -29,6 +35,17 @@
         expires.setFullYear(expires.getFullYear()+1);
         $cookiesProvider.defaults.expires = expires;
         console.log($cookiesProvider.defaults);
+    }
+
+    function locationProvider($locationProvider, $httpProvider) {
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: true
+        }).hashPrefix('!');
+
+        //$httpProvider.defaults.useXDomain = true;
+        $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+        //delete $httpProvider.defaults.headers.common["X-Requested-With"];
     }
 
     function restangularProvider(RestangularProvider, API_CONFIG) {

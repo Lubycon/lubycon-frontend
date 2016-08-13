@@ -6,6 +6,8 @@
         'common',
         'components',
         'app.pages',
+        'error',
+
         'ngAnimate',
         'ngCookies',
         'ngTouch',
