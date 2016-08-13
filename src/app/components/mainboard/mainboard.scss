@@ -1,0 +1,166 @@
+li {
+    list-style: none;
+}
+.table-wrap {
+    /*empty*/
+}
+
+// TABLE HEADER
+.table-header {
+    height: 50px;
+    background: #383838;
+    color: #fff;
+    text-align: center;
+    cursor: default !important;
+}
+
+// DATA TITLE IN HEADER
+.board-data-title {
+    margin: 0px auto;
+    padding: 0px 20px;
+
+    .board-name {
+        position: absolute;
+        top: 11px;
+        left: 30px;
+        color: #eeeeee;
+        font-size: 19px;
+        font-weight: 200;
+    }
+    span {
+        min-width: 60px;
+        line-height: 50px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 200;
+        float: right;
+
+        i {
+            margin-top: 16px;
+        }
+        .fa-heart {
+            color: #48cfad;
+        }
+    }
+}
+
+// TABLE BODY
+.table-list-wrap{
+    padding: 0;
+
+    .table-body {
+        width: 100%;
+        text-align: center;
+    }
+    .table-list{
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid #dddddd;
+        background: #ffffff;
+        &:hover {
+            background: #fcfcfc;
+        }
+
+        .table-list-inner{
+            position: relative;
+            margin: 0px auto;
+            padding: 10px 20px;
+            text-align: left;
+        }
+    }
+}
+
+// TABLE CATEGORY
+.table-tag-wrap{
+    display: inline-block;
+    min-width: 20px;
+    vertical-align: top;
+    margin-right: 13px;
+
+    .table-tag {
+        top: 3px;
+        left: 11px;
+        text-align: center;
+
+        .fa-circle {
+            font-size: 10px;
+        }
+        // FORUM: #48cfad
+        // TUTORIAL: #ffbe54
+        // Q&A: #d19cd9
+    }
+    .table-number {
+        font-size: 14px;
+        text-align: left;
+        color: #666666;
+    }
+}
+
+// TABLE USER PROFILE PICTURE
+.table-user-img {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}
+
+// TABLE INFO (TITLE, COMMENT COUNT)
+.table-info {
+    position: relative;
+    margin-left: 20px;
+
+    a:hover {
+        opacity: 0.6;
+    }
+    .table-subject {
+        display: inline-block;
+        position: relative;
+        cursor:pointer;
+        margin-top: 5px;
+        text-align: left;
+        color: #555555;
+        font-weight: 600;
+        letter-spacing: -0.1px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+}
+
+// TABLE CREATOR NAME
+.table-writer {
+    display: block;
+    bottom: 3px;
+    color: #444444;
+    cursor:pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 5px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// TABLE COUNTER (VIEW, LIKE, DATE)
+.table-counter {
+    line-height: 55px;
+    font-size: 18px;
+    text-align: center;
+    color: #488ccb;
+}
+.table-date {
+    display: inline-block;
+    width: 100px;
+    line-height: 55px;
+    float: right;
+    color: #545454;
+}
