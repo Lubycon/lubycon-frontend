@@ -7,8 +7,12 @@
 
     /** @ngInject */
     function MainController($timeout, toastr, toastrConfig) {
-        var vm = this;
+        console.log("MAIN PAGE IS LOADED");
 
+
+
+
+        var vm = this;
 
         vm.testText = "Hello, Lubycon!";
         vm.testText2 = "This is Test Grid";
@@ -18,5 +22,12 @@
             toastr.info('Thanks! Welcome to Lubycon :)','Test Alert');
             // success, info, error, warning
         };
+
+        vm.init = init();
+
+        function init(){
+            console.log(init);
+        }
+
     }
 })();

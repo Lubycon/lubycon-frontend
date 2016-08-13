@@ -17,12 +17,16 @@
         'ui.bootstrap',
         'toastr'
     ])
-    .constant('CONSOLE_LOG', false) // REAL SERVER -> TRUE
+    .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {
-        'host':'localhost' // MY LOCAL...
+    // THIS IS SERVER LOCATION SWITCH
+        'host': '' // MY LOCAL
+        //'host': ''
     })
     .constant('SNSKEY', {
-
+    // THIS IS GLOBAL SNSKEY FOR APP
+        'facebook':'', //LOCAL
+        'instagram':'' //LOCAL
     })
     .constant(); // ADD NEW CONSTANT
 

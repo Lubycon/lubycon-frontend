@@ -11,11 +11,14 @@
         $stateProvider
             .state('common.default.main', {
                 url: '/main',
-                templateUrl: 'app/pages/main/main.html',
+                templateUrl: 'app/pages/main/main.tmpl.html',
                 controller: 'MainController',
                 controllerAs: 'vm',
-                data: {
-                    css: 'app/pages/main/main.sass'
+                resolve: {
+                    getMainRsv: function($stateParams, Restangular) {
+                        // var api = Restangular.all('main');
+                        // return api.customGET().then();
+                    }
                 }
             });
     }
