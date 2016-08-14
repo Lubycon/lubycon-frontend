@@ -1,0 +1,190 @@
+.creator-card{
+    position: relative;
+    background: #fff;
+    padding-top: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+    .creator-menu{
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        cursor: pointer;
+    }
+        .creator-menu .creator-menu-icon{
+            font-size: 20px;
+            color: #aaaaaa;
+            transition: color 0.2s;
+        }
+            .creator-menu.selected .creator-menu-icon{
+                color: #48cfad;
+            }
+        .creator-menu-list{
+            width: 150px;
+            top: 10px;
+            left: -140px;
+            position: absolute;
+            border-radius: 5px;
+            z-index: 1;
+            border: 1px solid #aaaaaa;
+            background: rgba(255,255,255,0.9);
+            display: none;
+        }
+        .creator-menu-list ul{
+            line-height: 35px;
+        }
+            .creator-menu-list ul li{
+                text-align: center;
+                font-size: 14px;
+            }
+            .creator-menu-list ul li:hover{
+                background: rgba(200,200,200,0.5);
+            }
+                .creator-menu-list ul li i{
+                    display: inline-block;
+                    color: #444444;
+                    float: left;
+                    margin-top: 8px;
+                    margin-left: 7px;
+                    font-size: 17px;
+                }
+                .creator-menu-list ul li a{
+                    color: #444444;
+                }
+    .creator-card-header {
+        height: 22px;
+        text-align: left;
+        padding-left: 10px;
+    }
+        .creator-card-header .card-label {
+            color: #444444;
+            font-size: 17px;
+            font-weight: 600;
+        }
+            .creator-card-header .card-label .this-month {
+                color: #48cfad;
+                font-size: 21px;
+                font-weight: 600;
+                margin-left: 4px;
+            }
+    .creator-card-body {
+
+    }
+        .creator-card-body .creator-pic-wrap{
+            text-align: left;
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+        }
+            .creator-card-body .creator-pic-wrap .creator-pic {
+                overflow: hidden;
+                border-radius: 50%;
+                position: relative;
+                display: inline-block;
+                line-height: 0px;
+            }
+                .creator-card-body .creator-pic-wrap .creator-pic img {
+                    width: 100%;
+                }
+            .creator-card-body .creator-pic-wrap .location-pic {
+                position : absolute;
+                overflow: hidden;
+                border-radius: 50%;
+                box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
+            }
+                .creator-card-body .creator-pic-wrap .location-pic img {
+                    width: 100%;
+                }
+        .creator-card-body .creator-info-wrap{
+            max-width: 230px;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 5px;
+            text-align: left;
+        }
+            .creator-card-body .creator-info-wrap .creator-name {
+                width: 100%;
+                font-weight: 600;
+                transition: color 0.2s;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+                .creator-card-body .creator-info-wrap .creator-name a {
+                    width: 100%;
+                    color: #444444;
+                }
+                .creator-card-body .creator-info-wrap .creator-name:hover a {
+                    text-decoration: underline;
+                    color: #48cfad;
+                }
+            .creator-card-body .creator-info-wrap .creator-job {
+                color: #444444;
+                margin-top: 2px;
+            }
+            .creator-card-body .creator-info-wrap .creator-location {
+                color: #888888;
+                font-size: 14px;
+                margin-top: 2px;
+                text-overflow: ellipsis;
+                width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+                .creator-card-body .creator-info-wrap .creator-location i {
+                    color: #888888;
+                    margin-right: 10px;
+                }
+            .creator-card-body .creator-info-wrap .contents-count {
+                display: inline-block;
+                color: #aaaaaa;
+                float: left;
+                font-size: 13px;
+            }
+                .creator-card-body .creator-info-wrap .contents-count .contents-num {
+                    display: inline-block;
+                    color: #48cfad;
+                    font-size: 17px !important;
+                }
+    .creator-card-medal {
+        height: 25px;
+    }
+        .creator-card-medal ul {
+
+        }
+            .creator-card-medal ul li {
+
+            }
+                .creator-card-medal ul li img {
+
+                }
+    .creator-card-footer {
+        position: relative;
+        text-align: center;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+        .creator-card-footer ul {
+            width: 100%;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+            .creator-card-footer ul .usercontent {
+                display: inline-block;
+                width: 30%;
+                margin: 0px 1%;
+                overflow: hidden;
+                cursor: pointer;
+                transition: opacity 0.4s;
+            }
+                .creator-card-footer ul .usercontent img {
+                    width: 100%;
+                    margin-bottom: -3px;
+                }
+            .creator-card-footer ul .usercontent:hover {
+                opacity: 0.5;
+            }

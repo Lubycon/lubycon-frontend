@@ -1,7 +1,44 @@
 <div class="row">
     <div ng-repeat="member in creators" class="col-sm-6 col-lg-4">
-        <div class="card">
-            
+        <div class="card creator-card">
+            <div class="creator-card-header">
+                <span ng-if="member.best" class="card-label">
+                    Creator of the month
+                </span>
+            </div>
+            <div class="creator-card-body">
+                <div class="creator-pic-wrap">
+                    <div class="creator-pic">
+                        <img ng-src="{{contentHost + member.profile}}" />
+                    </div>
+                    <div class="location-pic">
+                        <img ng-src="assets/images/country/{{member.countryCode}}.png" />
+                    </div>
+                </div>
+                <div class="creator-info-wrap">
+                    <p class="creator-name">
+                        <a href="">{{member.name}}</a>
+                    </p>
+                    <p class="creator-job">{{member.job}}</p>
+                    <p class="creator-location">
+                        <i class="fa fa-map-marker"></i>{{member.city}},{{member.country}}
+                    </p>
+                </div>
+            </div>
+            <div class="creator-card-medal">
+                <ul>
+                    <li ng-repeat="medal in member.medals"></li>
+                </ul>
+            </div>
+            <div class="creator-card-footer">
+                <ul>
+                    <li ng-repeat="item in member.contents" class="usercontent">
+                        <a href="" class="content-link">
+                            <img ng-src="{{contentHost + item.img}}" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

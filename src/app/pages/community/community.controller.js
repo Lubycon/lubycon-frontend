@@ -57,7 +57,6 @@
             }
         ];
         //DUMMY DATA
-        console.log(vm.lists);
 
     }
 })();

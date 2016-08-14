@@ -16,7 +16,7 @@
             },
             //transclude: true,
             link: link,
-            contorller: controller
+            controller: controller
         };
 
         return directive;
