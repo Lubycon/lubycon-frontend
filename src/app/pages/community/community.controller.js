@@ -22,7 +22,7 @@
                 userData:{
                     code: 0,
                     name: "Test Member",
-                    profile: "#"
+                    profile: "user/3/profile.jpg"
                 }
             },
             {
@@ -37,7 +37,7 @@
                 userData:{
                     code: 1,
                     name: "Test Member1",
-                    profile: "#"
+                    profile: "user/5/profile.jpg"
                 }
             },
             {
@@ -52,7 +52,7 @@
                 userData:{
                     code: 2,
                     name: "Test Member2",
-                    profile: "#"
+                    profile: "user/0/profile.jpg"
                 }
             }
         ];

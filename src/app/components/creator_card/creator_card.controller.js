@@ -15,13 +15,17 @@
                 creators: '='
             },
             //transclude: true,
-            link: link
+            link: link,
+            contorller: controller
         };
 
         return directive;
 
         function link($scope, $element) {
             console.log($scope.creators);
+        }
+        function controller($scope, $element, API_CONFIG) {
+            $scope.contentHost = API_CONFIG.content;
         }
     }
 })();

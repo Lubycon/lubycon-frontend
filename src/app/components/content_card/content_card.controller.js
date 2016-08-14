@@ -15,13 +15,17 @@
                 contents: '='
             },
             //transclude: true,
-            link: link
+            link: link,
+            controller: controller
         };
 
         return directive;
 
         function link($scope, $element) {
-            console.log($scope.contents);
+
+        }
+        function controller($scope, $element, API_CONFIG){
+            $scope.contentHost = API_CONFIG.content;
         }
     }
 })();
