@@ -17,6 +17,13 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 body {
     background-color: #eeeeee;
 }
+
+.row .card {
+    background: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0px;
+}
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

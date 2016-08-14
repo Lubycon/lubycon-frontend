@@ -3,16 +3,16 @@
 
     angular
         .module('app')
-        .directive('contentCard', contentCard);
+        .directive('creatorCard', creatorCard);
 
     /* @ngInject */
-    function contentCard() {
+    function creatorCard() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/components/content_card/content_card.tmpl.html',
+            templateUrl: 'app/components/creator_card/creator_card.tmpl.html',
             replace: true,
             scope: {
-                contents: '='
+                creators: '='
             },
             //transclude: true,
             link: link
@@ -21,7 +21,7 @@
         return directive;
 
         function link($scope, $element) {
-            console.log($scope);
+            console.log($scope.creators);
         }
     }
 })();

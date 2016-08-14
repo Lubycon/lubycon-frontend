@@ -15,10 +15,10 @@
                 code : 1,
                 title: "TEST CARD",
                 category: "3D",
-                image: "#",
+                image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
-                userDirectory: "/",
+                userDirectory: "user/1/profile.jpg",
                 userData: {
                     code: 1,
                     name: "Test User",
@@ -108,6 +108,5 @@
             }
         ];
         // DUMMY DATA
-        console.log(vm.contents);
     }
 })();

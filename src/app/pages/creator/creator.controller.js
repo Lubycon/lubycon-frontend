@@ -153,6 +153,5 @@
             }
         ];
         // DUMMY DATA
-        console.log(vm.members);
     }
 })();

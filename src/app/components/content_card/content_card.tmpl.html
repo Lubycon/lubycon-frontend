@@ -1,12 +1,25 @@
 <div class="row">
     <div ng-repeat="item in contents" class="col-sm-6 col-lg-3">
-        <div class="card">
-            {{item.code}}<br/>
-            {{item.title}}<br/>
-            {{item.userData.name}}</br>
-            <p>view : {{item.contentCount.view}}</p>
-            <p>comment : {{item.contentCount.comment}}</p>
-            <p>like : {{item.contentCount.like}}</p>
+        <div class="card contents-card">
+            <div class="contents-pic">
+                <img
+                    ng-src="{{contentHost + item.image}}"
+                />
+            </div>
+            <div class="contents-info">
+                <a href="">
+                    <h4 class="content-title">{{item.title}}</h4>
+                    <h5>{{item.license}}</h5>
+                </a>
+            </div>
+            <span class="creator-info">
+                <a href="">
+                    <img ng-src="{{contentHost + item.userData.profile}}" />
+                    <span class="by">by</span>
+                    <span class="user-name">{{item.userData.name}}</span>
+                </a>
+            </span>
+            <i class="fa fa-star"></i>
         </div>
     </div>
 </div>

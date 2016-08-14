@@ -22,7 +22,9 @@
     .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {
     // THIS IS SERVER LOCATION SWITCH
-        'host': '' // MY LOCAL
+    // port = { APACHE: 8888, mySql: 8889 }
+        'host': 'http://localhost:8888/lubycon-web-app-api/', // MY LOCAL
+        'content': 'http://localhost:8888/contents/' // MY LOCAL
         //'host': ''
     })
     .constant('SNSKEY', {
