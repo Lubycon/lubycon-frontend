@@ -9,6 +9,7 @@
     <div class="navbar-header" id="main-logo">
         <a href="/">
             <img ng-if="!vm.isMobile" src="assets/images/logo/svg/logo_title_white.svg" />
+            <img ng-if="vm.isMobile" src="assets/images/logo/svg/title_white.svg" />
         </a>
     </div>
     <div class="collapse navbar-collapse">
@@ -30,6 +31,7 @@
         </ul>
     </div>
     <div class="navbar-header nav-member">
-        <a ng-href="{{vm.signinLink}}">{{'MENU.SIGNIN' | translate}}</a>
+        <a ng-href="{{vm.signinLink}}">
+            <i class="fa fa-lock"></i>{{'MENU.SIGNIN' | translate}}</a>
     </div>
 </nav>

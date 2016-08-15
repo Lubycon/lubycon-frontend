@@ -17,16 +17,22 @@
 // BRAND IMAGE
 #main-logo {
     position: absolute;
-    top: 8px;
+    top: 10px;
+    img {
+        width: 100%;
+    }
 }
 @media (max-width: 767px) {
     #main-logo {
         width: 120px;
+        left: 50%;
+        margin-left: -60px;
     }
 }
 @media (min-width: 768px) {
     #main-logo {
-        width: 170px;
+        width: 140px;
+        left: 5px;
     }
 }
 
@@ -41,7 +47,7 @@
 }
 
 // DESIGN FOR MENU BUTTONS
-.navbar-inverse .navbar-nav .navbar-menu a {
+.navbar-inverse a, .navbar-inverse .navbar-nav a {
     color: #ffffff;
     i {
         margin-right: 10px;

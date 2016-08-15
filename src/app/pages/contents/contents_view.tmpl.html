@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div class="divide60"></div>
+    CONTENT DATA<br/><br/>
+
+    code: {{vm.data.contents.code}}<br/>
+    title: {{vm.data.contents.title}}<br/>
+    subCategory1: {{vm.data.contents.subCate.split(',')[0]}}<br/>
+    subCategory2: {{vm.data.contents.subCate.split(',')[1]}}<br/>
+    content: {{vm.data.contents.content}}<br/>
+    like: {{vm.data.contents.like}}<br/>
+    bookmark: {{vm.data.content.bookmark}}<br/>
+    count: {{vm.data.contents.viewCount}}Views, {{vm.data.contents.likeCount}}Likes, {{vm.data.contents.downloadCount}}Downloads<br/>
+    filePath: {{vm.data.contents.filePath}}<br/>
+    cc code: {{vm.data.contents.cc}}<br/>
+    tags: {{vm.data.contents.tags}}
+
+    MEMBER DATA<br/><br/>
+
+    code: {{vm.data.userData.code}}<br/>
+    name: {{vm.data.userData.name}}<br/>
+    profile: <img ng-src="{{vm.contentHost + vm.data.userData.profile}}" />
+    job: {{vm.data.userData.job}}<br/>
+    location: {{vm.data.userData.city}}, {{vm.data.userData.country}}
+</div>

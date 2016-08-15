@@ -23,6 +23,22 @@
                     //     return api.customGET().then();
                     // }
                 }
+            })
+            .state('common.default.contents', {
+                url: '/contents/:category/:boardId',
+                templateUrl: 'app/pages/contents/contents_view.tmpl.html',
+                controller: 'ContentsViewController',
+                controllerAs: 'vm',
+                params: {
+                    category: null,
+                    boardId: null
+                },
+                resolve: {
+                    // getContentRsv: function($stateParams, Restangular) {
+                    //     var api = Restangular.all('contents/' + $stateParams.category + '/' + $stateParams.boardId);
+                    //     return api.customeGET().then()
+                    // }
+                }
             });
     }
 })();
