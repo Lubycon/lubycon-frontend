@@ -1,6 +1,14 @@
 {
-    "ERROR" :{
+    "ERROR" : {
+        "403" : "Permission Denied",
         "404" : "Page is not found",
-        "500" : "Server Error"
+        "405" : "Wrong Request",
+        "500" : "Server Error",
+        "502" : "Server is not response",
+        "503" : "Too many requests",
+        "504" : "Gateway timeout"
+    },
+    "MENU" : {
+        "SIGNIN" : "SIGN IN"
     }
 }

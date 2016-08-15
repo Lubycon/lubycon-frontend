@@ -10,6 +10,7 @@
     function DefaultLayoutController(){
         var layout = this;
         layout.header = true;
+        layout.mainFigure = true;
         layout.footer = true;
     }
 })();

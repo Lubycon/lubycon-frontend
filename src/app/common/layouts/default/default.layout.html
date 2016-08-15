@@ -1,6 +1,7 @@
 
 <div ui-view="header" ng-if="layout.header"></div>
-<div class="container">
+<div ui-view="mainFigure" ng-if="layout.mainFigure"></div>
+<div id="container" class="container">
     <div class="row">
         <div ui-view="aside"></div>
         <div ui-view="content"></div>

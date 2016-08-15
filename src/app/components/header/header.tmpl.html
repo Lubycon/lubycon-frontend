@@ -1,7 +1,7 @@
 
 <!-- THIS IS MAIN HEADER COMPONENT -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top main-header">
     <div class="navbar-header" id="main-logo">
         <a href="/">
             <img ng-if="!vm.isMobile" src="assets/images/logo/svg/logo_title_white.svg" />
@@ -25,5 +25,7 @@
             </li>
         </ul>
     </div>
-    <div class="navbar-header nav-member">SIGN IN</div>
+    <div class="navbar-header nav-member">
+        <a ng-href="{{vm.signinLink}}">{{'MENU.SIGNIN' | translate}}</a>
+    </div>
 </nav>

@@ -1,0 +1,16 @@
+[ui-view='header'] {
+
+}
+
+[ui-view='mainFigure'] {
+
+}
+
+#container {
+    background: #eeeeee;
+}
+
+[ui-view='footer'] {
+    position: fixed;
+    bottom: 0;
+}

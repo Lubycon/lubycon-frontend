@@ -9,7 +9,7 @@
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('common.default.main', {
+            .state('common.figure.main', {
                 url: '/main',
                 templateUrl: 'app/pages/main/main.tmpl.html',
                 controller: 'MainController',

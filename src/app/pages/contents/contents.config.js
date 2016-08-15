@@ -9,7 +9,7 @@
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('common.default.contents', {
+            .state('common.figure.contents', {
                 url: '/contents/:category',
                 templateUrl: 'app/pages/contents/contents.tmpl.html',
                 controller: 'ContentsController',

@@ -1,11 +1,12 @@
-// HEADER IS FIXED -> BODY PADDING-TOP 70px
-body {
-    padding-top: 70px;
-}
+// HEADER IS FIXED
 
 // NAVBAR START
 .navbar {
     border-radius: 0;
+}
+.navbar-inverse.main-header {
+    background: transparent;
+    border-bottom: 1px solid #ffffff;
 }
 
 // BRAND IMAGE
