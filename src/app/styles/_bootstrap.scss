@@ -1,0 +1,21 @@
+.btn {
+    border-radius: 0;
+    padding: 10px 15px;
+    font-weight: 200;
+    color: #ffffff;
+    transition: width 0.25s, opacity 0.25s ease-in-out;
+    &:hover {
+        color: #ffffff;
+    }
+}
+.btn-mint {
+    background: #48cfad;
+    color: #ffffff;
+}
+.btn-ghost {
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #ffffff;
+}

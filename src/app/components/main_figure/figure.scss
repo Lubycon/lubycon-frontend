@@ -14,7 +14,17 @@
 
         &.main {
             height: 350px;
-            line-height: 350px;
+            padding-top: 90px;
+        }
+        .main-text {
+
+        }
+        .btn {
+            width: 150px;
+            font-size: 15px;
+            &:hover {
+                @include elasticAction(170px);
+            }
         }
     }
 

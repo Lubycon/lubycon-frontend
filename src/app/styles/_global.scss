@@ -1,0 +1,19 @@
+
+// MIXIN......
+@mixin elasticAction($width){
+    width: $width;
+    opacity: 0.9;
+}
+
+@mixin ellipsis{
+    overflow:$overflow_hid;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.row .card {
+    background: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0px;
+}

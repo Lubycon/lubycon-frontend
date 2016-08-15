@@ -13,16 +13,54 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 // bower:scss
 // endbower
 
-
+// NORMALIZE
 body {
+    width: 100%;
+    position: relative;
     background-color: #eeeeee;
+    display: block;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none; /*hold font-size in moblie*/
+    -ms-overflow-style: none;
 }
 
-.row .card {
-    background: #ffffff;
-    text-align: center;
-    padding: 10px;
-    margin: 10px 0px;
+article, aside, hgroup, header, footer, figure, figcaption, nav, section {
+    display: block;
+}
+
+body, h1, h2, h3, h4, h5, h6, div, p, ul, ol, dl, li, dt, dd, address, article, aside, hgroup, header, footer, figure, figcaption, nav, section {
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+    margin: 0px;
+    padding: 0px;
+    &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+    }
+}
+
+* {
+    font-family: 'Source Sans Pro';
+    /*font-size: 1em;*/
+    font-weight: 400;
+    outline: 0;
+}
+*:focus{
+    outline: 0;
 }
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
@@ -33,6 +71,9 @@ body {
 // injector
 // endinjector
 
+// IMPORT GLOBAL STYLES....
+@import "styles/_bootstrap.scss";
+@import "styles/_global.scss";
 
 // IMPORT DIRECTIVE STYLES....
 @import "components/mainboard/mainboard.scss";

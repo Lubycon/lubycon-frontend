@@ -13,10 +13,8 @@
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
-
-        vm.isMain = $state.current.url === "/main";
         vm.mainText = "Connect Your Creativity With The World";
 
-        console.log(vm.isMain);
+        vm.isMain = true;
     }
 })();
