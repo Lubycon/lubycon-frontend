@@ -1,0 +1,34 @@
+#toast-container {
+    opacity: 0.9;
+}
+
+.toast {
+    &:before {
+        position: fixed;
+        font-family: FontAwesome;
+        font-size: 24px;
+        line-height: 18px;
+        float: left;
+        color: #FFF;
+        padding-right: 0.5em;
+        margin: auto 0.5em auto -1.5em;
+    }
+
+    .toast-message {
+        color: #fff;
+        font-weight: 400;
+    }
+
+    &.toast-bookmark {
+        background-color: #ffbe54;
+        &:before {
+            content: "\f005";
+        }
+    }
+    &.toast-remove {
+        background-color: #ec6446;
+        &:before {
+            content: "\f1f8";
+        }
+    }
+}

@@ -13,15 +13,14 @@
         vm.contents = [
             {
                 code : 1,
-                title: "TEST CARD",
+                title: "The AR Machine",
                 category: "3D",
                 image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
-                userDirectory: "contents/threed/Adrian_Joy20160414050808/",
                 userData: {
                     code: 1,
-                    name: "Test User",
+                    name: "Adrian Joy",
                     profile: "user/1/profile.jpg"
                 },
                 contentCount: {
@@ -32,16 +31,15 @@
             },
             {
                 code : 2,
-                title: "TEST CARD",
+                title: "Prison",
                 category: "3D",
-                image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
+                image: "contents/threed/Audrey_Wickham20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
-                bookmark: true,
-                userDirectory: "contents/threed/Adrian_Joy20160414050808/",
+                bookmark: false,
                 userData: {
                     code: 1,
-                    name: "Test User",
-                    profile: "user/1/profile.jpg"
+                    name: "Audrey Wickham",
+                    profile: "user/15/profile.jpg"
                 },
                 contentCount: {
                     view: 15,
@@ -51,15 +49,14 @@
             },
             {
                 code : 3,
-                title: "TEST CARD",
+                title: "Sweeeety Apples",
                 category: "3D",
-                image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
+                image: "contents/threed/Robert_Beasley20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
-                userDirectory: "contents/threed/Adrian_Joy20160414050808/",
                 userData: {
                     code: 1,
-                    name: "Test User",
+                    name: "Robert Beasley",
                     profile: "user/1/profile.jpg"
                 },
                 contentCount: {
@@ -70,15 +67,14 @@
             },
             {
                 code : 4,
-                title: "TEST CARD",
+                title: "Mirror",
                 category: "3D",
-                image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
+                image: "contents/threed/Steven_Watkins20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
-                bookmark: true,
-                userDirectory: "contents/threed/Adrian_Joy20160414050808/",
+                bookmark: false,
                 userData: {
                     code: 2,
-                    name: "Test User",
+                    name: "Steven Watkins",
                     profile: "user/2/profile.jpg"
                 },
                 contentCount: {
@@ -89,15 +85,14 @@
             },
             {
                 code : 5,
-                title: "TEST CARD",
+                title: "Blue Chairs",
                 category: "3D",
-                image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
+                image: "contents/threed/Terence_Bingham20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
-                userDirectory: "contents/threed/Adrian_Joy20160414050808/",
                 userData: {
                     code: 5,
-                    name: "Test User",
+                    name: "Terence Bingham",
                     profile: "user/5/profile.jpg"
                 },
                 contentCount: {

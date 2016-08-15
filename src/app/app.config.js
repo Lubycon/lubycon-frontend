@@ -22,13 +22,15 @@
     function toastSetting(toastrConfig) {
         //Set options third-party lib
         toastrConfig.allowHtml = true;
-        toastrConfig.timeOut = 2000;
+        toastrConfig.timeOut = 4000;
         toastrConfig.positionClass = 'toast-top-right';
         toastrConfig.preventDuplicates = false;
         toastrConfig.preventOpenDuplicates = true;
-        toastrConfig.progressBar = true;
+        toastrConfig.progressBar = false;
         toastrConfig.maxOpened = 10;
         toastrConfig.autoDismiss = false;
+
+        toastrConfig.showEasing = 'swing';
     }
 
     function cookiesProvider($cookiesProvider) {

@@ -2,27 +2,47 @@
 <div class="row">
     <div ng-repeat="item in contents" class="col-sm-6 col-lg-3">
         <div class="card contents-card">
-            <div class="contents-pic">
+            <div class="contents-pic"
+                ng-class="selected"
+                ng-mouseenter="selected = 'selected'"
+                ng-mouseleave="selected = ''"
+            >
                 <a ng-href="contents/3d/{{item.code}}">
                     <img
                         ng-src="{{contentHost + item.image}}"
                     />
+                    <div class="contents-overlay">
+                        <i class="fa fa-search-plus"></i>
+                        <ul>
+                            <li>
+                                <i class="fa fa-eye"></i><span>{{item.contentCount.view}}</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-comment-o"></i><span>{{item.contentCount.comment}}</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-heart"></i><span>{{item.contentCount.like}}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </a>
             </div>
-            <div class="contents-info">
-                <a href="">
-                    <h4 class="content-title">{{item.title}}</h4>
-                    <h5>{{item.license}}</h5>
-                </a>
+            <div class="content-desc">
+                <div class="contents-info">
+                    <a href="">
+                        <h4 class="content-title">{{item.title}}</h4>
+                        <h5>{{item.license}}</h5>
+                    </a>
+                </div>
+                <span class="creator-info">
+                    <a href="">
+                        <img ng-src="{{contentHost + item.userData.profile}}" />
+                        <span class="by">by</span>
+                        <span class="user-name">{{item.userData.name}}</span>
+                    </a>
+                </span>
+                <i class="fa fa-star bookmark-bt" ng-class="{selected : item.bookmark}" ng-click="bookmarkAction(item)"></i>
             </div>
-            <span class="creator-info">
-                <a href="">
-                    <img ng-src="{{contentHost + item.userData.profile}}" />
-                    <span class="by">by</span>
-                    <span class="user-name">{{item.userData.name}}</span>
-                </a>
-            </span>
-            <i class="fa fa-star"></i>
         </div>
     </div>
 </div>

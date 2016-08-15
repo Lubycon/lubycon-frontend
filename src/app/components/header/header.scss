@@ -6,11 +6,11 @@
 }
 .navbar-inverse.main-header {
     background: transparent;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #fff;
     transition: background 0.2s, border 0.2s;
     &.visible {
-        background: #222222;
-        border: 1px solid #000000;
+        background: #222;
+        border: 1px solid #000;
     }
 }
 
@@ -48,7 +48,7 @@
 
 // DESIGN FOR MENU BUTTONS
 .navbar-inverse a, .navbar-inverse .navbar-nav a {
-    color: #ffffff;
+    color: #fff;
     i {
         margin-right: 10px;
     }
@@ -56,17 +56,17 @@
 
 // DROPDOWN MENU OPENED
 .navbar-inverse .navbar-nav > .navbar-menu.open > a {
-    background-color: #444444;
+    background-color: #444;
 }
 .navbar-menu:hover {
-    background-color: #444444;
+    background-color: #444;
 }
 
 // DESIGN FOR MENU LISTS
 .main-nav-menu {
     border: none;
     border-radius: 0;
-    background-color: #444444;
+    background-color: #444;
     margin-top: 1px;
     left: -1px;
 }
@@ -74,7 +74,7 @@
 // MENU LISTS HOVER, FOCUS
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-color: #48cfad;
-    color: #ffffff;
+    color: #fff;
 }
 
 // MEMEBER MENU
@@ -82,5 +82,5 @@
     position: absolute;
     right: 10px;
     top: 14px;
-    color: #ffffff;
+    color: #fff;
 }

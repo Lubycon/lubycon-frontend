@@ -14,7 +14,7 @@
     }
         .creator-menu .creator-menu-icon{
             font-size: 20px;
-            color: #aaaaaa;
+            color: #aaa;
             transition: color 0.2s;
         }
             .creator-menu.selected .creator-menu-icon{
@@ -27,7 +27,7 @@
             position: absolute;
             border-radius: 5px;
             z-index: 1;
-            border: 1px solid #aaaaaa;
+            border: 1px solid #aaa;
             background: rgba(255,255,255,0.9);
             display: none;
         }
@@ -43,14 +43,14 @@
             }
                 .creator-menu-list ul li i{
                     display: inline-block;
-                    color: #444444;
+                    color: #444;
                     float: left;
                     margin-top: 8px;
                     margin-left: 7px;
                     font-size: 17px;
                 }
                 .creator-menu-list ul li a{
-                    color: #444444;
+                    color: #444;
                 }
     .creator-card-header {
         height: 22px;
@@ -58,7 +58,7 @@
         padding-left: 10px;
     }
         .creator-card-header .card-label {
-            color: #444444;
+            color: #444;
             font-size: 17px;
             font-weight: 600;
         }
@@ -114,18 +114,18 @@
             }
                 .creator-card-body .creator-info-wrap .creator-name a {
                     width: 100%;
-                    color: #444444;
+                    color: #444;
                 }
                 .creator-card-body .creator-info-wrap .creator-name:hover a {
                     text-decoration: underline;
                     color: #48cfad;
                 }
             .creator-card-body .creator-info-wrap .creator-job {
-                color: #444444;
+                color: #444;
                 margin-top: 2px;
             }
             .creator-card-body .creator-info-wrap .creator-location {
-                color: #888888;
+                color: #888;
                 font-size: 14px;
                 margin-top: 2px;
                 text-overflow: ellipsis;
@@ -134,12 +134,12 @@
                 overflow: hidden;
             }
                 .creator-card-body .creator-info-wrap .creator-location i {
-                    color: #888888;
+                    color: #888;
                     margin-right: 10px;
                 }
             .creator-card-body .creator-info-wrap .contents-count {
                 display: inline-block;
-                color: #aaaaaa;
+                color: #aaa;
                 float: left;
                 font-size: 13px;
             }
