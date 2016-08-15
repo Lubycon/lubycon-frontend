@@ -8,7 +8,7 @@
     /* @ngInject */
     function headerController(
         $rootScope, $scope, $location, $state, Restangular, $timeout,
-        DeviceConfig
+        DeviceConfig, $window
     ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
@@ -44,5 +44,8 @@
         };
 
         vm.signinLink = "";
+
+        // FOR HEADER BACKGROUND...
+        $scope.scrollDetect = false;
     }
 })();
