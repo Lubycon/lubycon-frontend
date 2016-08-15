@@ -8,6 +8,7 @@
         'app.pages',
         'error',
 
+        'pascalprecht.translate',
         'ngAnimate',
         'ngCookies',
         'ngTouch',
@@ -18,6 +19,16 @@
         'ui.router',
         'ui.bootstrap',
         'toastr'
+    ])
+    .constant('APP_LANGUAGES', [
+        {
+            name: 'LANGUAGES.ENGLISH',
+            key: 'en'
+        },
+        {
+            name: 'LANGUAGES.KOREAN',
+            key: 'ko'
+        }
     ])
     .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {

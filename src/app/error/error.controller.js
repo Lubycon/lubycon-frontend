@@ -7,18 +7,23 @@
 
     /* @ngInject */
     function ErrorController(
-        $rootScope, $scope, $location, $state, $timeout, $stateParams
+        $rootScope, $scope, $location, $state, $timeout, $stateParams, $translate
     ) {
-
         console.log("THIS IS ERROR PAGE : " + $stateParams.errorCode);
         var vm = this;
 
         vm.errorTitle = $stateParams.errorCode;
-        vm.errorMessages = {
-            404: "Page is not found",
-            500: "Server is not response"
-        }
-        vm.message = vm.errorMessages[vm.errorTitle * 1];
+
+        $translate([
+            'ERROR.404',
+            'ERROR.500'
+        ]).then(function (texts) {
+            vm.errorMessages = {
+                404: texts['ERROR.404'],
+                500: texts['ERROR.500']
+            }
+            vm.message = vm.errorMessages[vm.errorTitle * 1];
+        });
 
         vm.goHome = goHome;
         vm.goBack = goBack;

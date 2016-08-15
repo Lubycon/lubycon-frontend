@@ -8,6 +8,7 @@
         .config(locationProvider)
         .config(restangularProvider)
         .config(cookiesProvider)
+        .config(translateConfig)
         .run(run);
 
     /** @ngInject */
@@ -64,7 +65,7 @@
             }
 
             //DEFAULT LANGUAGE IS ENGLISH....
-            if(('ko en zh').indexOf(result.lang) == -1) result.lang = 'en';
+            if(('ko en').indexOf(result.lang) == -1) result.lang = 'en';
 
             return result;
         }());
@@ -89,6 +90,55 @@
             }
             return extractedData;
         });
+    }
+
+    function translateConfig($translateProvider, $translatePartialLoaderProvider, APP_LANGUAGES) {
+        /**
+         *  each module loads its own translation file - making it easier to create translations
+         *  also translations are not loaded when they aren't needed
+         *  each module will have a il8n folder that will contain its translations
+         */
+
+        // $translateProvider.useLoader('$translatePartialLoader', {
+        //     urlTemplate: '{part}/il8n/{lang}.json'
+        // });
+
+        $translateProvider.useLoader('$translatePartialLoader', {
+            //urlTemplate: 'app/language/{lang}.json'
+            urlTemplate: 'app/language/en.json' // ENGLISH TESTING....
+        });
+
+
+        $translatePartialLoaderProvider.addPart('app');
+
+        // make sure all values used in translate are sanitized for security
+        $translateProvider.useSanitizeValueStrategy('escaped');
+
+        // cache translation files to save load on server
+        $translateProvider.useLoaderCache(true);
+
+        // setup available languages in translate
+        var languageKeys = [];
+        for (var lang = APP_LANGUAGES.length - 1; lang >= 0; lang--) {
+            languageKeys.push(APP_LANGUAGES[lang].key);
+        }
+
+        /**
+         *  try to detect the users language by checking the following
+         *      navigator.language
+         *      navigator.browserLanguage
+         *      navigator.systemLanguage
+         *      navigator.userLanguage
+         */
+
+
+        $translateProvider.registerAvailableLanguageKeys(languageKeys, {
+            'ko_KR': 'ko',
+            'en_US': 'en', 'en_UK': 'en'
+        })
+        .determinePreferredLanguage();
+
+        $translateProvider.useLocalStorage();
     }
 
     function run(
