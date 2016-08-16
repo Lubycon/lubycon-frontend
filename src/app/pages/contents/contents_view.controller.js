@@ -6,7 +6,10 @@
         .controller('ContentsViewController', ContentsViewController);
 
     /** @ngInject */
-    function ContentsViewController($rootScope,$scope,$state,API_CONFIG) {
+    function ContentsViewController(
+        $rootScope, $scope, $state, $stateParams,
+        $sce, API_CONFIG
+    ) {
         var vm = this;
         console.log($state);
         // DUMMY DATA
@@ -37,5 +40,27 @@
             }
         };
         // DUMMY DATA
+        vm.init = (init)();
+
+        function init(){
+            vm.contents = vm.data.contents;
+            vm.category = $stateParams.category;
+            vm.is3D = vm.category === '3d';
+
+            vm.counts = [
+                { icon: 'fa fa-eye', data: vm.contents.viewCount },
+                { icon: 'fa fa-cloud-download', data: vm.contents.downloadCount },
+                { icon: 'fa fa-heart', data: vm.contents.likeCount }
+            ];
+            vm.contents.subCate = vm.contents.subCate.split(',');
+
+            vm.member = vm.data.userData;
+
+            vm.convertToHTML = convertToHTML;
+        }
+
+        function convertToHTML(string){
+            return $sce.trustAsHtml(string);
+        }
     }
 })();

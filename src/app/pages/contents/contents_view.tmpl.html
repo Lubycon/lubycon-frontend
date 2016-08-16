@@ -1,25 +1,101 @@
 
-<div class="container">
+<div class="container content-view">
+    <div class="row">
+        <section class="col-sm-6 col-lg-9">
+            <div class="card">
+                <div class="content-info">
+                    <h1>{{vm.data.contents.title}}</h1>
+                    <div class="divide10"></div>
+
+                    <h4>{{vm.category}} &gt; {{vm.contents.subCate[0]}}, {{vm.contents.subCate[1]}}</h4>
+                    <div class="divide10"></div>
+
+                    <ul>
+                        <li ng-repeat="count in vm.counts">
+                            <i class="{{count.icon}}"></i>{{count.data}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="divide20"></div>
+                <div class="divide-horizental"></div>
+                <div class="divide20"></div>
+
+                <ng-bind-html ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html>
+            </div>
+
+            <div class="card col-sm-6 col-lg-6">
+                <!--INFO 1-->
+            </div>
+            <div class="card col-sm-6 col-lg-6">
+                <!--INFO 2-->
+            </div>
+            <div class="card col-sm-6 col-lg-12">
+                <!--COMMENT-->
+            </div>
+        </section>
+        <aside class="col-sm-6 col-lg-3">
+            <div class="content-aside card">
+                <div class="creator-info col-sm-6 col-lg-12">
+                    <figure class="col-sm-3 col-lg-4">
+                        <img ng-src="{{vm.contentHost + vm.data.userData.profile}}" />
+                    </figure>
+                    <span class="col-sm-3 col-lg-8">
+                        <h4><a ng-href="creators/dashboard/{{vm.data.userData.code}}">
+                                {{vm.data.userData.name}}
+                            </a>
+                        </h4>
+                        <h5 data-value="job">{{vm.data.userData.job}}</h5>
+                        <h5 data-value="location">
+                            <i class="fa fa-map-marker"></i>{{vm.data.userData.city}}, {{vm.data.userData.country}}
+                        </h5>
+                    </span>
+                </div>
+
+                <div class="divide-horizental col-sm-6 col-lg-12"></div>
+
+                <div class="info-wrap" data-value="tag">
+                    <p class="info-title"><i class="fa fa-tag"></i>Tags</p>
+                    <div class="info-content">
+                        <ul>
+                            <li ng-repeat="tag in vm.data.contents.tags">{{tag}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-wrap" data-value="descript">
+                    <p class="info-title"><i class="fa fa-info-circle"></i>Description</p>
+                    <div class="info-content">
+                        <p>
+                            {{vm.data.contents.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
     <div class="divide60"></div>
     CONTENT DATA<br/><br/>
 
-    code: {{vm.data.contents.code}}<br/>
-    title: {{vm.data.contents.title}}<br/>
+    <!-- code: {{vm.data.contents.code}}<br/> -->
+    <!-- title: {{vm.data.contents.title}}<br/>
     subCategory1: {{vm.data.contents.subCate.split(',')[0]}}<br/>
-    subCategory2: {{vm.data.contents.subCate.split(',')[1]}}<br/>
+    subCategory2: {{vm.data.contents.subCate.split(',')[1]}}<br/> -->
     content: {{vm.data.contents.content}}<br/>
     like: {{vm.data.contents.like}}<br/>
     bookmark: {{vm.data.content.bookmark}}<br/>
-    count: {{vm.data.contents.viewCount}}Views, {{vm.data.contents.likeCount}}Likes, {{vm.data.contents.downloadCount}}Downloads<br/>
+    <!-- count: {{vm.data.contents.viewCount}}Views, {{vm.data.contents.likeCount}}Likes, {{vm.data.contents.downloadCount}}Downloads<br/> -->
     filePath: {{vm.data.contents.filePath}}<br/>
     cc code: {{vm.data.contents.cc}}<br/>
-    tags: {{vm.data.contents.tags}}
+    <!-- tags: {{vm.data.contents.tags}}<br/>
+    description: {{vm.data.contents.description}}<br/> -->
 
     MEMBER DATA<br/><br/>
 
     code: {{vm.data.userData.code}}<br/>
-    name: {{vm.data.userData.name}}<br/>
+    <!-- name: {{vm.data.userData.name}}<br/>
     profile: <img ng-src="{{vm.contentHost + vm.data.userData.profile}}" />
     job: {{vm.data.userData.job}}<br/>
-    location: {{vm.data.userData.city}}, {{vm.data.userData.country}}
+    location: {{vm.data.userData.city}}, {{vm.data.userData.country}} -->
 </div>

@@ -74,6 +74,64 @@
             })
 
 
+            .state('aside', {
+                abstract: true,
+                templateUrl: 'app/common/layouts/default/default.layout.html',
+                controller: 'DefaultLayoutController',
+                controllerAs: 'layout',
+                resolve: {
+
+                }
+            })
+            .state('aside.default', {
+                abstract: true,
+                views: {
+                    header: {
+                        templateUrl: 'app/components/header/header.tmpl.html',
+                        controller: 'HeaderController',
+                        controllerAs: 'vm'
+                    },
+                    content: {
+                        template: '<div ui-view="content"></div>'
+                    },
+                    aside: {
+                        template: '<div ui-view="aside"></div>'
+                    },
+                    footer: {
+                        templateUrl: 'app/components/footer/footer.tmpl.html',
+                        controller: 'FooterController',
+                        controllerAs: 'vm'
+                    }
+                }
+            })
+            .state('aside.figure', {
+                abstract: true,
+                views: {
+                    header: {
+                        templateUrl: 'app/components/header/header.tmpl.html',
+                        controller: 'HeaderController',
+                        controllerAs: 'vm'
+                    },
+                    mainFigure: {
+                        templateUrl: 'app/components/main_figure/figure.tmpl.html',
+                        controller: 'FigureController',
+                        controllerAs: 'vm'
+                    },
+                    content: {
+                        template: '<div ui-view="content"></div>'
+                    },
+                    aside: {
+                        template: '<div ui-view="aside"></div>'
+                    },
+                    footer: {
+                        templateUrl: 'app/components/footer/footer.tmpl.html',
+                        controller: 'FooterController',
+                        controllerAs: 'vm'
+                    }
+                }
+            })
+
+
 
             .state('full', {
                 abstract: true,
@@ -105,8 +163,6 @@
                     }
                 }
             })
-
-            // aside default, aside noFooter 추가할 것 2016.08.12 - Evan
             ;
     }
 })();

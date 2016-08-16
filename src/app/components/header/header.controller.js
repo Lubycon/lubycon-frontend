@@ -7,12 +7,10 @@
 
     /* @ngInject */
     function headerController(
-        $rootScope, $scope, $location, $state, Restangular, $timeout,
-        DeviceConfig, $window
+        $rootScope, $scope, $location, $state, Restangular, $timeout, $window
     ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
-        console.log(vm.isMobile);
 
         vm.menuList = {
             content: {
@@ -47,5 +45,6 @@
 
         // FOR HEADER BACKGROUND...
         $scope.scrollDetect = false;
+        $scope.isMain = vm.isMain;
     }
 })();

@@ -7,6 +7,7 @@
         'components',
         'app.pages',
         'error',
+        'services',
 
         'pascalprecht.translate',
         'ngAnimate',
@@ -14,6 +15,7 @@
         'ngTouch',
         'ngSanitize',
         'ngMessages',
+        'ngSanitize',
         'ngAria',
         'restangular',
         'ui.router',
