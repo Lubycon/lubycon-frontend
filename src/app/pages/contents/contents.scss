@@ -1,9 +1,4 @@
 .content-view{
-    padding-top: 70px;
-    // 헤더 픽스 떄문에 임시로 이렇게 해놓음...
-    // 나중에 반드시 레이아웃 단에서 수정할 것
-    // 2016-08-17 evan
-
     .card {
         padding: 20px;
     }
@@ -42,6 +37,16 @@
             position: fixed;
             max-width: 300px;
             text-align: left;
+        }
+        .action-area.card{
+            position: fixed;
+            max-width: 300px;
+            top: 380px;
+
+            .btn {
+                width: 260px;
+                margin: 5px 0px;
+            }
         }
     }
 

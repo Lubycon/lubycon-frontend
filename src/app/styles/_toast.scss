@@ -25,6 +25,12 @@
             content: "\f005";
         }
     }
+    &.toast-like {
+        background-color: #48cfad;
+        &:before {
+            content: ""
+        }
+    }
     &.toast-remove {
         background-color: #ec6446;
         &:before {

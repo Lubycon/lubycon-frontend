@@ -22,7 +22,7 @@
         return directive;
 
         function link($scope, $element) {
-            console.log($scope.contents);
+            console.log($scope.comments);
         }
         function controller($scope, $element, Restangular, toastr, API_CONFIG){
             $scope.contentHost = API_CONFIG.content;

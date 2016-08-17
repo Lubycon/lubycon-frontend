@@ -8,7 +8,7 @@
     /** @ngInject */
     function ContentsViewController(
         $rootScope, $scope, $state, $stateParams,
-        $sce, API_CONFIG
+        $sce, API_CONFIG, toastr
     ) {
         var vm = this;
         console.log($state);
@@ -26,7 +26,7 @@
                 likeCount: 32,
                 viewCount: 11,
                 downloadCount: 3,
-                filePath: 'http://aws.lubycon.com/contents/contents/2016081101_20',
+                // filePath: 'http://aws.lubycon.com/contents/contents/2016081101_20',
                 cc: '0101',
                 tags: ['tag1','tag2','tag3','tag4','tag5']
             },
@@ -72,6 +72,8 @@
             ];
             vm.contents.subCate = vm.contents.subCate.split(',');
 
+            vm.downloadable = vm.contents.filePath !== undefined;
+
             vm.member = vm.data.userData;
 
             vm.convertToHTML = convertToHTML;
@@ -79,6 +81,71 @@
 
         function convertToHTML(string){
             return $sce.trustAsHtml(string);
+        }
+
+        vm.bookmarkAction = bookmarkAction;
+        function bookmarkAction(){
+            // BOOKMARK CHECKING...
+            if(vm.contents.bookmark) { // OFF
+                vm.contents.bookmark = false;
+                toastr.success(vm.contents.title+' is removed at your bookmark',{
+                    iconClass: 'toast-remove'
+                });
+            }
+            else if(!vm.contents.bookmark) { // ON
+                vm.contents.bookmark = true;
+                toastr.success(vm.contents.title+' is saved to your bookmark',{
+                    iconClass: 'toast-bookmark'
+                });
+            }
+            else return false;
+            // BOOKMARK CHECKING END
+            // CREATE POST PARAM
+            var params = {
+                checked: vm.contents.bookmark,
+                getUserCode: vm.member.code
+                //giveUserCode: $rootScope.member.code // 미구현
+            };
+
+            console.log(params);
+
+            // POST TO SERVER...
+            // Restangular.all('bookmark/contents/' + $stateParams.category + vm.contents.code)
+            //     .customPOST(params, undefined, undefined, {'Content-Type':'application/json'})
+            //     .then(function(res){
+            //
+            //     });
+        }
+
+        vm.likeAction = likeAction;
+        function likeAction(){
+            // BOOKMARK CHECKING...
+            if(vm.contents.like) { // OFF
+                vm.contents.like = false;
+            }
+            else if(!vm.contents.like) { // ON
+                vm.contents.like = true;
+                toastr.success('Thanks!! - ' + vm.member.name + ' -',{
+                    iconClass: 'toast-like'
+                });
+            }
+            else return false;
+            // BOOKMARK CHECKING END
+            // CREATE POST PARAM
+            var params = {
+                checked: vm.contents.like,
+                getUserCode: vm.member.code
+                //giveUserCode: $rootScope.member.code // 미구현
+            };
+
+            console.log(params);
+
+            // POST TO SERVER...
+            // Restangular.all('like/contents/' + $stateParams.category + vm.contents.code)
+            //     .customPOST(params, undefined, undefined, {'Content-Type':'application/json'})
+            //     .then(function(res){
+            //
+            //     });
         }
     }
 })();

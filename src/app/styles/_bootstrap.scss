@@ -8,20 +8,34 @@
     border-radius: 0;
     padding: 10px 15px;
     font-weight: 200;
-    color: #ffffff;
+    background: #ccc;
+    color: #fff;
     transition: width 0.25s, opacity 0.25s ease-in-out;
-    &:hover {
-        color: #ffffff;
+    outline: 0 !important;
+    
+    &:hover,&:focus,&.focus {
+        color: #fff;
     }
 }
 .btn-mint {
     background: #48cfad;
-    color: #ffffff;
+    color: #fff;
 }
 .btn-ghost {
     border: 1px solid #ffffff;
     box-sizing: border-box;
+    background: transparent;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    color: #ffffff;
+    color: #fff;
+}
+.btn-bookmark {
+    &.selected {
+        background: #ffbe54;
+    }
+}
+.btn-like {
+    &.selected {
+        background: #48cfad;
+    }
 }

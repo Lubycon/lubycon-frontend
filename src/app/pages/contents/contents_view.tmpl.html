@@ -24,11 +24,15 @@
                 <ng-bind-html ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html>
             </div>
 
-            <div class="card col-sm-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6 clear-left">
                 <!--INFO 1-->
+                <div class="card">
+
+                </div>
             </div>
-            <div class="card col-sm-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6 clear-right">
                 <!--INFO 2-->
+                <div class="card"></div>
             </div>
             <div class="card col-sm-6 col-lg-12 comment-info">
 
@@ -46,16 +50,16 @@
             <div class="content-aside card">
                 <div class="creator-info col-sm-6 col-lg-12">
                     <figure class="col-sm-3 col-lg-4">
-                        <img ng-src="{{vm.contentHost + vm.data.userData.profile}}" />
+                        <img ng-src="{{vm.contentHost + vm.member.profile}}" />
                     </figure>
                     <span class="col-sm-3 col-lg-8">
-                        <h4><a ng-href="creators/dashboard/{{vm.data.userData.code}}">
-                                {{vm.data.userData.name}}
+                        <h4><a ng-href="creators/dashboard/{{vm.member.code}}">
+                                {{vm.member.name}}
                             </a>
                         </h4>
-                        <h5 data-value="job">{{vm.data.userData.job}}</h5>
+                        <h5 data-value="job">{{vm.member.job}}</h5>
                         <h5 data-value="location">
-                            <i class="fa fa-map-marker"></i>{{vm.data.userData.city}}, {{vm.data.userData.country}}
+                            <i class="fa fa-map-marker"></i>{{vm.member.city}}, {{vm.member.country}}
                         </h5>
                     </span>
                 </div>
@@ -66,7 +70,7 @@
                     <p class="info-title"><i class="fa fa-tag"></i>Tags</p>
                     <div class="info-content">
                         <ul>
-                            <li ng-repeat="tag in vm.data.contents.tags">{{tag}}</li>
+                            <li ng-repeat="tag in vm.contents.tags">{{tag}}</li>
                         </ul>
                     </div>
                 </div>
@@ -77,6 +81,25 @@
                             {{vm.data.contents.description}}
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="action-area card">
+                <div
+                    class="btn btn-bookmark"
+                    ng-class="{selected : vm.contents.bookmark}"
+                    ng-click="vm.bookmarkAction()"
+                >
+                    <i class="fa fa-star"></i>BOOKMARK
+                </div>
+                <div
+                    class="btn btn-like"
+                    ng-class="{selected : vm.contents.like}"
+                    ng-click="vm.likeAction()"
+                >
+                    <i class="fa fa-heart"></i>like
+                </div>
+                <div ng-if="vm.downloadable" class="btn">
+                    <i class="fa fa-cloud-download"></i>Download
                 </div>
             </div>
         </aside>
@@ -91,8 +114,8 @@
     subCategory1: {{vm.data.contents.subCate.split(',')[0]}}<br/>
     subCategory2: {{vm.data.contents.subCate.split(',')[1]}}<br/> -->
     <!-- content: {{vm.data.contents.content}}<br/> -->
-    like: {{vm.data.contents.like}}<br/>
-    bookmark: {{vm.data.contents.bookmark}}<br/>
+    <!-- like: {{vm.data.contents.like}}<br/>
+    bookmark: {{vm.data.contents.bookmark}}<br/> -->
     <!-- count: {{vm.data.contents.viewCount}}Views, {{vm.data.contents.likeCount}}Likes, {{vm.data.contents.downloadCount}}Downloads<br/> -->
     filePath: {{vm.data.contents.filePath}}<br/>
     cc code: {{vm.data.contents.cc}}<br/>
@@ -101,9 +124,9 @@
 
     MEMBER DATA<br/><br/>
 
-    code: {{vm.data.userData.code}}<br/>
-    <!-- name: {{vm.data.userData.name}}<br/>
-    profile: <img ng-src="{{vm.contentHost + vm.data.userData.profile}}" />
-    job: {{vm.data.userData.job}}<br/>
-    location: {{vm.data.userData.city}}, {{vm.data.userData.country}} -->
+    <!-- code: {{vm.member.code}}<br/> -->
+    <!-- name: {{vm.member.name}}<br/>
+    profile: <img ng-src="{{vm.contentHost + vm.member.profile}}" />
+    job: {{vm.member.job}}<br/>
+    location: {{vm.member.city}}, {{vm.member.country}} -->
 </div>
