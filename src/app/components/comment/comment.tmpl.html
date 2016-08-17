@@ -1,0 +1,15 @@
+<div class="comments">
+    <div class="comment" ng-repeat="comment in comments">
+        <div class="comment-profile">
+            <img ng-src="{{contentHost + comment.profile}}" />
+        </div>
+        <div class="comment-main">
+            <h4>{{comment.name}}</h4>
+            <h5>{{comment.content}}</h5>
+            <div class="comment-date">
+                {{comment.date}}
+            </div>
+        </div>
+        <div class="divide-horizental"></div>
+    </div>
+</div>

@@ -39,6 +39,24 @@
                 city: 'Seoul'
             }
         };
+        vm.comments = [
+            {
+                userCode: 5,
+                code: 1,
+                name: 'Test member1',
+                profile: 'user/5/profile.jpg',
+                date: '2016-08-17 12:32:01',
+                content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
+            },
+            {
+                userCode: 5,
+                code: 1,
+                name: 'Test member1',
+                profile: 'user/5/profile.jpg',
+                date: '2016-08-17 12:32:01',
+                content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
+            }
+        ];
         // DUMMY DATA
         vm.init = (init)();
 

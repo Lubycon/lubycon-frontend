@@ -30,10 +30,18 @@
             <div class="card col-sm-6 col-lg-6">
                 <!--INFO 2-->
             </div>
-            <div class="card col-sm-6 col-lg-12">
-                <!--COMMENT-->
+            <div class="card col-sm-6 col-lg-12 comment-info">
+
+                <div class="divide20"></div>
+                <div class="divide-horizental"></div>
+                <div class="divide20"></div>
+
+                <comment comments="vm.comments"></comment>
             </div>
         </section>
+
+
+
         <aside class="col-sm-6 col-lg-3">
             <div class="content-aside card">
                 <div class="creator-info col-sm-6 col-lg-12">
@@ -82,9 +90,9 @@
     <!-- title: {{vm.data.contents.title}}<br/>
     subCategory1: {{vm.data.contents.subCate.split(',')[0]}}<br/>
     subCategory2: {{vm.data.contents.subCate.split(',')[1]}}<br/> -->
-    content: {{vm.data.contents.content}}<br/>
+    <!-- content: {{vm.data.contents.content}}<br/> -->
     like: {{vm.data.contents.like}}<br/>
-    bookmark: {{vm.data.content.bookmark}}<br/>
+    bookmark: {{vm.data.contents.bookmark}}<br/>
     <!-- count: {{vm.data.contents.viewCount}}Views, {{vm.data.contents.likeCount}}Likes, {{vm.data.contents.downloadCount}}Downloads<br/> -->
     filePath: {{vm.data.contents.filePath}}<br/>
     cc code: {{vm.data.contents.cc}}<br/>

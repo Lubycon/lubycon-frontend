@@ -1,0 +1,34 @@
+.comments {
+    .comment{
+        position: relative;
+        padding: 10px;
+
+        .comment-profile {
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            float: left;
+            margin-right: 10px;
+
+            img {
+                width: 100%;
+            }
+        }
+        .comment-main {
+            position: relative;
+            text-align: left;
+            h4 {
+                font-weight: 600;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            h5 {}
+
+            .comment-date {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
