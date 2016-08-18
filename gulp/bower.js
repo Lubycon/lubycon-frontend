@@ -34,11 +34,11 @@ gulp.task('bower:scripts:minify', ['bower:scripts'], function() {
 
 gulp.task('bower:styles:minify', ['bower:styles'], function() {
   return gulp.src(paths.dist + '/**/*.css')
-    .pipe($.csso())
+    .pipe($.cssnano())
     .pipe($.rename(function (path) {
       path.extname = '.min.css';
     }))
-    .pipe(gulp.dest(paths.dist + '/'));
+    .pipe(gulp.dest(paths.dist));
 });
 
 var sassOptions = {
@@ -63,10 +63,11 @@ gulp.task('bower:partials', function () {
   return gulp.src([
     paths.src + '/app/common/**/*.html'
   ])
-    .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true
+    .pipe($.htmlmin({
+        removeEmptyAttributes: true,
+        removeAttributeQuotes: true,
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
       module: 'common',
