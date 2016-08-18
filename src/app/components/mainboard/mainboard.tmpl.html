@@ -22,7 +22,7 @@
                             <img ng-src="{{contentHost + list.userData.profile}}">
                         </span>
                         <span class="table-info">
-                            <a href="">
+                            <a ui-sref="common.default.community-view({category: 'forum', boardId: list.content.code})">
                                 <span class="table-subject">{{list.content.title}}</span>
                                 <span class="table-comments">[{{list.content.comment}}]</span>
                             </a>

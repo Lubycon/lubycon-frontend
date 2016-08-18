@@ -7,7 +7,7 @@
                 ng-mouseenter="selected = 'selected'"
                 ng-mouseleave="selected = ''"
             >
-                <a ng-href="contents/3d/{{item.code}}">
+                <a ui-sref="common.default.contents-view({category: '3d', boardId: item.code})">
                     <img
                         ng-src="{{contentHost + item.image}}"
                     />

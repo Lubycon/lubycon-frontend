@@ -24,7 +24,7 @@
                     // }
                 }
             })
-            .state('common.default.contents', {
+            .state('common.default.contents-view', {
                 url: '/contents/:category/:boardId',
                 templateUrl: 'app/pages/contents/contents_view.tmpl.html',
                 controller: 'ContentsViewController',
