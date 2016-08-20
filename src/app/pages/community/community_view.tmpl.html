@@ -1,5 +1,89 @@
 
-<div class="container">
+<div class="container community-view">
+    <div class="row">
+        <section class="col-xs-12 col-sm-12 col-lg-9">
+            <div class="card">
+                <div class="content-info">
+                    <h1>{{vm.contents.title}}</h1>
+                    <h4>{{vm.contents.date}}</h4>
+                    <div class="divide10"></div>
+
+                    <ul>
+                        <li ng-repeat="count in vm.counts">
+                            <i class="{{count.icon}}"></i>{{count.data}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="divide20"></div>
+                <div class="divide-horizental"></div>
+                <div class="divide20"></div>
+
+                <section class="content-section">
+                    <ng-bind-html ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html>
+                </section>
+            </div>
+
+            <div class="col-sm-6 col-lg-6 clear-left">
+                <!--INFO 1-->
+                <div class="card">
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 clear-right">
+                <!--INFO 2-->
+                <div class="card"></div>
+            </div>
+            <div class="card col-sm-12 col-lg-12 comment-info">
+
+                <div class="divide20"></div>
+                <div class="divide-horizental"></div>
+                <div class="divide20"></div>
+
+                <comment comments="vm.comments"></comment>
+            </div>
+        </section>
+
+
+
+        <aside class="col-xs-12 col-sm-12 col-lg-3">
+            <div class="content-aside card">
+                <div class="creator-info col-sm-12 col-lg-12">
+                    <figure class="col-sm-4 col-lg-4">
+                        <img ng-src="{{vm.contentHost + vm.member.profile}}" />
+                    </figure>
+                    <span class="col-sm-8 col-lg-8">
+                        <h4><a ng-href="creators/dashboard/{{vm.member.code}}">
+                                {{vm.member.name}}
+                            </a>
+                        </h4>
+                        <h5 data-value="job">{{vm.member.job}}</h5>
+                        <h5 data-value="location">
+                            <i class="fa fa-map-marker"></i>{{vm.member.city}}, {{vm.member.country}}
+                        </h5>
+                    </span>
+                </div>
+            </div>
+            <div class="action-area card">
+                <div
+                    class="btn btn-like"
+                    ng-class="{selected : vm.contents.like}"
+                    ng-click="vm.likeAction()"
+                >
+                    <i class="fa fa-heart"></i>like
+                </div>
+                <div ng-if="vm.downloadable" class="btn">
+                    <i class="fa fa-cloud-download"></i>Download
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
+    <div class="divide60"></div>
+    </div>
+
+
     Contents Data<br/><br/>
 
     code: {{vm.contents.code}}<br/>

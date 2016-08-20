@@ -1,7 +1,7 @@
 
 <div class="container content-view">
     <div class="row">
-        <section class="col-sm-6 col-lg-9">
+        <section class="col-xs-12 col-sm-12 col-lg-9">
             <div class="card">
                 <div class="content-info">
                     <h1>{{vm.data.contents.title}}</h1>
@@ -34,7 +34,7 @@
                 <!--INFO 2-->
                 <div class="card"></div>
             </div>
-            <div class="card col-sm-6 col-lg-12 comment-info">
+            <div class="card col-sm-12 col-lg-12 comment-info">
 
                 <div class="divide20"></div>
                 <div class="divide-horizental"></div>
@@ -46,13 +46,13 @@
 
 
 
-        <aside class="col-sm-6 col-lg-3">
+        <aside class="col-xs-12 col-sm-12 col-lg-3">
             <div class="content-aside card">
-                <div class="creator-info col-sm-6 col-lg-12">
-                    <figure class="col-sm-3 col-lg-4">
+                <div class="creator-info col-sm-12 col-lg-12">
+                    <figure class="col-sm-4 col-lg-4">
                         <img ng-src="{{vm.contentHost + vm.member.profile}}" />
                     </figure>
-                    <span class="col-sm-3 col-lg-8">
+                    <span class="col-sm-8 col-lg-8">
                         <h4><a ng-href="creators/dashboard/{{vm.member.code}}">
                                 {{vm.member.name}}
                             </a>
@@ -64,7 +64,7 @@
                     </span>
                 </div>
 
-                <div class="divide-horizental col-sm-6 col-lg-12"></div>
+                <div class="divide-horizental col-sm-12 col-lg-12"></div>
 
                 <div class="info-wrap" data-value="tag">
                     <p class="info-title"><i class="fa fa-tag"></i>Tags</p>

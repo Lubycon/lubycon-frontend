@@ -1,0 +1,65 @@
+.community-view{
+    .card {
+        padding: 20px;
+    }
+    i {
+        margin-right: 5px;
+    }
+}
+
+.community-view section {
+    .content-info {
+        text-align: left;
+
+        h1 { // TITLE...
+            font-weight: 600;
+            font-size: 35px;
+        }
+        h4 { // DATE...
+            display: inline-block;
+            font-size: 12px;
+        }
+        ul { // COUNT LIST...
+            li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    }
+    .content-section {
+        text-align: left;
+    }
+}
+
+.community-view aside {
+    @media (min-width: 1200px){
+        .content-aside.card {
+            position: fixed;
+            max-width: 300px;
+            text-align: left;
+        }
+        .action-area.card{
+            position: fixed;
+            max-width: 300px;
+            top: 215px;
+
+            .btn {
+                width: 260px;
+                margin: 5px 0px;
+            }
+        }
+    }
+
+    .creator-info {
+        padding: 0;
+        figure { // CREATOR PROFILE SIZE...
+            padding: 0;
+            img {
+                width: 100%;
+            }
+        }
+        span { // CREATOR INFO...
+            text-align: left;
+        }
+    }
+}
