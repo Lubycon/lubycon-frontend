@@ -1,0 +1,74 @@
+
+.dashboard-view {
+    // GLOBAL IN DAHSBOARD
+    .card {
+        padding: 0;
+        text-align: left;
+
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .data-wrap {
+            padding: 15px;
+            border-right: 1px solid #ddd;
+            &:last-child {
+                border-right: none;
+            }
+
+            .title {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+            .content {
+                text-align: center;
+                font-size: 28px;
+            }
+        }
+    }
+
+    //HISTORY
+    .history {
+        ul.history-lists {
+            .data-wrap {
+                padding: 5px 0;
+            }
+
+            .date {
+                color: #aaa;
+            }
+        }
+
+        i.fa-circle {
+            &:after {
+                position: absolute;
+                height: 20px;
+                width: 2px;
+                content: ' ';
+                background: #000;
+                top: -15px;
+                left: 20px;
+            }
+            &.work {
+                color: #48cfad;
+                &:after {
+                    background: #48cfad;
+                }
+            }
+            &.education {
+                color: #488ccb;
+                &:after {
+                    background: #488ccb;
+                }
+            }
+            &.awards {
+                color: #ffbe54;
+                &:after {
+                    background: #ffbe54;
+                }
+            }
+        }
+    }
+}

@@ -3,7 +3,8 @@
 <div ui-view="mainFigure" ng-if="layout.mainFigure"></div>
 <div id="container" class="container">
     <div class="row">
-        <div ui-view="content"></div>
+        <div ui-view="content" class="col-xs-12 col-sm-12 col-lg-9"></div>
+        <div ui-view="aside" class="col-xs-12 col-sm-12 col-lg-3"></div>
     </div>
 </div>
 <div ui-view="footer" ng-if="layout.footer"></div>

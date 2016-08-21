@@ -76,7 +76,7 @@
 
             .state('aside', {
                 abstract: true,
-                templateUrl: 'app/common/layouts/default/default.layout.html',
+                templateUrl: 'app/common/layouts/default/aside.layout.html',
                 controller: 'DefaultLayoutController',
                 controllerAs: 'layout',
                 resolve: {

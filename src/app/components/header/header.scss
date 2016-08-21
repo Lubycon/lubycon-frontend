@@ -9,29 +9,41 @@
     border-bottom: 1px solid #fff;
     transition: background 0.2s, border 0.2s;
     &.visible {
-        background: #222;
+        background: rgba(0,0,0,0.8);
         border: 1px solid #000;
     }
 }
 
-// BRAND IMAGE
-#main-logo {
-    position: absolute;
-    top: 10px;
-    img {
-        width: 100%;
+//MOBILE MENU BUTTON
+.mobile-menu-button {
+    float: right;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 6px;
+}
+
+.navbar-header {
+    // BRAND IMAGE
+    &.main-logo {
+        position: absolute;
+        img {
+            width: 100%;
+        }
     }
 }
+
 @media (max-width: 767px) {
-    #main-logo {
+    .main-logo {
         width: 120px;
+        top: 13px;
         left: 50%;
         margin-left: -60px;
     }
 }
 @media (min-width: 768px) {
-    #main-logo {
+    .main-logo {
         width: 140px;
+        top: 10px;
         left: 5px;
     }
 }
