@@ -32,6 +32,30 @@
                     //     return api.customGET().then();
                     // }
                 }
+            })
+            .state('aside.default.insight', {
+                url: '/creator/insight/:memberId',
+                views: {
+                    content: {
+                        templateUrl: 'app/pages/member/insight.tmpl.html',
+                        controller: 'InsightController',
+                        controllerAs: 'vm'
+                    },
+                    aside: {
+                        templateUrl: 'app/pages/member/aside.tmpl.html',
+                        controller: 'MemberAsideController',
+                        controllerAs: 'vm'
+                    }
+                },
+                params: {
+                    memberId: null
+                },
+                resolve: {
+                    // getInsightRsv: function($stateParams, Restangular) {
+                    //     var api = Restangular.all('cretors/insight' + $stateParams.memberId);
+                    //     return api.customGET().then();
+                    // }
+                }
             });
     }
 })();

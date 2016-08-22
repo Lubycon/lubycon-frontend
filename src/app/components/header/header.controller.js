@@ -7,10 +7,11 @@
 
     /* @ngInject */
     function headerController(
-        $rootScope, $scope, $location, $state, Restangular, $timeout, $window
+        $rootScope, $scope, $location, $state, $stateParams, Restangular, $timeout, $window
     ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
+        vm.isMain = $stateParams.url === '/main';
 
         vm.menuList = {
             content: {

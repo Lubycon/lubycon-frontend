@@ -43,9 +43,8 @@
     }
 }
 
-// DASHBOARD
-.dashboard-view {
-    // GLOBAL IN DAHSBOARD
+// GLOBAL IN MEMBER PAGE
+.member-page{
     .card {
         padding: 0;
         text-align: left;
@@ -73,7 +72,10 @@
             }
         }
     }
+}
 
+// DASHBOARD
+.dashboard-view {
     //HISTORY
     .history {
         ul.history-lists {
