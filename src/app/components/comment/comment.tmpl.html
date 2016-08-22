@@ -4,7 +4,9 @@
             <img ng-src="{{contentHost + comment.profile}}" />
         </div>
         <div class="comment-main">
-            <h4>{{comment.name}}</h4>
+            <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">
+                <h4>{{comment.name}}</h4>
+            </a>
             <h5>{{comment.content}}</h5>
             <div class="comment-date">
                 {{comment.date}}

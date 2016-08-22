@@ -9,7 +9,7 @@
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('common.default.creator', {
+            .state('common.figure.creator', {
                 url: '/creator',
                 templateUrl: 'app/pages/creator/creator.tmpl.html',
                 controller: 'CreatorController',

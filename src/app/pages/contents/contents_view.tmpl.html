@@ -53,7 +53,7 @@
                         <img ng-src="{{vm.contentHost + vm.member.profile}}" />
                     </figure>
                     <span class="col-sm-8 col-lg-8">
-                        <h4><a ng-href="creators/dashboard/{{vm.member.code}}">
+                        <h4><a ui-sref="aside.default.dashboard({memberId: item.userData.code})">
                                 {{vm.member.name}}
                             </a>
                         </h4>

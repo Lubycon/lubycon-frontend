@@ -5,13 +5,13 @@
     border-radius: 0;
 }
 .navbar-inverse.main-header {
-    background: transparent;
-    border-bottom: 1px solid #fff;
+    background: rgba(0,0,0,0.8);
+    border-bottom: 1px solid #000;
     transition: background 0.2s, border 0.2s;
-    &.visible {
-        background: rgba(0,0,0,0.8);
-        border: 1px solid #000;
-    }
+    // &.visible {
+    //     background: rgba(0,0,0,0.8);
+    //     border: 1px solid #000;
+    // }
 }
 
 //MOBILE MENU BUTTON
