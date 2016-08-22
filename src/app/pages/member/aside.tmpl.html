@@ -1,1 +1,22 @@
-<div class="card"></div>
+<div class="card member-aside">
+    <div class="member-info">
+        <div class="member-profile">
+            <img ng-src="{{vm.contentHost + vm.member.profile}}" />
+        </div>
+        <h4>{{vm.member.name}}</h4>
+        <a class="account-setting-icon" ui-sref="common.default.accountSetting({memberId: vm.member.code})"> <!--ACCOUNT SETTING-->
+            <i class="fa fa-gear"></i>
+        </a>
+    </div>
+    <div class="divide-horizental"></div>
+    <div class="member-menu">
+        <ul>
+            <li ng-repeat="menu in vm.menu">
+                <a ui-sref="{{menu.link}}">
+                    <i class="{{menu.icon}}"></i>
+                    {{menu.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

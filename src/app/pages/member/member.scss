@@ -1,4 +1,49 @@
+// MEMBER PAGE ASIDE STYLE
+.member-aside {
+    .member-info {
+        position: relative;
 
+        .member-profile {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+            }
+        }
+        h4 {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .account-setting-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #aaa;
+            font-size: 20px;
+        }
+    }
+    .member-menu {
+        text-align: left;
+
+        ul {
+            li {
+                font-size: 16px;
+                padding: 5px;
+                &:hover {
+                    color: #fff;
+                    background: #ddd;
+                }
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+// DASHBOARD
 .dashboard-view {
     // GLOBAL IN DAHSBOARD
     .card {
@@ -39,10 +84,8 @@
             .date {
                 color: #aaa;
             }
-        }
 
-        i.fa-circle {
-            &:after {
+            i:after {
                 position: absolute;
                 height: 20px;
                 width: 2px;
@@ -51,6 +94,9 @@
                 top: -15px;
                 left: 20px;
             }
+        }
+
+        i.fa-circle {
             &.work {
                 color: #48cfad;
                 &:after {

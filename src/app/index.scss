@@ -47,7 +47,8 @@ a {
     color: #444;
     margin: 0px;
     padding: 0px;
-    &:hover {
+    &:hover, &:focus {
+        color: #444;
         opacity: 0.8;
         text-decoration: none;
     }
