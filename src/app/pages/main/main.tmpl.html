@@ -6,8 +6,8 @@
         <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="item in vm.data.contents">
             <img ng-src="{{vm.contentHost + item.img}}" />
             <div class="overlay">
-                <span>{{item.title}}</span>
-                <span>{{item.creator}}</span>
+                <a ui-sref="common.default.contents-view({category: '3d', boardId: item.code})"><span>{{item.title}}</span></a>
+                <a ui-sref="aside.default.dashboard({memberId: item.userCode})"><span>{{item.creator}}</span></a>
             </div>
         </div>
 
@@ -15,7 +15,7 @@
         <div class="col-sm-6 col-md-12 col-lg-12">
             BEST CREATOR<br/>
             <img ng-src="{{vm.contentHost + vm.data.bestCreator.profile}}" />
-            {{vm.data.bestCreator.name}}<br/>
+            <a ui-sref="aside.default.dashboard({memberId: item.userCode})">{{vm.data.bestCreator.name}}<br/></a>
             {{vm.data.bestCreator.job}}<br/>
             {{vm.data.bestCreator.city}}, {{vm.data.bestCreator.country}}<br/>
             <img ng-src="{{vm.contentHost + vm.data.bestCreator.contentImg}}" />
