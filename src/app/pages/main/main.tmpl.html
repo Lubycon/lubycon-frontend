@@ -19,7 +19,7 @@
             {{vm.data.bestCreator.job}}<br/>
             {{vm.data.bestCreator.city}}, {{vm.data.bestCreator.country}}<br/>
             <img ng-src="{{vm.contentHost + vm.data.bestCreator.contentImg}}" />
-            {{vm.data.bestCreator.contentTitle}}
+            <a ui-sref="common.default.contents-view({boardId: item.code})">{{vm.data.bestCreator.contentTitle}}</a>
         </div>
     </div>
 </div>

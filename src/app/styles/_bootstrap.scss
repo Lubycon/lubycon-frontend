@@ -6,16 +6,24 @@
     }
 }
 
+// BUTTON
 .btn {
+    border: none;
     border-radius: 0;
     padding: 10px 15px;
     font-weight: 200;
-    background: #ccc;
+    background: #bbb;
     color: #fff;
     transition: width 0.25s, opacity 0.25s ease-in-out;
     outline: 0 !important;
+    margin: 0;
 
     &:hover,&:focus,&.focus {
+        color: #fff;
+        border: none;
+    }
+
+    a {
         color: #fff;
     }
 }
@@ -24,12 +32,15 @@
     color: #fff;
 }
 .btn-ghost {
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     box-sizing: border-box;
     background: transparent;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     color: #fff;
+    &:hover {
+        border: 1px solid #fff;
+    }
 }
 .btn-bookmark {
     &.selected {
@@ -40,4 +51,25 @@
     &.selected {
         background: #48cfad;
     }
+}
+
+// FORM CONTROL
+.input-group {
+    border-radius: 0;
+}
+.input-group-addon {
+    color: #444;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+}
+.form-control {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.form-control:focus {
+    border-color: #48cfad;
+    box-shadow: 0 0 8px rgba(72,207,173,0.6);
+    color: #444;
 }

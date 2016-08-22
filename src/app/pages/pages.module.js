@@ -4,6 +4,7 @@
     angular
         .module('app.pages', [
             'app.pages.main',
+            'app.pages.account',
             'app.pages.contents',
             'app.pages.community',
             'app.pages.creator',

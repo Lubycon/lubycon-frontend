@@ -1,0 +1,44 @@
+<!-- SIGNIN PAGE -->
+
+<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 signin-view animated" ng-class="{bounceInDown : !vm.isMobile}">
+    <div class="main-logo">
+        <img src="assets/images/logo/svg/logo_black.svg" />
+    </div>
+    <h4>SIGN IN</h4>
+    <form ng-submit="vm.signin()" class="signin-form">
+        <div class="divide20"></div>
+        <div class="signin-form-input">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-user" ng-class="{selected : vm.emailFocused}"></i>
+                </span>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="E-mail"
+                    ng-focus="vm.emailFocused = true"
+                    ng-blur="vm.emailFocused = false"
+                />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-key" ng-class="{selected : vm.passwordFocused}"></i>
+                </span>
+                <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    ng-focus="vm.passwordFocused = true"
+                    ng-blur="vm.passwordFocused = false"
+                />
+            </div>
+        </div>
+        <div class="divide20"></div>
+        <button class="btn btn-mint" type="submit">SIGN IN</button>
+        <div class="divide10"></div>
+        <button class="btn" type="button">SIGN UP</button>
+    </form>
+    <div class="signin-action-input">
+        <a class="forgot-password" href="">Forgot your password?</a>
+    </div>
+</div>
