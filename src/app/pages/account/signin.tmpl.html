@@ -1,6 +1,6 @@
 <!-- SIGNIN PAGE -->
 
-<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 signin-view animated" ng-class="{bounceInDown : !vm.isMobile}">
+<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 account-page signin-view animated" ng-class="{bounceInDown : !vm.isMobile}">
     <div class="main-logo">
         <img src="assets/images/logo/svg/logo_black.svg" />
     </div>
@@ -13,9 +13,11 @@
                     <i class="fa fa-user" ng-class="{selected : vm.emailFocused}"></i>
                 </span>
                 <input
+                    required
                     type="text"
                     class="form-control"
                     placeholder="E-mail"
+                    ng-model="vm.memberId"
                     ng-focus="vm.emailFocused = true"
                     ng-blur="vm.emailFocused = false"
                 />
@@ -25,9 +27,11 @@
                     <i class="fa fa-key" ng-class="{selected : vm.passwordFocused}"></i>
                 </span>
                 <input
+                    required
                     type="password"
                     class="form-control"
                     placeholder="Password"
+                    ng-model="vm.password"
                     ng-focus="vm.passwordFocused = true"
                     ng-blur="vm.passwordFocused = false"
                 />
@@ -36,9 +40,11 @@
         <div class="divide20"></div>
         <button class="btn btn-mint" type="submit">SIGN IN</button>
         <div class="divide10"></div>
-        <button class="btn" type="button">SIGN UP</button>
+        <button class="btn" type="button">
+            <a ui-sref="common.noFooter.signup">SIGN UP</a>
+        </button>
     </form>
     <div class="signin-action-input">
-        <a class="forgot-password" href="">Forgot your password?</a>
+        <a class="forgot-password">Forgot your password?</a>
     </div>
 </div>

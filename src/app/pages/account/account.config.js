@@ -15,7 +15,7 @@
                 controller: 'SigninController',
                 controllerAs: 'vm'
             })
-            .state('common.default.signup', {
+            .state('common.noFooter.signup', {
                 url: '/signup',
                 templateUrl: 'app/pages/account/signup.tmpl.html',
                 controller: 'SignupController',

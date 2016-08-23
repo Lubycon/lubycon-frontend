@@ -1,20 +1,5 @@
-// SIGN IN...
-@media (min-width: 415px){
-    .signin-view {
-        margin-top: 100px;
-        padding: 20px;
-    }
-}
-@media (max-width: 414px){
-    .signin-view {
-        width: 100%;
-        padding: 30px;
-        margin-top: -20px;
-    }
-}
-
-
-.signin-view {
+// GLOBAL...
+.account-page {
     position: relative;
     background-color: #fff;
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.2);
@@ -40,9 +25,28 @@
         }
     }
 
-    .signin-form, .signin-action-input {
+    form {
         margin: 20px;
+    }
+}
 
+@media (min-width: 415px){
+    .account-page {
+        margin-top: 100px;
+        padding: 20px;
+    }
+}
+@media (max-width: 414px){
+    .account-page {
+        width: 100%;
+        padding: 30px;
+        margin-top: -20px;
+    }
+}
+
+// SIGN IN...
+.signin-view {
+    .signin-form, .signin-action-input {
         .input-group {
             border-bottom: 1px solid #ddd;
             height: 40px;
@@ -60,6 +64,7 @@
             }
 
             .form-control {
+                border: none;
                 height: 39px;
                 &:focus {
                     box-shadow: none;
@@ -79,5 +84,12 @@
         a.forgot-password {
             float: right;
         }
+    }
+}
+
+// SIGN UP...
+.signup-view {
+    .btn {
+        float: right;
     }
 }

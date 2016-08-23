@@ -3,10 +3,10 @@
 
     angular
         .module('app.pages.account')
-        .controller('SigninController', SigninController);
+        .controller('SignupController', SignupController);
 
     /** @ngInject */
-    function SigninController($rootScope, $scope, Restangular, Authentication) {
+    function SignupController($rootScope, $scope, Restangular, Authentication) {
         var vm = this;
         var api = Restangular.all('members/signin');
 
@@ -15,9 +15,9 @@
         vm.memberId = null;
         vm.password = null;
 
-        vm.signin = signin;
-        function signin(){
-            console.log(Authentication,vm.memberId,vm.password);
+        vm.signup = signup;
+        function signup(){
+            console.log(Authentication);
         }
     }
 })();
