@@ -17,14 +17,7 @@
                     type="text"
                     class="form-control"
                     placeholder="ex) example@lubycon.com"
-                />
-            </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <label>Nickname</label>
-                <input
-                    required
-                    type="text"
-                    class="form-control"
+                    ng-model="vm.member.email"
                 />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
@@ -33,6 +26,7 @@
                     required
                     type="password"
                     class="form-control"
+                    ng-model="vm.member.password"
                 />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
@@ -41,12 +35,29 @@
                     required
                     type="password"
                     class="form-control"
+                    ng-model="vm.rePassword"
+                />
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Nickname</label>
+                <input
+                    required
+                    type="text"
+                    class="form-control"
+                    ng-model="vm.member.nickname"
+                />
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Country</label>
+                <input
+                    required
+                    type="text"
+                    class="form-control"
+                    ng-model="vm.member.country"
                 />
             </div>
         </div>
         <div class="divide10"></div>
-        <button class="btn btn-mint" type="button">
-            <a ui-sref="common.noFooter.signup">APPLY</a>
-        </button>
+        <button type="submit" class="btn btn-mint" type="button">APPLY</button>
     </form>
 </div>

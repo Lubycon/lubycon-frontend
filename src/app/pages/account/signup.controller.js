@@ -12,12 +12,18 @@
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
-        vm.memberId = null;
-        vm.password = null;
+        vm.member = {
+            email: null,
+            nickname: null,
+            password: null,
+            country: null
+        };
+        vm.rePassword = null;
 
         vm.signup = signup;
         function signup(){
-            console.log(Authentication);
+            var passwordCheck = vm.member.password === vm.rePassword;
+            console.log(Authentication,vm.member,passwordCheck);
         }
     }
 })();

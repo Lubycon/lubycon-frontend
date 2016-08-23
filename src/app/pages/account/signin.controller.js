@@ -12,12 +12,12 @@
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
-        vm.memberId = null;
+        vm.email = null;
         vm.password = null;
 
         vm.signin = signin;
         function signin(){
-            console.log(Authentication,vm.memberId,vm.password);
+            console.log(Authentication,vm.email,vm.password);
         }
     }
 })();
