@@ -6,8 +6,7 @@
         .factory('Authentication', Authentication);
 
     function Authentication($cookieStore, $cookies, $rootScope, Restangular, $window, $location) {
-        // signin 시도
-        // 토큰 발급
+
         var defaultHeaders = Restangular.defaultHeaders;
         Restangular.setDefaultHeaders(defaultHeaders);
         console.log(defaultHeaders);
@@ -25,11 +24,11 @@
         function setCredentials(token, reload) {
             // INIT TOKEN...
             var authdata = token;
-            $rootScope.sign = { sign: true };
+            $rootScope.memberState = { sign: true, state: null };
 
             // SET COOKIE DATA...
             $cookieStore.put('authToken', authdata);
-            $cookieStore.put('sign', $rootScope.sign);
+            $cookieStore.put('memberState', $rootScope.memberState);
 
             // SET HTTP HEADER...
             defaultHeaders = Restangular.defaultHeaders;
@@ -37,7 +36,7 @@
             Restangular.setDefaultHeaders(defaultHeaders);
 
             // GET MEMBER DATA...
-            Restangular.all('members/simple/' + defaultHeaders['X-lubycon-Token']).get().then(
+            Restangular.all('members/simple/').get().then(
                 function (res) {
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
@@ -55,21 +54,19 @@
             );
 
             // REFRESH COOKIE...
-            $cookieStore.put('globals', $rootScope.sign);
+            $cookieStore.put('memberState', $rootScope.memberState);
 
             if(reload === 'reload') {
-                console.log($rootScope.referer);
                 $location.path('/main');
                 $window.location.reload();
             }
         }
 
         function updateCredentials(callback) {
-            Restangular.one('members/simple/' + defaultHeaders['X-lubycon-Token']).get().then(
-                function (userDetail) {
-                    $rootScope.member = userDetail.result;
+            Restangular.one('members/simple/').get().then(
+                function (res) {
+                    $rootScope.member = res.result;
                     $cookieStore.put('member', $rootScope.member);
-                    //callback($rootScope.member);
                 }
             );
         }
@@ -77,23 +74,25 @@
         function clearCredentials(reload, target, flag) {
             console.log(Restangular.defaultHeaders);
             if(!target) target = '/main';
-            if($rootScope.sign && $rootScope.member && !flag) {
-                Restangular.all('member/signout').customPUT().then(function () {
-                    if(reload === 'reload') {
-                        $location.path(target);
-                        $window.location.reload();
+            if($rootScope.memberState && $rootScope.member && !flag) {
+                Restangular.all('member/signout').customPUT().then(
+                    function () {
+                        if(reload === 'reload') {
+                            $location.path(target);
+                            $window.location.reload();
+                        }
                     }
-                });
+                );
             }
             else {
 
             }
             // CLEAR ROOT...
-            $rootScope.sign = {};
+            $rootScope.memberState = { sign: false, state: null };
 
             // DESTORY TOKEN AND SIGN DATA
             $cookieStore.remove('authToken');
-            $cookieStore.remove('sign');
+            $cookieStore.remove('memberState');
         }
     }
 })();
