@@ -34,9 +34,28 @@ gulp.task('inject', ['scripts', 'styles'], function () {
     addRootSlash: false
   };
 
+  var wiredepOptions = {
+    directory: 'bower_components',
+    ignorePath: '../../',
+    exclude: [/default\.css/],
+    fileTypes: {
+      html: {
+        block: /(([\s\t]*)<!--\s*bower:*(\S*)\s*-->)(\n|\r|.)*?(<!--\s*endbower\s*-->)/gi,
+        detect: {
+          js: /<script.*src=['"](.+)['"]>/gi,
+          css: /<link.*href=['"](.+)['"]/gi
+        },
+        replace: {
+          js: '<script src="/{{filePath}}"></script>',
+          css: '<link rel="stylesheet" href="/{{filePath}}" />'
+        }
+      }
+    }
+  };
+
   return gulp.src(path.join(conf.paths.src, '/*.html'))
     .pipe($.inject(injectStyles, injectOptions))
     .pipe($.inject(injectScripts, injectOptions))
-    .pipe(wiredep(_.extend({}, conf.wiredep)))
+    .pipe(wiredep(wiredepOptions))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
 });
