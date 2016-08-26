@@ -86,6 +86,12 @@ gulp.task('faviconIco', function () {
         .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
+gulp.task('translations', function () {
+    return gulp.src('src/**/language/*.json')
+        .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
+        .pipe($.size());
+});
+
 gulp.task('asset-css', function () {
     return gulp.src(path.join(conf.paths.src, '/assets/css/**/*'))
         .pipe(gulp.dest(path.join(conf.paths.dist, '/assets/css/')));
@@ -119,4 +125,4 @@ gulp.task('clean', function () {
     return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
 
-gulp.task('buildapp', ['html', 'fonts', 'other', 'faviconIco', 'asset-css', 'asset-js']);
+gulp.task('buildapp', ['html', 'fonts', 'other', 'faviconIco', 'asset-css', 'asset-js', 'translations']);
