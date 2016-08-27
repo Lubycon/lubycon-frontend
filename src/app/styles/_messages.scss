@@ -1,0 +1,115 @@
+// MESSAGE PAGE...
+
+.message {
+    width: 100%;
+}
+.message.message-wrapper {
+    margin-top: 50px;
+    background: #ffffff;
+    text-align: center;
+
+    .message-icon {
+        margin-top: 40px;
+        font-size: 100px;
+    }
+    .message-box {
+        position: relative;
+        text-align: center;
+        padding: 30px 150px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        color: #444444;
+    }
+}
+
+.main-message {
+    font-size: 50px;
+    color: #444;
+    font-weight: 600;
+    padding: 10px;
+}
+.sub-message {
+    font-size: 24px;
+    color: #444;
+}
+.input-wrapper {
+    padding: 10px;
+}
+.label-message {
+    color: #444;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.input-message {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 3px 3px 3px 10px;
+    color: #444;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.input-message:focus {
+    border: 1px solid #48cfad;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+.time-wrapper {
+    font-size: 15px;
+    color: #444444;
+    padding: 12px;
+    border: 2px dashed #48cfad;
+}
+.time-box {
+    color: #444;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.message-box {
+    .btn {
+        display: inline-block;
+        min-width: 130px;
+        height: 35px;
+        line-height: 36px;
+        padding: 0 10px;
+        margin: 0 5px;
+        color: #fff;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        vertical-align: middle;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &.submit-bt {
+            background: #48cfad;
+        }
+        &.cancel-bt {
+            background: #ec6446;
+        }
+    }
+}
+
+.message-icon {
+    &.black {
+        color: #444;
+    }
+    &.mint {
+        color: #48cfad;
+    }
+    &.red {
+        color: #ec6446;
+    }
+    &.blue {
+        color: #488ccb;
+    }
+    &.orange {
+        color: #ffbe54;
+    }
+}

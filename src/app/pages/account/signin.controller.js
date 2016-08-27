@@ -6,7 +6,7 @@
         .controller('SigninController', SigninController);
 
     /** @ngInject */
-    function SigninController($rootScope, $scope, Restangular, Authentication) {
+    function SigninController($rootScope, $scope, $state, Restangular, Authentication) {
         var vm = this;
 
         vm.signInfo = {
@@ -20,13 +20,13 @@
         vm.signin = signin;
         function signin(){
             console.log(Authentication,vm.signInfo);
-
-            Authentication.signIn.post(
-                vm.signInfo, undefined, undefined, {'Content-Type':'application/json'}
-            ).then(function (res) {
-                console.log(res);
-                Authentication.setCredentials(res.token,'reload');
-            });
+            
+            // Authentication.signIn.post(
+            //     vm.signInfo, undefined, undefined, {'Content-Type':'application/json'}
+            // ).then(function (res) {
+            //     console.log(res);
+            //     Authentication.setCredentials(res.token,'reload');
+            // });
         }
     }
 })();

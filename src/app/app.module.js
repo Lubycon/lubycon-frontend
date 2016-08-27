@@ -7,6 +7,7 @@
         'components',
         'app.pages',
         'error',
+        'messages',
         'services',
 
         'pascalprecht.translate',

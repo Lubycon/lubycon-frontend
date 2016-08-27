@@ -9,7 +9,7 @@
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('full.default.404', {
+            .state('full.noFooter.404', {
                 url: '/error/:errorCode',
                 templateUrl: 'app/error/error.tmpl.html',
                 controller: 'ErrorController',

@@ -24,6 +24,8 @@
         function signup(){
             var passwordCheck = vm.member.password === vm.rePassword;
             console.log(Authentication,vm.member,passwordCheck);
+            
+            $state.go('common.noFooter.signup-message',{ signupCheck: true });
         }
     }
 })();
