@@ -1,0 +1,16 @@
+<div class="selectBox">
+    <div class="select-body" uib-dropdown on-toggle="toggleOn" ng-class="{empty : !output}">
+        <a href="" class="dropdown-toggle" uib-dropdown-toggle>
+            <i class="fa {{icon}} dropdown-icon"></i> {{output || placeholder}} <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="item in options" ng-click="selectOption($index)">
+                <a href="" role="menuitem">{{item}}</a>
+            </li>
+            <li ng-show="!options.length" role="menuitem" >{{'No Item'}}</li>
+        </ul>
+    </div>
+    <select ng-show="isMobile" ng-model="output">
+        <option ng-repeat="item in options">{{item}}</option>
+    </select>
+</div>

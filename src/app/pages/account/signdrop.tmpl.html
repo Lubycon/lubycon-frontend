@@ -1,0 +1,37 @@
+<!--SIGN DROP PAGE-->
+
+<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 account-page signup-view animated" ng-class="{bounceInDown : !vm.isMobile}">
+    <div class="main-logo">
+        <img src="assets/images/logo/svg/logo_black.svg" />
+    </div>
+    <h4>SIGN DROP</h4>
+    <form ng-submit="vm.signdrop()" class="signup-form">
+        <div class="divide20"></div>
+        <div class="signup-form-input">
+            <ul>
+                <li>
+                    Why you want to delete your account?
+                    <div class="divide10"></div>
+                    <selectbox
+                        icon="'fa-filter'"
+                        placeholder="Select..."
+                        options="vm.dropKindList"
+                        required="true"
+                        output="vm.dropKind"
+                    >
+                    </selectbox>
+                </li>
+            </ul>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Reason</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Reason"
+                />
+            </div>
+        </div>
+        <div class="divide10"></div>
+        <button type="submit" class="btn">DELETE ACCOUNT</button>
+    </form>
+</div>

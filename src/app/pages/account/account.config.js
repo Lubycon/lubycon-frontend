@@ -20,6 +20,13 @@
                 templateUrl: 'app/pages/account/signup.tmpl.html',
                 controller: 'SignupController',
                 controllerAs: 'vm'
-            });
+            })
+            .state('common.noFooter.signdrop', {
+                url: '/signdrop',
+                templateUrl: 'app/pages/account/signdrop.tmpl.html',
+                controller: 'SigndropController',
+                controllerAs: 'vm'
+            })
+            ;
     }
 })();

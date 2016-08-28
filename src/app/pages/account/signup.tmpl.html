@@ -49,15 +49,17 @@
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Country</label>
-                <input
-                    required
-                    type="text"
-                    class="form-control"
-                    ng-model="vm.member.country"
-                />
+                <selectbox
+                    icon="'fa-filter'"
+                    placeholder="Select your location..."
+                    options="vm.countryList"
+                    required="true"
+                    output="vm.member.country"
+                >
+                </selectbox>
             </div>
         </div>
         <div class="divide10"></div>
-        <button type="submit" class="btn btn-mint" type="button">APPLY</button>
+        <button type="submit" class="btn btn-mint">APPLY</button>
     </form>
 </div>

@@ -19,12 +19,13 @@
             country: null
         };
         vm.rePassword = null;
+        vm.countryList = ['country A','country B','country C','country D'];
 
         vm.signup = signup;
         function signup(){
             var passwordCheck = vm.member.password === vm.rePassword;
             console.log(Authentication,vm.member,passwordCheck);
-            
+
             $state.go('common.noFooter.signup-message',{ signupCheck: true });
         }
     }

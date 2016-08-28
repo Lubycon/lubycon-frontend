@@ -1,0 +1,42 @@
+.selectBox {
+    .select-body {
+        position: relative;
+        border: 1px solid #444;
+        max-width: 200px;
+        padding: 7px;
+
+        &.open {
+            background: #eee;
+        }
+        &.empty {
+            .dropdown-toggle,i {
+                color: #aaa;
+            }
+            .fa-caret-down {
+                color: #444;
+            }
+        }
+
+        i {
+            color: #444;
+
+            &.dropdown-icon {
+                margin-right: 5px;
+            }
+            &.fa-caret-down {
+                position: absolute;
+                right: 7px;
+            }
+        }
+    }
+    .dropdown-menu {
+        width: 100%;
+        border-radius: 0;
+        background-color: rgba(255,255,255,0.9);
+        color: #444;
+    }
+    select {
+        position: fixed;
+        left: 200%;
+    }
+}
