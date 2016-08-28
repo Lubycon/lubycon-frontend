@@ -4,9 +4,9 @@
 .navbar {
     border-radius: 0;
 }
-.navbar-inverse.main-header {
-    background: rgba(0,0,0,0.8);
-    border-bottom: 1px solid #000;
+.main-header {
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #fff;
     transition: background 0.2s, border 0.2s;
     // &.visible {
     //     background: rgba(0,0,0,0.8);
@@ -18,7 +18,7 @@
 .mobile-menu-button {
     float: right;
     font-size: 20px;
-    color: #fff;
+    color: #444;
     margin-top: 6px;
 }
 
@@ -60,7 +60,7 @@
 
 // DESIGN FOR MENU BUTTONS
 .navbar-inverse a, .navbar-inverse .navbar-nav a {
-    color: #fff;
+    color: #444;
     i {
         margin-right: 10px;
     }
@@ -68,17 +68,17 @@
 
 // DROPDOWN MENU OPENED
 .navbar-inverse .navbar-nav > .navbar-menu.open > a {
-    background-color: #444;
+    background-color: #fff;
 }
 .navbar-menu:hover {
-    background-color: #444;
+    background-color: #fff;
 }
 
 // DESIGN FOR MENU LISTS
 .main-nav-menu {
     border: none;
     border-radius: 0;
-    background-color: #444;
+    background-color: #fff;
     margin-top: 1px;
     left: -1px;
 }
@@ -86,7 +86,7 @@
 // MENU LISTS HOVER, FOCUS
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-color: #48cfad;
-    color: #fff;
+    color: #444;
 }
 
 // MEMEBER MENU
@@ -94,5 +94,5 @@
     position: absolute;
     right: 10px;
     top: 14px;
-    color: #fff;
+    color: #444;
 }
