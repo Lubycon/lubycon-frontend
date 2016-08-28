@@ -9,7 +9,7 @@
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('common.noFooter.signup-message', {
+            .state('common.noFooter.signupMessage', {
                 url: '/message/signup',
                 templateUrl: 'app/messages/message.tmpl.html',
                 controller: 'SignupMessageController',
@@ -18,7 +18,7 @@
                     success: null
                 }
             })
-            .state('common.noFooter.content-message', {
+            .state('common.noFooter.contentMessage', {
                 url: '/message/contents',
                 templateUrl: 'app/messages/message.tmpl.html',
                 controller: 'ContentsMessageController',
@@ -28,7 +28,7 @@
                     kind: null
                 }
             })
-            .state('common.noFooter.setting-message', {
+            .state('common.noFooter.settingMessage', {
                 url: '/message/setting',
                 templateUrl: 'app/messages/message.tmpl.html',
                 controller: 'SettingMessageController',
@@ -37,7 +37,7 @@
                     success: null
                 }
             })
-            .state('common.noFooter.change-pwd-message', {
+            .state('common.noFooter.changePwdMessage', {
                 url: '/message/pwdsetting',
                 templateUrl: 'app/messages/message.tmpl.html',
                 controller: 'pwdMessageController',
@@ -46,7 +46,7 @@
 
                 }
             })
-            .state('common.noFooter.fail-cert-message', {
+            .state('common.noFooter.failCertMessage', {
                 url: '/message/certs/fail',
                 templateUrl: 'app/messages/message.tmpl.html',
                 controller: 'FailCertMessageController',

@@ -5,12 +5,12 @@
 		<article class="sub-message">{{vm.message.content}}</article>
 	</div>
 	<div class="message-box">
-		<div
-			class="btn {{button.category}}"
+		<button
+			class="btn {{button.kind}}"
 			ng-repeat="button in vm.message.buttons"
 			ng-click="button.func()"
 		>
 			{{button.content}}
-		</div>
+		</button>
 	</div>
 </section>

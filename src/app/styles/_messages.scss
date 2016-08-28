@@ -68,21 +68,14 @@
         font-size: 20px;
         margin-right: 10px;
     }
-    .input-message {
-        border: 1px solid #aaa;
-        border-radius: 3px;
-        padding: 3px 3px 3px 10px;
-        color: #444;
-        font-size: 23px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-    }
-    .input-message:focus {
-        border: 1px solid #48cfad;
-        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    .input-group {
+        label {
+            margin-right: 10px;
+        }
+        .form-control {
+            width: 80%;
+            float: none;
+        }
     }
     .time-wrapper {
         font-size: 15px;
