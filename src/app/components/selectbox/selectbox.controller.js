@@ -31,11 +31,17 @@
                 $scope.output = $scope.options[index];
                 console.log(index,$scope.options[index]);
             }
+
+            $scope.mobileAction = function(){
+                if($scope.isMobile){
+                    angular.element('.mobile-selector').trigger('focus');
+                    return false;
+                }
+                else return false;
+            }
         }
         function controller($rootScope, $scope, $element) {
             $scope.isMobile = $rootScope.deviceInfo.isMobile;
-
-
         }
     }
 })();
