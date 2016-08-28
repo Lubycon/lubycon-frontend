@@ -37,6 +37,24 @@
                     success: null
                 }
             })
+            .state('common.noFooter.change-pwd-message', {
+                url: '/message/pwdsetting',
+                templateUrl: 'app/messages/message.tmpl.html',
+                controller: 'pwdMessageController',
+                controllerAs: 'vm',
+                params: {
+
+                }
+            })
+            .state('common.noFooter.fail-cert-message', {
+                url: '/message/certs/fail',
+                templateUrl: 'app/messages/message.tmpl.html',
+                controller: 'FailCertMessageController',
+                controllerAs: 'vm',
+                params: {
+
+                }
+            })
             ;
     }
 })();
