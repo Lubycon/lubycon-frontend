@@ -93,3 +93,27 @@
         float: right;
     }
 }
+
+// SETTING...
+.account-setting {
+    margin-top: 0;
+    background-color: transparent;
+    box-shadow: none;
+
+    .card-title {
+        text-align: left;
+        font-size: 24px;
+        &:before {
+            display: none;
+        }
+    }
+
+    .input-group {
+        width: 300px;
+
+        label {
+            width: 100%;
+            text-align: left;
+        }
+    }
+}

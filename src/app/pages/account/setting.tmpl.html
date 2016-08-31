@@ -1,0 +1,140 @@
+<!-- SIGNIN PAGE -->
+
+<div class="col-xs-12 col-sm-12 col-lg-12 account-page account-setting">
+    <form ng-submit="vm.postSetting()">
+        <div class="card">
+
+        </div>
+        <div class="card">
+            <h4 class="card-title">Account Setting</h4>
+            <div class="divide20"></div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>E-mail</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    disabled
+                    ng-model="vm.member.email"
+                />
+            </div>
+            <selectbox
+                icon="'fa-lock'"
+                placeholder="Option"
+                options="vm.publicOptionList"
+                required="true"
+                output="vm.publicOption.email"
+            >
+            </selectbox>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    disabled
+                    ng-model="vm.member.name"
+                />
+            </div>
+        </div>
+        <div class="card">
+            <h4 class="card-title">Basic Info</h4>
+            <div class="divide20"></div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Profile Photo</label>
+                <div>
+                    <div class="cropper-window" id="croped"><img ng-src="{{vm.contentHost + vm.member.profile}}" /></div>
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <div class="cropper-window" id="cropper-preview"></div>
+                </div>
+                <div>
+                    <button
+                        class="btn"
+                        ngf-select
+                        type="file"
+                        name="files"
+                        ng-model="vm.member.profile"
+                        accept="image/*"
+                        ngf-max-size="10MB"
+                        ngf-max-files="1"
+                        ngf-fix-orientation="true"
+                    ><i class="fa fa-cloud-upload"></i></button>
+                    <button class="btn"><i class="fa fa-crop"></i></button>
+                </div>
+                <div id="cropper-wrapper"><img id="cropper_img" /></div>
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Job</label>
+                <selectbox
+                    icon="'fa-lock'"
+                    placeholder="Option"
+                    options="vm.publicOptionList"
+                    output="vm.member.job"
+                >
+                </selectbox>
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Position</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    ng-model="vm.member.position"
+                />
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Country</label>
+                <selectbox
+                    icon="'fa-lock'"
+                    placeholder="Country"
+                    options="vm.publicOptionList"
+                    required="true"
+                    output="vm.member.country"
+                >
+                </selectbox>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="City"
+                    ng-model="vm.member.city"
+                />
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Language</label>
+                <ul>
+                    <li ng-repeat="language in vm.languages">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="language..."
+                            ng-model="language.name"
+                        />
+                        <selectbox
+                            icon="'fa-lock'"
+                            placeholder="Country"
+                            options="vm.publicOptionList"
+                            required="true"
+                            output="language.level"
+                        >
+                        </selectbox>
+                    </li>
+                </ul>
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Description</label>
+                <textarea
+                    type="text"
+                    rows="5"
+                    ng-maxlength="1000"
+                    class="form-control"
+                    ng-model="vm.member.desciption"
+                ></textarea>
+            </div>
+        </div>
+        <div class="card">
+            <h4 class="card-title">History</h4>
+        </div>
+        <div class="card">
+            <h4 class="card-title">Contact</h4>
+        </div>
+        <div class="divide20"></div>
+        <button class="btn btn-mint" type="submit">SUBMIT</button>
+    </form>
+</div>

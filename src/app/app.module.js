@@ -21,6 +21,7 @@
         'restangular',
         'ui.router',
         'ui.bootstrap',
+        'ngFileUpload',
         'toastr'
     ])
     .constant('APP_LANGUAGES', [

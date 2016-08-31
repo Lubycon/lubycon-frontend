@@ -27,6 +27,12 @@
                 controller: 'SigndropController',
                 controllerAs: 'vm'
             })
+            .state('common.default.accountSetting', {
+                url: '/setting',
+                templateUrl: 'app/pages/account/setting.tmpl.html',
+                controller: 'AccountSettingController',
+                controllerAs: 'vm'
+            })
             ;
     }
 })();
