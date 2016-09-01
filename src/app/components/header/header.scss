@@ -45,8 +45,8 @@
 @media (min-width: 768px) {
     .main-logo {
         width: 140px;
-        top: 10px;
-        left: 5px;
+        top: 13px;
+        left: 8px;
     }
 }
 
@@ -97,4 +97,12 @@
     right: 10px;
     top: 14px;
     color: #444;
+
+    a.main-signin {
+        font-size: 16px;
+        font-weight: 600;
+        i {
+            margin-right: 5px;
+        }
+    }
 }

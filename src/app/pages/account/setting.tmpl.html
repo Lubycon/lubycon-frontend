@@ -41,9 +41,11 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Profile Photo</label>
                 <div>
-                    <div class="cropper-window" id="croped"><img ng-src="{{vm.contentHost + vm.member.profile}}" /></div>
+                    <div class="cropper-window cropped">
+                        <img ng-src="{{vm.profileChanged ? vm.member.profile : vm.contentHost + vm.member.profile}}" />
+                    </div>
                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    <div class="cropper-window" id="cropper-preview"></div>
+                    <div class="cropper-window preview"></div>
                 </div>
                 <div>
                     <button
@@ -51,15 +53,17 @@
                         ngf-select
                         type="file"
                         name="files"
-                        ng-model="vm.member.profile"
-                        accept="image/*"
+                        ng-model="vm.uploadedProfile"
+                        ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
+                        ngf-accept="'image/*'"
+                        ngf-resize="{width:200, height:200, quality: 1.0}"
                         ngf-max-size="10MB"
                         ngf-max-files="1"
                         ngf-fix-orientation="true"
                     ><i class="fa fa-cloud-upload"></i></button>
-                    <button class="btn"><i class="fa fa-crop"></i></button>
+                    <span class="btn"><i class="fa fa-crop" ng-click="vm.crop()"></i></span>
                 </div>
-                <div id="cropper-wrapper"><img id="cropper_img" /></div>
+                <img cropper class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Job</label>

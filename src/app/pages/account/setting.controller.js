@@ -74,6 +74,30 @@
         vm.publicOption = vm.data.publicOption;
 
         vm.publicOptionList = ['Public','Private'];
+        vm.profileChanged = false;
+
+        vm.init = (init)();
+        function init(){
+
+        }
+
+        vm.changedFile = function(files,file,newFiles,invalidFiles){
+            console.log("files : ", files);
+            console.log("file : ", file);
+            console.log("newFiles : ", newFiles);
+            console.log("invalidFiles : ", invalidFiles);
+            console.log(vm.uploadedProfile);
+
+            console.log($.fn);
+
+        }
+        vm.crop = function(){
+            var canvas = angular.element('.cropper').cropper("getCroppedCanvas", { width: 100, height: 100 }),
+                base64URI = canvas.toDataURL('image/jpeg');
+                console.log(base64URI);
+            vm.profileChanged = true;
+            vm.member.profile = base64URI;
+        }
 
         vm.postSetting = function(){
             console.log(vm.data);
