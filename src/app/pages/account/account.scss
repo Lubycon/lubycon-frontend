@@ -109,11 +109,42 @@
     }
 
     .input-group {
-        width: 300px;
+        position: relative;
+        text-align: left;
+        margin: 10px 0;
 
         label {
             width: 100%;
             text-align: left;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .form-control {
+            width: 200px;
+            height: 36px;
+            margin: 0 5px;
+            float: none;
+        }
+
+        .selectBox {
+            min-width: 150px;
+            max-width: 300px;
+            display: inline-block;
+            margin: 0 5px;
+            background: #fff;
+
+            .select-body {
+                border: 1px solid #ccc;
+            }
+        }
+
+        .history-group {
+            .selectBox {
+                min-width: 110px;
+            }
         }
     }
 }

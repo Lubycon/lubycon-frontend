@@ -10,7 +10,7 @@
         var directive = {
             restrict: 'EA',
             templateUrl: 'app/components/selectbox/selectbox.tmpl.html',
-            replace: false,
+            replace: true,
             scope: {
                 search: '=',
                 icon: '=',

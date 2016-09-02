@@ -1,4 +1,4 @@
-<!-- SIGNIN PAGE -->
+<!-- SETTING PAGE -->
 
 <div class="col-xs-12 col-sm-12 col-lg-12 account-page account-setting">
     <form ng-submit="vm.postSetting()">
@@ -16,15 +16,15 @@
                     disabled
                     ng-model="vm.member.email"
                 />
+                <selectbox
+                    icon="'fa-lock'"
+                    placeholder="Option"
+                    options="vm.publicOptionList"
+                    required="true"
+                    output="vm.publicOption.email"
+                >
+                </selectbox>
             </div>
-            <selectbox
-                icon="'fa-lock'"
-                placeholder="Option"
-                options="vm.publicOptionList"
-                required="true"
-                output="vm.publicOption.email"
-            >
-            </selectbox>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Name</label>
                 <input
@@ -63,12 +63,11 @@
                     ><i class="fa fa-cloud-upload"></i></button>
                     <span class="btn"><i class="fa fa-crop" ng-click="vm.crop()"></i></span>
                 </div>
-                <img cropper class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
+                <img cropper previewer="'.preview'" class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Job</label>
                 <selectbox
-                    icon="'fa-lock'"
                     placeholder="Option"
                     options="vm.publicOptionList"
                     output="vm.member.job"
@@ -86,7 +85,6 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Country</label>
                 <selectbox
-                    icon="'fa-lock'"
                     placeholder="Country"
                     options="vm.publicOptionList"
                     required="true"
@@ -111,7 +109,6 @@
                             ng-model="language.name"
                         />
                         <selectbox
-                            icon="'fa-lock'"
                             placeholder="Country"
                             options="vm.publicOptionList"
                             required="true"
@@ -120,6 +117,9 @@
                         </selectbox>
                     </li>
                 </ul>
+                <div class="divide20"></div>
+                <div class="btn" ng-click="vm.languageControl('add')"><i class="fa fa-plus"></i></div>
+                <div class="btn" ng-click="vm.languageControl('remove')"><i class="fa fa-minus"></i></div>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Description</label>
@@ -134,9 +134,95 @@
         </div>
         <div class="card">
             <h4 class="card-title">History</h4>
+            <div class="divide20"></div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <ul>
+                    <li ng-repeat="history in vm.histories">
+                        <div class="history-group">
+                            <selectbox
+                                placeholder="Kind"
+                                options="vm.historyKind"
+                                required="true"
+                                output="history.category"
+                            ></selectbox>
+                            <selectbox
+                                placeholder="Year"
+                                options="vm.yearsDummy"
+                                required="true"
+                                output="history.year"
+                            ></selectbox>
+                            <selectbox
+                                placeholder="Month"
+                                options="vm.monthDummy"
+                                required="true"
+                                output="history.month"
+                            ></selectbox>
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="What did you do?"
+                                ng-model="history.content"
+                            />
+                        </div>
+                    </li>
+                </ul>
+                <div class="divide20"></div>
+                <div class="btn" ng-click="vm.historyControl('add')"><i class="fa fa-plus"></i></div>
+                <div class="btn" ng-click="vm.historyControl('remove')"><i class="fa fa-minus"></i></div>
+            </div>
         </div>
         <div class="card">
             <h4 class="card-title">Contact</h4>
+            <div class="divide20"></div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Mobile</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    ng-model="vm.member.mobile"
+                />
+                <selectbox
+                    icon="'fa-lock'"
+                    placeholder="Option"
+                    options="vm.publicOptionList"
+                    required="true"
+                    output="vm.publicOption.mobile"
+                >
+                </selectbox>
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Fax</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    ng-model="vm.member.fax"
+                />
+                <selectbox
+                    icon="'fa-lock'"
+                    placeholder="Option"
+                    options="vm.publicOptionList"
+                    required="true"
+                    output="vm.publicOption.fax"
+                >
+                </selectbox>
+            </div>
+            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <label>Website</label>
+                <input
+                    type="text"
+                    placeholder="ex) www.lubycon.com"
+                    class="form-control"
+                    ng-model="vm.member.website"
+                />
+                <selectbox
+                    icon="'fa-lock'"
+                    placeholder="Option"
+                    options="vm.publicOptionList"
+                    required="true"
+                    output="vm.publicOption.website"
+                >
+                </selectbox>
+            </div>
         </div>
         <div class="divide20"></div>
         <button class="btn btn-mint" type="submit">SUBMIT</button>

@@ -8,7 +8,7 @@
     /** @ngInject */
     function SignupController($rootScope, $scope, Restangular, Authentication) {
         var vm = this;
-        var api = Restangular.all('members/signin');
+        var api = Restangular.all('members/signup');
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
