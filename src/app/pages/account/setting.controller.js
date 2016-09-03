@@ -85,6 +85,7 @@
         // option dummy
 
         vm.profileChanged = false;
+        vm.cropping = false;
 
         vm.init = (init)();
         function init(){
@@ -97,16 +98,16 @@
             console.log("newFiles : ", newFiles);
             console.log("invalidFiles : ", invalidFiles);
             console.log(vm.uploadedProfile);
-
-            console.log($.fn);
-
-        }
+        };
         vm.crop = function(){
-            var canvas = angular.element('.cropper').cropper("getCroppedCanvas", { width: 100, height: 100 }),
+            vm.cropping = false;
+            var canvas = angular.element('.cropper').cropper('getCroppedCanvas', { width: 640, height: 640 }),
                 base64URI = canvas.toDataURL('image/jpeg');
             vm.profileChanged = true;
             vm.member.profile = base64URI;
-        }
+
+            angular.element('.cropper').cropper('destroy');
+        };
 
         vm.languageControl = function(param){
             if(param === 'add'){
@@ -122,7 +123,7 @@
             else if(param === 'remove'){
                 vm.languages.pop();
             }
-        }
+        };
 
         vm.historyControl = function(param){
             if(param === 'add'){
@@ -131,7 +132,7 @@
                     var newHistory = {
                         year: now.getFullYear(),
                         month: $filter('date')(now, 'MMM'),
-                        category: 'Work Experience',
+                        category: 'Work',
                         content: ''
                     };
                     vm.histories.push(newHistory);
@@ -141,10 +142,10 @@
             else if(param === 'remove'){
                 vm.histories.pop();
             }
-        }
+        };
 
         vm.postSetting = function(){
             console.log(vm.data);
-        }
+        };
     }
 })();

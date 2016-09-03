@@ -146,5 +146,26 @@
                 min-width: 110px;
             }
         }
+
+        .cropper-container {
+
+        }
+        .cropper-window {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            vertical-align: bottom;
+
+            &.cropper-preview {
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                display: inline-block;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
     }
 }

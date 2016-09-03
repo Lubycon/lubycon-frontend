@@ -3,9 +3,6 @@
 <div class="col-xs-12 col-sm-12 col-lg-12 account-page account-setting">
     <form ng-submit="vm.postSetting()">
         <div class="card">
-
-        </div>
-        <div class="card">
             <h4 class="card-title">Account Setting</h4>
             <div class="divide20"></div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
@@ -44,8 +41,8 @@
                     <div class="cropper-window cropped">
                         <img ng-src="{{vm.profileChanged ? vm.member.profile : vm.contentHost + vm.member.profile}}" />
                     </div>
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    <div class="cropper-window preview"></div>
+                    <i ng-show="vm.cropping" class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <div ng-show="vm.cropping" class="cropper-window cropper-preview"></div>
                 </div>
                 <div>
                     <button
@@ -56,14 +53,15 @@
                         ng-model="vm.uploadedProfile"
                         ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
                         ngf-accept="'image/*'"
-                        ngf-resize="{width:200, height:200, quality: 1.0}"
+                        ngf-resize="{width:640, height:640, quality: 1.0}"
                         ngf-max-size="10MB"
                         ngf-max-files="1"
                         ngf-fix-orientation="true"
+                        ng-show="!vm.cropping"
                     ><i class="fa fa-cloud-upload"></i></button>
-                    <span class="btn"><i class="fa fa-crop" ng-click="vm.crop()"></i></span>
+                    <span class="btn" ng-show="vm.cropping"><i class="fa fa-crop" ng-click="vm.crop()"></i></span>
                 </div>
-                <img cropper previewer="'.preview'" class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
+                <img cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Job</label>
