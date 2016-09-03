@@ -22,7 +22,47 @@
         return directive;
 
         function link($scope, $element) {
-            // console.log($scope.creators);
+            $scope.menuList = [
+                {
+                    icon: 'fa-tachometer',
+                    name: 'Dashboard',
+                    url: 'aside.default.dashboard({memberId: member.code})'
+                },
+                {
+                    icon: 'fa-eye',
+                    name: 'Contents',
+                    url: 'aside.default.dashboard({memberId: member.code})'
+                },
+                {
+                    icon: 'fa-bar-chart',
+                    name: 'Insight',
+                    url: 'aside.default.insight({memberId: member.code})'
+                },
+                {
+                    icon: 'fa-table',
+                    name: 'Forum',
+                    url: 'aside.default.dashboard({memberId: member.code})'
+                }
+            ];
+
+            $scope.toggleClick = function(member, event) {
+                if(!member.selected ) {
+                    initSelected();
+                    member.selected = true;
+                }
+                else member.selected = false;
+
+            };
+
+            function initSelected(){
+                // INIT MEMBER SELECT DATA...
+                if($scope.creators){
+                    for(var i = 0; i < $scope.creators.length; i++){
+                        $scope.creators[i].selected = false;
+                    }
+                }
+                else return false;
+            }
         }
         function controller($scope, $element, API_CONFIG) {
             $scope.contentHost = API_CONFIG.content;

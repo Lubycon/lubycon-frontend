@@ -96,7 +96,7 @@
             -moz-box-sizing: border-box;
             .usercontent {
                 display: inline-block;
-                width: 33%;
+                width: 33.3%;
                 overflow: hidden;
                 cursor: pointer;
                 transition: opacity 0.4s;
@@ -105,9 +105,9 @@
                     width: 100%;
                     margin-bottom: -3px;
                 }
-            }
-            &:hover {
-                opacity: 0.5;
+                &:hover {
+                    opacity: 0.5;
+                }
             }
         }
     }
@@ -131,36 +131,34 @@
             }
         }
 
-        .creator-menu-list{
+        ul.creator-menu-list{
             width: 150px;
-            top: 10px;
-            left: -140px;
+            top: 20px;
+            right: 0px;
             position: absolute;
             border-radius: 5px;
             z-index: 1;
             border: 1px solid #aaa;
             background: rgba(255,255,255,0.9);
-            display: none;
-
-            ul {
-                line-height: 35px;
-                li {
-                    text-align: center;
-                    font-size: 14px;
-                    &:hover {
-                        background: rgba(200,200,200,0.5);
-                    }
-                    i {
-                        display: inline-block;
-                        color: #444;
-                        float: left;
-                        margin-top: 8px;
-                        margin-left: 7px;
-                        font-size: 17px;
-                    }
-                    a {
-                        color: #444;
-                    }
+            line-height: 35px;
+            li {
+                text-align: left;
+                font-size: 14px;
+                &:hover {
+                    background: rgba(200,200,200,0.5);
+                }
+                i {
+                    display: inline-block;
+                    color: #444;
+                    float: left;
+                    margin-top: 8px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    font-size: 17px;
+                    vertical-align: middle;
+                }
+                a {
+                    color: #444;
                 }
             }
         }

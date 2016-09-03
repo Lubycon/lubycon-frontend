@@ -5,6 +5,11 @@
         padding: 10px;
         margin-bottom: 20px;
     }
+    .overlay {
+        position: absolute;
+        background: rgba(0,0,0,0.7);
+        padding: 10px;
+    }
     .card {
         padding: 5px;
         background: transparent;
@@ -18,11 +23,8 @@
             }
 
             .overlay {
-                position: absolute;
                 width: 100%;
                 bottom: 0;
-                padding: 10px;
-                background: rgba(0,0,0,0.7);
                 text-align: left;
                 a {
                     display: block;
@@ -42,9 +44,71 @@
     }
 
     .creator-section {
-        padding: 20px;
         height: 400px;
         background-size: 100%;
         background-position: center;
+        color: #fff;
+        * {
+            color: #fff;
+        }
+        h4 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .overlay {
+            top: 0;
+            right: 0;
+            padding: 40px;
+            height: 400px;
+            text-align: center;
+
+            .creator-pic {
+                display: inline-block;
+                position: relative;
+            }
+
+            .medal {
+                position: absolute;
+                bottom: -15px;
+                right: -10px;
+                width: 50px;
+                height: 50px;
+            }
+
+            h5 {
+                font-size: 30px;
+                font-weight: 600;
+            }
+            h6 {
+                font-size: 20px;
+                font-weight: 200;
+                &.location {
+                    font-size: 17px;
+                }
+            }
+            i {
+                margin-right: 5px;
+            }
+
+            .btn {
+                width: 90%;
+                margin: 5px 0;
+                &:hover {
+                    @include elasticAction(100%);
+                }
+            }
+        }
+
+
+
+
+        .profile {
+            border-radius: 50%;
+            overflow: hidden;
+        }
     }
 }

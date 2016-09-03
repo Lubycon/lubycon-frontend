@@ -2,11 +2,7 @@
     <div ng-repeat="member in creators" class="col-sm-6 col-lg-3">
         <div class="card creator-card">
             <div class="creator-info">
-                <div class="creator-card-header">
-                    <span ng-if="member.best" class="card-label">
-                        Creator of the month
-                    </span>
-                </div>
+                <div class="divide20"></div>
                 <div class="creator-card-body">
                     <div class="creator-pic-wrap">
                         <div class="creator-pic">
@@ -15,7 +11,7 @@
                     </div>
                     <div class="creator-info-wrap">
                         <p class="creator-name">
-                            <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">{{member.name}}</a>
+                            <a ui-sref="aside.default.dashboard({memberId: member.code})">{{member.name}}</a>
                         </p>
                     </div>
                 </div>
@@ -32,6 +28,16 @@
                     <li ng-repeat="item in member.contents" class="usercontent">
                         <a href="" class="content-link">
                             <img ng-src="{{contentHost + item.img}}" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="creator-menu" ng-click="toggleClick(member,$event)" ng-class="{'selected' : member.selected}">
+                <i class="creator-menu-icon fa fa-bars"></i>
+                <ul ng-show="member.selected" class="creator-menu-list">
+                    <li ng-repeat="menu in menuList">
+                        <a ui-sref="{{menu.url}}">
+                            <i class="fa {{menu.icon}}"></i> {{menu.name}}
                         </a>
                     </li>
                 </ul>
