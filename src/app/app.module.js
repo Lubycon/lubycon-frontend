@@ -38,8 +38,8 @@
     .constant('API_CONFIG', {
     // THIS IS SERVER LOCATION SWITCH
     // port = { APACHE: 8888, mySql: 8889 }
-        'host': 'http://localhost:8888/lubycon-web-app-api/', // MY LOCAL
-        'host': 'http://aws.lubycon.com/var/www/lubycon-web-api/LubyconAPI/app/routes/api.php',
+        //'host': 'http://localhost:8888/lubycon-web-app-api/', // MY LOCAL
+        'host': 'http://aws.lubycon.com/var/www/lubycon-web-api/LubyconAPI/app/http/routes.php',
         'content': 'http://localhost:8888/contents/' // MY LOCAL
         //'host': ''
     })
