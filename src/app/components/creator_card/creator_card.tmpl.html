@@ -1,5 +1,5 @@
 <div class="row">
-    <div ng-repeat="member in creators" class="col-sm-6 col-lg-4">
+    <div ng-repeat="member in creators" class="col-sm-6 col-lg-3">
         <div class="card creator-card">
             <div class="creator-card-header">
                 <span ng-if="member.best" class="card-label">
@@ -11,17 +11,10 @@
                     <div class="creator-pic">
                         <img ng-src="{{contentHost + member.profile}}" />
                     </div>
-                    <div class="location-pic">
-                        <img ng-src="assets/images/country/{{member.countryCode}}.png" />
-                    </div>
                 </div>
                 <div class="creator-info-wrap">
                     <p class="creator-name">
                         <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">{{member.name}}</a>
-                    </p>
-                    <p class="creator-job">{{member.job}}</p>
-                    <p class="creator-location">
-                        <i class="fa fa-map-marker"></i>{{member.city}},{{member.country}}
                     </p>
                 </div>
             </div>

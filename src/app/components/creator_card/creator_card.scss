@@ -5,6 +5,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    padding: 0 !important;
 }
     .creator-menu{
         position: absolute;
@@ -72,10 +73,8 @@
 
     }
         .creator-card-body .creator-pic-wrap{
-            text-align: left;
+            text-align: center;
             position: relative;
-            display: inline-block;
-            margin-right: 20px;
         }
             .creator-card-body .creator-pic-wrap .creator-pic {
                 overflow: hidden;
@@ -85,15 +84,6 @@
                 line-height: 0px;
             }
                 .creator-card-body .creator-pic-wrap .creator-pic img {
-                    width: 100%;
-                }
-            .creator-card-body .creator-pic-wrap .location-pic {
-                position : absolute;
-                overflow: hidden;
-                border-radius: 50%;
-                box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
-            }
-                .creator-card-body .creator-pic-wrap .location-pic img {
                     width: 100%;
                 }
         .creator-card-body .creator-info-wrap{
@@ -119,34 +109,6 @@
                 .creator-card-body .creator-info-wrap .creator-name:hover a {
                     text-decoration: underline;
                     color: #48cfad;
-                }
-            .creator-card-body .creator-info-wrap .creator-job {
-                color: #444;
-                margin-top: 2px;
-            }
-            .creator-card-body .creator-info-wrap .creator-location {
-                color: #888;
-                font-size: 14px;
-                margin-top: 2px;
-                text-overflow: ellipsis;
-                width: 150px;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-                .creator-card-body .creator-info-wrap .creator-location i {
-                    color: #888;
-                    margin-right: 10px;
-                }
-            .creator-card-body .creator-info-wrap .contents-count {
-                display: inline-block;
-                color: #aaa;
-                float: left;
-                font-size: 13px;
-            }
-                .creator-card-body .creator-info-wrap .contents-count .contents-num {
-                    display: inline-block;
-                    color: #48cfad;
-                    font-size: 17px !important;
                 }
     .creator-card-medal {
         height: 25px;
@@ -175,11 +137,11 @@
         }
             .creator-card-footer ul .usercontent {
                 display: inline-block;
-                width: 30%;
-                margin: 0px 1%;
+                width: 33%;
                 overflow: hidden;
                 cursor: pointer;
                 transition: opacity 0.4s;
+                vertical-align: middle;
             }
                 .creator-card-footer ul .usercontent img {
                     width: 100%;

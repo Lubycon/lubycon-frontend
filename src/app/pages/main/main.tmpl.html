@@ -1,19 +1,21 @@
 <!-- MAIN PAGE TEMPLATE -->
 
 
-<div class="container">
-    <div class="row main-contents">
-        <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="item in vm.data.contents">
-            <img ng-src="{{vm.contentHost + item.img}}" />
-            <div class="overlay">
-                <a ui-sref="common.default.contents-view({category: '3d', boardId: item.code})"><span>{{item.title}}</span></a>
-                <a ui-sref="aside.default.dashboard({memberId: item.userCode})"><span>{{item.creator}}</span></a>
+<div class="container main-contents">
+    <div class="row">
+        <div class="card col-sm-6 col-md-4 col-lg-3" ng-repeat="item in vm.data.contents">
+            <div class="content-wrapper">
+                <img ng-src="{{vm.contentHost + item.img}}" />
+                <div class="overlay">
+                    <a class="content-info" ui-sref="common.default.contents-view({category: '3d', boardId: item.code})"><span>{{item.title}}</span></a>
+                    <a class="member-info" ui-sref="aside.default.dashboard({memberId: item.userCode})">by <span>{{item.creator}}</span></a>
+                </div>
             </div>
         </div>
-
-
-        <div class="col-sm-6 col-md-12 col-lg-12">
-            BEST CREATOR<br/>
+    </div>
+    <div class="row">
+        <div class="card col-sm-6 col-md-12 col-lg-12" ng-style="{'background-image': 'url('+vm.data.bestCreator.contentTitle+')'}">
+            <h4>CREATOR OF THE MONTH</h4>
             <img ng-src="{{vm.contentHost + vm.data.bestCreator.profile}}" />
             <a ui-sref="aside.default.dashboard({memberId: item.userCode})">{{vm.data.bestCreator.name}}<br/></a>
             {{vm.data.bestCreator.job}}<br/>
