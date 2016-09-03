@@ -33,6 +33,12 @@
                         id: 2,
                         img: "contents/threed/Audrey_Wickham20160414050808/thumbnail/thumbnail.jpg"
                     }
+                ],
+                medals: [
+                    {
+                        code: "0501", //임시
+                        description: "Creator of the month"
+                    }
                 ]
             },
             {

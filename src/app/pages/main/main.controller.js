@@ -50,7 +50,7 @@
                 job: 'Developer',
                 country: 'United State America',
                 city: 'New York',
-                contentImg: 'contents/threed/Mohammad_Anwar20160414050808/thumbnail/thumbnail.jpg',
+                contentImg: 'contents/creator_of_the_month/sample.png',
                 contentTitle: 'Best Content Title'
             }
         }

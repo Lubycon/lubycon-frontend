@@ -14,13 +14,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="card col-sm-6 col-md-12 col-lg-12" ng-style="{'background-image': 'url('+vm.data.bestCreator.contentTitle+')'}">
+        <div class="card col-sm-6 col-md-12 col-lg-12 creator-section" ng-style="{'background-image': 'url('+vm.contentHost+vm.data.bestCreator.contentImg+')'}">
             <h4>CREATOR OF THE MONTH</h4>
             <img ng-src="{{vm.contentHost + vm.data.bestCreator.profile}}" />
             <a ui-sref="aside.default.dashboard({memberId: item.userCode})">{{vm.data.bestCreator.name}}<br/></a>
             {{vm.data.bestCreator.job}}<br/>
             {{vm.data.bestCreator.city}}, {{vm.data.bestCreator.country}}<br/>
-            <img ng-src="{{vm.contentHost + vm.data.bestCreator.contentImg}}" />
             <a ui-sref="common.default.contents-view({boardId: item.code})">{{vm.data.bestCreator.contentTitle}}</a>
         </div>
     </div>

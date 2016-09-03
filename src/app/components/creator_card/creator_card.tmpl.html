@@ -1,27 +1,31 @@
 <div class="row">
     <div ng-repeat="member in creators" class="col-sm-6 col-lg-3">
         <div class="card creator-card">
-            <div class="creator-card-header">
-                <span ng-if="member.best" class="card-label">
-                    Creator of the month
-                </span>
-            </div>
-            <div class="creator-card-body">
-                <div class="creator-pic-wrap">
-                    <div class="creator-pic">
-                        <img ng-src="{{contentHost + member.profile}}" />
+            <div class="creator-info">
+                <div class="creator-card-header">
+                    <span ng-if="member.best" class="card-label">
+                        Creator of the month
+                    </span>
+                </div>
+                <div class="creator-card-body">
+                    <div class="creator-pic-wrap">
+                        <div class="creator-pic">
+                            <img ng-src="{{contentHost + member.profile}}" />
+                        </div>
+                    </div>
+                    <div class="creator-info-wrap">
+                        <p class="creator-name">
+                            <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">{{member.name}}</a>
+                        </p>
                     </div>
                 </div>
-                <div class="creator-info-wrap">
-                    <p class="creator-name">
-                        <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">{{member.name}}</a>
-                    </p>
+                <div class="creator-card-medal">
+                    <ul>
+                        <li ng-repeat="medal in member.medals">
+                            <img ng-src="{{'assets/images/medals/' + medal.code + '.png'}}" />
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="creator-card-medal">
-                <ul>
-                    <li ng-repeat="medal in member.medals"></li>
-                </ul>
             </div>
             <div class="creator-card-footer">
                 <ul>
