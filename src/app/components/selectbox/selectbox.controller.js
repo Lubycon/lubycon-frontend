@@ -19,7 +19,7 @@
                 options: '=',
                 required: '=',
                 theme: '@',
-                selected: '=' // GET INDEX
+                selectedIndex: '=' // GET INDEX
             },
             //transclude: true,
             link: link,
@@ -32,7 +32,7 @@
             $scope.isOpen = false;
 
             // GET SELECTED INDEX...
-            if($scope.selected > -1) $scope.output = $scope.options[$scope.selected];
+            if($scope.selectedIndex > -1) $scope.output = $scope.options[$scope.selectedIndex];
 
             $scope.toggleAction = function(){
                 $scope.isOpen = $scope.isOpen ? false : true;
