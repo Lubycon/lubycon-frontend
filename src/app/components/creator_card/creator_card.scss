@@ -125,40 +125,28 @@
             transition: color 0.2s;
         }
 
-        &.selected {
+        &.open {
             .creator-menu-icon {
                 color: #48cfad;
             }
         }
 
         ul.creator-menu-list{
-            width: 150px;
-            top: 20px;
-            right: 0px;
-            position: absolute;
-            border-radius: 5px;
-            z-index: 1;
-            border: 1px solid #aaa;
-            background: rgba(255,255,255,0.9);
-            line-height: 35px;
+            text-align: left;
             li {
                 text-align: left;
                 font-size: 14px;
                 &:hover {
-                    background: rgba(200,200,200,0.5);
+                    a {
+                        background: rgba(200,200,200,0.5);
+                    }
                 }
                 i {
-                    display: inline-block;
-                    color: #444;
-                    float: left;
-                    margin-top: 8px;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    font-size: 17px;
-                    vertical-align: middle;
+                    margin-right: 5px;
                 }
                 a {
                     color: #444;
+                    padding: 3px 10px;
                 }
             }
         }

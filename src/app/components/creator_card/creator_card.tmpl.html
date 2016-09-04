@@ -32,9 +32,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="creator-menu" ng-click="toggleClick(member,$event)" ng-class="{'selected' : member.selected}">
-                <i class="creator-menu-icon fa fa-bars"></i>
-                <ul ng-show="member.selected" class="creator-menu-list">
+            <div class="creator-menu" uib-dropdown on-toggle="">
+                <a href="#" class="dropdown-toggle" onclick="return false;" uib-dropdown-toggle>
+                    <i class="creator-menu-icon fa fa-bars"></i>
+                </a>
+                <ul class="creator-menu-list dropdown-menu" role="menu">
                     <li ng-repeat="menu in menuList">
                         <a ui-sref="{{menu.url}}">
                             <i class="fa {{menu.icon}}"></i> {{menu.name}}
