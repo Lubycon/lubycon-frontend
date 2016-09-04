@@ -17,7 +17,8 @@
                 placeholder: '@',
                 output: '=',
                 options: '=',
-                required: '='
+                required: '=',
+                theme: '@'
             },
             //transclude: true,
             link: link,
@@ -27,10 +28,15 @@
         return directive;
 
         function link($scope, $element) {
+            $scope.isOpen = false;
+
+            $scope.toggleAction = function(){
+                $scope.isOpen = $scope.isOpen ? false : true;
+            }
             $scope.selectOption = function(index) {
                 $scope.output = $scope.options[index];
-                console.log(index,$scope.options[index]);
-            }
+            };
+            $scope.theme = $scope.theme ? $scope.theme : 'white';
 
             $scope.mobileAction = function(){
                 if($scope.isMobile){
