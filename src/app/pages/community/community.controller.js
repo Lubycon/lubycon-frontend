@@ -58,5 +58,20 @@
         ];
         //DUMMY DATA
 
+        // BIND FILTERS...
+        vm.filterData = {
+            sort: null
+        };
+        vm.filters = [
+            {
+                icon: 'fa-filter',
+                options: ['Recent','Featured','Like','Download','Comment'],
+                data: vm.filterData.sort
+            }
+        ];
+        vm.filterSubmit = function() {
+            vm.filterData.sort = vm.filters[0].data;
+            console.log(vm.filterData);
+        };
     }
 })();

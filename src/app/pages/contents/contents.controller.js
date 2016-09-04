@@ -103,5 +103,35 @@
             }
         ];
         // DUMMY DATA
+
+        // BIND FILTERS...
+        vm.filterData = {
+            category: null,
+            license: null,
+            sort: null
+        };
+        vm.filters = [
+            {
+                icon: 'fa-bars',
+                options: ['All Category','category1','category2','category3'],
+                data: vm.filterData.category
+            },
+            {
+                icon: 'fa-creative-commons',
+                options: ['All license','Free','Non commercial'],
+                data: vm.filterData.license
+            },
+            {
+                icon: 'fa-filter',
+                options: ['Recent','Featured','Downalod','View'],
+                data: vm.filterData.sort
+            }
+        ];
+        vm.filterSubmit = function() {
+            vm.filterData.category = vm.filters[0].data;
+            vm.filterData.license = vm.filters[1].data;
+            vm.filterData.sort = vm.filters[2].data;
+            console.log(vm.filterData);
+        };
     }
 })();

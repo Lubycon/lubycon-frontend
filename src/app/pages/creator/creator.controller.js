@@ -159,5 +159,21 @@
             }
         ];
         // DUMMY DATA
+
+        // BIND FILTERS...
+        vm.filterData = {
+            sort: null
+        };
+        vm.filters = [
+            {
+                icon: 'fa-filter',
+                options: ['Recently Joined','Medalists','Best Creators','A ~ Z','Z ~ A'],
+                data: vm.filterData.sort
+            }
+        ];
+        vm.filterSubmit = function() {
+            vm.filterData.sort = vm.filters[0].data;
+            console.log(vm.filterData);
+        };
     }
 })();
