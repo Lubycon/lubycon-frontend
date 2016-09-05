@@ -50,7 +50,7 @@
                 job: 'Developer',
                 country: 'United State America',
                 city: 'New York',
-                contentImg: 'contents/creator_of_the_month/sample.png',
+                contentImg: '/creator_of_the_month/sample.png',
                 contentTitle: 'Best Content Title'
             }
         }
