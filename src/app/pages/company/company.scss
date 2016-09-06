@@ -1,0 +1,154 @@
+// ABOUT US....
+
+.navbar.navbar-fixed-top.main-header {
+    margin: 0;
+}
+#container.container {
+    width: 100%;
+    padding: 0;
+}
+
+.aboutus-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+// GLOBAL SECTION STYLE
+.aboutus-section {
+    position: relative;
+    min-height: 300px;
+    background: #ffffff;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+    text-align: center;
+    &[data-value="focus"] {
+        padding: 50px 0;
+    }
+    h4 {
+        font-family: 'Montserrat', sans-serif;
+        color: #444444;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+    h5 {
+        color: #444444;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0px;
+    }
+    p {
+        color: #444444;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+// HEADER STYLE
+.aboutus-header.aboutus-section {
+    background: url('/assets/images/about_us/main.jpg') 42% 56% no-repeat;
+    height: 600px;
+    text-align: left;
+    margin: 0;
+
+    .intro {
+        position: absolute;
+        bottom: 50px;
+        left: 120px;
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            letter-spacing: 3px;
+            font-size: 70px;
+            text-align: left;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 30px;
+            margin-left: 5px;
+            margin-top: -10px;
+        }
+        p {
+            margin: 20px 0px;
+            color: #fff;
+            letter-spacing: 1px;
+            font-size: 20px;
+            font-weight: 200;
+            margin-left: 5px;
+            text-align: left;
+        }
+        .btn-ghost {
+            margin-top: 30px;
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+// BODY STYLE
+.aboutus-body {
+    margin: 0 auto;
+    background: #ffffff;
+
+    .descript {
+        line-height: 30px;
+        font-family: 'Source Serif Pro', serif;
+        font-size: 18px;
+        color: #444444;
+        text-align: left;
+    }
+
+    .focus-wrapper {
+        padding: 0 60px;
+        .focus-icon {
+            width: 55px;
+            height: 55px;
+            margin: 20px auto;
+            img {
+                width: 100%;
+            }
+        }
+
+        .focus-article {
+            margin-top: 10px;
+
+            .focus-title {
+                font-family: 'Montserrat', sans-serif;
+                color: #444444;
+                font-weight: 600;
+                font-size: 24px;
+                border-top: 1px solid #dddddd;
+                padding: 20px 0px 15px 0px;
+            }
+        }
+    }
+
+    .btn-ghost {
+        width: 250px;
+        border: 1px solid #444;
+        margin-top: 30px;
+        font-size: 15px;
+        a {
+            color: #444;
+        }
+        &:hover {
+            @include elasticAction(270px);
+        }
+    }
+
+    #mailadress {
+        font-weight: 600;
+        color: #48cfad;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

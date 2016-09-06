@@ -10,7 +10,8 @@
             'app.pages.creator',
             'app.pages.editor',
             'app.pages.member',
-            'app.pages.certification'
+            'app.pages.certification',
+            'app.pages.company'
         ]);
 
 })();

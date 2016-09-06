@@ -1,0 +1,66 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro' rel='stylesheet' type='text/css'>
+<div class="aboutus-wrapper">
+    <div class="aboutus-header aboutus-section">
+        <div class="intro">
+            <h3>HELLO WORLD</h3>
+            <h4>Connect your creativity with the World</h4>
+            <p>
+                <b>LUBYCON</b> is the online marketplace for every creators<br/>
+                Do you want to show your awesome works to other creators?<br/>
+                We can help you.
+            </p>
+            <div class="btn btn-ghost"><a href="#">SHOW CONTENTS</a></div>
+        </div>
+    </div>
+    <div class="aboutus-body row container">
+        <div class="aboutus-section col-xs-12 col-sm-12 col-lg-12" data-value="focus">
+            <h4>OUR FOCUSES</h4>
+            <div class="divide20"></div>
+            <div class="section-content">
+                <ul>
+                    <li ng-repeat="item in vm.focuses" class="focus-wrapper col-xs-12 col-sm-12 col-lg-4">
+                        <figure class="focus-icon">
+                            <img ng-src="{{'assets/images/about_us/' + item.icon}}" />
+                        </figure>
+                        <div class="focus-article">
+                            <p class="focus-title">{{item.title}}</p>
+                            <p class="descript">{{item.description}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="aboutus-section col-xs-12 col-sm-12 col-lg-12" data-value="collabolations">
+            <h4>AWESOME COLLABORATIONS</h4>
+            <div class="divide10"></div>
+            <h5>Your works can be changed Artwork, Vector, 3D model whatever Anythings</h5>
+            <div class="divide20"></div>
+
+            <div class="section-content">
+                <p class="descript">
+                    Your creative works can be born again but with a different finish. Imagine the portrait you drew on sketchpad becoming a 3D printed model or the animation you created changed into impressionism style.
+                    The possibilities are endless. Countless styles exists and other creators can help you achieve your goals the way you imagined.
+                    Through collaborations, you can join with other creators to make something extraordinary.
+                </p>
+                <div class="btn btn-ghost"><a href="#">FIND CREATORS</a></div>
+            </div>
+        </div>
+        <div class="aboutus-section col-xs-12 col-sm-12 col-lg-12" data-value="contactUS">
+            <h4>CONTACT US</h4>
+            <div class="divide10"></div>
+            <h5>
+                If you have any questions, please feel free to contact us at
+                <a id="mailadress" href="mailto:contact@lubycon.com">contact@lubycon.com</a>
+            </h5>
+
+            <div class="section-content">
+                <div class="btn btn-ghost">
+                    <a href="mailto:contact@lubycon.com" target="_blank">
+                        <i class="fa fa-envelope-o"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
