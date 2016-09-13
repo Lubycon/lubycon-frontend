@@ -2,6 +2,9 @@
     .btn {
         border: none;
         background: #444;
+        min-width: 43px;
+        min-height: 43px;
+        background-size: cover;
         &.selected {
             background: #333;
             color: #48cfad
