@@ -1,0 +1,36 @@
+<div class="texture-uploader editor-modal">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Select your textures....</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <ul>
+            <li
+                ng-repeat="texture in textures"
+                ng-click="selectTexture($index,$event)"
+                class="btn textures"
+                ng-class="{selected : texture.selected}"
+            >
+                <img ngf-thumbnail="texture" ngf-size="{width: 500, height: 500, quality: 1}">
+            </li>
+            <li>
+                <button
+                    class="btn texture-upload-btn"
+                    ngf-select
+                    type="file"
+                    name="files"
+                    ng-model="uploadedTextures"
+                    ngf-change="changedFile($files,$file,$newFiles,$invalidFiles)"
+                    ngf-accept="'image/*'"
+                    ngf-max-size="10MB"
+                    ngf-multiple="true"
+                >
+                    <i class="fa fa-plus"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" type="button" ng-click="ok()">OK</button>
+        <button class="btn" type="button" ng-click="cancel()">CANCEL</button>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.colorpicker {
+    .dropdown-menu {
+        background: #444;
+
+        colorpicker-preview {
+            display: none;
+        }
+
+        input[name="colorpicker-input"] {
+            border: none;
+            height: 25px;
+            color: #444;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .close-colorpicker {
+            height: 25px;
+        }
+
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+    }
+}

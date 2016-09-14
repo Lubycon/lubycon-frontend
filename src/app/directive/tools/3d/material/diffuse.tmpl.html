@@ -1,6 +1,29 @@
 <div class="material-controller">
-    <div></div>
-    <rzslider rz-slider-model="testModel"></rzslider>
-
-    <!--POPUP-->
+    <div class="controller-tab" ng-show="selectedTab='texture'">
+        <button class="btn texture-viewer" ng-click="modalOpen()">
+            <img ng-if="selectedTexture" ngf-thumbnail="selectedTexture" ngf-size="{width: 500, height: 500, quality: 1}" />
+            <img ng-if="!selectedTexture" src="assets/images/editor/transparent.png" />
+        </button>
+        <rzslider
+                rz-slider-model="modelOpacity"
+                rz-slider-options="sliderOptions"
+        ></rzslider>
+    </div>
+    <div class="controller-tab" ng-show="selectedTab='color'">
+        <button
+            class="color-viewer btn"
+            colorpicker="hex"
+            colorpicker-size="200"
+            colorpicker-position="right"
+            colorpicker-parent="true"
+            colorpicker-with-input="true"
+            type="text"
+            ng-model="modelColor"
+            ng-style="{'background-color': modelColor}">
+        </button>
+        <rzslider
+                rz-slider-model="modelOpacity"
+                rz-slider-options="sliderOptions"
+        ></rzslider>
+    </div>
 </div>

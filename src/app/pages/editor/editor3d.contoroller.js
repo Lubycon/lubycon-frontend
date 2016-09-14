@@ -108,6 +108,9 @@
             }
             if(!vm.toolEnabled[name]) vm.toolEnabled[name] = true;
             else vm.toolEnabled[name] = false;
+
+            // REFRESH SLIDER VALUE
+            $timeout(function () { $scope.$broadcast('rzSliderForceRender'); });
         };
 
         vm.changedFile = function(files,file,newFile,invalideFiles) {

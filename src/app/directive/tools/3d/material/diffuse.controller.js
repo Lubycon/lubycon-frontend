@@ -21,13 +21,47 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            $scope.testModel = 10;
+            $scope.modelOpacity = 100;
+            $scope.modelColor = '#aaaaaa';
+
+            // $scope.selectedTexture;
+            $scope.uploadedTextures = [];
+
+            $scope.sliderOptions = {
+                floor: 0,
+                ceil: 100,
+                step: 1,
+                showSelectionBar: true
+            };
         }
-        function controller($rootScope, $scope, $element) {
+        function controller($rootScope, $scope, $element, $timeout, $uibModal) {
             console.log($scope.scene,$scope.renderer,$element);
 
-            // $scope.object = $scope.scene.getObjectByName('mainObject');
-            // $scope.materialList = $scope.object.material.materials;
+            $scope.modalOpen = function(size) {
+                var instance = $uibModal.open({
+                    animation: true,
+                    ariaLabelledBy: 'modal-title',
+                    ariaDescribedBy: 'modal-body',
+                    backdrop: true,
+                    templateUrl: 'app/directive/tools/3d/textureUploader.tmpl.html',
+                    size: size,
+                    resolve: {
+                        textures: function(){
+                            return $scope.uploadedTextures;
+                        },
+                        type: function(){
+                            return 'diffuse';
+                        }
+                    },
+                    controller: 'textureUploaderController'
+                });
+
+                instance.result.then(function(res) {
+                    $scope.selectedTexture = res.selectedTexture;
+                    $scope.uploadedTextures = res.textures;
+                    console.log($scope.selectedTexture);
+                });
+            };
         }
     }
 })();

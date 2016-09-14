@@ -22,6 +22,7 @@
         'ui.bootstrap',
         'ngFileUpload',
         'rzModule',
+        'colorpicker.module',
         'toastr'
     ])
     .constant('APP_LANGUAGES', [
