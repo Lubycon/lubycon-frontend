@@ -21,6 +21,7 @@
         'ui.router',
         'ui.bootstrap',
         'ngFileUpload',
+        'rzModule',
         'toastr'
     ])
     .constant('APP_LANGUAGES', [

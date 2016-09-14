@@ -9,7 +9,7 @@
     function lightTool() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/directive/tools/lightTool.tmpl.html',
+            templateUrl: 'app/directive/tools/3d/light/lightTool.tmpl.html',
             scope: {
                 scene: '='
             },

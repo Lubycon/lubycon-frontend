@@ -51,7 +51,23 @@
                 name: 'materialTool',
                 type: 'open',
                 icon: 'fa-square',
-                subTools: []
+                subTools: [{
+                    name: 'materials',
+                    category: 'selectbox',
+                    directive: '<material-selector scene="vm.scene" renderer="vm.renderer"></material-selector>'
+                },{
+                    name: 'diffuse',
+                    category: 'tab',
+                    directive: '<diffuse-tool scene="vm.scene" renderer="vm.renderer"></diffuse-tool>'
+                },{
+                    name: 'specular',
+                    category: 'tab',
+                    directive: '<specular-tool scene="vm.scene" renderer="vm.renderer"></specular-tool>'
+                },{
+                    name: 'normal',
+                    category: 'tab',
+                    directive: '<normal-tool scene="vm.scene" renderer="vm.renderer"></normal-tool>'
+                }]
             },{
                 name: 'mapTool',
                 type: 'open',

@@ -9,7 +9,7 @@
     function viewModeTool() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/directive/tools/viewmode.tmpl.html',
+            templateUrl: 'app/directive/tools/3d/geometry/viewmode.tmpl.html',
             scope: {
                 scene: '=',
                 renderer: '='
@@ -24,7 +24,7 @@
 
         }
         function controller($rootScope, $scope, $element) {
-            console.log($scope.scene,$scope.renderer);
+            // console.log($scope.scene,$scope.renderer);
 
             $scope.modeChange = function(mode) {
                 $scope.object = $scope.scene.getObjectByName('mainObject');

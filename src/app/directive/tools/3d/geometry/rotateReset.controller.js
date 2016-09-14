@@ -9,7 +9,7 @@
     function rotateResetTool() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/directive/tools/rotateReset.tmpl.html',
+            templateUrl: 'app/directive/tools/3d/geometry/rotateReset.tmpl.html',
             scope: {
                 scene: '=',
                 renderer: '='
@@ -24,9 +24,7 @@
 
         }
         function controller($rootScope, $scope, $element) {
-
-
-            console.log($scope.scene,$scope.renderer);
+            // console.log($scope.scene,$scope.renderer);
             var object = $scope.scene.getObjectByName('mainObject');
 
 

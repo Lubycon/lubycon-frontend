@@ -9,7 +9,7 @@
     function rotateTool() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/directive/tools/rotate.tmpl.html',
+            templateUrl: 'app/directive/tools/3d/geometry/rotate.tmpl.html',
             scope: {
                 scene: '=',
                 renderer: '='
