@@ -25,12 +25,10 @@
         }
         function controller($rootScope, $scope, $element) {
             // console.log($scope.scene,$scope.renderer);
-            var object = $scope.scene.getObjectByName('mainObject');
-
-
             $scope.initEuler = function(axis) {
                 // MESH의 ROTATION Euler의 초기값이 -0인 경우가 있음. 알아낼 것
                 // 2016.09.12 09:12 - evan
+                var object = $scope.scene.getObjectByName('mainObject');
                 event.stopPropagation();
                 console.log(axis);
                 console.log(object);

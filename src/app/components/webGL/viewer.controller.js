@@ -124,6 +124,10 @@
             	camera.updateProjectionMatrix();
             	renderer.setSize(windowWidth, windowHeight);
             }
+
+            $rootScope.$on('$stateChangeStart', function() {
+                cancelAnimationFrame(animationID);
+            });
         }
     }
 })();

@@ -19,7 +19,8 @@
                 options: '=',
                 required: '=',
                 theme: '@',
-                selectedIndex: '=' // GET INDEX
+                selectedIndex: '=', // GET INDEX
+                changeEvent: '='
             },
             //transclude: true,
             link: link,
@@ -36,7 +37,7 @@
 
             $scope.toggleAction = function(){
                 $scope.isOpen = $scope.isOpen ? false : true;
-            }
+            };
             $scope.selectOption = function(index) {
                 $scope.output = $scope.options[index];
                 console.log("select box : ", $scope.output);
@@ -49,7 +50,17 @@
                     return false;
                 }
                 else return false;
-            }
+            };
+
+            // TESTING...
+            $scope.$watch(function() {
+                return $scope.output;
+            },function(newValue,oldValue) {
+                if(!$scope.output) {
+                    if($scope.selectedIndex > -1) $scope.output = $scope.options[$scope.selectedIndex];
+                    console.log($scope.output);
+                }
+            });
         }
         function controller($rootScope, $scope, $element) {
             $scope.isMobile = $rootScope.deviceInfo.isMobile;

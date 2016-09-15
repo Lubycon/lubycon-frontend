@@ -12,7 +12,8 @@
             templateUrl: 'app/directive/tools/3d/material/diffuse.tmpl.html',
             scope: {
                 scene: '=',
-                renderer: '='
+                renderer: '=',
+                material: '='
             },
             link: link,
             controller: controller
@@ -35,7 +36,7 @@
             };
         }
         function controller($rootScope, $scope, $element, $timeout, $uibModal) {
-            console.log($scope.scene,$scope.renderer,$element);
+            // console.log($scope.scene,$scope.renderer);
 
             $scope.modalOpen = function(size) {
                 var instance = $uibModal.open({
@@ -59,8 +60,15 @@
                 instance.result.then(function(res) {
                     $scope.selectedTexture = res.selectedTexture;
                     $scope.uploadedTextures = res.textures;
-                    console.log($scope.selectedTexture);
+                    $scope.bindMaterial();
                 });
+            };
+
+            $scope.bindMaterial = function() {
+                console.log($scope.material);
+
+                material.map = $scope.selectedTexture;
+                material.needsUpdate = true;
             };
         }
     }

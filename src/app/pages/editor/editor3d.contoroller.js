@@ -15,7 +15,10 @@
 
         // WEBGL SETTING...
         vm.scene = new THREE.Scene();
+        vm.scene.existMainObject = false;
         vm.renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
+
+        vm.selectedMaterial = undefined;
         // WEBGL SETTING...
 
         vm.model = {};
@@ -54,19 +57,19 @@
                 subTools: [{
                     name: 'materials',
                     category: 'selectbox',
-                    directive: '<material-selector scene="vm.scene" renderer="vm.renderer"></material-selector>'
+                    directive: '<material-selector scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></material-selector>'
                 },{
                     name: 'diffuse',
                     category: 'tab',
-                    directive: '<diffuse-tool scene="vm.scene" renderer="vm.renderer"></diffuse-tool>'
+                    directive: '<diffuse-tool scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></diffuse-tool>'
                 },{
                     name: 'specular',
                     category: 'tab',
-                    directive: '<specular-tool scene="vm.scene" renderer="vm.renderer"></specular-tool>'
+                    directive: '<specular-tool scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></specular-tool>'
                 },{
                     name: 'normal',
                     category: 'tab',
-                    directive: '<normal-tool scene="vm.scene" renderer="vm.renderer"></normal-tool>'
+                    directive: '<normal-tool scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></normal-tool>'
                 }]
             },{
                 name: 'mapTool',
@@ -82,7 +85,7 @@
 
         function init(){
             $timeout(function(){
-                bindSubTools(vm.config.tools)
+                bindSubTools(vm.config.tools);
             },0);
         }
 
@@ -158,6 +161,8 @@
 
                     vm.scene.add(mesh);
                 } // end for
+                vm.scene.existMainObject = true;
+                console.log(vm.scene.existMainObject);
             };
 
             console.log(files);
