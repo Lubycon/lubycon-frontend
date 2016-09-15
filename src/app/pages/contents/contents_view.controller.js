@@ -58,6 +58,11 @@
             }
         ];
         // DUMMY DATA
+        vm.model = {
+            map: {"threed":true,"skymap":1,"image":0,"color":"rgb(34, 34, 34)"},
+            lights: [],
+            model: -1
+        };
         vm.init = (init)();
 
         function init(){

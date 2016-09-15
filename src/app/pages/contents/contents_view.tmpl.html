@@ -21,7 +21,8 @@
                 <div class="divide-horizental"></div>
                 <div class="divide20"></div>
 
-                <ng-bind-html ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html>
+                <!-- <ng-bind-html ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html> -->
+                <webgl-viewer model="vm.model"></webgl-viewer>
             </div>
 
             <div class="col-sm-6 col-lg-6 clear-left">
