@@ -28,11 +28,9 @@
             $scope.isMobile = $rootScope.deviceInfo.isMobile;
             var windowWidth = $element.find('.webgl-viewer').width(),
                 windowHeight = $element.find('.webgl-viewer').width() * 0.75;
-            console.log($element,windowWidth + 'x' + windowHeight);
+            console.log('canvas size : ' + windowWidth + ' X ' + windowHeight);
 
             var gl = $element.find('.webgl-viewer')[0];
-            console.log(gl);
-
             var scene = new THREE.Scene();
 
             // CAMERA SETTING....
@@ -59,7 +57,7 @@
             var renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
         		renderer.setSize(windowWidth, windowHeight);
                 renderer.setPixelRatio(window.devicePixelRatio);
-                renderer.setClearColor(0xffffff, 1);
+                renderer.setClearColor(0xeeeeee, 1);
                 renderer.shadowMap.enabled = true;
                 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
                 renderer.gammaInput = true;
