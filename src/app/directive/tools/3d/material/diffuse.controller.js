@@ -35,7 +35,7 @@
                 showSelectionBar: true
             };
         }
-        function controller($rootScope, $scope, $element, $timeout, $uibModal) {
+        function controller($rootScope, $scope, $element, $timeout, $uibModal, TextureService) {
             // console.log($scope.scene,$scope.renderer);
 
             $scope.modalOpen = function(size) {
@@ -58,17 +58,18 @@
                 });
 
                 instance.result.then(function(res) {
+                    console.log(res);
                     $scope.selectedTexture = res.selectedTexture;
                     $scope.uploadedTextures = res.textures;
-                    $scope.bindMaterial();
+                    $scope.bindMaterial(res.selectedTexture);
                 });
             };
 
-            $scope.bindMaterial = function() {
-                console.log($scope.material);
-
-                material.map = $scope.selectedTexture;
-                material.needsUpdate = true;
+            $scope.bindMaterial = function(tex) {
+                TextureService.get(tex,function(res){
+                    $scope.material.map = res;
+                    $scope.material.needsUpdate = true;
+                });
             };
         }
     }

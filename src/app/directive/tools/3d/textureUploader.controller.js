@@ -23,6 +23,9 @@
             if($scope.textures.length === 0) {
                 $scope.textures = files;
                 $scope.textures[0].selected = true;
+                $scope.textures[0].usedType = type;
+
+                $scope.selectedTexture = $scope.textures[0];
             }
             else $scope.textures = $.merge($scope.textures, newFiles);
 
@@ -33,6 +36,7 @@
             for(var i = 0; i < $scope.textures.length; i++){
                 console.log($scope.textures);
                 $scope.textures[i].selected = false;
+                delete $scope.textures[i].usedType;
             }
             $scope.textures[index].selected = true;
             $scope.textures[index].usedType = type;
