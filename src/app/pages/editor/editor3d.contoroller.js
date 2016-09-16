@@ -6,9 +6,11 @@
         .controller('Editor3dController', Editor3dController);
 
     /** @ngInject */
-    function Editor3dController($rootScope, $scope, $filter) {
+    function Editor3dController($rootScope, $scope, $filter, $sce, $compile) {
         var vm = this;
+        vm.isMobile = $rootScope.deviceInfo.isMobile;
 
+        vm.a = new THREE.Scene(); // TESTING
         // CONFIG...
         vm.editorSet = '3d';
         vm.config = {
@@ -22,11 +24,16 @@
                 icon: 'fa-lightbulb-o',
                 subTools: [{
                     name: 'rotate',
-                    callback: vm.rotateToggle
+                    category: 'switch',
+                    directive: '<light-tool scene="vm.a"></light-tool>'
                 },{
-
+                    name: 'reset',
+                    category: 'buttons',
+                    directive: '<rotate-reset-tool></rotate-reset-tool>'
                 },{
-
+                    name: 'mode',
+                    category: 'buttons',
+                    directive: '<light-tool></light-tool>'
                 }]
             },{
                 name: 'geometryTool',

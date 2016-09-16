@@ -58,7 +58,7 @@
         position: fixed;
         top: 100px;
         left: 50px;
-        li {
+        & > li {
             width: 300px;
             min-height: 300px;
             background: rgba(0,0,0,0.85);
@@ -67,7 +67,15 @@
 
             h4 {
                 color: #eee;
+                font-size: 16px;
+                i {
+                    margin-right: 10px;
+                }
             }
         }
     }
+}
+
+.editor-viewer {
+    width: 100%;
 }

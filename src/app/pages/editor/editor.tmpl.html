@@ -1,4 +1,6 @@
 
+
+<!----- HEADER ----->
 <div class="editor-header">
     <ul class="headerTools">
         <li ng-repeat="tool in vm.config.headerTools">
@@ -10,6 +12,8 @@
         </li>
     </ul>
 </div>
+
+<!----- TOOLBAR ----->
 <aside class="editor-aside">
     <ul class="tools">
         <li ng-repeat="tool in vm.config.tools">
@@ -20,11 +24,20 @@
     </ul>
     <ul class="toolboxes">
         <li ng-repeat="tool in vm.config.tools" ng-show="vm.toolEnabled[tool.name]">
-            <h4>{{tool.name | camelCaseFilter}}</h4>
+            <h4><i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter}}</h4>
             <div class="divide20"></div>
 
-
+            <ul>
+                <li ng-repeat="subTool in tool.subTools">
+                    <h5>{{subTool.name | camelCaseFilter}}</h5>
+                    <light-tool scene="vm.a"></light-tool><!--TESTING-->
+                </li>
+            </ul>
         </li>
     </ul>
 </aside>
-<webgl-viewer ng-if="vm.editorSet==='3d'"></webgl-viewer>
+
+<!----- VIEWER ----->
+<div class="editor-viewer">
+    <webgl-viewer ng-if="vm.editorSet==='3d'"></webgl-viewer>
+</div>
