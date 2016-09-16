@@ -1,0 +1,30 @@
+
+<div class="editor-header">
+    <ul class="headerTools">
+        <li ng-repeat="tool in vm.config.headerTools">
+            <button
+                class="btn"
+            ><!--ng file upload -->
+                <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
+            </button>
+        </li>
+    </ul>
+</div>
+<aside class="editor-aside">
+    <ul class="tools">
+        <li ng-repeat="tool in vm.config.tools">
+            <button class="btn" ng-click="vm.toolboxToggle(tool.name)">
+                <i class="fa {{tool.icon}}"></i>
+            </button>
+        </li>
+    </ul>
+    <ul class="toolboxes">
+        <li ng-repeat="tool in vm.config.tools" ng-show="vm.toolEnabled[tool.name]">
+            <h4>{{tool.name | camelCaseFilter}}</h4>
+            <div class="divide20"></div>
+
+
+        </li>
+    </ul>
+</aside>
+<webgl-viewer ng-if="vm.editorSet==='3d'"></webgl-viewer>

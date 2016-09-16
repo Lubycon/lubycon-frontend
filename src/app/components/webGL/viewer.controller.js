@@ -27,7 +27,7 @@
 
             $scope.isMobile = $rootScope.deviceInfo.isMobile;
             var windowWidth = $element.find('.webgl-viewer').width(),
-                windowHeight = $element.find('.webgl-viewer').width() * 0.75;
+                windowHeight = $element.find('.webgl-viewer').width() * 0.6;
             console.log('canvas size : ' + windowWidth + ' X ' + windowHeight);
 
             var gl = $element.find('.webgl-viewer')[0];
@@ -79,14 +79,12 @@
                 controls.zoomSpeed = 0.5;
                 controls.maxDistance = 100;
 
-
             // TEST MODEL...
             var geometry = new THREE.BoxGeometry( 1, 1, 1 );
             var material = new THREE.MeshPhongMaterial( {color: 0x48cfad} );
             var cube = new THREE.Mesh( geometry, material );
             scene.add( cube );
             // TEST MODEL...
-
 
             // EVENT BINDING....
             window.addEventListener("resize", windowResizeGL, false);
@@ -115,7 +113,7 @@
 
             function windowResizeGL(){
             	var windowWidth = $element.find('.webgl-viewer').width(),
-                windowHeight = 450;
+                windowHeight = $element.find('.webgl-viewer').width() * 0.75;
 
             	camera.aspect = windowWidth / windowHeight;
             	camera.updateProjectionMatrix();
