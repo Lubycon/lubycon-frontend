@@ -5,25 +5,25 @@
             <img ng-if="!selectedTexture" src="assets/images/editor/transparent.png" />
         </button>
         <rzslider
-                rz-slider-model="modelOpacity"
-                rz-slider-options="sliderOptions"
+            rz-slider-model="modelOpacity"
+            rz-slider-options="sliderOptions"
         ></rzslider>
     </div>
     <div class="controller-tab" ng-show="selectedTab='color'">
-        <button
-            class="color-viewer btn"
-            colorpicker="hex"
-            colorpicker-size="200"
-            colorpicker-position="right"
-            colorpicker-parent="true"
-            colorpicker-with-input="true"
-            type="text"
+        <spectrum-colorpicker
             ng-model="modelColor"
-            ng-style="{'background-color': modelColor}">
-        </button>
+            format="'hex'"
+            options="{
+                showInput: true,
+                showInitial: true,
+                chooseText: 'OK',
+                cancelText: 'CANCEL'
+            }"
+            on-change="changeColor(color)"
+        ></spectrum-colorpicker>
         <rzslider
-                rz-slider-model="modelOpacity"
-                rz-slider-options="sliderOptions"
+            rz-slider-model="modelOpacity"
+            rz-slider-options="sliderOptions"
         ></rzslider>
     </div>
 </div>

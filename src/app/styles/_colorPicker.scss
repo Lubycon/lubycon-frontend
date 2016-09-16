@@ -1,28 +1,42 @@
-.colorpicker {
-    .dropdown-menu {
-        background: #444;
+.sp-replacer {
+    background: #444;
+    color: #eee;
+    border: none;
 
-        colorpicker-preview {
-            display: none;
+    .sp-dd {
+        color: #eee;
+    }
+}
+
+.sp-container {
+    background: #444;
+    border: 1px solid #222;
+
+    .sp-picker-container {
+        border: none;
+
+        .sp-input-container {
+            .sp-input {
+                background: #fff;
+                border: 1px solid #fff;
+                border-radius: 0;
+                color: #444;
+            }
         }
 
-        input[name="colorpicker-input"] {
-            border: none;
-            height: 25px;
-            color: #444;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .close-colorpicker {
-            height: 25px;
-        }
-
-        &::before {
-            display: none;
-        }
-        &::after {
-            display: none;
+        .sp-button-container {
+            margin-top: 10px;
+            .sp-cancel {
+                display: none;
+            }
+            .sp-choose {
+                float: right;
+                background: #48cfad;
+                color: #eee;
+                border: none;
+                border-radius: 0;
+                padding: 5px 20px;
+            }
         }
     }
 }

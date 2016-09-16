@@ -3,27 +3,26 @@
 
   angular
     .module('app', [
-        'common',
-        'components',
-        'app.pages',
-        'error',
-        'messages',
-        'services',
-        'pascalprecht.translate',
-        'ngAnimate',
-        'ngCookies',
-        'ngTouch',
+        'common', // COMMON MODULE
+        'components', // COMPONENTS MODULE
+        'app.pages', // PAGES MODULE
+        'error', // ERROR PAGE MODULE
+        'messages', // MESSAGE PAGE MODULE
+        'services', // SERVICE MODULE
+        'pascalprecht.translate', // TRANSLATE FOR LANGUAGE PACK MODULE
+        'ngAnimate', // animate.css MODULE
+        'ngCookies', // COOKIE STORE MODULE
+        'ngTouch', // TOUCH MODULE FOR MOBILE
         'ngSanitize',
         'ngMessages',
-        'ngSanitize',
         'ngAria',
-        'restangular',
-        'ui.router',
-        'ui.bootstrap',
-        'ngFileUpload',
-        'rzModule',
-        'colorpicker.module',
-        'toastr'
+        'restangular', // REST API MODULE
+        'ui.router', // ROUTING MODULE
+        'ui.bootstrap', // BOOTSTRAP
+        'ngFileUpload', // FILE UPLOAD MODULE
+        'rzModule', // SLIDER COMPONENT MODULE
+        'angularSpectrumColorpicker', // COLOR PICKER MODULE
+        'toastr' // TOAST MESSAGE MODULE
     ])
     .constant('APP_LANGUAGES', [
         {

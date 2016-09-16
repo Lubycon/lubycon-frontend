@@ -15,7 +15,6 @@
 
         // WEBGL SETTING...
         vm.scene = new THREE.Scene();
-        vm.scene.existMainObject = false;
         vm.renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
 
         vm.selectedMaterial = undefined;
@@ -81,7 +80,7 @@
         vm.toolEnabled = {};
         // CONFIG...
 
-        vm.init = (init)();
+        vm.init = init;
 
         function init(){
             $timeout(function(){
@@ -161,8 +160,10 @@
 
                     vm.scene.add(mesh);
                 } // end for
-                vm.scene.existMainObject = true;
+                
                 console.log(vm.scene.existMainObject);
+
+                vm.init();
             };
 
             console.log(files);

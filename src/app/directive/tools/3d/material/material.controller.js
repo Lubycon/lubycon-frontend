@@ -22,30 +22,21 @@
         return directive;
 
         function link($scope, $element, $attrs) {
+            var object = $scope.scene.getObjectByName('mainObject');
             $scope.materialList = [];
 
-            // WHEN 3D OBJECT IS UPLOADED...
-            $scope.$watch(function() {
-                return $scope.scene.existMainObject;
-            },function(newValue,oldValue){
-                if(newValue) {
-                    $scope.object = $scope.scene.getObjectByName('mainObject');
+            for(var i = 0; i < object.material.materials.length; i++) {
+                $scope.materialList.push(object.material.materials[i].name);
+            }
 
-                    // BIND MATERIALS...
-                    for(var i = 0; i < $scope.object.material.materials.length; i++) {
-                        $scope.materialList.push($scope.object.material.materials[i].name);
-                    }
+            $scope.selectedMaterial = $scope.materialList[0]; // TESTING....
 
-                    $scope.selectedMaterial = $scope.materialList[0]; // TESTING....
-
-                    // GET SELECTED MATERIAL
-                    $scope.material = $scope.object.material.materials[0];
-                }
-            },true);
+            // GET SELECTED MATERIAL
+            $scope.material = object.material.materials[0];
 
             $scope.changeEvent = function(index,item) {
-
-                $scope.material = $scope.object.material.materials[index];
+                $scope.material = object.material.materials[index];
+                console.log('SELECTED MATERIAL IS : ',$scope.material);
             };
         }
         function controller($rootScope, $scope, $element) {
