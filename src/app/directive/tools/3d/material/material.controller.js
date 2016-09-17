@@ -13,7 +13,7 @@
             scope: {
                 scene: '=',
                 renderer: '=',
-                material: '='
+                output: '='
             },
             link: link,
             controller: controller
@@ -29,14 +29,15 @@
                 $scope.materialList.push(object.material.materials[i].name);
             }
 
-            $scope.selectedMaterial = $scope.materialList[0]; // TESTING....
+            $scope.output = $scope.materialList[0]; // TESTING....
 
             // GET SELECTED MATERIAL
-            $scope.material = object.material.materials[0];
+            $scope.output = object.material.materials[0];
 
             $scope.changeEvent = function(index,item) {
-                $scope.material = object.material.materials[index];
-                console.log('SELECTED MATERIAL IS : ',$scope.material);
+                console.log(index,item);
+                $scope.output = object.material.materials[index];
+                console.log('SELECTED MATERIAL IS : ',$scope.output);
             };
         }
         function controller($rootScope, $scope, $element) {

@@ -3,13 +3,13 @@
 
     angular
         .module('app')
-        .directive('diffuseTool', diffuseTool);
+        .directive('normalTool', normalTool);
 
     /* @ngInject */
-    function diffuseTool() {
+    function normalTool() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/directive/tools/3d/material/diffuse.tmpl.html',
+            templateUrl: 'app/directive/tools/3d/material/normal.tmpl.html',
             scope: {
                 scene: '=',
                 renderer: '=',
@@ -23,33 +23,30 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            console.log('diffuseController',$scope);
+            console.log('normalController',$scope);
             $scope.object = $scope.scene.getObjectByName('mainObject');
 
-            $scope.modelOpacity = $scope.output ? $scope.output.opacity * 100 : 100;
-            $scope.modelColor = $scope.output ?
-                '#' + $scope.output.color.getHexString():
-                '#' + $scope.object.material.materials[0].color.getHexString();
-            console.log($scope.modelColor);
+            $scope.modelNormalScale = $scope.output ? $scope.output.normalScale.x * 100 : 100;
+            // NORMAL SCALE -> Vector2 { width, height, x, y}
 
             $scope.sliderOptions = {
                 floor: 0,
                 ceil: 100,
                 step: 1,
                 showSelectionBar: true,
-                onChange: $scope.changeOpacity
+                onChange: $scope.changeNormalScale
             };
 
             $scope.selectedTab = 'texture';
 
             $scope.$watch('output',function(newValue, oldValue){
-                console.log('-----------------------------DIFFUSE TOOL CATCHED---------------------------------');
+                console.log('-----------------------------NORMAL TOOL CATCHED----------------------------------');
                 console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
                 console.log(oldValue,'->',newValue);
                 console.log($scope);
 
-                $scope.currentTextureIndex = ($scope.output && $scope.output.map) ?
-                    $scope.output.map.textureIndex : -1;
+                $scope.currentTextureIndex = ($scope.output && $scope.output.normalMap) ?
+                    $scope.output.normalMap.textureIndex : -1;
 
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
@@ -59,12 +56,6 @@
 
         }
         function controller($rootScope, $scope, $element, $timeout, $uibModal, TextureService) {
-            // TAB ACTION
-            $scope.tabAction = function(value) {
-                $scope.selectedTab = value;
-                $timeout(function () { $scope.$broadcast('rzSliderForceRender'); });
-                console.log($scope.selectedTab);
-            };
 
             // TEXTURE METHOD
             $scope.modalOpen = function(size) {
@@ -80,9 +71,9 @@
                         info: function() {
                             return {
                                 textures: $scope.textures,
-                                type: 'diffuse',
+                                type: 'specular',
                                 currentMaterial: $scope.output,
-                                currentTexture: $scope.output.map
+                                currentTexture: $scope.output.normalMap
                             };
                         }
                     },
@@ -110,7 +101,7 @@
                             res.textureIndex = index;
                             console.log(res);
                             if($scope.output) {
-                                $scope.output.map = res;
+                                $scope.output.normalMap = res;
                                 $scope.output.needsUpdate = true;
                             }
                         });
@@ -119,17 +110,13 @@
                 }
             };
 
-            // COLOR METHOD
-            $scope.changeColor = function(color) {
-                var textureColor = new THREE.Color(color);
-                if($scope.output) $scope.output.color = textureColor;
-            };
-
             // OPACITY METHOD
-            $scope.changeOpacity = function() {
-                var opacity = $scope.modelOpacity * 0.01;
+            $scope.changeNormalScale = function() {
 
-                if($scope.output) $scope.output.opacity = opacity;
+                var val = $scope.modelNormalScale * 0.01;
+                var normalScale = new THREE.Vector2(val,val); // {x,y}
+
+                if($scope.output) $scope.output.normalScale = normalScale;
                 else return false;
             };
         }

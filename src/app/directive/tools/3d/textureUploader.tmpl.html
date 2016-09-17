@@ -1,13 +1,13 @@
 <div class="texture-uploader editor-modal">
     <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">Select your textures....</h3>
+        <h3 class="modal-title" id="modal-title">Texture Box</h3>
     </div>
     <div class="modal-body" id="modal-body">
         <ul>
             <li
                 ng-repeat="texture in textures"
                 ng-click="selectTexture($index,$event)"
-                class="btn textures"
+                class="btn textures {{texture.usedType ? texture.usedType : ''}}"
                 ng-class="{selected : texture.selected}"
             >
                 <img ngf-thumbnail="texture" ngf-size="{width: 500, height: 500, quality: 1}">

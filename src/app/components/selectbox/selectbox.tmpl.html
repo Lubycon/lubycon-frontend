@@ -6,7 +6,7 @@
             <i ng-show="isOpen" class="arrow fa fa-caret-up"></i>
         </a>
         <ul ng-show="!isMobile" class="dropdown-menu" role="menu">
-            <li ng-repeat="item in options" ng-click="selectOption($index); changeEvent($index,$item);" ng-class="{'selected' : item === output}">
+            <li ng-repeat="item in options" ng-click="selectOption($index); changeEvent($index,item);" ng-class="{'selected' : item === output}">
                 <a href="#" role="menuitem" onclick="return false;">{{item}}</a>
             </li>
             <li ng-show="!options.length" role="menuitem" >{{'No Item'}}</li>

@@ -6,44 +6,61 @@
         .controller('textureUploaderController', textureUploaderController);
 
     /** @ngInject */
-    function textureUploaderController($scope, $uibModalInstance, textures, type) {
-        if(textures.length !== 0) $scope.textures = textures;
-        else $scope.textures = [];
+    function textureUploaderController($scope, $uibModalInstance, info) {
 
-        console.log(textures,$scope.textures,type);
+
+        console.log(info);
+
+        function init() {
+            if(info.textures.length !== 0) {
+                $scope.textures = info.textures;
+                $scope.initTextureSelection($scope.textures);
+
+                if(info.currentTexture) {
+                    $scope.textures[info.currentTexture.textureIndex].selected = true;
+                    $scope.selectedTexture = $scope.textures[info.currentTexture.textureIndex];
+                }
+            }
+            else $scope.textures = [];
+        }
 
         $scope.changedFile = function(files,file,newFiles,invalidFiles) {
             console.log(files,file,newFiles,invalidFiles);
             console.log($scope.textures.length === 0);
 
-            for(var i = 0; i < newFiles.length; i++){
-                newFiles[i].selected = false;
-            }
+            $scope.initTextureSelection(newFiles);
 
             if($scope.textures.length === 0) {
-                $scope.textures = files;
-                $scope.textures[0].selected = true;
-                $scope.textures[0].usedType = type;
-
-                $scope.selectedTexture = $scope.textures[0];
+                $scope.textures = newFiles;
             }
             else $scope.textures = $.merge($scope.textures, newFiles);
+
+            $scope.setTextureIndex($scope.textures);
 
             console.log($scope.textures);
         };
 
-        $scope.selectTexture = function(index) {
-            for(var i = 0; i < $scope.textures.length; i++){
-                console.log($scope.textures);
-                $scope.textures[i].selected = false;
-                delete $scope.textures[i].usedType;
-            }
+        $scope.selectTexture = function(index,$event) {
+
+            $scope.initTextureSelection($scope.textures);
+
             $scope.textures[index].selected = true;
-            $scope.textures[index].usedType = type;
             $scope.selectedTexture = $scope.textures[index];
-            console.log('selected texture : ',$scope.textures[index]);
         };
 
+        $scope.setTextureIndex = function(textures) {
+            for(var i = 0; i < textures.length; i++) {
+                textures[i].textureIndex = i;
+            }
+        };
+
+        $scope.initTextureSelection = function(textures) {
+            for(var i = 0; i < textures.length; i++) {
+                textures[i].selected = false;
+            }
+        };
+
+        // CONTROLLER OUTPUT ------>
         $scope.ok = function() {
             $uibModalInstance.close({
                 selectedTexture: $scope.selectedTexture,
@@ -54,5 +71,7 @@
         $scope.cancel = function() {
             $uibModalInstance.dismiss('cancel');
         };
+
+        init();
     }
 })();

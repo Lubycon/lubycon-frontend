@@ -18,9 +18,9 @@
         vm.renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
 
         vm.selectedMaterial = undefined;
-        // WEBGL SETTING...
-
+        vm.uploadedMaterials = [];
         vm.model = {};
+        // WEBGL SETTING...
 
         vm.config = {
             headerTools: [{
@@ -56,19 +56,19 @@
                 subTools: [{
                     name: 'materials',
                     category: 'selectbox',
-                    directive: '<material-selector scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></material-selector>'
+                    directive: '<material-selector scene="vm.scene" renderer="vm.renderer" output="vm.selectedMaterial"></material-selector>'
                 },{
                     name: 'diffuse',
                     category: 'tab',
-                    directive: '<diffuse-tool scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></diffuse-tool>'
+                    directive: '<diffuse-tool scene="vm.scene" renderer="vm.renderer" output="vm.selectedMaterial" textures="vm.uploadedMaterials"></diffuse-tool>'
                 },{
                     name: 'specular',
                     category: 'tab',
-                    directive: '<specular-tool scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></specular-tool>'
+                    directive: '<specular-tool scene="vm.scene" renderer="vm.renderer" output="vm.selectedMaterial" textures="vm.uploadedMaterials"></specular-tool>'
                 },{
                     name: 'normal',
                     category: 'tab',
-                    directive: '<normal-tool scene="vm.scene" renderer="vm.renderer" material="vm.selectedMaterial"></normal-tool>'
+                    directive: '<normal-tool scene="vm.scene" renderer="vm.renderer" output="vm.selectedMaterial" textures="vm.uploadedMaterials"></normal-tool>'
                 }]
             },{
                 name: 'mapTool',
@@ -160,7 +160,7 @@
 
                     vm.scene.add(mesh);
                 } // end for
-                
+
                 console.log(vm.scene.existMainObject);
 
                 vm.init();
