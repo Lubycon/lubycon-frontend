@@ -11,10 +11,13 @@
             restrict: 'EA',
             templateUrl: 'app/components/webGL/viewer.tmpl.html',
             scope: {
-                model: '='
+                model: '=',
+                scene: '=',
+                renderer: '='
             },
             link: link,
-            controller: controller
+            controller: controller,
+            controllerAs: 'webGLViewer'
         };
 
         return directive;
@@ -31,13 +34,14 @@
             console.log('canvas size : ' + windowWidth + ' X ' + windowHeight);
 
             var gl = $element.find('.webgl-viewer')[0];
-            var scene = new THREE.Scene();
+            var scene = $scope.scene;
 
             // CAMERA SETTING....
             var camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
                 camera.position.x = -2;
                 camera.position.y = 1;
                 camera.position.z = 3;
+                camera.name = 'mainCamera';
             var cameraLight = new THREE.SpotLight(0xffffff,0.1);
                 cameraLight.castShadow = true;
                 cameraLight.receiveShadow = true;
@@ -54,10 +58,10 @@
             scene.add(testLight);
 
             // RENDERER SETTING....
-            var renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
-        		renderer.setSize(windowWidth, windowHeight);
+            var renderer = $scope.renderer;
+                renderer.setSize(windowWidth, windowHeight);
                 renderer.setPixelRatio(window.devicePixelRatio);
-                renderer.setClearColor(0xeeeeee, 1);
+                renderer.setClearColor(0x222222, 1);
                 renderer.shadowMap.enabled = true;
                 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
                 renderer.gammaInput = true;
@@ -83,6 +87,7 @@
             var geometry = new THREE.BoxGeometry( 1, 1, 1 );
             var material = new THREE.MeshPhongMaterial( {color: 0x48cfad} );
             var cube = new THREE.Mesh( geometry, material );
+            cube.name = 'testCube';
             scene.add( cube );
             // TEST MODEL...
 

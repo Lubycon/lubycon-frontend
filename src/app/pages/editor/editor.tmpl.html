@@ -28,9 +28,8 @@
             <div class="divide20"></div>
 
             <ul>
-                <li ng-repeat="subTool in tool.subTools">
+                <li ng-repeat="subTool in tool.subTools" class="sub-tools" data-value="{{subTool.name}}">
                     <h5>{{subTool.name | camelCaseFilter}}</h5>
-                    <light-tool scene="vm.a"></light-tool><!--TESTING-->
                 </li>
             </ul>
         </li>
@@ -39,5 +38,5 @@
 
 <!----- VIEWER ----->
 <div class="editor-viewer">
-    <webgl-viewer ng-if="vm.editorSet==='3d'"></webgl-viewer>
+    <webgl-viewer ng-if="vm.editorSet==='3d'" scene="vm.scene" renderer="vm.renderer"></webgl-viewer>
 </div>

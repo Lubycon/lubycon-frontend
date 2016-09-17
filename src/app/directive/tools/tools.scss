@@ -1,0 +1,10 @@
+.editor-aside {
+    .btn {
+        border: none;
+        background: #444;
+        &.selected {
+            background: #333;
+            color: #48cfad
+        }
+    }
+}

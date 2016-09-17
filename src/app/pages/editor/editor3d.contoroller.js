@@ -6,13 +6,18 @@
         .controller('Editor3dController', Editor3dController);
 
     /** @ngInject */
-    function Editor3dController($rootScope, $scope, $filter, $sce, $compile) {
+    function Editor3dController($rootScope, $scope, $filter, $compile ,$timeout) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
-        vm.a = new THREE.Scene(); // TESTING
         // CONFIG...
         vm.editorSet = '3d';
+
+        // WEBGL SETTING...
+        vm.scene = new THREE.Scene();
+        vm.renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
+        // WEBGL SETTING...
+
         vm.config = {
             headerTools: [{
                 name: 'fileUpload',
@@ -22,10 +27,15 @@
                 name: 'lightTool',
                 type: 'open',
                 icon: 'fa-lightbulb-o',
+                subTools: []
+            },{
+                name: 'geometryTool',
+                type: 'open',
+                icon: 'fa-cube',
                 subTools: [{
                     name: 'rotate',
                     category: 'switch',
-                    directive: '<light-tool scene="vm.a"></light-tool>'
+                    directive: '<rotate-tool scene="vm.scene" renderer="vm.renderer"></rotate-tool>'
                 },{
                     name: 'reset',
                     category: 'buttons',
@@ -33,24 +43,44 @@
                 },{
                     name: 'mode',
                     category: 'buttons',
-                    directive: '<light-tool></light-tool>'
+                    directive: '<view-mode-tool></view-mode-tool>'
                 }]
-            },{
-                name: 'geometryTool',
-                type: 'open',
-                icon: 'fa-cube'
             },{
                 name: 'materialTool',
                 type: 'open',
-                icon: 'fa-square'
+                icon: 'fa-square',
+                subTools: []
             },{
                 name: 'mapTool',
                 type: 'open',
-                icon: 'fa-picture-o'
+                icon: 'fa-picture-o',
+                subTools: []
             }]
         };
         vm.toolEnabled = {};
         // CONFIG...
+
+        vm.init = (init)();
+
+        function init(){
+            $timeout(function(){
+                bindSubTools(vm.config.tools)
+            },0);
+        }
+
+        function bindSubTools(tools){
+            console.log(tools);
+            for(var i = 0; i < tools.length; i++){
+                var subTools = tools[i].subTools;
+                if(subTools.length > 0){
+                    for(var j = 0; j < subTools.length; j++){
+                        var target = angular.element(document).find('.sub-tools[data-value="'+subTools[j].name+'"]');
+                        subTools[j].directive = $compile(subTools[j].directive)($scope);
+                        subTools[j].directive.appendTo(target);
+                    }
+                }
+            }
+        }
 
         vm.toolboxToggle = function(name){
             var keys = Object.keys(vm.toolEnabled);

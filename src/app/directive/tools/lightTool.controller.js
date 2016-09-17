@@ -24,8 +24,12 @@
         }
         function controller($rootScope, $scope, $element) {
             'use stict';
-
-            console.log('light tool is loaded',$scope.scene);
+            console.log($scope.scene);
+            var light = new THREE.DirectionalLight(0xff0000,0.5);
+                light.position.x = -2;
+                light.position.y = -2;
+                light.position.z = -2;
+            $scope.scene.add(light);
         }
     }
 })();

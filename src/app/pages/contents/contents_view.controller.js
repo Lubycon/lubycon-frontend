@@ -64,6 +64,11 @@
             model: -1
         };
         vm.init = (init)();
+        vm.viewerType = $stateParams.category;
+        if(vm.viewerType === '3d') {
+            vm.scene = new THREE.Scene();
+            vm.renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
+        }
 
         function init(){
             vm.contents = vm.data.contents;
