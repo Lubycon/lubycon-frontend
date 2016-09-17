@@ -31,7 +31,11 @@
                 name: 'lightTool',
                 type: 'open',
                 icon: 'fa-lightbulb-o',
-                subTools: []
+                subTools: [{
+                    name: 'lights',
+                    category: 'switch',
+                    directive: '<light-tool scene="vm.scene" renderer="vm.renderer"></light-tool>'
+                }]
             },{
                 name: 'geometryTool',
                 type: 'open',

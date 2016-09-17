@@ -26,7 +26,8 @@
 
         $scope.changedFile = function(files,file,newFiles,invalidFiles) {
             console.log(files,file,newFiles,invalidFiles);
-            console.log($scope.textures.length === 0);
+
+            if(!newFiles || !files) return false;
 
             $scope.initTextureSelection(newFiles);
 

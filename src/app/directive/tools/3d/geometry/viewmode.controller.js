@@ -21,16 +21,22 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-
+            $scope.object = $scope.scene.getObjectByName('mainObject');
         }
         function controller($rootScope, $scope, $element) {
-            // console.log($scope.scene,$scope.renderer);
 
             $scope.modeChange = function(mode) {
-                $scope.object = $scope.scene.getObjectByName('mainObject');
+                // THIS IS MULTI MATERIAL
                 $scope.material = $scope.object ? $scope.object.material : null;
+
+                // THESE ARE EACH MATERIALS IN MULTI MATERIAL
                 $scope.materials = $scope.material.materials;
-                console.log($scope.object,$scope.material);
+
+                // SAVE TO TEMP...
+                if(!$scope._material_temp) {
+                    $scope._material_temp = angular.copy($scope.materials);
+                }
+
                 switch(mode){
                     case 'realistic' :
                         materialViewControl(true);
@@ -62,34 +68,25 @@
             };
 
             function materialViewControl(bool) {
-                if(bool){
-                    for(var i = 0, l = $scope.materials.length; i < l; i++){
-                        var textureIndex = $scope.materials[i].textureIndex;
+                for(var i = 0; i < $scope.materials.length; i++) {
+                    if(bool) {
+                        $scope.materials[i].map = angular.copy($scope._material_temp[i].map);
 
-                        if(textureIndex !== -1){
-                            $scope.materials[i].map = loadedMaterials[textureIndex];
-                            $scope.materials[i].needsUpdate = true;
-                        }
+                        if(i === $scope.materials.length - 1) $scope._material_temp = null;
                     }
+                    else $scope.materials[i].map = null;
+
+                    $scope.materials[i].needsUpdate = true;
                 }
-                else{
-                    for(var i = 0, l = $scope.material.length; i < l; i++){
-                        $scope.materials[i].map = null;
-                        $scope.materials[i].needsUpdate = true;
-                    }
-                }
+                console.log('---------------------AFTER--------------------------');
+                console.log($scope.materials,$scope._material_temp);
             }
 
             function xrayViewControl(bool) {
-                if(bool){
-                    for(var i = 0, ml = $scope.materials.length; i < ml; i++){
-                        $scope.materials[i].opacity = 0.5;
-                    }
-                }
-                else{
-                    for(var i = 0, ml = $scope.materials.length; i < ml; i++){
-                        $scope.materials[i].opacity = 1;
-                    }
+                var opacity;
+                for(var i = 0; i < $scope.materials.length; i++) {
+                    opacity = bool ? 0.5 : 1;
+                    $scope.materials[i].opacity = opacity;
                 }
             }
 

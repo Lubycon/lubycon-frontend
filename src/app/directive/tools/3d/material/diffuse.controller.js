@@ -99,11 +99,11 @@
 
             // TEXTURE CHANGE METHOD
             $scope.bindMaterial = function(tex) {
-                var texConstructor = tex.constructor.name;
-                var index = tex.textureIndex;
-                console.log('THIS TEXTURE IS : ',texConstructor,index);
-
                 if(tex){
+                    var texConstructor = tex.constructor.name;
+                    var index = tex.textureIndex;
+                    console.log('THIS TEXTURE IS : ',texConstructor,index);
+
                     if(texConstructor === 'File') {
                         console.log(tex,index);
                         TextureService.get(tex,function(res){
