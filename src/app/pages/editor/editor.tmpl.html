@@ -6,7 +6,13 @@
         <li ng-repeat="tool in vm.config.headerTools">
             <button
                 class="btn"
-            ><!--ng file upload -->
+                ngf-select
+                type="file"
+                name="files"
+                ng-model="vm.model"
+                ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
+                ngf-max-files="1"
+            >
                 <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
             </button>
         </li>

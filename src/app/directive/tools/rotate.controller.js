@@ -28,8 +28,8 @@
             $scope.toggleAction = function() {
                 $scope.toggleOn = !$scope.toggleOn;
 
-                console.log($scope.scene,$scope.renderer);
-                var object = $scope.scene.getObjectByName('testCube'),
+                // console.log($scope.scene,$scope.renderer);
+                var object = $scope.scene.getObjectByName('mainObject'),
                     camera = $scope.scene.getObjectByName('mainCamera'),
                     existControl = $scope.scene.getObjectByName('objectController'),
                     control, gridHelper, axisHelper;

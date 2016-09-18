@@ -72,7 +72,7 @@
         		alert("context is lost");
         		cancelAnimationFrame(animationID);
         	},false);
-        	console.log(renderer);
+        	// console.log(renderer);
         	gl.appendChild(renderer.domElement);
 
             // CONTROL SETTING....
@@ -84,11 +84,11 @@
                 controls.maxDistance = 100;
 
             // TEST MODEL...
-            var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            var material = new THREE.MeshPhongMaterial( {color: 0x48cfad} );
-            var cube = new THREE.Mesh( geometry, material );
-            cube.name = 'testCube';
-            scene.add( cube );
+            // var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            // var material = new THREE.MeshPhongMaterial( {color: 0x48cfad} );
+            // var cube = new THREE.Mesh( geometry, material );
+            // cube.name = 'mainObject';
+            // scene.add( cube );
             // TEST MODEL...
 
             // EVENT BINDING....

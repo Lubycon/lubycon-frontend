@@ -18,6 +18,8 @@
         vm.renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
         // WEBGL SETTING...
 
+        vm.model = {};
+
         vm.config = {
             headerTools: [{
                 name: 'fileUpload',
@@ -39,11 +41,11 @@
                 },{
                     name: 'reset',
                     category: 'buttons',
-                    directive: '<rotate-reset-tool></rotate-reset-tool>'
+                    directive: '<rotate-reset-tool scene="vm.scene" renderer="vm.renderer"></rotate-reset-tool>'
                 },{
                     name: 'mode',
                     category: 'buttons',
-                    directive: '<view-mode-tool></view-mode-tool>'
+                    directive: '<view-mode-tool scene="vm.scene" renderer="vm.renderer"></view-mode-tool>'
                 }]
             },{
                 name: 'materialTool',
@@ -92,20 +94,54 @@
             else vm.toolEnabled[name] = false;
         };
 
-        // GEOMETRY TOOL....
-        vm.ratateToggle = function(){
+        vm.changedFile = function(files,file,newFile,invalideFiles) {
+            var reader = new FileReader();
+            reader.readAsBinaryString(file);
 
+            reader.onloadend = function() {
+                var contents = reader.result;
+                var object = new THREE.OBJLoader().parse(contents);
+                console.log(object);
+
+                for(var i = 0; i < object.length; i++) {
+                    var userData = object[i].userData;
+                    var geometry = object[i].geometry;
+                        geometry.center();
+                    var material = object[i].material;
+
+                    if(material.type === "MeshPhongMaterial"){
+                        material.specular = new THREE.Color(0xffffff);
+                        material.shininess = 100;
+                        material.side = THREE.DoubleSide;
+                        material.transparent = true;
+                        material.needsUpdate = true;
+                    }
+                    else if(material.type === "MultiMaterial"){
+                        var materials = material.materials;
+                        for(var j = 0, ml = materials.length; j < ml; j++){
+                            materials[j].specular = new THREE.Color(0xffffff);
+                            materials[j].shininess = 100;
+                            materials[j].side = THREE.DoubleSide;
+                            materials[j].transparent = true;
+                            materials[j].needsUpdate = true;
+                            materials[j].dispose();
+                        }
+                    }
+                    else $.error("WebGL failed loading to material");
+
+                    var mesh = new THREE.Mesh(geometry,material);
+                        mesh.castShadow = true;
+                        mesh.receiveShadow = true;
+                        mesh.scale.set(1,1,1);
+                        mesh.initMatrix = mesh.matrixWorld.clone();
+                        mesh.userData = userData;
+                        mesh.name = 'mainObject';
+
+                    vm.scene.add(mesh);
+                } // end for
+            };
+
+            console.log(files);
         };
-        vm.rotateReset = function(){
-
-        };
-        vm.renderMode = function(){
-
-        };
-        // MATERIAL TOOL....
-
-        // MAP TOOL....
-
-        // LIGHT TOOL....
     }
 })();
