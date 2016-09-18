@@ -18,7 +18,7 @@
         </div>
         <div>
             <spectrum-colorpicker
-                ng-model="config.color"
+                ng-model="selectedLight.config.color"
                 format="'hex'"
                 options="{
                     showInput: true,
@@ -37,7 +37,7 @@
             ></rzslider>
             distance
             <rzslider
-                ng-show="selectedLight.config.type === 'spot' || selectedLight.type === 'point'"
+                ng-show="selectedLight.config.type === 'spot' || selectedLight.config.type === 'point'"
                 rz-slider-model="selectedLight.config.distance"
                 rz-slider-options="sliderOptions[1]"
             ></rzslider>
