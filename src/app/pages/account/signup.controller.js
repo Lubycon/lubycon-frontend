@@ -24,7 +24,9 @@
         vm.signup = signup;
         function signup(){
             var passwordCheck = vm.member.password === vm.rePassword;
-            console.log(Authentication,vm.member,passwordCheck);
+            console.log('your request : ', vm.member);
+            console.log('password matching : ', passwordCheck);
+            console.log('http header : ',Restangular.defaultHeaders);
             if(passwordCheck && vm.member.country) {
                 // TESTING....
                 Restangular.all('members/signup').customPOST(
