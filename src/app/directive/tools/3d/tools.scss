@@ -32,6 +32,26 @@
             display: none;
         }
     }
+
+
+    // LIGHT TOOLS...
+    .light-generator {
+        position: relative;
+        border: 1px solid #444;
+        padding: 10px;
+        &.selected {
+            border: 1px solid #48cfad;
+        }
+
+        p {
+            height: 30px;
+        }
+        .switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    }
 }
 
 // EDITOR MODAL

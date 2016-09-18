@@ -23,7 +23,7 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            console.log('normalController',$scope);
+            // console.log('normalController',$scope);
             $scope.object = $scope.scene.getObjectByName('mainObject');
 
             $scope.modelNormalScale = $scope.output ? $scope.output.normalScale.x * 100 : 100;
@@ -40,10 +40,10 @@
             $scope.selectedTab = 'texture';
 
             $scope.$watch('output',function(newValue, oldValue){
-                console.log('-----------------------------NORMAL TOOL CATCHED----------------------------------');
-                console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
-                console.log(oldValue,'->',newValue);
-                console.log($scope);
+                // console.log('-----------------------------NORMAL TOOL CATCHED----------------------------------');
+                // console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
+                // console.log(oldValue,'->',newValue);
+                // console.log($scope);
 
                 $scope.currentTextureIndex = ($scope.output && $scope.output.normalMap) ?
                     $scope.output.normalMap.textureIndex : -1;
@@ -51,7 +51,7 @@
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
 
-                console.log($scope.currentTextureIndex,$scope.selectedTexture);
+                // console.log($scope.currentTextureIndex,$scope.selectedTexture);
             });
 
         }

@@ -23,14 +23,14 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            console.log('diffuseController',$scope);
+            // console.log('diffuseController',$scope);
             $scope.object = $scope.scene.getObjectByName('mainObject');
 
             $scope.modelOpacity = $scope.output ? $scope.output.opacity * 100 : 100;
             $scope.modelColor = $scope.output ?
                 '#' + $scope.output.color.getHexString():
                 '#' + $scope.object.material.materials[0].color.getHexString();
-            console.log($scope.modelColor);
+            // console.log($scope.modelColor);
 
             $scope.sliderOptions = {
                 floor: 0,
@@ -43,10 +43,10 @@
             $scope.selectedTab = 'texture';
 
             $scope.$watch('output',function(newValue, oldValue){
-                console.log('-----------------------------DIFFUSE TOOL CATCHED---------------------------------');
-                console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
-                console.log(oldValue,'->',newValue);
-                console.log($scope);
+                // console.log('-----------------------------DIFFUSE TOOL CATCHED---------------------------------');
+                // console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
+                // console.log(oldValue,'->',newValue);
+                // console.log($scope);
 
                 $scope.currentTextureIndex = ($scope.output && $scope.output.map) ?
                     $scope.output.map.textureIndex : -1;
@@ -54,7 +54,7 @@
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
 
-                console.log($scope.currentTextureIndex,$scope.selectedTexture);
+                // console.log($scope.currentTextureIndex,$scope.selectedTexture);
             });
 
         }

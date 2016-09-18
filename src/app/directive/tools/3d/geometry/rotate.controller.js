@@ -48,7 +48,7 @@
                 }
                 else {
                     control = new THREE.TransformControls(camera,$scope.renderer.domElement);
-                    gridHelper = new THREE.GridHelper(2,1);
+                    gridHelper = new THREE.GridHelper(3,20);
                     axisHelper = new THREE.AxisHelper(50);
 
                     control.name = 'objectController';

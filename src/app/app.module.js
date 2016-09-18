@@ -22,6 +22,7 @@
         'ngFileUpload', // FILE UPLOAD MODULE
         'rzModule', // SLIDER COMPONENT MODULE
         'angularSpectrumColorpicker', // COLOR PICKER MODULE
+        'switcher', // CHECKBOX SWITCH MODE MODULE
         'toastr' // TOAST MESSAGE MODULE
     ])
     .constant('APP_LANGUAGES', [
