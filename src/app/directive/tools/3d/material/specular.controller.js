@@ -23,14 +23,14 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            console.log('specularController',$scope);
+            // console.log('specularController',$scope);
             $scope.object = $scope.scene.getObjectByName('mainObject');
 
             $scope.modelShininess = $scope.output ? $scope.output.shininess : 100;
             $scope.modelColor = $scope.output ?
                 '#' + $scope.output.specular.getHexString():
                 '#' + $scope.object.material.materials[0].specular.getHexString();
-            console.log($scope.modelColor);
+            // console.log($scope.modelColor);
 
             $scope.sliderOptions = {
                 floor: 0,
@@ -43,10 +43,10 @@
             $scope.selectedTab = 'texture';
 
             $scope.$watch('output',function(newValue, oldValue){
-                console.log('----------------------------SPECULAR TOOL CATCHED---------------------------------');
-                console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
-                console.log(oldValue,'->',newValue);
-                console.log($scope);
+                // console.log('----------------------------SPECULAR TOOL CATCHED---------------------------------');
+                // console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
+                // console.log(oldValue,'->',newValue);
+                // console.log($scope);
 
                 $scope.currentTextureIndex = ($scope.output && $scope.output.specularMap) ?
                     $scope.output.specularMap.textureIndex : -1;
@@ -54,7 +54,7 @@
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
 
-                console.log($scope.currentTextureIndex,$scope.selectedTexture);
+                // console.log($scope.currentTextureIndex,$scope.selectedTexture);
             });
 
         }
