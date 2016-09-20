@@ -18,10 +18,12 @@
                     category: null
                 },
                 resolve: {
-                    // getCreatorRsv: function($stateParams, Restangular) {
-                    //     var api = Restangular.all('cretors');
-                    //     return api.customGET().then();
-                    // }
+                    get3dMaps: function($http) {
+                        return $http.get('/data/mapPreset/preset3d.json').then();
+                    },
+                    get2dMaps: function($http) {
+                        return $http.get('/data/mapPreset/preset2d.json').then();
+                    }
                 }
             })
             // .state('common.noFooter.editor2d', {

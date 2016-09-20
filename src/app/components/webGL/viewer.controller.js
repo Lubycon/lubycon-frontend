@@ -13,7 +13,8 @@
             scope: {
                 model: '=',
                 scene: '=',
-                renderer: '='
+                renderer: '=',
+                map: '='
             },
             link: link,
             controller: controller,
@@ -23,11 +24,14 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-
+            $scope.$watch('map',function(newValue,oldValue) {
+                console.log('MAP CHANGED : ',oldValue,'=>',newValue);
+                $scope.initSkyBox();
+            });
         }
         function controller($rootScope, $scope, $element) {
             'use stict';
-
+            console.log($scope.map);
             $scope.isMobile = $rootScope.deviceInfo.isMobile;
             var windowWidth = $element.find('.webgl-viewer').width(),
                 windowHeight = $element.find('.webgl-viewer').width() * 0.6;
@@ -35,6 +39,7 @@
 
             var gl = $element.find('.webgl-viewer')[0];
             var scene = $scope.scene;
+            $scope.initSkyBox = initSkyBox;
 
             // CAMERA SETTING....
             var camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
@@ -50,12 +55,10 @@
 
             scene.add(camera, cameraLight);
 
-            // TEST LIGHT...
-            var testLight = new THREE.DirectionalLight(0xffffff,1);
-                testLight.position.x = 2;
-                testLight.position.y = 2;
-                testLight.position.z = 2;
-            scene.add(testLight);
+            // MAP SETTING...FOR 3D
+            initSkyBox();
+            // MAP SETTING...FOR 2D
+            // NOTHING
 
             // RENDERER SETTING....
             var renderer = $scope.renderer;
@@ -84,14 +87,6 @@
                 controls.maxDistance = 100;
                 // controls.autoRotate = true;
                 // controls.autoRotateSpeed = 0.3;
-
-            // TEST MODEL...
-            // var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            // var material = new THREE.MeshPhongMaterial( {color: 0x48cfad} );
-            // var cube = new THREE.Mesh( geometry, material );
-            // cube.name = 'mainObject';
-            // scene.add( cube );
-            // TEST MODEL...
 
             // EVENT BINDING....
             window.addEventListener("resize", windowResizeGL, false);
@@ -125,6 +120,71 @@
             	camera.aspect = windowWidth / windowHeight;
             	camera.updateProjectionMatrix();
             	renderer.setSize(windowWidth, windowHeight);
+            }
+
+            function initSkyBox() {
+                // SKYBOX SETTING....FOR 3D
+                if($scope.scene.getObjectByName('skybox')) $scope.scene.remove($scope.scene.getObjectByName('skybox'));
+
+                var skyGeometry = new THREE.SphereGeometry(500, 60, 40),
+                    skyMaterial = new THREE.MeshBasicMaterial({
+                        map: new THREE.TextureLoader().load($scope.map.image)
+                    });
+                    skyMaterial.side = THREE.BackSide;
+                    skyMaterial.dispose();
+                var skyMesh = new THREE.Mesh(skyGeometry,skyMaterial);
+                var skybox = new THREE.Group();
+                    skybox.add(skyMesh);
+                    skybox.index = $scope.map.id;
+                    skybox.name = "skybox";
+
+                for(var i = 0, l = $scope.map.light.length; i < l; i++){
+                    var newLight = lightGenerate($scope.map.light[i],i);
+                    skybox.add(newLight);
+                }
+                scene.add(skybox);
+            }
+
+            function lightGenerate(light,index) {
+                var type = light.type,
+                newLight = null;
+                switch(type){
+                    case "DirectionalLight" :
+                        newLight = new THREE.DirectionalLight(light.color*1,light.intensity);
+
+                        newLight.target.position.set(
+                            light.target.x,
+                            light.target.y,
+                            light.target.z
+                        );
+                    break;
+                    case "SpotLight" :
+                        newLight = new THREE.SpotLight(light.color*1,light.intensity);
+                        newLight.angel = light.angle;
+                        newLight.penumbra = light.penumbra;
+                        newLight.target.position.set(
+                            light.target.x,
+                            light.target.y,
+                            light.target.z
+                        );
+                    break;
+                    case "HemisphereLight" :
+                        newLight = new THREE.HemisphereLight(light.skyColor*1,light.groundColor*1,light.intensity);
+                    break;
+                    case "PointLight" :
+                        newLight = new THREE.PointLight(light.color*1,light.intensity,light.radius);
+                    break;
+                    default : return false;
+                }
+
+                newLight.position.set(
+                    light.position.x,
+                    light.position.y,
+                    light.position.z
+                );
+                newLight.name = "presetLight"+index;
+
+                return newLight;
             }
 
             $rootScope.$on('$stateChangeStart', function() {

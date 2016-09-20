@@ -1,0 +1,67 @@
+[{
+	"id" : "0",
+	"type" : "3d",
+	"name" : "Cloud Sky",
+	"image" : "/assets/images/editor/map/cloud_sky/map.jpg",
+	"preview" : "/assets/images/editor/map/cloud_sky/preview.jpg",
+	"descript": "",
+	"light" : [{
+		"type" : "DirectionalLight",
+		"color" : "0xffffff",
+		"position" : { "x" : 100, "y" : 100, "z" : 100 },
+		"target" : { "x" : 0, "y" : 0, "z" : 0 },
+		"castShadow" : true,
+		"intensity" : 0.5
+	},{
+		"type" : "HemisphereLight",
+		"skyColor" : "0xdef3fb",
+		"groundColor" : "0xffbe54",
+		"position" : { "x" : 0, "y" : 0, "z" : 0 },
+		"castShadow" : true,
+		"intensity" : 0.9
+	}]
+},{
+	"id" : "1",
+	"type" : "3d",
+	"name" : "Light Capsule",
+	"image" : "/assets/images/editor/map/light_capsule/map.jpg",
+	"preview" : "/assets/images/editor/map/light_capsule/preview.jpg",
+	"descript": "",
+	"light" : [{
+		"type" : "DirectionalLight",
+		"color" : "0xffffff",
+		"position" : { "x" : 100, "y" : 100, "z" : 100 },
+		"target" : { "x" : 0, "y" : 0, "z" : 0 },
+		"castShadow" : true,
+		"intensity" : 0.5
+	},{
+		"type" : "DirectionalLight",
+		"color" : "0xffffff",
+		"position" : { "x" : -100, "y" : -100, "z" : -100 },
+		"target" : { "x" : 0, "y" : 0, "z" : 0 },
+		"castShadow" : true,
+		"intensity" : 0.5
+	}]
+},{
+	"id" : "2",
+	"type" : "3d",
+	"name" : "Sunset",
+	"image" : "/assets/images/editor/map/sunset/map.jpg",
+	"preview" : "/assets/images/editor/map/sunset/preview.jpg",
+	"descript": "",
+	"light" : [{
+		"type" : "DirectionalLight",
+		"color" : "0xffbe54",
+		"position" : { "x" : 100, "y" : 20, "z" : 100 },
+		"target" : { "x" : 0, "y" : 0, "z" : 0 },
+		"castShadow" : true,
+		"intensity" : 0.5
+	},{
+		"type" : "DirectionalLight",
+		"color" : "0x437dcc",
+		"position" : { "x" : -100, "y" : 0, "z" : -100 },
+		"target" : { "x" : 0, "y" : 0, "z" : 0 },
+		"castShadow" : true,
+		"intensity" : 0.5
+	}]
+}]

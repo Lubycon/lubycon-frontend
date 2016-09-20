@@ -6,7 +6,7 @@
         .controller('Editor3dController', Editor3dController);
 
     /** @ngInject */
-    function Editor3dController($rootScope, $scope, $filter, $compile ,$timeout) {
+    function Editor3dController($rootScope, $scope, $filter, $compile ,$timeout, get3dMaps, get2dMaps) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
@@ -20,6 +20,17 @@
         vm.selectedMaterial = undefined;
         vm.uploadedMaterials = [];
         vm.model = {};
+        vm.maps = {
+            _3d: get3dMaps.data,
+            _2d: get2dMaps.data
+        };
+        vm.selectedMapData = {
+            type: '3d',
+            index: 0
+        };
+        $scope.$watch('vm.selectedMapData',function(newValue,oldValue) {
+            vm.selectedMap = vm.selectedMapData.type === '3d' ? vm.maps._3d[vm.selectedMapData.index] : vm.maps._2d[vm.selectedMapData.index];
+        });
         // WEBGL SETTING...
 
         vm.config = {
@@ -78,7 +89,11 @@
                 name: 'mapTool',
                 type: 'open',
                 icon: 'fa-picture-o',
-                subTools: []
+                subTools: [{
+                    name: 'presets',
+                    category: 'tab',
+                    directive: '<map-tool scene="vm.scene" renderer="vm.renderer" output="vm.selectedMapData" maps="vm.maps"></map-tool>'
+                }]
             }]
         };
         vm.toolEnabled = {};
