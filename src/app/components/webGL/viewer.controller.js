@@ -82,6 +82,8 @@
                 controls.rotateSpeed = 0.5;
                 controls.zoomSpeed = 0.5;
                 controls.maxDistance = 100;
+                // controls.autoRotate = true;
+                // controls.autoRotateSpeed = 0.3;
 
             // TEST MODEL...
             // var geometry = new THREE.BoxGeometry( 1, 1, 1 );
