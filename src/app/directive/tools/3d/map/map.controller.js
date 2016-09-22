@@ -26,9 +26,11 @@
             console.log($scope.maps,$scope.output);
 
             $scope.selectedTab = '3d';
+            $scope.mapColor = '#222222';
             $scope.output = {
                 type: $scope.selectedTab,
-                index: 0
+                index: 0,
+                color: $scope.mapColor
             };
 
             var _2dMapList = $scope.maps._2d.map(function(v) { return v.name; });
@@ -45,17 +47,24 @@
             $scope.changeMap = function(index,value){
                 $scope.output = {
                     type: $scope.selectedTab,
-                    index: index
+                    index: index,
+                    color: $scope.mapColor
                 };
-                console.log($scope.output);
+            };
+            $scope.changeColor = function(color){
+                $scope.output = {
+                    type: $scope.selectedTab,
+                    index: $scope.output.index,
+                    color: color
+                };
             };
             $scope.tabAction = function(value) {
                 $scope.selectedTab = value;
                 $scope.output = {
                     type: $scope.selectedTab,
-                    index: 0
+                    index: 0,
+                    color: $scope.mapColor
                 };
-                console.log($scope.output);
             };
         }
     }

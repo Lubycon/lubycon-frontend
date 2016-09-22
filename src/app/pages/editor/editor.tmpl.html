@@ -43,6 +43,6 @@
 </aside>
 
 <!----- VIEWER ----->
-<div class="editor-viewer">
-    <webgl-viewer ng-if="vm.editorSet==='3d'" scene="vm.scene" renderer="vm.renderer" map="vm.selectedMap"></webgl-viewer>
+<div class="editor webgl-viewer">
+    <webgl-viewer ng-if="vm.editorSet==='3d'" model="vm.model" scene="vm.scene" renderer="vm.renderer" map="vm.selectedMap"></webgl-viewer>
 </div>

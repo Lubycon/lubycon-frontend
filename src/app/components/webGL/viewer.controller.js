@@ -26,7 +26,19 @@
         function link($scope, $element, $attrs) {
             $scope.$watch('map',function(newValue,oldValue) {
                 console.log('MAP CHANGED : ',oldValue,'=>',newValue);
-                $scope.initSkyBox();
+                if(newValue.type === '3d') $scope.initSkyBox();
+                else if(newValue.type === '2d') $scope.init2DMap();
+            },true);
+
+            $scope.$watch('model',function(newValue,oldValue) {
+                console.log(oldValue,newValue);
+                var oldModel = $scope.scene.getObjectByName('mainObject');
+
+                if(oldModel) $scope.scene.remove(oldModel);
+
+                if(newValue && (newValue.constructor.name === 'Mesh' || newValue.constructor.name === 'Group')) {
+                    $scope.scene.add(newValue);
+                }
             });
         }
         function controller($rootScope, $scope, $element) {
@@ -40,6 +52,7 @@
             var gl = $element.find('.webgl-viewer')[0];
             var scene = $scope.scene;
             $scope.initSkyBox = initSkyBox;
+            $scope.init2DMap = init2DMap;
 
             // CAMERA SETTING....
             var camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
@@ -123,6 +136,9 @@
             }
 
             function initSkyBox() {
+                var oldLight = $scope.scene.getObjectByName('2dLight');
+                if(oldLight) $scope.scene.remove(oldLight);
+
                 // SKYBOX SETTING....FOR 3D
                 if($scope.scene.getObjectByName('skybox')) $scope.scene.remove($scope.scene.getObjectByName('skybox'));
 
@@ -143,6 +159,34 @@
                     skybox.add(newLight);
                 }
                 scene.add(skybox);
+            }
+
+            function init2DMap() {
+                $element.parent().css('background-color',$scope.map.color);
+                if($scope.map.image === '#') $element.parent().css('background-image','none');
+                else $element.parent().css('background-image',"url(" + $scope.map.image + ")");
+                clearRendererMap();
+            }
+
+            function clearRendererMap() {
+                var skybox = $scope.scene.getObjectByName('skybox');
+                var oldLight = $scope.scene.getObjectByName('2dLight');
+                console.log(skybox);
+
+                // REMOVE SKYBOX
+                if(skybox) {
+                    $scope.scene.remove(skybox);
+                    $scope.renderer.setClearColor(0x222222,0);
+                }
+
+                if(!oldLight) {
+                    var light = new THREE.DirectionalLight(0xffffff,1);
+                        light.name = '2dLight';
+                        light.position.x = 100;
+                        light.position.y = 100;
+                        light.position.z = 100;
+                    $scope.scene.add(light);
+                }
             }
 
             function lightGenerate(light,index) {

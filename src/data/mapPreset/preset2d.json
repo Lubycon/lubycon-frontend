@@ -1,19 +1,22 @@
 [{
 	"id" : "0",
+	"type" : "2d",
 	"name" : "None",
 	"image" : "#",
-	"preview" : "../data/webGLmap_Preset/2dBackgrounds/Lubycon_Title.svg",
+	"preview" : "",
 	"descript" : ""
 },{
 	"id" : "1",
+	"type" : "2d",
 	"name" : "Lubycon Text",
-	"image" : "../data/webGLmap_Preset/2dBackgrounds/Lubycon_Title.svg",
-	"preview" : "../data/webGLmap_Preset/2dBackgrounds/Lubycon_Title.svg",
+	"image" : "/assets/images/editor/map/lubycon_title/map.svg",
+	"preview" : "/assets/images/editor/map/lubycon_title/map.svg",
 	"descript" : ""
 },{
 	"id" : "2",
+	"type" : "2d",
 	"name" : "Lubycon Logo",
-	"image" : "../data/webGLmap_Preset/2dBackgrounds/Lubycon_logo_black.svg",
-	"preview" : "../data/webGLmap_Preset/2dBackgrounds/Lubycon_logo_black.svg",
+	"image" : "/assets/images/editor/map/lubycon_logo/map.svg",
+	"preview" : "/assets/images/editor/map/lubycon_logo/map.svg",
 	"descript": ""
 }]

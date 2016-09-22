@@ -19,17 +19,26 @@
 
         vm.selectedMaterial = undefined;
         vm.uploadedMaterials = [];
-        vm.model = {};
+        vm.model = null;
         vm.maps = {
             _3d: get3dMaps.data,
             _2d: get2dMaps.data
         };
         vm.selectedMapData = {
             type: '3d',
-            index: 0
+            index: 0,
+            color: '#222222'
         };
         $scope.$watch('vm.selectedMapData',function(newValue,oldValue) {
-            vm.selectedMap = vm.selectedMapData.type === '3d' ? vm.maps._3d[vm.selectedMapData.index] : vm.maps._2d[vm.selectedMapData.index];
+            if(vm.selectedMapData && vm.selectedMapData.type === '3d') {
+                vm.selectedMap = vm.maps._3d[vm.selectedMapData.index];
+                vm.selectedMapColor = undefined;
+            }
+            else if(vm.selectedMapData && vm.selectedMapData.type === '2d') {
+                vm.selectedMap = vm.maps._2d[vm.selectedMapData.index];
+                vm.selectedMap.color = vm.selectedMapData.color;
+            }
+            console.log(vm.selectedMap);
         });
         // WEBGL SETTING...
 
@@ -135,56 +144,58 @@
         };
 
         vm.changedFile = function(files,file,newFile,invalideFiles) {
-            var reader = new FileReader();
-            reader.readAsBinaryString(file);
+            console.log(file);
+            if(file){
+                var reader = new FileReader();
+                reader.readAsBinaryString(file);
 
-            reader.onloadend = function() {
-                var contents = reader.result;
-                var object = new THREE.OBJLoader().parse(contents);
-                console.log(object);
+                reader.onloadend = function() {
+                    var contents = reader.result;
+                    var object = new THREE.OBJLoader().parse(contents);
+                    console.log(object);
 
-                for(var i = 0; i < object.length; i++) {
-                    var userData = object[i].userData;
-                    var geometry = object[i].geometry;
-                        geometry.center();
-                    var material = object[i].material;
+                    for(var i = 0; i < object.length; i++) {
+                        var userData = object[i].userData;
+                        var geometry = object[i].geometry;
+                            geometry.center();
+                        var material = object[i].material;
 
-                    if(material.type === "MeshPhongMaterial"){
-                        material.specular = new THREE.Color(0xffffff);
-                        material.shininess = 100;
-                        material.side = THREE.DoubleSide;
-                        material.transparent = true;
-                        material.needsUpdate = true;
-                    }
-                    else if(material.type === "MultiMaterial"){
-                        var materials = material.materials;
-                        for(var j = 0, ml = materials.length; j < ml; j++){
-                            materials[j].specular = new THREE.Color(0xffffff);
-                            materials[j].shininess = 100;
-                            materials[j].side = THREE.DoubleSide;
-                            materials[j].transparent = true;
-                            materials[j].needsUpdate = true;
-                            materials[j].dispose();
+                        if(material.type === "MeshPhongMaterial"){
+                            material.specular = new THREE.Color(0xffffff);
+                            material.shininess = 100;
+                            material.side = THREE.DoubleSide;
+                            material.transparent = true;
+                            material.needsUpdate = true;
                         }
-                    }
-                    else $.error("WebGL failed loading to material");
+                        else if(material.type === "MultiMaterial"){
+                            var materials = material.materials;
+                            for(var j = 0, ml = materials.length; j < ml; j++){
+                                materials[j].specular = new THREE.Color(0xffffff);
+                                materials[j].shininess = 100;
+                                materials[j].side = THREE.DoubleSide;
+                                materials[j].transparent = true;
+                                materials[j].needsUpdate = true;
+                                materials[j].dispose();
+                            }
+                        }
+                        else $.error("WebGL failed loading to material");
 
-                    var mesh = new THREE.Mesh(geometry,material);
-                        mesh.castShadow = true;
-                        mesh.receiveShadow = true;
-                        mesh.scale.set(1,1,1);
-                        mesh.initMatrix = mesh.matrixWorld.clone();
-                        mesh.userData = userData;
-                        mesh.name = 'mainObject';
+                        var mesh = new THREE.Mesh(geometry,material);
+                            mesh.castShadow = true;
+                            mesh.receiveShadow = true;
+                            mesh.scale.set(1,1,1);
+                            mesh.initMatrix = mesh.matrixWorld.clone();
+                            mesh.userData = userData;
+                            mesh.name = 'mainObject';
 
-                    vm.scene.add(mesh);
-                } // end for
+                        vm.model = mesh;
+                    } // end for
 
-                console.log(vm.scene.existMainObject);
+                    console.log(vm.scene.existMainObject);
 
-                vm.init();
-            };
-
+                    vm.init();
+                };
+            }
             console.log(files);
         };
     }
