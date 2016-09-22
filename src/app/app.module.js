@@ -40,7 +40,7 @@
     // THIS IS SERVER LOCATION SWITCH
     // port = { APACHE: 8888, mySql: 8889 }
         //'host': 'http://localhost:8888/var/www/LubyconAPI/public/', // MY LOCAL
-        'host': 'http://52.43.84.192/',
+        'host': 'http://52.42.84.192/',
         //'host': 'http://aws.lubycon.com/var/www/LubyconAPI/app/http/routes.php',
         'content': 'http://localhost:8888/contents/' // MY LOCAL
         //'host': ''
