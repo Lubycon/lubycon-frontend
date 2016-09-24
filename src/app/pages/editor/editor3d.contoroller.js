@@ -29,6 +29,7 @@
             index: 0,
             color: '#222222'
         };
+        vm.selectedLight = [];
         $scope.$watch('vm.selectedMapData',function(newValue,oldValue) {
             if(vm.selectedMapData && vm.selectedMapData.type === '3d') {
                 vm.selectedMap = vm.maps._3d[vm.selectedMapData.index];
@@ -54,7 +55,7 @@
                 subTools: [{
                     name: 'lights',
                     category: 'switch',
-                    directive: '<light-tool scene="vm.scene" renderer="vm.renderer"></light-tool>'
+                    directive: '<light-tool scene="vm.scene" renderer="vm.renderer" output="vm.selectedLight"></light-tool>'
                 }]
             },{
                 name: 'geometryTool',

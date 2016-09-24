@@ -50,7 +50,7 @@
             group.add(light,helper);
             group.name = lightName;
 
-            scene.add(group);
+            return group;
         }
 
         function destroy(scene,name) {

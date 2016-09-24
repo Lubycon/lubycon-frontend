@@ -12,7 +12,8 @@
             templateUrl: 'app/directive/tools/3d/light/lightTool.tmpl.html',
             scope: {
                 scene: '=',
-                renderer: '='
+                renderer: '=',
+                output: '='
             },
             link: link,
             controller: controller
@@ -22,7 +23,7 @@
 
         function link($scope, $element, $attrs) {
             $scope.maxLightsLength = 3;
-            $scope.lights = [];
+            $scope.lights = $scope.output;
             $scope.selectedLight = null;
             $scope.lightTypes = ['directional','spot','point'];
 
@@ -74,8 +75,6 @@
                     config: angular.copy($scope.initConfig)
                 };
             }
-
-            console.log($scope.lights,$scope.selectedLight);
         }
 
         function controller($rootScope, $scope, $element, $timeout, lightGenerateService) {
@@ -99,7 +98,10 @@
                     var isExist = $scope.isExistLights();
 
                     if(newValue) {
-                        lightGenerateService.create($scope.scene,target.config,target.name);
+                        var newLight = lightGenerateService.create($scope.scene,target.config,target.name);
+
+                        $scope.scene.add(newLight);
+
                         lightGenerateService.control.attach($scope.scene,$scope.renderer,target.name);
                         $scope.selectedLight = target;
                         $scope.selectedLight.object = $scope.scene.getObjectByName(target.name);

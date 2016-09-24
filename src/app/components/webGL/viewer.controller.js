@@ -39,6 +39,11 @@
                 if(newValue && (newValue.constructor.name === 'Mesh' || newValue.constructor.name === 'Group')) {
                     $scope.scene.add(newValue);
                 }
+                else if(newValue && newValue.constructor.name === 'String') {
+                    var modelJSON = $.parseJSON(newValue);
+                    var loader = new THREE.ObjectLoader().parse(modelJSON);
+                    $scope.scene.add(loader);
+                }
             });
         }
         function controller($rootScope, $scope, $element) {

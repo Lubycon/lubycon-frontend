@@ -44,5 +44,12 @@
 
 <!----- VIEWER ----->
 <div class="editor webgl-viewer">
-    <webgl-viewer ng-if="vm.editorSet==='3d'" model="vm.model" scene="vm.scene" renderer="vm.renderer" map="vm.selectedMap"></webgl-viewer>
+    <webgl-viewer
+        ng-if="vm.editorSet==='3d'"
+        scene="vm.scene"
+        renderer="vm.renderer"
+        model="vm.model"
+        map="vm.selectedMap"
+        light="vm.selectedLight"
+    ></webgl-viewer>
 </div>
