@@ -152,8 +152,8 @@
 
                 reader.onloadend = function() {
                     var contents = reader.result;
-                    var object = new THREE.OBJLoader().parse(contents);
-                    object = modelLoadService.combine(object);
+                    var object = modelLoadService.combine(new THREE.OBJLoader().parse(contents));
+
                     object.name = 'mainObject';
                     vm.model = object;
                     console.log(object);
@@ -163,7 +163,6 @@
                     vm.init();
                 };
             }
-            console.log(files);
         };
     }
 })();

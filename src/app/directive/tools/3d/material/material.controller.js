@@ -24,7 +24,7 @@
         function link($scope, $element, $attrs) {
             var object = $scope.scene.getObjectByName('mainObject');
             $scope.materialList = [];
-
+            console.log(object);
             for(var i = 0; i < object.material.materials.length; i++) {
                 $scope.materialList.push(object.material.materials[i].name);
             }

@@ -13,7 +13,9 @@
         return service;
 
         function combine(model) {
+            console.time('Model combine');
             console.log(model);
+
 
             var geometry = new THREE.Geometry();
             var usedMaterials = [],
@@ -125,6 +127,7 @@
             model.add(new THREE.Mesh(geometry,new THREE.MeshFaceMaterial(materials)));
             console.log(model);
 
+            console.timeEnd('Model combine');
             return model.children[0];
         }
     }
