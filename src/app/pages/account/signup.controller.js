@@ -29,7 +29,7 @@
             console.log('http header : ',Restangular.defaultHeaders);
             if(passwordCheck && vm.member.country) {
                 // TESTING....
-                Restangular.all('members/signup').customPOST(
+                Restangular.all('members/signup').post(
                     vm.member, undefined, undefined, {'Content-Type':'application/json'}
                 ).then(function(res) {
                     console.log(res);

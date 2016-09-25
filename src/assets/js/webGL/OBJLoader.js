@@ -319,7 +319,6 @@ THREE.OBJLoader.prototype = {
 			},
 
 			addFace: function ( a, b, c, d, ua, ub, uc, ud, na, nb, nc, nd ) {
-
 				var vLen = this.vertices.length;
 
 				var ia = this.parseVertexIndex( a, vLen );
@@ -646,7 +645,6 @@ THREE.OBJLoader.prototype = {
 			var geometry = object.geometry;
 			var materials = object.materials;
 			var isLine = ( geometry.type === 'Line' );
-			console.log(object);
 
 			// Skip o/g line declarations that did not follow with any faces
 			if ( geometry.vertices.length === 0 ) continue;
@@ -670,7 +668,6 @@ THREE.OBJLoader.prototype = {
 				buffergeometry.addAttribute( 'uv', new THREE.BufferAttribute( new Float32Array( geometry.uvs ), 2 ) );
 
 			}
-
 
 			// Create materials
 
@@ -699,7 +696,7 @@ THREE.OBJLoader.prototype = {
 				if ( ! material ) {
 
 					material = ( ! isLine ? new THREE.MeshPhongMaterial() : new THREE.LineBasicMaterial() );
-					material.name = sourceMaterial.name;
+					material.name = geometry.name ? geometry.name : sourceMaterial.name;
 
 				}
 
@@ -737,7 +734,7 @@ THREE.OBJLoader.prototype = {
 		}
 
 		console.timeEnd( 'OBJLoader' );
-
+		// TESTING...
 		return container;
 
 	}
