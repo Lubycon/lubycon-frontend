@@ -24,10 +24,13 @@
         function link($scope, $element, $attrs) {
             var object = $scope.scene.getObjectByName('mainObject');
             $scope.materialList = [];
-            console.log(object);
-            for(var i = 0; i < object.material.materials.length; i++) {
-                $scope.materialList.push(object.material.materials[i].name);
+            console.log(object,$scope.scene);
+            if(object) {
+                for(var i = 0; i < object.material.materials.length; i++) {
+                    $scope.materialList.push(object.material.materials[i].name);
+                }
             }
+            else console.log('THERE IS NO OBJECT - Material.controller.js');
 
             $scope.output = $scope.materialList[0]; // TESTING....
 

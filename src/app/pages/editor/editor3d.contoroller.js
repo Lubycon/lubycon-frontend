@@ -114,7 +114,7 @@
         function init(){
             $timeout(function(){
                 bindSubTools(vm.config.tools);
-            },0);
+            });
         }
 
         function bindSubTools(tools){
@@ -153,12 +153,10 @@
                 reader.onloadend = function() {
                     var contents = reader.result;
                     var object = modelLoadService.combine(new THREE.OBJLoader().parse(contents));
-
                     object.name = 'mainObject';
                     vm.model = object;
-                    console.log(object);
-
-                    console.log(vm.scene.existMainObject);
+                    
+                    $scope.$apply();
 
                     vm.init();
                 };

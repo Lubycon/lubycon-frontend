@@ -14,7 +14,7 @@
 
         function combine(model) {
             console.time('Model combine');
-            console.log(model);
+            // console.log(model);
 
 
             var geometry = new THREE.Geometry();
@@ -46,14 +46,8 @@
                     });
                 }
 
-                // Object
-                // count : 192
-                // materialIndex : 0
-                // name : "Material__25"
-                // start : 0
-
-                console.log('group data',groupData);
-                console.log(i,eachModel,eachModel.geometry,eachModel.material);
+                // console.log('group data',groupData);
+                // console.log(i,eachModel,eachModel.geometry,eachModel.material);
 
                 if(eachModel.material.constructor.name === 'MeshPhongMaterial') usedMaterials.push(eachModel.material);
                 else if(eachModel.material.constructor.name === 'MultiMaterial'){
@@ -65,7 +59,7 @@
                 // MERGE GEOMETRIES...
                 eachModel.updateMatrix();
                 geometry.merge(newGeometry,eachModel.matrix);
-                console.log(geometry);
+                // console.log(geometry);
             }
 
 
@@ -95,13 +89,13 @@
             materialNames = materials.map(function(v){
                 return v.name;
             });
-            console.log(materials,materialNames);
+            // console.log(materials,materialNames);
 
 
 
             // BIND MATERIAL
             var faceIndex = 0, groupCount = 0, groupVertexCount = groupData[groupCount].count;
-            console.log(groupData);
+            // console.log(groupData);
             for(var i = 0; i < geometry.vertices.length; i++) {
                 var face = geometry.faces[faceIndex];
 
@@ -116,7 +110,7 @@
                     groupVertexCount += groupData[groupCount].count;
                 }
             }
-            console.log(geometry.faces);
+            // console.log(geometry.faces);
 
             // COMPUTE GEOMETRY
             geometry.center();
@@ -125,9 +119,10 @@
             // REDEFINE MODEL
             model.children = [];
             model.add(new THREE.Mesh(geometry,new THREE.MeshFaceMaterial(materials)));
-            console.log(model);
+            // console.log(model);
 
             console.timeEnd('Model combine');
+
             return model.children[0];
         }
     }
