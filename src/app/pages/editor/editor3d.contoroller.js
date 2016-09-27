@@ -6,7 +6,11 @@
         .controller('Editor3dController', Editor3dController);
 
     /** @ngInject */
-    function Editor3dController($rootScope, $scope, $filter, $compile ,$timeout, modelLoadService, get3dMaps, get2dMaps) {
+    function Editor3dController(
+        $rootScope, $scope, $filter, $compile ,$timeout,
+        modelLoadService, FileControlService,
+        get3dMaps, get2dMaps
+    ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
@@ -121,6 +125,9 @@
             console.log(tools);
             for(var i = 0; i < tools.length; i++){
                 var subTools = tools[i].subTools;
+                // THERE IS NO MATERIALS IN STL FILE...
+                if(tools[i].name === 'materialTool' && vm.modelExtention === 'stl') continue;
+
                 if(subTools.length > 0){
                     for(var j = 0; j < subTools.length; j++){
                         var target = angular.element(document).find('.sub-tools[data-value="'+subTools[j].name+'"]');
@@ -148,14 +155,27 @@
             console.log(file);
             if(file){
                 var reader = new FileReader();
+                var loader;
                 reader.readAsBinaryString(file);
+
+                var extention = FileControlService.getExtention(file);
+                vm.modelExtention = extention;
 
                 reader.onloadend = function() {
                     var contents = reader.result;
-                    var object = modelLoadService.combine(new THREE.OBJLoader().parse(contents));
+                    var object;
+
+                    switch(extention) {
+                        case 'obj' : object = modelLoadService.combine(new THREE.OBJLoader().parse(contents)); break;
+                        case 'stl' : object = modelLoadService.setMesh(new THREE.STLLoader().parse(contents)); break;
+                        case 'fbx' : object = modelLoadService.combine(new THREE.FBXLoader().parse(contents)); break;
+                        default : return false;
+                    }
+
                     object.name = 'mainObject';
                     vm.model = object;
-                    
+                    vm.uploadedMaterials = [];
+
                     $scope.$apply();
 
                     vm.init();

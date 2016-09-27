@@ -7,14 +7,15 @@
 
     function modelLoadService($rootScope, ArrayService) {
         var service = {
-            combine: combine
+            combine: combine,
+            setMesh: setMesh
         };
 
         return service;
 
         function combine(model) {
             console.time('Model combine');
-            // console.log(model);
+            console.log(model);
 
 
             var geometry = new THREE.Geometry();
@@ -124,6 +125,17 @@
             console.timeEnd('Model combine');
 
             return model.children[0];
+        }
+
+        function setMesh(geometry) {
+            var material = new THREE.MeshPhongMaterial();
+
+            geometry = new THREE.Geometry().fromBufferGeometry(geometry);
+
+            geometry.center();
+            geometry.normalize();
+
+            return new THREE.Mesh(geometry,material);
         }
     }
 })();
