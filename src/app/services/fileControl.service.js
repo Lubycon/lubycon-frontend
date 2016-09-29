@@ -19,7 +19,7 @@
             indexNum = name.lastIndexOf("."),
             extention = indexNum > -1 ? name.substring(indexNum + 1) : "";
             console.log(extention);
-            return extention;
+            return extention.toLowerCase();
         }
     }
 })();
