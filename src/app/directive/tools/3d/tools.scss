@@ -54,55 +54,8 @@
     }
 }
 
-// EDITOR MODAL
-.editor-modal {
-    background: #222;
-    color: #eee;
-    padding: 0 15px;
-    .modal-header {
-        border: none;
-        padding: 15px 0;
-        h3.modal-title {
-            color: #eee;
-        }
-    }
+.texture-uploader.editor-modal {
     .modal-body {
-        border: none;
-        background: #111;
-    }
-    .modal-footer {
-        border: none;
-        padding: 15px 0;
-        .btn {
-            background: #444;
-            padding: 10px 20px;
-        }
-    }
-
-
-    &.texture-uploader {
-        .texture-upload-btn {
-            border: 2px dashed #eee;
-            background: transparent;
-        }
-
-        .btn.textures {
-            width: 43px;
-            height: 43px;
-            padding: 0;
-            img {
-                width: 100%;
-            }
-        }
-
-        ul {
-            li {
-                display: inline-block;
-                margin: 5px;
-                &.selected {
-                    border: 1px solid #48cfad;
-                }
-            }
-        }
+        text-align: left;
     }
 }

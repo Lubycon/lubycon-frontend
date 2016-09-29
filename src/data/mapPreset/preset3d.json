@@ -18,7 +18,7 @@
 		"groundColor" : "0xffbe54",
 		"position" : { "x" : 0, "y" : 0, "z" : 0 },
 		"castShadow" : true,
-		"intensity" : 0.9
+		"intensity" : 0.5
 	}]
 },{
 	"id" : "1",

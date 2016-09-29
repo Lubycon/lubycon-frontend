@@ -19,12 +19,13 @@
                     type="file"
                     name="files"
                     ng-model="uploadedTextures"
+                    ng-click="beforeChangedFile()"
                     ngf-change="changedFile($files,$file,$newFiles,$invalidFiles)"
                     ngf-accept="'image/*'"
                     ngf-max-size="10MB"
                     ngf-multiple="true"
                 >
-                    <i class="fa fa-plus"></i>
+                    <i ng-class="uploadingNow ? 'fa fa-spinner fa-spin' : 'fa fa-plus'"></i>
                 </button>
             </li>
         </ul>

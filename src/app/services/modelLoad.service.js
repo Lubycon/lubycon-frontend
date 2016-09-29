@@ -85,7 +85,12 @@
                     else isExistMaterial = false;
                 }
 
-                if(!isExistMaterial) materials.push(usedMaterials[i]);
+                if(!isExistMaterial) {
+                    usedMaterials[i].side = THREE.DoubleSide;
+                    usedMaterials[i].transparent = true;
+                    usedMaterials[i].needsUpdate = true;
+                    materials.push(usedMaterials[i]);
+                }
             }
             materialNames = materials.map(function(v){
                 return v.name;
@@ -129,6 +134,9 @@
 
         function setMesh(geometry) {
             var material = new THREE.MeshPhongMaterial();
+                material.side = THREE.DoubleSide;
+                material.transparent = true;
+                material.needsUpdate = true;
 
             geometry = new THREE.Geometry().fromBufferGeometry(geometry);
 

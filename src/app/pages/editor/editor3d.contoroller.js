@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function Editor3dController(
-        $rootScope, $scope, $filter, $compile ,$timeout,
+        $rootScope, $scope, $filter, $compile ,$timeout, toastr,
         modelLoadService, FileControlService,
         get3dMaps, get2dMaps
     ) {
@@ -111,6 +111,7 @@
             }]
         };
         vm.toolEnabled = {};
+        vm.cropping = false;
         // CONFIG...
 
         vm.init = init;
@@ -181,6 +182,34 @@
                     vm.init();
                 };
             }
+        };
+
+        vm.capture = function() {
+            console.time("capture");
+            if(!vm.model) {
+                toastr.error('You have to upload the 3D file first');
+                return false;
+            }
+
+            if(vm.selectedMapData.type === '2d') {
+                vm.renderer.setClearColor(vm.selectedMapData.color,1);
+                $timeout(action,100);
+            }
+            else action();
+        };
+
+        function action() {
+            var data = vm.renderer.domElement.toDataURL('image/jpeg',1);
+            vm.uploadedThumbnail = data;
+
+            if(vm.selectedMapData.type === '2d') vm.renderer.setClearColor(0x222222,0);
+
+            console.timeEnd('capture');
+        }
+
+        vm.crop = function() {
+            vm.cropping = false;
+            // GO TO SETTING STEP!!!!
         };
     }
 })();

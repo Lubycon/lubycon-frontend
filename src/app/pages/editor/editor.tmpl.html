@@ -1,55 +1,93 @@
 
-
 <!----- HEADER ----->
-<div class="editor-header">
-    <ul class="headerTools">
-        <li ng-repeat="tool in vm.config.headerTools">
-            <button
-                class="btn"
-                ngf-select
-                type="file"
-                name="files"
-                ng-model="vm.model"
-                ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
-                ngf-max-files="1"
-            >
-                <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
-            </button>
-        </li>
-    </ul>
-</div>
+<div class="editor">
+    <div class="editor-header">
+        <ul class="headerTools">
+            <li ng-repeat="tool in vm.config.headerTools">
+                <button
+                    class="btn"
+                    ngf-select
+                    type="file"
+                    name="files"
+                    ng-model="vm.model"
+                    ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
+                    ngf-max-files="1"
+                >
+                    <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
+                </button>
+            </li>
+        </ul>
+        <button
+            class="btn next-button"
+            data-target="#thumbnail-modal"
+            data-toggle="modal"
+            ng-click="vm.capture()"
+        >NEXT<i class="fa fa-arrow-right"></i></button>
+    </div>
 
-<!----- TOOLBAR ----->
-<aside class="editor-aside">
-    <ul class="tools">
-        <li ng-repeat="tool in vm.config.tools">
-            <button class="btn" ng-click="vm.toolboxToggle(tool.name)">
-                <i class="fa {{tool.icon}}"></i>
-            </button>
-        </li>
-    </ul>
-    <ul class="toolboxes">
-        <li ng-repeat="tool in vm.config.tools" ng-show="vm.toolEnabled[tool.name]">
-            <h4><i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter}}</h4>
-            <div class="divide20"></div>
+    <!----- TOOLBAR ----->
+    <aside class="editor-aside">
+        <ul class="tools" ng-show="vm.model">
+            <li ng-repeat="tool in vm.config.tools">
+                <button class="btn" ng-click="vm.toolboxToggle(tool.name)">
+                    <i class="fa {{tool.icon}}"></i>
+                </button>
+            </li>
+        </ul>
+        <ul class="toolboxes">
+            <li ng-repeat="tool in vm.config.tools" ng-show="vm.toolEnabled[tool.name]">
+                <h4><i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter}}</h4>
+                <div class="divide20"></div>
 
-            <ul>
-                <li ng-repeat="subTool in tool.subTools" class="sub-tools" data-value="{{subTool.name}}">
-                    <h5>{{subTool.name | camelCaseFilter}}</h5>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</aside>
+                <ul>
+                    <li ng-repeat="subTool in tool.subTools" class="sub-tools" data-value="{{subTool.name}}">
+                        <h5>{{subTool.name | camelCaseFilter}}</h5>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
 
-<!----- VIEWER ----->
-<div class="editor webgl-viewer">
-    <webgl-viewer
-        ng-if="vm.editorSet==='3d'"
-        scene="vm.scene"
-        renderer="vm.renderer"
-        model="vm.model"
-        map="vm.selectedMap"
-        light="vm.selectedLight"
-    ></webgl-viewer>
+
+    <!-------------------- EDIT STEP------------------->
+    <!-----3D VIEWER ----->
+    <div class="editor webgl-viewer">
+        <webgl-viewer
+            ng-if="vm.editorSet==='3d'"
+            scene="vm.scene"
+            renderer="vm.renderer"
+            model="vm.model"
+            map="vm.selectedMap"
+            light="vm.selectedLight"
+        ></webgl-viewer>
+    </div>
+
+
+    <!-------------------- THUMBNAIL STEP------------------->
+    <div ng-if="vm.model" class=" modal fade" id="thumbnail-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="editor-modal modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Thumbnail</h3>
+                </div>
+                <div class="modal-body">
+                    <div ng-if="vm.editorSet === '3d'">
+                        <div class="cropper-window">
+                            <img cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.uploadedThumbnail" ngf-no-object-url="true" />
+                        </div>
+                        <div class="cropper-window cropper-preview"></div>
+                    </div>
+
+
+                    <div ng-if="vm.editorSet === '2d'"></div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal">BACK</button>
+                    <button class="btn" ng-click="vm.crop()">NEXT</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
