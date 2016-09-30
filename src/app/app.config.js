@@ -152,6 +152,12 @@
         if(CONSOLE_LOG === false) {
             var console = {};
             console.log = function() {};
+            console.error = function() {};
+            console.warn = function() {};
+            console.info = function() {};
+            console.time = function() {};
+            console.timeEnd = function() {};
+
             window.console = console;
         }
         // CONSOLE LOG SWITCH

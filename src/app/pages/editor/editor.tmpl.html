@@ -1,10 +1,11 @@
 
 <!----- HEADER ----->
-<div class="editor">
-    <div class="editor-header">
-        <ul class="headerTools">
-            <li ng-repeat="tool in vm.config.headerTools">
-                <button
+<form ng-submit="vm.postData()">
+    <div class="editor">
+        <div class="editor-header">
+            <ul class="headerTools">
+                <li ng-repeat="tool in vm.config.headerTools">
+                    <button
                     class="btn"
                     ngf-select
                     type="file"
@@ -12,16 +13,17 @@
                     ng-model="vm.model"
                     ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
                     ngf-max-files="1"
-                >
+                    >
                     <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
                 </button>
             </li>
         </ul>
         <button
-            class="btn next-button"
-            data-target="#thumbnail-modal"
-            data-toggle="modal"
-            ng-click="vm.capture()"
+        class="btn next-button"
+        type="button"
+        data-target="#thumbnail-modal"
+        data-toggle="modal"
+        ng-click="vm.capture()"
         >NEXT<i class="fa fa-arrow-right"></i></button>
     </div>
 
@@ -53,12 +55,12 @@
     <!-----3D VIEWER ----->
     <div class="editor webgl-viewer">
         <webgl-viewer
-            ng-if="vm.editorSet==='3d'"
-            scene="vm.scene"
-            renderer="vm.renderer"
-            model="vm.model"
-            map="vm.selectedMap"
-            light="vm.selectedLight"
+        ng-if="vm.editorSet==='3d'"
+        scene="vm.scene"
+        renderer="vm.renderer"
+        model="vm.model"
+        map="vm.selectedMap"
+        light="vm.selectedLight"
         ></webgl-viewer>
     </div>
 
@@ -73,7 +75,7 @@
                 <div class="modal-body">
                     <div ng-if="vm.editorSet === '3d'">
                         <div class="cropper-window">
-                            <img cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.uploadedThumbnail" ngf-no-object-url="true" />
+                            <img cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.capturedData" ngf-no-object-url="true" />
                         </div>
                         <div class="cropper-window cropper-preview"></div>
                     </div>
@@ -84,10 +86,64 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal">BACK</button>
-                    <button class="btn" ng-click="vm.crop()">NEXT</button>
+                    <button type="button" class="btn" data-dismiss="modal">BACK</button>
+                    <button
+                    type="button"
+                    class="btn"
+                    ng-click="vm.crop()"
+                    data-dismiss="modal"
+                    data-target="#setting-modal"
+                    data-toggle="modal"
+                    >NEXT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------- SETTING STEP------------------->
+
+    <div ng-if="vm.thumbnail" class=" modal fade" id="setting-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="editor-modal modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Setting</h3>
+                </div>
+                <div class="modal-body row">
+                    <div class="divided-form col-xs-12 col-sm-12 col-lg-6">
+                        <div class="input-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="input-group">
+                            <label>Category</label>
+                            <select
+                                chosen
+                                multiple
+                                max-selected-options="3"
+                                data-placeholder="Select Categories (max 3)"
+                            >
+                                <!--TEST VALUES-->
+                                <option value="0">Alaska</option>
+                                <option value="1">Arizona</option>
+                                <option value="2">Arkansas</option>
+                                <option value="3">California</option>
+                                <!--TEST VALUES-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="divided-form col-xs-12 col-sm-12 col-lg-6">
+                        <div class="input-group">
+                            <label>Descript</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-target="#thumbnail-modal" data-toggle="modal">BACK</button>
+                    <button type="submit" class="btn" ng-click="vm.crop()" >SUBMIT</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</form>

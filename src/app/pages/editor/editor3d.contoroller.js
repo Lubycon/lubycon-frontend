@@ -200,7 +200,7 @@
 
         function action() {
             var data = vm.renderer.domElement.toDataURL('image/jpeg',1);
-            vm.uploadedThumbnail = data;
+            vm.capturedData = data;
 
             if(vm.selectedMapData.type === '2d') vm.renderer.setClearColor(0x222222,0);
 
@@ -209,7 +209,16 @@
 
         vm.crop = function() {
             vm.cropping = false;
+
+            var canvas = angular.element('.cropper').cropper('getCroppedCanvas', { width: 640, height: 640 }),
+                base64URI = canvas.toDataURL('image/jpeg');
+            vm.thumbnail = base64URI;
             // GO TO SETTING STEP!!!!
+        };
+
+        vm.postData = function() {
+            console.time('Data submit');
+            console.timeEnd('Data submit');
         };
     }
 })();

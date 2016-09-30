@@ -165,3 +165,30 @@
         }
     }
 }
+
+#setting-modal {
+    .divided-form {
+        padding: 10px;
+        &:first-child {
+            border-right: 1px solid #222;
+        }
+    }
+
+    .input-group {
+        text-align: left;
+        width: 90%;
+
+        label {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #eee;
+        }
+        input[type="text"] {
+            background: #222;
+            border: 1px solid #333;
+        }
+        .chosen-container{
+            width: 100% !important;
+        }
+    }
+}

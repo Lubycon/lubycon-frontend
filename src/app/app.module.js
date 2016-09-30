@@ -13,9 +13,10 @@
         'ngAnimate', // animate.css MODULE
         'ngCookies', // COOKIE STORE MODULE
         'ngTouch', // TOUCH MODULE FOR MOBILE
-        'ngSanitize',
-        'ngMessages',
-        'ngAria',
+        'ngSanitize', // STRING TO HTML CONVERT MODULE
+        'ngMessages', // INFO OR ERROR MESSAGE MODULE
+        'ngAria', // FORM CONTROL MODULE
+        'localytics.directives', // ANGULAR CHOSEN MODULE(MULTIPLE SELECTOR)
         'restangular', // REST API MODULE
         'ui.router', // ROUTING MODULE
         'ui.bootstrap', // BOOTSTRAP
