@@ -39,19 +39,18 @@
     ])
     .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {
-    // THIS IS SERVER LOCATION SWITCH
-    // port = { APACHE: 8888, mySql: 8889 }
-        //'host': 'http://localhost:8888/var/www/LubyconAPI/public/', // MY LOCAL
-        'host': 'http://52.42.84.192/',
-        //'host': 'http://aws.lubycon.com/var/www/LubyconAPI/app/http/routes.php',
+        // THIS IS SERVER LOCATION SWITCH
+        // port = { APACHE: 8888, mySql: 8889 }
+        'host': 'http://52.42.84.192/', // TEST SERVER
         'content': 'http://localhost:8888/contents/', // MY LOCAL
-        'appkey': 'lubycon-back'
-        //'host': ''
+        'appkey': ''
     })
     .constant('SNSKEY', {
     // THIS IS GLOBAL SNSKEY FOR APP
-        'facebook':'', //LOCAL
-        'instagram':'' //LOCAL
+        'email':'0100',
+        'facebook':'0101',
+        'google':'0102',
+        'instagrma':'0103'
     })
     .constant(); // ADD NEW CONSTANT
 
