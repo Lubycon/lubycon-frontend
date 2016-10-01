@@ -9,6 +9,7 @@
     <div class="light-controller" ng-if="selectedLight">
         <div class="btn-group">
             <button
+                type="button"
                 class="btn"
                 ng-repeat="type in lightTypes"
                 ng-class="{'selected' : selectedLight.config.type === type}"

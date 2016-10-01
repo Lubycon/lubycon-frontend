@@ -1,7 +1,7 @@
 <div class="map-controller">
     <div class="btn-group">
-        <button class="btn" ng-class="{'selected' : selectedTab === '3d'}" ng-click="tabAction('3d')">3D</button>
-        <button class="btn" ng-class="{'selected' : selectedTab === '2d'}" ng-click="tabAction('2d')">2D</button>
+        <button type="button" class="btn" ng-class="{'selected' : selectedTab === '3d'}" ng-click="tabAction('3d')">3D</button>
+        <button type="button" class="btn" ng-class="{'selected' : selectedTab === '2d'}" ng-click="tabAction('2d')">2D</button>
     </div>
     <div class="controller-tab" ng-show="selectedTab === '3d'">
         <selectbox

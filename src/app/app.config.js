@@ -75,7 +75,8 @@
         var defaultHeaders = {
             "Content-Type": "application/json",
             'X-lubycon-version': '1.0.0',
-            'X-lubycon-language': _info.lang
+            'X-lubycon-language': _info.lang,
+            'lubycon-dev': API_CONFIG.appkey // REAL IS FALSE
         };
 
         RestangularProvider.setDefaultHeaders(defaultHeaders);

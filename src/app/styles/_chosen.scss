@@ -1,0 +1,40 @@
+.chosen-container.chosen-container-multi {
+    height: 34px;
+    .chosen-choices {
+        background: #222;
+        border: 1px solid #333;
+        height: 100%;
+        .search-field {
+            input[type="text"] {
+                height: 30px;
+            }
+        }
+        .search-choice {
+            background-color: #222;
+            background-image: none;
+            border: 2px solid #333;
+            color: #fff;
+            box-shadow: none;
+            border-radius: 0px;
+            line-height: 14px;
+        }
+    }
+    .chosen-drop {
+        background: #222;
+        border: 1px solid #333;
+
+        .chosen-results {
+            color: #eee;
+            li {
+                color: #eee;
+                &.result-selected {
+                    color: #48cfad;
+                }
+                &.highlighted {
+                    background-color: #48cfad;
+                    background-image: none;
+                }
+            }
+        }
+    }
+}

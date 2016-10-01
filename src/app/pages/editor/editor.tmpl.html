@@ -1,29 +1,30 @@
 
-<!----- HEADER ----->
-<form ng-submit="vm.postData()">
-    <div class="editor">
-        <div class="editor-header">
-            <ul class="headerTools">
-                <li ng-repeat="tool in vm.config.headerTools">
-                    <button
+
+
+<div class="editor">
+    <!----- HEADER ----->
+    <div class="editor-header">
+        <ul class="headerTools">
+            <li ng-repeat="tool in vm.config.headerTools">
+                <button
                     class="btn"
                     ngf-select
-                    type="file"
+                    type="button"
                     name="files"
                     ng-model="vm.model"
                     ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
                     ngf-max-files="1"
-                    >
+                >
                     <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
                 </button>
             </li>
         </ul>
         <button
-        class="btn next-button"
-        type="button"
-        data-target="#thumbnail-modal"
-        data-toggle="modal"
-        ng-click="vm.capture()"
+            class="btn next-button"
+            type="button"
+            data-target="#thumbnail-modal"
+            data-toggle="modal"
+            ng-click="vm.capture()"
         >NEXT<i class="fa fa-arrow-right"></i></button>
     </div>
 
@@ -31,7 +32,7 @@
     <aside class="editor-aside">
         <ul class="tools" ng-show="vm.model">
             <li ng-repeat="tool in vm.config.tools">
-                <button class="btn" ng-click="vm.toolboxToggle(tool.name)">
+                <button type="button" class="btn" ng-click="vm.toolboxToggle(tool.name)">
                     <i class="fa {{tool.icon}}"></i>
                 </button>
             </li>
@@ -55,17 +56,17 @@
     <!-----3D VIEWER ----->
     <div class="editor webgl-viewer">
         <webgl-viewer
-        ng-if="vm.editorSet==='3d'"
-        scene="vm.scene"
-        renderer="vm.renderer"
-        model="vm.model"
-        map="vm.selectedMap"
-        light="vm.selectedLight"
+            ng-if="vm.editorSet==='3d'"
+            scene="vm.scene"
+            renderer="vm.renderer"
+            model="vm.model"
+            map="vm.selectedMap"
+            light="vm.selectedLight"
         ></webgl-viewer>
     </div>
 
 
-    <!-------------------- THUMBNAIL STEP------------------->
+<!-------------------- THUMBNAIL STEP------------------->
     <div ng-if="vm.model" class=" modal fade" id="thumbnail-modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="editor-modal modal-content">
@@ -88,12 +89,12 @@
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal">BACK</button>
                     <button
-                    type="button"
-                    class="btn"
-                    ng-click="vm.crop()"
-                    data-dismiss="modal"
-                    data-target="#setting-modal"
-                    data-toggle="modal"
+                        type="button"
+                        class="btn"
+                        ng-click="vm.crop()"
+                        data-dismiss="modal"
+                        data-target="#setting-modal"
+                        data-toggle="modal"
                     >NEXT</button>
                 </div>
             </div>
@@ -101,7 +102,6 @@
     </div>
 
     <!-------------------- SETTING STEP------------------->
-
     <div ng-if="vm.thumbnail" class=" modal fade" id="setting-modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="editor-modal modal-content">
@@ -112,7 +112,7 @@
                     <div class="divided-form col-xs-12 col-sm-12 col-lg-6">
                         <div class="input-group">
                             <label>Title</label>
-                            <input type="text" class="form-control" />
+                            <input type="text" ng-model="vm.title" class="form-control" />
                         </div>
                         <div class="input-group">
                             <label>Category</label>
@@ -120,30 +120,62 @@
                                 chosen
                                 multiple
                                 max-selected-options="3"
+                                ng-model="vm.selectedCategories"
                                 data-placeholder="Select Categories (max 3)"
                             >
-                                <!--TEST VALUES-->
-                                <option value="0">Alaska</option>
-                                <option value="1">Arizona</option>
-                                <option value="2">Arkansas</option>
-                                <option value="3">California</option>
-                                <!--TEST VALUES-->
+                                <option value="{{item.code}}" ng-repeat="item in vm.categories">{{item.name}}</option>
                             </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Tags</label>
+                            <div class="form-control tags-form">
+                                <ul>
+                                    <li class="tags" ng-repeat="tag in vm.tags">
+                                        {{tag}}
+                                        <i class="fa fa-close" ng-click="vm.removeTag($index)"></i>
+                                    </li>
+                                    <li><input
+                                        type="text"
+                                        ng-if="vm.tags.length < 20"
+                                        ng-model="vm.currentTag"
+                                        ng-trim="true"
+                                        ng-maxlength="20"
+                                        ng-keydown="vm.detectTag($event,$valid)"
+                                    /></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Descript</label>
+                            <textarea msd-elastic="\n" type="text" class="form-control" ng-model="vm.description"></textarea>
                         </div>
                     </div>
                     <div class="divided-form col-xs-12 col-sm-12 col-lg-6">
+
                         <div class="input-group">
-                            <label>Descript</label>
-                            <input type="text" class="form-control" />
+                            <label>Creative Commons</label>
+                            <div class="cc-box">
+                                <ul>
+                                    <li ng-repeat="item in vm.creativeCommons" ng-show="item.check">
+                                        <img ng-src="{{item.icon.white}}" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="cc-setting">
+                                <ul>
+                                    <li ng-repeat="item in vm.creativeCommons">
+                                        <checkbox data-index="{{$index}}" output="item.check" theme="black" disabled="item.disabled" label="item.descript" change-event="vm.changeCC"></checkbox>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-target="#thumbnail-modal" data-toggle="modal">BACK</button>
-                    <button type="submit" class="btn" ng-click="vm.crop()" >SUBMIT</button>
+                    <button type="submit" ng-click="vm.postData()" class="btn">SUBMIT</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</form>

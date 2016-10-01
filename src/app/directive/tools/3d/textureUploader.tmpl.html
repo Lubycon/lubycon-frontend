@@ -16,7 +16,7 @@
                 <button
                     class="btn texture-upload-btn"
                     ngf-select
-                    type="file"
+                    type="button"
                     name="files"
                     ng-model="uploadedTextures"
                     ng-click="beforeChangedFile()"
@@ -31,7 +31,7 @@
         </ul>
     </div>
     <div class="modal-footer">
-        <button class="btn" type="button" ng-click="ok()">OK</button>
-        <button class="btn" type="button" ng-click="cancel()">CANCEL</button>
+        <button type="button" class="btn" ng-click="ok()">OK</button>
+        <button type="button" class="btn" ng-click="cancel()">CANCEL</button>
     </div>
 </div>

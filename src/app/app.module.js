@@ -24,7 +24,8 @@
         'rzModule', // SLIDER COMPONENT MODULE
         'angularSpectrumColorpicker', // COLOR PICKER MODULE
         'switcher', // CHECKBOX SWITCH MODE MODULE
-        'toastr' // TOAST MESSAGE MODULE
+        'toastr' , // TOAST MESSAGE MODULE
+        'monospaced.elastic' // TEXTAREA AUTOMATICALLY SIZE
     ])
     .constant('APP_LANGUAGES', [
         {
@@ -43,7 +44,8 @@
         //'host': 'http://localhost:8888/var/www/LubyconAPI/public/', // MY LOCAL
         'host': 'http://52.42.84.192/',
         //'host': 'http://aws.lubycon.com/var/www/LubyconAPI/app/http/routes.php',
-        'content': 'http://localhost:8888/contents/' // MY LOCAL
+        'content': 'http://localhost:8888/contents/', // MY LOCAL
+        'appkey': 'lubycon-back'
         //'host': ''
     })
     .constant('SNSKEY', {

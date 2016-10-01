@@ -1,32 +1,52 @@
-var ccPac = [
+[
 	{
 		"id" : "cc",
 		"name" : "Creative Commons",
 		"descript" : "Creative Commons License",
-		"icon" : "../asset/img/creative_commons/png/cc_w.png" 
+		"icon" : {
+			"white" : "/assets/images/creative_commons/cc_w.png",
+			"black" : "/assets/images/creative_commons/cc_k.png"
+		},
+		"check" : true
 	},
 	{
 		"id" : "by",
 		"name" : "Attribution",
 		"descript" : "Free to share and adapt with appropriate credit",
-		"icon" : "../asset/img/creative_commons/png/by_w.png"
+		"icon" : {
+			"white" : "/assets/images/creative_commons/by_w.png",
+			"black" : "/assets/images/creative_commons/by_k.png"
+		},
+		"check" : true
 	},
 	{
 		"id" : "nc",
 		"name" : "Non Commercial",
 		"descript" : "Not allowed for commercial purpose",
-		"icon" : "../asset/img/creative_commons/png/nc_w.png"
+		"icon" : {
+			"white" : "/assets/images/creative_commons/nc_w.png",
+			"black" : "/assets/images/creative_commons/nc_k.png"
+		},
+		"check" : true
 	},
 	{
 		"id" : "nd",
 		"name" : "Non Distributed",
 		"descript" : "You may not distribute the modified material",
-		"icon" : "../asset/img/creative_commons/png/nd_w.png"
+		"icon" : {
+			"white" : "/assets/images/creative_commons/nd_w.png",
+			"black" : "/assets/images/creative_commons/nd_k.png"
+		},
+		"check" : true
 	},
 	{
 		"id" : "sa",
 		"name" : "Share Alike",
 		"descript" : "Free to share including the modified material under the same license as original",
-		"icon" : "../asset/img/creative_commons/png/share_w.png"
+		"icon" : {
+			"white" : "/assets/images/creative_commons/sa_w.png",
+			"black" : "/assets/images/creative_commons/sa_k.png"
+		},
+		"check" : false
 	}
 ]

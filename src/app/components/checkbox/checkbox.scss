@@ -1,0 +1,35 @@
+.checkbox {
+    label {
+        margin: 0;
+        padding: 0;
+    }
+
+    .checkbox-body {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+
+        .fa-check {
+            color: #48cfad;
+            vertical-align: top;
+        }
+    }
+    .checkbox-label {
+        display: inline-block;
+        color: #999;
+        font-size: 14px;
+    }
+    &.black .checkbox-body {
+        border: 1px solid #444;
+    }
+    &.white .checkbox-body {
+        border: 1px solid #222;
+    }
+    &.disabled .checkbox-body {
+        background: #666;
+        .fa-check {
+            color: #444;
+        }
+    }
+}

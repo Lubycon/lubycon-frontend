@@ -9,10 +9,19 @@
     function Editor3dController(
         $rootScope, $scope, $filter, $compile ,$timeout, toastr,
         modelLoadService, FileControlService,
-        get3dMaps, get2dMaps
+        get3dMaps, get2dMaps, getCategory, getCreativeCommons
     ) {
+
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
+
+        // JSON DATA SETTING
+        if(get3dMaps.status === 200 && get2dMaps.status === 200) {
+            vm.maps = {
+                _3d: get3dMaps.data,
+                _2d: get2dMaps.data
+            };
+        }
 
         // CONFIG...
         vm.editorSet = '3d';
@@ -24,10 +33,7 @@
         vm.selectedMaterial = undefined;
         vm.uploadedMaterials = [];
         vm.model = null;
-        vm.maps = {
-            _3d: get3dMaps.data,
-            _2d: get2dMaps.data
-        };
+
         vm.selectedMapData = {
             type: '3d',
             index: 0,
@@ -112,6 +118,17 @@
         };
         vm.toolEnabled = {};
         vm.cropping = false;
+
+        vm.tags = [];
+        vm.selectedCategories = [];
+        vm.currentTag = null; // THIS VALUE IS USED FOR INPUT ELEMENT
+        vm.creativeCommons = angular.copy(getCreativeCommons.data);
+            vm.creativeCommons[0].disabled = true;
+            vm.creativeCommons[4].disabled = true;
+        vm.categories = getCategory.data.threed;
+        //TESTING...
+        vm.editorData = {};
+
         // CONFIG...
 
         vm.init = init;
@@ -197,7 +214,6 @@
             }
             else action();
         };
-
         function action() {
             var data = vm.renderer.domElement.toDataURL('image/jpeg',1);
             vm.capturedData = data;
@@ -216,7 +232,66 @@
             // GO TO SETTING STEP!!!!
         };
 
+        vm.detectTag = function(event) {
+            // MAX TEXT LENGTH = 20;
+            if(event.which === 13 || event.which === 32) {
+                vm.tags.push(vm.currentTag);
+                vm.currentTag = null;
+            }
+        };
+
+        vm.removeTag = function(index) {
+            vm.tags.splice(index,1);
+            console.log(vm.tags);
+        };
+
+        vm.changeCC = function(element,index) {
+            console.log(vm.creativeCommons[index].check);
+            if(vm.creativeCommons[index].check) {
+                if(index === 3) vm.creativeCommons[4].disabled = true;
+                else if(index === 4) vm.creativeCommons[3].disabled = true;
+                else return false;
+            }
+            else {
+                if(index === 3) vm.creativeCommons[4].disabled = false;
+                else if(index === 4)  vm.creativeCommons[3].disabled = false;
+                else return false;
+            }
+        };
+
         vm.postData = function() {
+            vm.model = vm.model.toJSON();
+            console.log(vm.model);
+
+
+            vm.editorData = {
+                attachedFiles: null, // DO
+                attachedImg: null, // DO
+                content: {
+                    type: 1,
+                    data: {
+                        model: vm.model,
+                        map: null, // DO
+                        lights: [] // DO
+                    }
+                },
+                setting: {
+                    title: vm.title,
+                    description: vm.description,
+                    thumbnail: null,
+                    category: null,
+                    tags: vm.tags,
+                    cc: {
+                        ccUsed: null,
+                        by: vm.creativeCommons[1].check,
+                        nc: vm.creativeCommons[2].check,
+                        nd: vm.creativeCommons[3].check,
+                        sa: vm.creativeCommons[4].check
+                    }
+                }
+
+            };
+            console.log(vm.editorData);
             console.time('Data submit');
             console.timeEnd('Data submit');
         };

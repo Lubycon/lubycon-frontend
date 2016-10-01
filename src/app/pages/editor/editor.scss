@@ -178,6 +178,36 @@
         text-align: left;
         width: 90%;
 
+        .form-control {
+            background: #222;
+            color: #999;
+            border: 1px solid #333;
+
+            &.tags-form {
+                height: auto;
+                ul {
+                    li {
+                        display: inline-block;
+                        color: #999;
+                        .fa-close {
+                            margin-left: 5px;
+                        }
+                    }
+                    li.tags {
+                        border: 1px solid #444;
+                        padding: 0 5px;
+                        margin: 3px 5px 3px 0;
+                    }
+                }
+                input[type="text"] {
+                    width: auto;
+                    height: 100%;
+                    border: none;
+                    background: transparent;
+                }
+            }
+        }
+
         label {
             margin: 0 0 10px;
             font-size: 18px;
@@ -185,10 +215,28 @@
         }
         input[type="text"] {
             background: #222;
+            color: #999;
             border: 1px solid #333;
         }
         .chosen-container{
             width: 100% !important;
+        }
+
+        .cc-box {
+            ul {
+                background: #222;
+                border: 1px solid #333;
+                padding: 5px;
+                text-align: center;
+                li {
+                    display: inline-block;
+                    width: 10%;
+                    margin: 5px 10px 5px 0;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

@@ -23,6 +23,12 @@
                     },
                     get2dMaps: function($http) {
                         return $http.get('/data/mapPreset/preset2d.json').then();
+                    },
+                    getCategory: function($http) {
+                        return $http.get('/data/category.json').then();
+                    },
+                    getCreativeCommons: function($http) {
+                        return $http.get('/data/creative_commons.json').then();
                     }
                 }
             })
