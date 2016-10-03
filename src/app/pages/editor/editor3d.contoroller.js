@@ -241,7 +241,9 @@
                         case 'obj' : object = ModelLoadService.combine(new THREE.OBJLoader().parse(contents)); break;
                         case 'stl' : object = ModelLoadService.setMesh(new THREE.STLLoader().parse(contents)); break;
                         case 'fbx' : object = ModelLoadService.combine(new THREE.FBXLoader().parse(contents)); break;
-                        default : return false;
+                        default :
+                            toastr.error('Wrong extention');
+                            return false;
                     }
 
                     object.name = 'mainObject';

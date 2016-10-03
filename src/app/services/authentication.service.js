@@ -12,8 +12,8 @@
         console.log(defaultHeaders);
 
         var service = {
-            signin: Restangular.service('members/signin'),
-            signup: Restangular.service('members/signup'),
+            signIn: Restangular.service('members/signin'),
+            signUp: Restangular.service('members/signup'),
             setCredentials: setCredentials,
             updateCredentials: updateCredentials,
             clearCredentials: clearCredentials

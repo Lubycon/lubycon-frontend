@@ -120,6 +120,9 @@
 
             // COMPUTE GEOMETRY
             geometry.center();
+            // geometry.computeFaceNormals();
+			// geometry.computeVertexNormals();
+			// geometry.computeBoundingBox();
             geometry.normalize();
 
             // REDEFINE MODEL

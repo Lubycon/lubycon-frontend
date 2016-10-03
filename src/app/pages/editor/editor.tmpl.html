@@ -14,6 +14,7 @@
                     ng-model="vm.model"
                     ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
                     ngf-max-files="1"
+                    ngf-accept="'.obj, .stl, .fbx'"
                 >
                     <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
                 </button>
