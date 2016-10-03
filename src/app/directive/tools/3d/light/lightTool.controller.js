@@ -79,6 +79,15 @@
 
         function controller($rootScope, $scope, $element, $timeout, LightGenerateService) {
             'use stict';
+            // BIND DOM EVENT
+            var camera = $scope.scene.getObjectByName('mainCamera'),
+                domEvents = new THREEx.DomEvents(camera,$scope.renderer.domElement);
+
+            $scope.lightClickEvent = function(event) {
+                var index = (event.target.name.split('t')[1] * 1) - 1;
+                console.log(event,index);
+                $scope.changeLight(index);
+            };
 
             $scope.changeLight = function(index) {
                 if($scope.lights[index].name === $scope.selectedLight.name) return false;
@@ -109,9 +118,11 @@
                         $scope.changeLight(target.index);
 
                         $scope.$broadcast('rzSliderForceRender');
-                        console.log($scope.selectedLight);
+
+                        domEvents.addEventListener(newLight,'click', $scope.lightClickEvent);
                     }
                     else {
+                        domEvents.removeEventListener($scope.scene.getObjectByName(target.name),'click', $scope.lightClickEvent);
                         LightGenerateService.destroy($scope.scene,target.name);
                         if(!reload) {
                             target.config = angular.copy($scope.initConfig);

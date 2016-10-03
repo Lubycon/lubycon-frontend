@@ -14,7 +14,8 @@
                 model: '=',
                 scene: '=',
                 renderer: '=',
-                map: '='
+                map: '=',
+                lights: '='
             },
             link: link,
             controller: controller,
@@ -39,7 +40,7 @@
                 if(newValue && (newValue.constructor.name === 'Mesh' || newValue.constructor.name === 'Group')) {
                     $scope.scene.add(newValue);
                 }
-                else if(newValue && newValue.constructor.name === 'String') {
+                else if(newValue && newValue.constructor.name === 'String') { // JSON일 경우
                     var modelJSON = $.parseJSON(newValue);
                     var loader = new THREE.ObjectLoader().parse(modelJSON);
                     $scope.scene.add(loader);

@@ -3,22 +3,19 @@
 
     angular
         .module('app')
-        .directive('checkbox', checkbox);
+        .directive('radio', radio);
 
     /* @ngInject */
-    function checkbox() {
+    function radio() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'app/components/checkbox/checkbox.tmpl.html',
+            templateUrl: 'app/components/radio/radio.tmpl.html',
             replace: true,
             scope: {
-                icon: '=?',
                 output: '=',
-                theme: '@?',
-                disabled: '=?',
-                label: '=',
-                selectedIndex: '=', // GET INDEX
-                changeEvent: '='
+                value: '=',
+                label: '@',
+                theme: '@?'
             },
             //transclude: true,
             link: link,
@@ -29,10 +26,9 @@
 
         function link($scope, $element, $attrs) {
             if(angular.isUndefined($scope.theme)) $scope.theme = 'white';
-            if(angular.isUndefined($scope.disabled)) $scope.disabled = false;
 
-            $scope.$watch('output',function(){
-                $scope.changeEvent($element, $attrs.index ? $attrs.index * 1 : undefined);
+            $scope.$watch('output',function(newValue,oldValue){
+                console.log(oldValue,'=>',newValue);
             });
         }
         function controller($rootScope, $scope, $element, $attrs, $timeout) {

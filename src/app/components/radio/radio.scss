@@ -1,0 +1,37 @@
+.radio {
+    label {
+        margin: 0;
+        padding: 0;
+    }
+
+    .radio-body {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        .fa-circle {
+            color: #48cfad;
+            font-size: 14px;
+            vertical-align: top;
+            padding-top: 2px;
+        }
+    }
+    .radio-label {
+        display: inline-block;
+        color: #999;
+        font-size: 14px;
+    }
+    &.black .radio-body {
+        border: 1px solid #444;
+    }
+    &.white .radio-body {
+        border: 1px solid #222;
+    }
+    &.disabled .radio-body {
+        background: #666;
+        .fa-check {
+            color: #444;
+        }
+    }
+}

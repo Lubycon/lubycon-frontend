@@ -161,17 +161,19 @@
                             <label>Creative Commons</label>
                             <div class="cc-box">
                                 <ul>
-                                    <li ng-repeat="item in vm.creativeCommons" ng-show="item.check">
+                                    <li ng-repeat="item in vm.creativeCommons" ng-show="item.check && vm.ccUsage">
                                         <img ng-src="{{item.icon.white}}" />
                                     </li>
                                 </ul>
                             </div>
                             <div class="cc-setting">
-                                <ul>
+                                <radio output="vm.ccUsage" label="CREATIVE COMMONS LICENSE" value="true" theme="black"></radio>
+                                <ul ng-show="vm.ccUsage">
                                     <li ng-repeat="item in vm.creativeCommons">
                                         <checkbox data-index="{{$index}}" output="item.check" theme="black" disabled="item.disabled" label="item.descript" change-event="vm.changeCC"></checkbox>
                                     </li>
                                 </ul>
+                                <radio output="vm.ccUsage" label="NO USAGE WITHOUT OWNER`S PERMISSION" value="false" theme="black"></radio>
                             </div>
                         </div>
                     </div>

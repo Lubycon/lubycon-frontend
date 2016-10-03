@@ -173,7 +173,11 @@
 #setting-modal {
     .divided-form {
         padding: 10px;
+        border-left: 1px solid #222;
+        margin-left: -1px;
         &:first-child {
+            border-left: none;
+            margin-left: 0;
             border-right: 1px solid #222;
         }
     }

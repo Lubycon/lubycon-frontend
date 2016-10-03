@@ -126,7 +126,7 @@
             vm.creativeCommons[0].disabled = true;
             vm.creativeCommons[4].disabled = true;
         vm.categories = getCategory.data.threed;
-
+        vm.ccUsage = true;
         // FOR APPLY DATA
         vm.editorData = {};
 
@@ -322,9 +322,17 @@
         };
 
         vm.postData = function() {
-            vm.model = vm.model.toJSON();
             console.log(vm.model);
 
+            // LIGHT REDEFINE...
+            vm.selectedLight.map(function(v){
+                if(v.object) v.position = v.object.children[0].position;
+                delete v.object;
+                return v;
+
+                // POSITON이 Vector3로 들어감.
+                // 추후 이것때문에 문제가 생길 시, Vector3안에 있는 데이터를 새로운 Object에 일일히 바인딩 해줄 것
+            });
 
             vm.editorData = {
                 attachedFiles: null, // DO
@@ -332,26 +340,25 @@
                 content: {
                     type: 1,
                     data: {
-                        model: vm.model,
-                        map: null, // DO
-                        lights: [] // DO
+                        model: vm.model.toJSON(),
+                        map: vm.selectedMapData,
+                        lights: vm.selectedLight
                     }
                 },
                 setting: {
                     title: vm.title,
                     description: vm.description,
-                    thumbnail: null,
-                    category: null,
+                    thumbnail: vm.thumbnail,
+                    category: vm.selectedCategories,
                     tags: vm.tags,
                     cc: {
-                        ccUsed: null,
+                        ccUsed: vm.ccUsage,
                         by: vm.creativeCommons[1].check,
                         nc: vm.creativeCommons[2].check,
                         nd: vm.creativeCommons[3].check,
                         sa: vm.creativeCommons[4].check
                     }
                 }
-
             };
             console.log(vm.editorData);
             console.time('Data submit');

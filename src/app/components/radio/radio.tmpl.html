@@ -1,0 +1,9 @@
+<div class="radio {{theme}}">
+    <label>
+        <div class="radio-body" >
+            <i ng-if="output === value" class="fa fa-circle"></i>
+        </div>
+        <span class="radio-label">{{label}}</span>
+        <input type="radio" ng-value="value" ng-model="output" style="display: none" />
+    </label>
+</div>
