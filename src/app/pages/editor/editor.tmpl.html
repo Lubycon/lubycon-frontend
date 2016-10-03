@@ -32,7 +32,12 @@
     <aside class="editor-aside">
         <ul class="tools" ng-show="vm.model">
             <li ng-repeat="tool in vm.config.tools">
-                <button type="button" class="btn" ng-click="vm.toolboxToggle(tool.name)">
+                <button
+                    type="button"
+                    class="btn"
+                    ng-class="{'selected' : vm.toolEnabled[tool.name]}"
+                    ng-click="vm.toolboxToggle(tool.name)"
+                >
                     <i class="fa {{tool.icon}}"></i>
                 </button>
             </li>

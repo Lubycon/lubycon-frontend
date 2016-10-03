@@ -77,7 +77,7 @@
             }
         }
 
-        function controller($rootScope, $scope, $element, $timeout, lightGenerateService) {
+        function controller($rootScope, $scope, $element, $timeout, LightGenerateService) {
             'use stict';
 
             $scope.changeLight = function(index) {
@@ -85,7 +85,7 @@
 
                 if($scope.lights[index].enable) {
                     $scope.selectedLight = $scope.lights[index];
-                    lightGenerateService.control.attach($scope.scene,$scope.renderer,$scope.selectedLight.name);
+                    LightGenerateService.control.attach($scope.scene,$scope.renderer,$scope.selectedLight.name);
                 }
                 else return false;
 
@@ -98,11 +98,11 @@
                     var isExist = $scope.isExistLights();
 
                     if(newValue) {
-                        var newLight = lightGenerateService.create($scope.scene,target.config,target.name);
+                        var newLight = LightGenerateService.create($scope.scene,target.config,target.name);
 
                         $scope.scene.add(newLight);
 
-                        lightGenerateService.control.attach($scope.scene,$scope.renderer,target.name);
+                        LightGenerateService.control.attach($scope.scene,$scope.renderer,target.name);
                         $scope.selectedLight = target;
                         $scope.selectedLight.object = $scope.scene.getObjectByName(target.name);
 
@@ -112,18 +112,18 @@
                         console.log($scope.selectedLight);
                     }
                     else {
-                        lightGenerateService.destroy($scope.scene,target.name);
+                        LightGenerateService.destroy($scope.scene,target.name);
                         if(!reload) {
                             target.config = angular.copy($scope.initConfig);
                             target.object = null;
                         }
 
                         if(isExist.length === 0) {
-                            lightGenerateService.control.remove($scope.scene);
+                            LightGenerateService.control.remove($scope.scene);
                             $scope.selectedLight = null;
                         }
                         else if((isExist.length > -1) && (target.name !== isExist[0].name)) {
-                            lightGenerateService.control.attach($scope.scene,$scope.renderer,isExist[0].name);
+                            LightGenerateService.control.attach($scope.scene,$scope.renderer,isExist[0].name);
                             $scope.selectedLight = isExist[0];
                         }
                     }
@@ -209,28 +209,3 @@
         }
     }
 })();
-
-
-
-// intensity: function(val,selector){
-//     light.intensity = val*0.01;
-//     helper.update();
-// },
-// falloff: function(val,selector){
-//     light.distance = val;
-//     helper.update();
-//     //0~1.0(float)
-//     //spot,point
-// },
-// angle: function(val,selector){
-//     light.angle = val*0.01;
-//     helper.update();
-//     //0~90 dgree(float)
-//     //spot
-// },
-// softness: function(val,selector){
-//     light.penumbra = val*0.01;
-//     helper.update();
-//     //0~1.0(float)
-//     //spot
-// }

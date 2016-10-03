@@ -1,5 +1,6 @@
-<div>
-    <button type="button" class="btn" ng-class="{'selected' : toggleOn}" ng-click="toggleAction()">
-        {{toggleOn ? 'ROTATE ON' : 'ROTATE OFF'}}
-    </button>
+<div class="rotateTool" ng-class="{'selected' : toggleOn}">
+    <switcher
+        ng-model="toggleOn"
+        ng-change="toggleAction(newValue,oldValue)"
+    ></switcher>
 </div>

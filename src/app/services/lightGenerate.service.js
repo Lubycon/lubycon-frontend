@@ -3,16 +3,17 @@
 
     angular
         .module('app')
-        .factory('lightGenerateService', lightGenerateService);
+        .factory('LightGenerateService', LightGenerateService);
 
-    function lightGenerateService($rootScope) {
+    function LightGenerateService($rootScope) {
         var service = {
             create: create,
             destroy: destroy,
             control: {
                 attach: attachControl,
                 detach: detachControl,
-                remove: removeControl
+                remove: removeControl,
+                lastTarget: null
             }
         };
 
@@ -78,16 +79,18 @@
                 controller.setSize(1);
             }
 
-            controller.attach(scene.getObjectByName(lightName).children[0]);
+            if(lightName) controller.attach(scene.getObjectByName(lightName).children[0]);
+            else controller.attach(scene.getObjectByName(this.lastTarget).children[0]);
+
             controller.update();
             controller.visible = true;
+            this.lastTarget = controller.object.parent.name;
         }
 
         function detachControl(scene) {
             var controller = scene.getObjectByName('lightController');
             if(controller) {
                 controller.detach();
-                controller.dispose();
                 controller.visible = false;
             }
         }
@@ -97,7 +100,7 @@
 
             if(controller) {
                 controller.detach();
-                controller.dispose();
+                controller.dispose(); // CLEAR MEMORY
                 scene.remove(controller);
             }
         }

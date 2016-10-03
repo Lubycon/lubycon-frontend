@@ -69,6 +69,10 @@
                     &:hover {
                         background: #444;
                     }
+                    &.selected {
+                        background: #222;
+                        text-shadow: 0px 0px 10px rgba(255,255,255,0.7);
+                    }
                 }
             }
         }

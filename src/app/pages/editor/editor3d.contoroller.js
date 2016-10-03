@@ -8,7 +8,8 @@
     /** @ngInject */
     function Editor3dController(
         $rootScope, $scope, $filter, $compile ,$timeout, toastr,
-        modelLoadService, FileControlService,
+        ModelLoadService, FileControlService, LightGenerateService,
+        ModelControlService,
         get3dMaps, get2dMaps, getCategory, getCreativeCommons
     ) {
 
@@ -22,9 +23,6 @@
                 _2d: get2dMaps.data
             };
         }
-
-        // CONFIG...
-        vm.editorSet = '3d';
 
         // WEBGL SETTING...
         vm.scene = new THREE.Scene();
@@ -53,6 +51,8 @@
         });
         // WEBGL SETTING...
 
+        // CONFIG...
+        vm.editorSet = '3d';
         vm.config = {
             headerTools: [{
                 name: 'fileUpload',
@@ -126,7 +126,8 @@
             vm.creativeCommons[0].disabled = true;
             vm.creativeCommons[4].disabled = true;
         vm.categories = getCategory.data.threed;
-        //TESTING...
+
+        // FOR APPLY DATA
         vm.editorData = {};
 
         // CONFIG...
@@ -143,6 +144,8 @@
             console.log(tools);
             for(var i = 0; i < tools.length; i++){
                 var subTools = tools[i].subTools;
+                vm.toolEnabled[tools[i].name] = false;
+
                 // THERE IS NO MATERIALS IN STL FILE...
                 if(tools[i].name === 'materialTool' && vm.modelExtention === 'stl') continue;
 
@@ -159,14 +162,65 @@
         vm.toolboxToggle = function(name){
             var keys = Object.keys(vm.toolEnabled);
             for(var i = 0; i < keys.length; i++){
-                if(keys[i] === name) continue;
-                vm.toolEnabled[keys[i]] = false;
+                if(keys[i] === name) {
+                    console.log('this tool is on',name);
+                    vm.turnOnThisTool(name);
+                    vm.toolEnabled[keys[i]] = true;
+                }
+                else {
+                    console.log('this tool is off',keys[i]);
+                    vm.turnOffThisTool(keys[i]);
+                    vm.toolEnabled[keys[i]] = false;
+                }
             }
-            if(!vm.toolEnabled[name]) vm.toolEnabled[name] = true;
-            else vm.toolEnabled[name] = false;
 
             // REFRESH SLIDER VALUE
             $timeout(function () { $scope.$broadcast('rzSliderForceRender'); });
+
+            console.log(vm.toolEnabled);
+        };
+
+        vm.turnOnThisTool = function(name) {
+            if(name === 'lightTool') {
+                for(var i = 0; i < vm.selectedLight.length; i++){
+                    if(vm.selectedLight[i].enable) {
+                        vm.scene.getObjectByName(vm.selectedLight[i].name).children[1].visible = true;
+                        LightGenerateService.control.attach(vm.scene,vm.renderer);
+                    }
+                }
+            }
+            else if(name === 'geometryTool') {
+                if(angular.element('.rotateTool').hasClass('selected')){
+                    ModelControlService.attach(vm.scene,vm.renderer,'rotate');
+                }
+            }
+            else if(name === 'materialTool') {
+
+            }
+            else if(name === 'mapTool') {
+
+            }
+            else return false;
+        };
+        vm.turnOffThisTool = function(name) {
+            if(name === 'lightTool') {
+                for(var i = 0; i < vm.selectedLight.length; i++){
+                    if(vm.selectedLight[i].enable) {
+                        vm.scene.getObjectByName(vm.selectedLight[i].name).children[1].visible = false;
+                        LightGenerateService.control.detach(vm.scene);
+                    }
+                }
+            }
+            else if(name === 'geometryTool') {
+                ModelControlService.detach(vm.scene);
+            }
+            else if(name === 'materialTool') {
+                // NOTHING....
+            }
+            else if(name === 'mapTool') {
+                // NOTHING....
+            }
+            else return false;
         };
 
         vm.changedFile = function(files,file,newFile,invalideFiles) {
@@ -184,9 +238,9 @@
                     var object;
 
                     switch(extention) {
-                        case 'obj' : object = modelLoadService.combine(new THREE.OBJLoader().parse(contents)); break;
-                        case 'stl' : object = modelLoadService.setMesh(new THREE.STLLoader().parse(contents)); break;
-                        case 'fbx' : object = modelLoadService.combine(new THREE.FBXLoader().parse(contents)); break;
+                        case 'obj' : object = ModelLoadService.combine(new THREE.OBJLoader().parse(contents)); break;
+                        case 'stl' : object = ModelLoadService.setMesh(new THREE.STLLoader().parse(contents)); break;
+                        case 'fbx' : object = ModelLoadService.combine(new THREE.FBXLoader().parse(contents)); break;
                         default : return false;
                     }
 
@@ -215,6 +269,14 @@
             else action();
         };
         function action() {
+            var keys = Object.keys(vm.toolEnabled);
+            console.log(keys);
+            for(var i = 0; i < keys.length; i++) {
+                console.log(vm.toolEnabled);
+                vm.toolEnabled[keys[i]] = false;
+                vm.turnOffThisTool(keys[i]);
+            }
+
             var data = vm.renderer.domElement.toDataURL('image/jpeg',1);
             vm.capturedData = data;
 
