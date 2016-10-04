@@ -215,8 +215,16 @@
                 }
             }
         }
-
+        .checkbox {
+            label {
+                font-size: 0;
+            }
+            .checkbox-body {
+                margin-right: 10px;
+            }
+        }
         label {
+            display: block;
             margin: 0 0 10px;
             font-size: 18px;
             color: #eee;
