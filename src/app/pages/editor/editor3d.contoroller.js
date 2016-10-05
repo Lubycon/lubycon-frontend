@@ -127,6 +127,7 @@
             vm.creativeCommons[4].disabled = true;
         vm.categories = getCategory.data.threed;
         vm.ccUsage = true;
+        vm.downloadable = false;
         // FOR APPLY DATA
         vm.editorData = {};
 

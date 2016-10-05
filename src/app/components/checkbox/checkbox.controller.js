@@ -32,7 +32,7 @@
             if(angular.isUndefined($scope.disabled)) $scope.disabled = false;
 
             $scope.$watch('output',function(){
-                $scope.changeEvent($element, $attrs.index ? $attrs.index * 1 : undefined);
+                if($scope.changeEvent) $scope.changeEvent($element, $attrs.index ? $attrs.index * 1 : undefined);
             });
         }
         function controller($rootScope, $scope, $element, $attrs, $timeout) {
