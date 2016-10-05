@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li class="navbar-menu">
-                <a ng-href="{{vm.menuList.content.link}}">{{vm.menuList.content.name}}</a>
+                <a ui-sref="{{vm.menuList.content.link}}">{{vm.menuList.content.name}}</a>
             </li>
             <li class="dropdown navbar-menu" uib-dropdown on-toggle="vm.CommunityToggle">
                 <a href="" class="dropdown-toggle" uib-dropdown-toggle>
@@ -22,7 +22,7 @@
                 </a>
                 <ul class="dropdown-menu main-nav-menu" role="menu">
                     <li ng-repeat="menu in vm.menuList.community">
-                        <a ng-href="{{menu.link}}">
+                        <a ui-sref="{{menu.link}}">
                             <i class="{{menu.icon}}"></i>{{menu.name}}</a>
                     </li>
                 </ul>

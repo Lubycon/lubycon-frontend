@@ -14,6 +14,9 @@ $navbar-inverse-link-color: #ffffff;
 // endbower
 
 // NORMALIZE
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 body {
     width: 100%;
     position: relative;

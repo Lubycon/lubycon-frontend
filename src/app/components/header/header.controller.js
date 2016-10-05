@@ -16,28 +16,28 @@
         vm.menuList = {
             content: {
                 name: 'CONTENTS',
-                link: '/contents/3d'
+                link: 'common.figure.contents({ category: "3d" })'
             },
             community: [
                 {
                     name: 'Creator',
                     icon: 'fa fa-pencil',
-                    link: '/creator'
+                    link: 'common.figure.creator({ category: null })'
                 },
                 {
                     name: 'Forum',
                     icon: 'fa fa-comments',
-                    link: '/community/forum'
+                    link: 'common.figure.community({ category: "forum" })'
                 },
                 {
                     name: 'Tutorial',
                     icon: 'fa fa-book',
-                    link: '/community/tutorial'
+                    link: 'common.figure.community({ category: "tutorial" })'
                 },
                 {
                     name: 'Q&A',
                     icon: 'fa fa-question',
-                    link: '/community/qna'
+                    link: 'common.figure.community({ category: "qna" })'
                 }
             ]
         };

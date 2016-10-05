@@ -164,6 +164,9 @@
                                     <li ng-repeat="item in vm.creativeCommons" ng-show="item.check && vm.ccUsage">
                                         <img ng-src="{{item.icon.white}}" />
                                     </li>
+                                    <li ng-show="!vm.ccUsage">
+                                        <img ng-src="{{'/assets/images/creative_commons/not_cc.png'}}" />
+                                    </li>
                                 </ul>
                             </div>
                             <div class="cc-setting">

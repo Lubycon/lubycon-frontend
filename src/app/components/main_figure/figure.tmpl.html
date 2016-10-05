@@ -1,12 +1,11 @@
-<div class="main_figure">
-    <figure ng-class="{main : vm.isMain}">
-        <span class="main-text">{{vm.mainText}}</span>
-
-        <div>
-            <button class="btn btn-ghost">MORE CONTENTS</span>
-            <button class="btn btn-mint">
-                <a ui-sref="common.noFooter.signin">SIGN IN</a>
-            </button>
-        </div>
+<div class="main-figure">
+    <figure>
+        <section class="main-section">
+            <span class="main-text">{{vm.mainText}}</span>
+            <div>
+                <a class="btn btn-ghost" ui-sref="common.figure.contents({ category: '3d' })">MORE CONTENTS</a>
+                <a class="btn btn-mint" ui-sref="common.noFooter.signin">SIGN IN</a>
+            </div>
+        </section>
     </figure>
 </div>

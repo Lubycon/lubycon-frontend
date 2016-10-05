@@ -16,13 +16,17 @@
     // SET ROUTE INFO...
     $rootScope.$on('$stateChangeStart',function(event,toState,toParams,fromState,fromParams){
         $rootScope.clientLocation = {
-            from : { url: fromState.url, params: fromParams },
-            to : { url: toState.url, params: toParams }
+            from : fromState,
+            to : toState
         };
-        console.log($rootScope.clientLocation);
-    });
 
-    $log.debug('runBlock end');
+        var stateClass = toState.name
+            .replace(/^(common|aside|full)\.(default|figure|noFooter)\./g,'state-')
+            .replace(/(\.|\_)/gi,'-');
+
+
+        angular.element('body').removeClass().addClass(stateClass);
+    });
   }
 
 })();

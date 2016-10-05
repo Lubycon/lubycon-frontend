@@ -11,6 +11,10 @@
     text-overflow:ellipsis;
 }
 
+#container {
+    padding-top: 90px;
+}
+
 // FOR ELEMENTS....
 label {
     margin: 10px 0;
@@ -43,5 +47,5 @@ label {
 
 // CROPPER PREVIEW
 .cropper-preview {
-    overflow: hidden;    
+    overflow: hidden;
 }

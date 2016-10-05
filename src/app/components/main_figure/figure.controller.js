@@ -12,9 +12,6 @@
     ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
-
         vm.mainText = "Connect Your Creativity With The World";
-
-        vm.isMain = true;
     }
 })();
