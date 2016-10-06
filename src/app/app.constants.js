@@ -4,7 +4,6 @@
 
     angular
         .module('app')
-        .constant('moment', moment)
         .constant('DeviceConfig', Device);
 
     function Device(){

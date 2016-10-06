@@ -10,7 +10,7 @@
         $rootScope, $scope, $location, $state, $timeout, $stateParams, $translate
     ) {
         var vm = this;
-        vm.timer = true;
+        vm.timer = $stateParams.kind === 'signup';
         vm.message = {
             animation: 'bounceInDown',
             icon: 'fa-lock',
@@ -32,6 +32,9 @@
         vm.success = $stateParams.success;
         vm.kind = $stateParams.kind;
         vm.submit = submit;
+
+
+        vm.testTime = 11506356840; // miliseconds
 
         function submit() {
             console.log("submit",vm.inputCode);

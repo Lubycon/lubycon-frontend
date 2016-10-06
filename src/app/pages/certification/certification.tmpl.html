@@ -6,10 +6,10 @@
 	</div>
 	<div ng-if="vm.timer" class="message-box">
 		<article class="time-wrapper">
-			<span class="time-box day-box"></span> Days
-			<span class="time-box hour-box"></span> Hours
-			<span class="time-box minute-box"></span> Minute
-			<span class="time-box second-box"></span> Seconds
+			<span class="time-box day-box"></span>{{vm.testTime | date:'d'}} Days
+			<span class="time-box hour-box"></span>{{vm.testTime | date:'h'}} Hours
+			<span class="time-box minute-box"></span>{{vm.testTime | date:'m'}} Minutes
+			<span class="time-box second-box"></span>{{vm.testTime | date:'s'}} Seconds
 		</article>
 	</div>
 	<div class="message-box">
