@@ -19,7 +19,12 @@
                 url: '/signup',
                 templateUrl: 'app/pages/account/signup.tmpl.html',
                 controller: 'SignupController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    getCountry: function($http) {
+                        return $http.get('/data/country.json').then();
+                    }
+                }
             })
             .state('common.noFooter.signdrop', {
                 url: '/signdrop',

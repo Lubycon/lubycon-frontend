@@ -2,17 +2,26 @@
     //COMMON STYLE....
     .select-body {
         position: relative;
-        max-width: 200px;
         padding: 7px;
         text-align: center;
 
         .dropdown-menu {
             width: 100%;
             border-radius: 0;
+            max-height: 300px;
+            overflow-x: hidden;
+            overflow-y: scroll;
             li.selected {
                 a {
                     color: #48cfad !important;
+                    font-weight: 600;
                 }
+            }
+        }
+        .select-search {
+            padding: 3px 10px 5px;
+            .form-control {
+                float: none;
             }
         }
         select {
@@ -22,6 +31,9 @@
         a {
             display: inline-block;
             width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         // WHITE THEME....

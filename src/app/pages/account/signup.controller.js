@@ -6,9 +6,12 @@
         .controller('SignupController', SignupController);
 
     /** @ngInject */
-    function SignupController($rootScope, $scope, Restangular, Authentication, $state, toastr) {
+    function SignupController(
+        $rootScope, $scope, Restangular, Authentication, $state, toastr,
+        getCountry
+    ) {
         var vm = this;
-        var api = Restangular.all('members/signup');
+        var api = Authentication.signUp;
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
@@ -19,34 +22,28 @@
             country: null
         };
         vm.rePassword = null;
-        vm.countryList = ['country A','country B','country C','country D'];
-
+        vm.countryList = getCountry.data;
         vm.signup = signup;
+
         function signup(){
+            console.log(vm.member);
             var passwordCheck = vm.member.password === vm.rePassword;
-            console.log('your request : ', vm.member);
-            console.log('password matching : ', passwordCheck);
-            console.log('http header : ',Restangular.defaultHeaders);
+
             if(passwordCheck && vm.member.country) {
-                // TESTING....
-                Restangular.all('members/signup').post(
+                api.post(
                     vm.member, undefined, undefined, {'Content-Type':'application/json'}
                 ).then(function(res) {
                     console.log(res);
                     if(res.status.code === "0000") {
-                        console.log("SIGN UP IS SUCCESS",res);
-                        // $state.go('common.noFooter.signup-message',{ signupCheck: true });
+                        $state.go('common.noFooter.certCheck',{ kind: 'signup' });
                     }
                     else {
                         console.log('sign up is failed!!!!',res);
                     }
                 });
-                // TESTING...
             }
             else {
-                toastr.error('패스워드 틀렸거나 국가 선택 안함',{
-
-                });
+                toastr.error('패스워드 틀렸거나 국가 선택 안함');
             }
         }
     }

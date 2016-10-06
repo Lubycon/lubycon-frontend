@@ -20,14 +20,12 @@
             content: 'Please insert your certification code.',
             inputLabel: 'Code',
             inputType: 'text',
-            buttons: [
-                {
-                    kind: 'submit-bt',
-                    type: 'submit',
-                    func: null,
-                    content: 'SUBMIT'
-                }
-            ]
+            buttons: [{
+                kind: 'submit-bt',
+                type: 'submit',
+                func: null,
+                content: 'SUBMIT'
+            }]
         };
         vm.inputCode = null;
 

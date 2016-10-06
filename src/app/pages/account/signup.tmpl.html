@@ -49,15 +49,12 @@
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Country</label>
-                <selectbox
-                    icon="'fa-filter'"
-                    placeholder="Select your location..."
-                    options="vm.countryList"
-                    required="true"
-                    output="vm.member.country"
-                    theme="white"
+                <select
+                    chosen
+                    ng-model="vm.member.country"
                 >
-                </selectbox>
+                    <option value="{{country.code}}" ng-repeat="country in vm.countryList">{{country.name}}</option>
+                </select>
             </div>
         </div>
         <div class="divide10"></div>

@@ -1,1692 +1,1687 @@
-{"country": 
-    
-    [
-        {
-            "countryCode": "0",
-            "utc": "4",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Afghanistan"
-        },
-        {
-            "countryCode": "1",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Albania"
-        },
-        {
-            "countryCode": "2",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Algeria"
-        },
-        {
-            "countryCode": "3",
-            "utc": "-11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "American Samoa"
-        },
-        {
-            "countryCode": "4",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south west europe",
-            "name": "Andorra"
-        },
-        {
-            "countryCode": "5",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Angola"
-        },
-        {
-            "countryCode": "6",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Anguilla"
-        },
-        {
-            "countryCode": "7",
-            "utc": "0",
-            "continentCode": "undecided",
-            "region": "undecided",
-            "name": "Antarctica"
-        },
-        {
-            "countryCode": "8",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Antigua and Barbuda"
-        },
-        {
-            "countryCode": "9",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Argentina"
-        },
-        {
-            "countryCode": "10",
-            "utc": "4",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Armenia"
-        },
-        {
-            "countryCode": "11",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Aruba"
-        },
-        {
-            "countryCode": "12",
-            "utc": "10",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Australia"
-        },
-        {
-            "countryCode": "13",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "central europe",
-            "name": "Austria"
-        },
-        {
-            "countryCode": "14",
-            "utc": "4",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Azerbaijan"
-        },
-        {
-            "countryCode": "15",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Bahamas"
-        },
-        {
-            "countryCode": "16",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Bahrain"
-        },
-        {
-            "countryCode": "17",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Bangladesh"
-        },
-        {
-            "countryCode": "18",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Barbados"
-        },
-        {
-            "countryCode": "19",
-            "utc": "3",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Belarus"
-        },
-        {
-            "countryCode": "20",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Belgium"
-        },
-        {
-            "countryCode": "21",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Belize"
-        },
-        {
-            "countryCode": "22",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Benin"
-        },
-        {
-            "countryCode": "23",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Bermuda"
-        },
-        {
-            "countryCode": "24",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Bhutan"
-        },
-        {
-            "countryCode": "25",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Bolivia"
-        },
-        {
-            "countryCode": "26",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Bosnia and Herzegovina"
-        },
-        {
-            "countryCode": "27",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Botswana"
-        },
-        {
-            "countryCode": "28",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Brazil"
-        },
-        {
-            "countryCode": "29",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "British Indian Ocean Territory"
-        },
-        {
-            "countryCode": "30",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "British Virgin Islands"
-        },
-        {
-            "countryCode": "31",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Brunei"
-        },
-        {
-            "countryCode": "32",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Bulgaria"
-        },
-        {
-            "countryCode": "33",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Burkina Faso"
-        },
-        {
-            "countryCode": "34",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "central africa",
-            "name": "Burundi"
-        },
-        {
-            "countryCode": "35",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Cambodia"
-        },
-        {
-            "countryCode": "36",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Cameroon"
-        },
-        {
-            "countryCode": "37",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "north america",
-            "name": "Canada"
-        },
-        {
-            "countryCode": "38",
-            "utc": "-1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Cape Verde"
-        },
-        {
-            "countryCode": "39",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Cayman Islands"
-        },
-        {
-            "countryCode": "40",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "central africa",
-            "name": "Central African Republic"
-        },
-        {
-            "countryCode": "41",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "central africa",
-            "name": "Chad"
-        },
-        {
-            "countryCode": "42",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Chile"
-        },
-        {
-            "countryCode": "43",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "China"
-        },
-        {
-            "countryCode": "44",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Christmas Island"
-        },
-        {
-            "countryCode": "45",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Cocos Islands"
-        },
-        {
-            "countryCode": "46",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Colombia"
-        },
-        {
-            "countryCode": "47",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "indian ocean",
-            "name": "Comoros"
-        },
-        {
-            "countryCode": "48",
-            "utc": "-10",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Cook Islands"
-        },
-        {
-            "countryCode": "49",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Costa Rica"
-        },
-        {
-            "countryCode": "50",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Croatia"
-        },
-        {
-            "countryCode": "51",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Cuba"
-        },
-        {
-            "countryCode": "52",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Curacao"
-        },
-        {
-            "countryCode": "53",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Cyprus"
-        },
-        {
-            "countryCode": "54",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "central europe",
-            "name": "Czech Republic"
-        },
-        {
-            "countryCode": "55",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Democratic Republic of the Congo"
-        },
-        {
-            "countryCode": "56",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Denmark"
-        },
-        {
-            "countryCode": "57",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Djibouti"
-        },
-        {
-            "countryCode": "58",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Dominica"
-        },
-        {
-            "countryCode": "59",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Dominican Republic"
-        },
-        {
-            "countryCode": "60",
-            "utc": "9",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "East Timor"
-        },
-        {
-            "countryCode": "61",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Ecuador"
-        },
-        {
-            "countryCode": "62",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Egypt"
-        },
-        {
-            "countryCode": "63",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "El Salvador"
-        },
-        {
-            "countryCode": "64",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Equatorial Guinea"
-        },
-        {
-            "countryCode": "65",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Eritrea"
-        },
-        {
-            "countryCode": "66",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Estonia"
-        },
-        {
-            "countryCode": "67",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Ethiopia"
-        },
-        {
-            "countryCode": "68",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Falkland Islands"
-        },
-        {
-            "countryCode": "69",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Faroe Islands"
-        },
-        {
-            "countryCode": "70",
-            "utc": "12",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Fiji"
-        },
-        {
-            "countryCode": "71",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Finland"
-        },
-        {
-            "countryCode": "72",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "France"
-        },
-        {
-            "countryCode": "73",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "French Guiana"
-        },
-        {
-            "countryCode": "74",
-            "utc": "-10",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "French polynesia"
-        },
-        {
-            "countryCode": "75",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Gabon"
-        },
-        {
-            "countryCode": "76",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Gambia"
-        },
-        {
-            "countryCode": "77",
-            "utc": "4",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Georgia"
-        },
-        {
-            "countryCode": "78",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Germany"
-        },
-        {
-            "countryCode": "79",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Ghana"
-        },
-        {
-            "countryCode": "80",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south west europe",
-            "name": "Gibraltar"
-        },
-        {
-            "countryCode": "81",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Greece"
-        },
-        {
-            "countryCode": "82",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "north america",
-            "name": "Greenland"
-        },
-        {
-            "countryCode": "83",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Grenada"
-        },
-        {
-            "countryCode": "84",
-            "utc": "10",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Guam"
-        },
-        {
-            "countryCode": "85",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Guatemala"
-        },
-        {
-            "countryCode": "86",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Guernsey"
-        },
-        {
-            "countryCode": "87",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Guinea"
-        },
-        {
-            "countryCode": "88",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Guinea-Bissau"
-        },
-        {
-            "countryCode": "89",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Guyana"
-        },
-        {
-            "countryCode": "90",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Haiti"
-        },
-        {
-            "countryCode": "91",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Honduras"
-        },
-        {
-            "countryCode": "92",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "Hong Kong"
-        },
-        {
-            "countryCode": "93",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "central europe",
-            "name": "Hungary"
-        },
-        {
-            "countryCode": "94",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Iceland"
-        },
-        {
-            "countryCode": "95",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "India"
-        },
-        {
-            "countryCode": "96",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Indonesia"
-        },
-        {
-            "countryCode": "97",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Iran"
-        },
-        {
-            "countryCode": "98",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Iraq"
-        },
-        {
-            "countryCode": "99",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Ireland"
-        },
-        {
-            "countryCode": "100",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Isle of Man"
-        },
-        {
-            "countryCode": "101",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Israel"
-        },
-        {
-            "countryCode": "102",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "southern europe",
-            "name": "Italy"
-        },
-        {
-            "countryCode": "103",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Ivory Coast"
-        },
-        {
-            "countryCode": "104",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Jamaica"
-        },
-        {
-            "countryCode": "105",
-            "utc": "9",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "Japan"
-        },
-        {
-            "countryCode": "106",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Jersey"
-        },
-        {
-            "countryCode": "107",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Jordan"
-        },
-        {
-            "countryCode": "108",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "central asia",
-            "name": "Kazakhstan"
-        },
-        {
-            "countryCode": "109",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Kenya"
-        },
-        {
-            "countryCode": "110",
-            "utc": "12",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Kiribati"
-        },
-        {
-            "countryCode": "111",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "southern europe",
-            "name": "Kosovo"
-        },
-        {
-            "countryCode": "112",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Kuwait"
-        },
-        {
-            "countryCode": "113",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "central asia",
-            "name": "Kyrgyzstan"
-        },
-        {
-            "countryCode": "114",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Laos"
-        },
-        {
-            "countryCode": "115",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Latvia"
-        },
-        {
-            "countryCode": "116",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Lebanon"
-        },
-        {
-            "countryCode": "117",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Lesotho"
-        },
-        {
-            "countryCode": "118",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Liberia"
-        },
-        {
-            "countryCode": "119",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Libya"
-        },
-        {
-            "countryCode": "120",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "central europe",
-            "name": "Liechtenstein"
-        },
-        {
-            "countryCode": "121",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Lithuania"
-        },
-        {
-            "countryCode": "122",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Luxembourg"
-        },
-        {
-            "countryCode": "123",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "Macau"
-        },
-        {
-            "countryCode": "124",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Macedonia"
-        },
-        {
-            "countryCode": "125",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "indian ocean",
-            "name": "Madagascar"
-        },
-        {
-            "countryCode": "126",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Malawi"
-        },
-        {
-            "countryCode": "127",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Malaysia"
-        },
-        {
-            "countryCode": "128",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Maldives"
-        },
-        {
-            "countryCode": "129",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Mali"
-        },
-        {
-            "countryCode": "130",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "southern europe",
-            "name": "Malta"
-        },
-        {
-            "countryCode": "131",
-            "utc": "12",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Marshall Islands"
-        },
-        {
-            "countryCode": "132",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Mauritania"
-        },
-        {
-            "countryCode": "133",
-            "utc": "4",
-            "continentCode": "0",
-            "region": "indian ocean",
-            "name": "Mauritius"
-        },
-        {
-            "countryCode": "134",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "indian ocean",
-            "name": "Mayotte"
-        },
-        {
-            "countryCode": "135",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Mexico"
-        },
-        {
-            "countryCode": "136",
-            "utc": "11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Micronesia"
-        },
-        {
-            "countryCode": "137",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Moldova"
-        },
-        {
-            "countryCode": "138",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Monaco"
-        },
-        {
-            "countryCode": "139",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "northern asia",
-            "name": "Mongolia"
-        },
-        {
-            "countryCode": "140",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "southern europe",
-            "name": "Montenegro"
-        },
-        {
-            "countryCode": "141",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Montserrat"
-        },
-        {
-            "countryCode": "142",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Morocco"
-        },
-        {
-            "countryCode": "143",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Mozambique"
-        },
-        {
-            "countryCode": "144",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Myanmar"
-        },
-        {
-            "countryCode": "145",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Namibia"
-        },
-        {
-            "countryCode": "146",
-            "utc": "12",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Nauru"
-        },
-        {
-            "countryCode": "147",
-            "utc": "6",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Nepal"
-        },
-        {
-            "countryCode": "148",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "Netherlands"
-        },
-        {
-            "countryCode": "149",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Netherlands Antilles"
-        },
-        {
-            "countryCode": "150",
-            "utc": "11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "New Caledonia"
-        },
-        {
-            "countryCode": "151",
-            "utc": "-11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "New Zealand"
-        },
-        {
-            "countryCode": "152",
-            "utc": "-6",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Nicaragua"
-        },
-        {
-            "countryCode": "153",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Niger"
-        },
-        {
-            "countryCode": "154",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Nigeria"
-        },
-        {
-            "countryCode": "155",
-            "utc": "-11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Niue"
-        },
-        {
-            "countryCode": "156",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "North Korea"
-        },
-        {
-            "countryCode": "157",
-            "utc": "10",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Northern Mariana Islands"
-        },
-        {
-            "countryCode": "158",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Norway"
-        },
-        {
-            "countryCode": "159",
-            "utc": "4",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Oman"
-        },
-        {
-            "countryCode": "160",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "central asia",
-            "name": "Pakistan"
-        },
-        {
-            "countryCode": "161",
-            "utc": "9",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Palau"
-        },
-        {
-            "countryCode": "162",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Palestine"
-        },
-        {
-            "countryCode": "163",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Panama"
-        },
-        {
-            "countryCode": "164",
-            "utc": "10",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Papua New Guinea"
-        },
-        {
-            "countryCode": "165",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Paraguay"
-        },
-        {
-            "countryCode": "166",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Peru"
-        },
-        {
-            "countryCode": "167",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Philippines"
-        },
-        {
-            "countryCode": "168",
-            "utc": "-8",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Pitcairn"
-        },
-        {
-            "countryCode": "169",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Poland"
-        },
-        {
-            "countryCode": "170",
-            "utc": "-1",
-            "continentCode": "3",
-            "region": "south west europe",
-            "name": "Portugal"
-        },
-        {
-            "countryCode": "171",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Puerto Rico"
-        },
-        {
-            "countryCode": "172",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Qatar"
-        },
-        {
-            "countryCode": "173",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "central africa",
-            "name": "Republic of the Congo"
-        },
-        {
-            "countryCode": "174",
-            "utc": "4",
-            "continentCode": "0",
-            "region": "indian ocean",
-            "name": "Reunion"
-        },
-        {
-            "countryCode": "175",
-            "utc": "2",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Romania"
-        },
-        {
-            "countryCode": "176",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "northern asia",
-            "name": "Russia"
-        },
-        {
-            "countryCode": "177",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "central asia",
-            "name": "Rwanda"
-        },
-        {
-            "countryCode": "178",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Saint Barthelemy"
-        },
-        {
-            "countryCode": "179",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Saint Helena"
-        },
-        {
-            "countryCode": "180",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Saint Kitts and Nevis"
-        },
-        {
-            "countryCode": "181",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Saint Lucia"
-        },
-        {
-            "countryCode": "182",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Saint Martin"
-        },
-        {
-            "countryCode": "183",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "",
-            "name": "Saint Pierre and Miquelon"
-        },
-        {
-            "countryCode": "184",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Saint Vincent and the Grenadines"
-        },
-        {
-            "countryCode": "185",
-            "utc": "13",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Samoa"
-        },
-        {
-            "countryCode": "186",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "southern europe",
-            "name": "San Marino"
-        },
-        {
-            "countryCode": "187",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Sao Tome and Principe"
-        },
-        {
-            "countryCode": "188",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Saudi Arabia"
-        },
-        {
-            "countryCode": "189",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Senegal"
-        },
-        {
-            "countryCode": "190",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Serbia"
-        },
-        {
-            "countryCode": "191",
-            "utc": "4",
-            "continentCode": "0",
-            "region": "indian ocean",
-            "name": "Seychelles"
-        },
-        {
-            "countryCode": "192",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Sierra Leone"
-        },
-        {
-            "countryCode": "193",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Singapore"
-        },
-        {
-            "countryCode": "194",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "Sint Maarten"
-        },
-        {
-            "countryCode": "195",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "central europe",
-            "name": "Slovakia"
-        },
-        {
-            "countryCode": "196",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south east europe",
-            "name": "Slovenia"
-        },
-        {
-            "countryCode": "197",
-            "utc": "11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Solomon Islands"
-        },
-        {
-            "countryCode": "198",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Somalia"
-        },
-        {
-            "countryCode": "199",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "South Africa"
-        },
-        {
-            "countryCode": "200",
-            "utc": "9",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "South Korea"
-        },
-        {
-            "countryCode": "201",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "South Sudan"
-        },
-        {
-            "countryCode": "202",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "south west europe",
-            "name": "Spain"
-        },
-        {
-            "countryCode": "203",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "south asia",
-            "name": "Sri Lanka"
-        },
-        {
-            "countryCode": "204",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Sudan"
-        },
-        {
-            "countryCode": "205",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Suriname"
-        },
-        {
-            "countryCode": "206",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Svalbard and Jan Mayen"
-        },
-        {
-            "countryCode": "207",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Swaziland"
-        },
-        {
-            "countryCode": "208",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "northern europe",
-            "name": "Sweden"
-        },
-        {
-            "countryCode": "209",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "central europe",
-            "name": "Switzerland"
-        },
-        {
-            "countryCode": "210",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Syria"
-        },
-        {
-            "countryCode": "211",
-            "utc": "8",
-            "continentCode": "1",
-            "region": "east asia",
-            "name": "Taiwan"
-        },
-        {
-            "countryCode": "212",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "central asia",
-            "name": "Tajikistan"
-        },
-        {
-            "countryCode": "213",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Tanzania"
-        },
-        {
-            "countryCode": "214",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Thailand"
-        },
-        {
-            "countryCode": "215",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "western africa",
-            "name": "Togo"
-        },
-        {
-            "countryCode": "216",
-            "utc": "13",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Tokelau"
-        },
-        {
-            "countryCode": "217",
-            "utc": "13",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Tonga"
-        },
-        {
-            "countryCode": "218",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Trinidad and Tobago"
-        },
-        {
-            "countryCode": "219",
-            "utc": "1",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Tunisia"
-        },
-        {
-            "countryCode": "220",
-            "utc": "2",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Turkey"
-        },
-        {
-            "countryCode": "221",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "central asia",
-            "name": "Turkmenistan"
-        },
-        {
-            "countryCode": "222",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "west indies",
-            "name": "Turks and Caicos Islands"
-        },
-        {
-            "countryCode": "223",
-            "utc": "12",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Tuvalu"
-        },
-        {
-            "countryCode": "224",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "central america",
-            "name": "U.S. Virgin Islands"
-        },
-        {
-            "countryCode": "225",
-            "utc": "3",
-            "continentCode": "0",
-            "region": "eastern africa",
-            "name": "Uganda"
-        },
-        {
-            "countryCode": "226",
-            "utc": "3",
-            "continentCode": "3",
-            "region": "eastern europe",
-            "name": "Ukraine"
-        },
-        {
-            "countryCode": "227",
-            "utc": "4",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "United Arab Emirates"
-        },
-        {
-            "countryCode": "228",
-            "utc": "0",
-            "continentCode": "3",
-            "region": "western europe",
-            "name": "United Kingdom"
-        },
-        {
-            "countryCode": "229",
-            "utc": "-5",
-            "continentCode": "3",
-            "region": "north america",
-            "name": "United States"
-        },
-        {
-            "countryCode": "230",
-            "utc": "-3",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Uruguay"
-        },
-        {
-            "countryCode": "231",
-            "utc": "5",
-            "continentCode": "1",
-            "region": "central asia",
-            "name": "Uzbekistan"
-        },
-        {
-            "countryCode": "232",
-            "utc": "11",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Vanuatu"
-        },
-        {
-            "countryCode": "233",
-            "utc": "1",
-            "continentCode": "3",
-            "region": "southern europe",
-            "name": "Vatican"
-        },
-        {
-            "countryCode": "234",
-            "utc": "-4",
-            "continentCode": "3",
-            "region": "south america",
-            "name": "Venezuela"
-        },
-        {
-            "countryCode": "235",
-            "utc": "7",
-            "continentCode": "1",
-            "region": "south east asia",
-            "name": "Vietnam"
-        },
-        {
-            "countryCode": "236",
-            "utc": "12",
-            "continentCode": "4",
-            "region": "pacific",
-            "name": "Wallis and Futuna"
-        },
-        {
-            "countryCode": "237",
-            "utc": "0",
-            "continentCode": "0",
-            "region": "northern africa",
-            "name": "Western Sahara"
-        },
-        {
-            "countryCode": "238",
-            "utc": "3",
-            "continentCode": "1",
-            "region": "south west asia",
-            "name": "Yemen"
-        },
-        {
-            "countryCode": "239",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Zambia"
-        },
-        {
-            "countryCode": "240",
-            "utc": "2",
-            "continentCode": "0",
-            "region": "southern africa",
-            "name": "Zimbabwe"
-        }
-    ]
-}
+[{
+    "code": "0",
+    "utc": "4",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Afghanistan"
+},
+{
+    "code": "1",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Albania"
+},
+{
+    "code": "2",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Algeria"
+},
+{
+    "code": "3",
+    "utc": "-11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "American Samoa"
+},
+{
+    "code": "4",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south west europe",
+    "name": "Andorra"
+},
+{
+    "code": "5",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Angola"
+},
+{
+    "code": "6",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Anguilla"
+},
+{
+    "code": "7",
+    "utc": "0",
+    "continentCode": "undecided",
+    "region": "undecided",
+    "name": "Antarctica"
+},
+{
+    "code": "8",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Antigua and Barbuda"
+},
+{
+    "code": "9",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Argentina"
+},
+{
+    "code": "10",
+    "utc": "4",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Armenia"
+},
+{
+    "code": "11",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Aruba"
+},
+{
+    "code": "12",
+    "utc": "10",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Australia"
+},
+{
+    "code": "13",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "central europe",
+    "name": "Austria"
+},
+{
+    "code": "14",
+    "utc": "4",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Azerbaijan"
+},
+{
+    "code": "15",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Bahamas"
+},
+{
+    "code": "16",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Bahrain"
+},
+{
+    "code": "17",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Bangladesh"
+},
+{
+    "code": "18",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Barbados"
+},
+{
+    "code": "19",
+    "utc": "3",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Belarus"
+},
+{
+    "code": "20",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Belgium"
+},
+{
+    "code": "21",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Belize"
+},
+{
+    "code": "22",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Benin"
+},
+{
+    "code": "23",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Bermuda"
+},
+{
+    "code": "24",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Bhutan"
+},
+{
+    "code": "25",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Bolivia"
+},
+{
+    "code": "26",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Bosnia and Herzegovina"
+},
+{
+    "code": "27",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Botswana"
+},
+{
+    "code": "28",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Brazil"
+},
+{
+    "code": "29",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "British Indian Ocean Territory"
+},
+{
+    "code": "30",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "British Virgin Islands"
+},
+{
+    "code": "31",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Brunei"
+},
+{
+    "code": "32",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Bulgaria"
+},
+{
+    "code": "33",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Burkina Faso"
+},
+{
+    "code": "34",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "central africa",
+    "name": "Burundi"
+},
+{
+    "code": "35",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Cambodia"
+},
+{
+    "code": "36",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Cameroon"
+},
+{
+    "code": "37",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "north america",
+    "name": "Canada"
+},
+{
+    "code": "38",
+    "utc": "-1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Cape Verde"
+},
+{
+    "code": "39",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Cayman Islands"
+},
+{
+    "code": "40",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "central africa",
+    "name": "Central African Republic"
+},
+{
+    "code": "41",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "central africa",
+    "name": "Chad"
+},
+{
+    "code": "42",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Chile"
+},
+{
+    "code": "43",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "China"
+},
+{
+    "code": "44",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Christmas Island"
+},
+{
+    "code": "45",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Cocos Islands"
+},
+{
+    "code": "46",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Colombia"
+},
+{
+    "code": "47",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "indian ocean",
+    "name": "Comoros"
+},
+{
+    "code": "48",
+    "utc": "-10",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Cook Islands"
+},
+{
+    "code": "49",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Costa Rica"
+},
+{
+    "code": "50",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Croatia"
+},
+{
+    "code": "51",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Cuba"
+},
+{
+    "code": "52",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Curacao"
+},
+{
+    "code": "53",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Cyprus"
+},
+{
+    "code": "54",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "central europe",
+    "name": "Czech Republic"
+},
+{
+    "code": "55",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Democratic Republic of the Congo"
+},
+{
+    "code": "56",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Denmark"
+},
+{
+    "code": "57",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Djibouti"
+},
+{
+    "code": "58",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Dominica"
+},
+{
+    "code": "59",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Dominican Republic"
+},
+{
+    "code": "60",
+    "utc": "9",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "East Timor"
+},
+{
+    "code": "61",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Ecuador"
+},
+{
+    "code": "62",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Egypt"
+},
+{
+    "code": "63",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "El Salvador"
+},
+{
+    "code": "64",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Equatorial Guinea"
+},
+{
+    "code": "65",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Eritrea"
+},
+{
+    "code": "66",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Estonia"
+},
+{
+    "code": "67",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Ethiopia"
+},
+{
+    "code": "68",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Falkland Islands"
+},
+{
+    "code": "69",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Faroe Islands"
+},
+{
+    "code": "70",
+    "utc": "12",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Fiji"
+},
+{
+    "code": "71",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Finland"
+},
+{
+    "code": "72",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "France"
+},
+{
+    "code": "73",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "French Guiana"
+},
+{
+    "code": "74",
+    "utc": "-10",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "French polynesia"
+},
+{
+    "code": "75",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Gabon"
+},
+{
+    "code": "76",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Gambia"
+},
+{
+    "code": "77",
+    "utc": "4",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Georgia"
+},
+{
+    "code": "78",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Germany"
+},
+{
+    "code": "79",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Ghana"
+},
+{
+    "code": "80",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south west europe",
+    "name": "Gibraltar"
+},
+{
+    "code": "81",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Greece"
+},
+{
+    "code": "82",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "north america",
+    "name": "Greenland"
+},
+{
+    "code": "83",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Grenada"
+},
+{
+    "code": "84",
+    "utc": "10",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Guam"
+},
+{
+    "code": "85",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Guatemala"
+},
+{
+    "code": "86",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Guernsey"
+},
+{
+    "code": "87",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Guinea"
+},
+{
+    "code": "88",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Guinea-Bissau"
+},
+{
+    "code": "89",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Guyana"
+},
+{
+    "code": "90",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Haiti"
+},
+{
+    "code": "91",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Honduras"
+},
+{
+    "code": "92",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "Hong Kong"
+},
+{
+    "code": "93",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "central europe",
+    "name": "Hungary"
+},
+{
+    "code": "94",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Iceland"
+},
+{
+    "code": "95",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "India"
+},
+{
+    "code": "96",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Indonesia"
+},
+{
+    "code": "97",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Iran"
+},
+{
+    "code": "98",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Iraq"
+},
+{
+    "code": "99",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Ireland"
+},
+{
+    "code": "100",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Isle of Man"
+},
+{
+    "code": "101",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Israel"
+},
+{
+    "code": "102",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "southern europe",
+    "name": "Italy"
+},
+{
+    "code": "103",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Ivory Coast"
+},
+{
+    "code": "104",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Jamaica"
+},
+{
+    "code": "105",
+    "utc": "9",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "Japan"
+},
+{
+    "code": "106",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Jersey"
+},
+{
+    "code": "107",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Jordan"
+},
+{
+    "code": "108",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "central asia",
+    "name": "Kazakhstan"
+},
+{
+    "code": "109",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Kenya"
+},
+{
+    "code": "110",
+    "utc": "12",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Kiribati"
+},
+{
+    "code": "111",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "southern europe",
+    "name": "Kosovo"
+},
+{
+    "code": "112",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Kuwait"
+},
+{
+    "code": "113",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "central asia",
+    "name": "Kyrgyzstan"
+},
+{
+    "code": "114",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Laos"
+},
+{
+    "code": "115",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Latvia"
+},
+{
+    "code": "116",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Lebanon"
+},
+{
+    "code": "117",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Lesotho"
+},
+{
+    "code": "118",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Liberia"
+},
+{
+    "code": "119",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Libya"
+},
+{
+    "code": "120",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "central europe",
+    "name": "Liechtenstein"
+},
+{
+    "code": "121",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Lithuania"
+},
+{
+    "code": "122",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Luxembourg"
+},
+{
+    "code": "123",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "Macau"
+},
+{
+    "code": "124",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Macedonia"
+},
+{
+    "code": "125",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "indian ocean",
+    "name": "Madagascar"
+},
+{
+    "code": "126",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Malawi"
+},
+{
+    "code": "127",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Malaysia"
+},
+{
+    "code": "128",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Maldives"
+},
+{
+    "code": "129",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Mali"
+},
+{
+    "code": "130",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "southern europe",
+    "name": "Malta"
+},
+{
+    "code": "131",
+    "utc": "12",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Marshall Islands"
+},
+{
+    "code": "132",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Mauritania"
+},
+{
+    "code": "133",
+    "utc": "4",
+    "continentCode": "0",
+    "region": "indian ocean",
+    "name": "Mauritius"
+},
+{
+    "code": "134",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "indian ocean",
+    "name": "Mayotte"
+},
+{
+    "code": "135",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Mexico"
+},
+{
+    "code": "136",
+    "utc": "11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Micronesia"
+},
+{
+    "code": "137",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Moldova"
+},
+{
+    "code": "138",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Monaco"
+},
+{
+    "code": "139",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "northern asia",
+    "name": "Mongolia"
+},
+{
+    "code": "140",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "southern europe",
+    "name": "Montenegro"
+},
+{
+    "code": "141",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Montserrat"
+},
+{
+    "code": "142",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Morocco"
+},
+{
+    "code": "143",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Mozambique"
+},
+{
+    "code": "144",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Myanmar"
+},
+{
+    "code": "145",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Namibia"
+},
+{
+    "code": "146",
+    "utc": "12",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Nauru"
+},
+{
+    "code": "147",
+    "utc": "6",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Nepal"
+},
+{
+    "code": "148",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "Netherlands"
+},
+{
+    "code": "149",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Netherlands Antilles"
+},
+{
+    "code": "150",
+    "utc": "11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "New Caledonia"
+},
+{
+    "code": "151",
+    "utc": "-11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "New Zealand"
+},
+{
+    "code": "152",
+    "utc": "-6",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Nicaragua"
+},
+{
+    "code": "153",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Niger"
+},
+{
+    "code": "154",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Nigeria"
+},
+{
+    "code": "155",
+    "utc": "-11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Niue"
+},
+{
+    "code": "156",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "North Korea"
+},
+{
+    "code": "157",
+    "utc": "10",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Northern Mariana Islands"
+},
+{
+    "code": "158",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Norway"
+},
+{
+    "code": "159",
+    "utc": "4",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Oman"
+},
+{
+    "code": "160",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "central asia",
+    "name": "Pakistan"
+},
+{
+    "code": "161",
+    "utc": "9",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Palau"
+},
+{
+    "code": "162",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Palestine"
+},
+{
+    "code": "163",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Panama"
+},
+{
+    "code": "164",
+    "utc": "10",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Papua New Guinea"
+},
+{
+    "code": "165",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Paraguay"
+},
+{
+    "code": "166",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Peru"
+},
+{
+    "code": "167",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Philippines"
+},
+{
+    "code": "168",
+    "utc": "-8",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Pitcairn"
+},
+{
+    "code": "169",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Poland"
+},
+{
+    "code": "170",
+    "utc": "-1",
+    "continentCode": "3",
+    "region": "south west europe",
+    "name": "Portugal"
+},
+{
+    "code": "171",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Puerto Rico"
+},
+{
+    "code": "172",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Qatar"
+},
+{
+    "code": "173",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "central africa",
+    "name": "Republic of the Congo"
+},
+{
+    "code": "174",
+    "utc": "4",
+    "continentCode": "0",
+    "region": "indian ocean",
+    "name": "Reunion"
+},
+{
+    "code": "175",
+    "utc": "2",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Romania"
+},
+{
+    "code": "176",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "northern asia",
+    "name": "Russia"
+},
+{
+    "code": "177",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "central asia",
+    "name": "Rwanda"
+},
+{
+    "code": "178",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Saint Barthelemy"
+},
+{
+    "code": "179",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Saint Helena"
+},
+{
+    "code": "180",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Saint Kitts and Nevis"
+},
+{
+    "code": "181",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Saint Lucia"
+},
+{
+    "code": "182",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Saint Martin"
+},
+{
+    "code": "183",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "",
+    "name": "Saint Pierre and Miquelon"
+},
+{
+    "code": "184",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Saint Vincent and the Grenadines"
+},
+{
+    "code": "185",
+    "utc": "13",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Samoa"
+},
+{
+    "code": "186",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "southern europe",
+    "name": "San Marino"
+},
+{
+    "code": "187",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Sao Tome and Principe"
+},
+{
+    "code": "188",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Saudi Arabia"
+},
+{
+    "code": "189",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Senegal"
+},
+{
+    "code": "190",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Serbia"
+},
+{
+    "code": "191",
+    "utc": "4",
+    "continentCode": "0",
+    "region": "indian ocean",
+    "name": "Seychelles"
+},
+{
+    "code": "192",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Sierra Leone"
+},
+{
+    "code": "193",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Singapore"
+},
+{
+    "code": "194",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "Sint Maarten"
+},
+{
+    "code": "195",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "central europe",
+    "name": "Slovakia"
+},
+{
+    "code": "196",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south east europe",
+    "name": "Slovenia"
+},
+{
+    "code": "197",
+    "utc": "11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Solomon Islands"
+},
+{
+    "code": "198",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Somalia"
+},
+{
+    "code": "199",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "South Africa"
+},
+{
+    "code": "200",
+    "utc": "9",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "South Korea"
+},
+{
+    "code": "201",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "South Sudan"
+},
+{
+    "code": "202",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "south west europe",
+    "name": "Spain"
+},
+{
+    "code": "203",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "south asia",
+    "name": "Sri Lanka"
+},
+{
+    "code": "204",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Sudan"
+},
+{
+    "code": "205",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Suriname"
+},
+{
+    "code": "206",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Svalbard and Jan Mayen"
+},
+{
+    "code": "207",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Swaziland"
+},
+{
+    "code": "208",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "northern europe",
+    "name": "Sweden"
+},
+{
+    "code": "209",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "central europe",
+    "name": "Switzerland"
+},
+{
+    "code": "210",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Syria"
+},
+{
+    "code": "211",
+    "utc": "8",
+    "continentCode": "1",
+    "region": "east asia",
+    "name": "Taiwan"
+},
+{
+    "code": "212",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "central asia",
+    "name": "Tajikistan"
+},
+{
+    "code": "213",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Tanzania"
+},
+{
+    "code": "214",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Thailand"
+},
+{
+    "code": "215",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "western africa",
+    "name": "Togo"
+},
+{
+    "code": "216",
+    "utc": "13",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Tokelau"
+},
+{
+    "code": "217",
+    "utc": "13",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Tonga"
+},
+{
+    "code": "218",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Trinidad and Tobago"
+},
+{
+    "code": "219",
+    "utc": "1",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Tunisia"
+},
+{
+    "code": "220",
+    "utc": "2",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Turkey"
+},
+{
+    "code": "221",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "central asia",
+    "name": "Turkmenistan"
+},
+{
+    "code": "222",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "west indies",
+    "name": "Turks and Caicos Islands"
+},
+{
+    "code": "223",
+    "utc": "12",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Tuvalu"
+},
+{
+    "code": "224",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "central america",
+    "name": "U.S. Virgin Islands"
+},
+{
+    "code": "225",
+    "utc": "3",
+    "continentCode": "0",
+    "region": "eastern africa",
+    "name": "Uganda"
+},
+{
+    "code": "226",
+    "utc": "3",
+    "continentCode": "3",
+    "region": "eastern europe",
+    "name": "Ukraine"
+},
+{
+    "code": "227",
+    "utc": "4",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "United Arab Emirates"
+},
+{
+    "code": "228",
+    "utc": "0",
+    "continentCode": "3",
+    "region": "western europe",
+    "name": "United Kingdom"
+},
+{
+    "code": "229",
+    "utc": "-5",
+    "continentCode": "3",
+    "region": "north america",
+    "name": "United States"
+},
+{
+    "code": "230",
+    "utc": "-3",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Uruguay"
+},
+{
+    "code": "231",
+    "utc": "5",
+    "continentCode": "1",
+    "region": "central asia",
+    "name": "Uzbekistan"
+},
+{
+    "code": "232",
+    "utc": "11",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Vanuatu"
+},
+{
+    "code": "233",
+    "utc": "1",
+    "continentCode": "3",
+    "region": "southern europe",
+    "name": "Vatican"
+},
+{
+    "code": "234",
+    "utc": "-4",
+    "continentCode": "3",
+    "region": "south america",
+    "name": "Venezuela"
+},
+{
+    "code": "235",
+    "utc": "7",
+    "continentCode": "1",
+    "region": "south east asia",
+    "name": "Vietnam"
+},
+{
+    "code": "236",
+    "utc": "12",
+    "continentCode": "4",
+    "region": "pacific",
+    "name": "Wallis and Futuna"
+},
+{
+    "code": "237",
+    "utc": "0",
+    "continentCode": "0",
+    "region": "northern africa",
+    "name": "Western Sahara"
+},
+{
+    "code": "238",
+    "utc": "3",
+    "continentCode": "1",
+    "region": "south west asia",
+    "name": "Yemen"
+},
+{
+    "code": "239",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Zambia"
+},
+{
+    "code": "240",
+    "utc": "2",
+    "continentCode": "0",
+    "region": "southern africa",
+    "name": "Zimbabwe"
+}]

@@ -1,3 +1,4 @@
+// CHOSEN TAG BOX
 .chosen-container.chosen-container-multi {
     height: 34px;
     .chosen-choices {
@@ -29,9 +30,51 @@
                 color: #eee;
                 &.result-selected {
                     color: #48cfad;
+                    font-weight: 600;
                 }
                 &.highlighted {
                     background-color: #48cfad;
+                    background-image: none;
+                }
+            }
+        }
+    }
+}
+
+// CHOSEN SELECT BOX
+.chosen-container.chosen-container-single {
+    display: block;
+
+    &.chosen-container-active {
+        .chosen-single {
+            box-shadow: none;
+            border: 1px solid #aaa;
+        }
+    }
+    .chosen-single {
+        height: 30px;
+        line-height: 28px;
+        background: #fff;
+        color: #444;
+        border-radius: 0;
+
+        span {
+            text-align: center;
+        }
+    }
+
+    .chosen-drop {
+        border-radius: 0;
+
+        .chosen-results {
+            li {
+                &.result-selected {
+                    color: #48cfad;
+                    font-weight: 600;
+                }
+                &.highlighted {
+                    background-color: #48cfad;
+                    color: #fff;
                     background-image: none;
                 }
             }
