@@ -4,12 +4,17 @@
 		<article class="main-message">{{vm.message.title}}</article>
 		<article class="sub-message">{{vm.message.content}}</article>
 	</div>
-	<div ng-if="vm.timer" class="message-box">
+	<div class="message-box">
 		<article class="time-wrapper">
-			<span class="time-box day-box"></span>{{vm.testTime | date:'d'}} Days
-			<span class="time-box hour-box"></span>{{vm.testTime | date:'h'}} Hours
-			<span class="time-box minute-box"></span>{{vm.testTime | date:'m'}} Minutes
-			<span class="time-box second-box"></span>{{vm.testTime | date:'s'}} Seconds
+			<timer
+				countdown="vm.time"
+				max-time-unit="'hour'"
+				interval="1000"
+			>
+				<span class="time">{{hours}}</span> Hours
+				<span class="time">{{mminutes}}</span> Minutes
+				<span class="time">{{sseconds}}</span> Seconds
+			</timer>
 		</article>
 	</div>
 	<div class="message-box">

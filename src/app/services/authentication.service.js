@@ -39,34 +39,35 @@
             defaultHeaders["X-lubycon-Token"] = authdata;
             Restangular.setDefaultHeaders(defaultHeaders);
 
-            // GET MEMBER DATA...
-            Restangular.all('members/simple').customGET().then(
-                function (res) {
-                    if(res.status.code === '0000') {
-                        $rootScope.member = res.result;
-                        $cookieStore.put('member', $rootScope.member);
+            if(memberState === 'active') {
+                // GET MEMBER DATA...
+                Restangular.all('members/simple').customGET().then(
+                    function (res) {
+                        if(res.status.code === '0000') {
+                            $rootScope.member = res.result;
+                            $cookieStore.put('member', $rootScope.member);
+                            $location.path('/main');
+                        }
+                        else {
+                            console.log(res.status);
+                            service.clearCredentials();
+                        }
+                    },
+                    function (err) {
+                        console.log(err);
+                        service.clearCredentials('reload');
                     }
-                    else {
-                        console.log(res.status);
-                        service.clearCredentials();
-                    }
-                },
-                function (err) {
-                    console.log(err);
-                    service.clearCredentials('reload');
-                }
-            );
+                );
+            }
+            else if(memberState === 'inactive') {
+                $location.path('/certs/code/signup');
+            }
+            else service.clearCredentials();
 
             // REFRESH COOKIE...
             $cookieStore.put('memberState', $rootScope.memberState);
 
-            if(reload === 'reload') {
-                $location.path('/main');
-                $window.location.reload();
-            }
-            else {
-                $location.path('/main');
-            }
+            if(reload === 'reload') $window.location.reload();
         }
 
         function updateCredentials(callback) {

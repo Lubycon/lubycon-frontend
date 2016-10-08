@@ -25,8 +25,6 @@
             ).then(function (res) {
                 console.log(res);
                 if(res.status.code === '0000') {
-                    // TESTING
-                    res.result.condition = 'active';
                     Authentication.setCredentials(res.result.token,res.result.condition);
                 }
             });

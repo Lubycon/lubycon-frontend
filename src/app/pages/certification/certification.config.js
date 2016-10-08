@@ -9,7 +9,7 @@
     function moduleConfig($stateProvider) {
 
         $stateProvider
-            .state('common.noFooter.certCheck', {
+            .state('common.noFooter.cert-check', {
                 url: '/certs/code/:kind',
                 templateUrl: 'app/pages/certification/certification.tmpl.html',
                 controller: 'CertCheckController',
@@ -18,7 +18,7 @@
                     kind: null
                 }
             })
-            .state('common.noFooter.certPwd', {
+            .state('common.noFooter.cert-pwd', {
                 url: '/certs/pwd',
                 templateUrl: 'app/pages/certification/certification.tmpl.html',
                 controller: 'PwdCheckController',

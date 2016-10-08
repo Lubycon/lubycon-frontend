@@ -7,10 +7,12 @@
 
     /* @ngInject */
     function CertCheckController(
-        $rootScope, $scope, $location, $state, $timeout, $stateParams, $translate
+        $rootScope, $scope, $location, $state,
+        $timeout, $stateParams, $translate,
+        Restangular
     ) {
         var vm = this;
-        vm.timer = $stateParams.kind === 'signup';
+
         vm.message = {
             animation: 'bounceInDown',
             icon: 'fa-lock',
@@ -27,17 +29,37 @@
                 content: 'SUBMIT'
             }]
         };
-        vm.inputCode = null;
 
+        vm.inputCode = null;
         vm.success = $stateParams.success;
         vm.kind = $stateParams.kind;
         vm.submit = submit;
 
 
-        vm.testTime = 11506356840; // miliseconds
+        vm.time = 21600; // miliseconds
+        console.log(vm.time);
 
         function submit() {
-            console.log("submit",vm.inputCode);
+            console.log(vm.inputCode);
+            Restangular.all('certs/signup/code').customPOST(
+                {code: vm.inputCode},
+                undefined,
+                undefined,
+                {'Content-Type': 'application/json'}
+            ).then(function(res) {
+                console.log(res);
+                if(res.status.code === '0000') {
+                    if(res.status.result.validity) {
+                        // 인증 성공
+                    }
+                    else {
+                        // 인증 실패
+                    }
+                }
+                else {
+                    // 전송 실패
+                }
+            });
         }
     }
 })();
