@@ -7,7 +7,8 @@
 
     /* @ngInject */
     function headerController(
-        $rootScope, $scope, $location, $state, $stateParams, Restangular, $timeout, $window
+        $rootScope, $scope, $location, $state, $stateParams,
+        Restangular, $timeout, $window, Authentication
     ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
@@ -45,5 +46,9 @@
         // FOR HEADER BACKGROUND...
         $scope.scrollDetect = false;
         $scope.isMain = vm.isMain;
+
+        vm.doSignOut = function(){
+                Authentication.clearCredentials('reload');
+        };
     }
 })();

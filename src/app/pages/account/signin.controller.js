@@ -25,10 +25,9 @@
             ).then(function (res) {
                 console.log(res);
                 if(res.status.code === '0000') {
-                    Authentication.setCredentials(res.result.token);
-                }
-                else if(res.status.code === '0014') {
-                    // inactive user
+                    // TESTING
+                    res.result.condition = 'active';
+                    Authentication.setCredentials(res.result.token,res.result.condition);
                 }
             });
         }

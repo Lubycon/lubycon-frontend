@@ -38,10 +38,20 @@
                 <figure></figure>
                 <h4>{{$root.member.name}}</h4>
             </a>
-            <ul class="dropdown-menu" role="menu">
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                <li>
+                    <a ui-sref="aside.default.dashboard({memberId:$root.member.id})">
+                        <i class="fa fa-tachometer"></i>Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="aside.default.insight({memberId:$root.member.id})">
+                        <i class="fa fa-line-chart"></i>Insight
+                    </a>
+                </li>
+                <li>
+                    <a href="#" ng-click="vm.doSignOut()" onclick="return false;">Sign out</a>
+                </li>
             </ul>
         </div>
     </div>

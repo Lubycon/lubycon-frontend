@@ -21,10 +21,14 @@
 
         return service;
 
-        function setCredentials(token, reload) {
+        function setCredentials(token, memberState, reload) {
             // INIT TOKEN...
             var authdata = token;
-            $rootScope.memberState = { sign: true };
+
+            $rootScope.memberState = {
+                sign: true,
+                condition: memberState
+            };
 
             // SET COOKIE DATA...
             $cookieStore.put('authdata', authdata);
@@ -38,7 +42,6 @@
             // GET MEMBER DATA...
             Restangular.all('members/simple').customGET().then(
                 function (res) {
-                    console.log(res);
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
                         $cookieStore.put('member', $rootScope.member);
@@ -75,28 +78,24 @@
             );
         }
 
-        function clearCredentials(reload, target, flag) {
+        function clearCredentials(reload, target) {
             console.log(Restangular.defaultHeaders);
             if(!target) target = '/main';
-            if($rootScope.memberState && $rootScope.member && !flag) {
-                Restangular.all('member/signout').customPUT().then(
-                    function () {
-                        if(reload === 'reload') {
-                            $location.path(target);
-                            $window.location.reload();
-                        }
+            if($rootScope.member && ($rootScope.memberState.condition === 'active' || $rootScope.memberState.condition === 'inactive')) {
+                Restangular.all('members/signout').customPUT(
+                    { memberId: $rootScope.member.id }
+                ).then(function () {
+                    delete $rootScope.member;
+
+                    // DESTORY TOKEN AND SIGN DATA
+                    $cookieStore.remove('authdata');
+                    $cookieStore.remove('memberState');
+                    if(reload === 'reload') {
+                        $location.path(target);
+                        $window.location.reload();
                     }
-                );
+                });
             }
-            else {
-
-            }
-            // CLEAR ROOT...
-            $rootScope.memberState = { sign: false, state: null };
-
-            // DESTORY TOKEN AND SIGN DATA
-            $cookieStore.remove('authToken');
-            $cookieStore.remove('memberState');
         }
     }
 })();
