@@ -24,7 +24,7 @@
         'rzModule', // SLIDER COMPONENT MODULE
         'angularSpectrumColorpicker', // COLOR PICKER MODULE
         'switcher', // CHECKBOX SWITCH MODE MODULE
-        'toastr' , // TOAST MESSAGE MODULE
+        'toastr', // TOAST MESSAGE MODULE
         'timer', // TIMER MODULE
         'monospaced.elastic' // TEXTAREA AUTOMATICALLY SIZE
     ])
