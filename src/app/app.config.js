@@ -9,14 +9,45 @@
         .config(restangularProvider)
         .config(cookiesProvider)
         .config(translateConfig)
+        .run(authenticationDetect)
         .run(run);
 
     /** @ngInject */
     function config($logProvider) {
-    // GLOBAL SETTING...
-
-        // LOG IS ON
         $logProvider.debugEnabled(true);
+    }
+
+    function authenticationDetect($rootScope, $state, $cookieStore, Restangular, $translate, Authentication) {
+
+        var defaultHeaders = angular.extend({}, Restangular.defaultHeaders, {
+            "Content-Type": "application/json",
+            'X-lubycon-version': '1.0.0'
+        });
+
+        console.log('authentication init start');
+
+        Restangular.setDefaultHeaders(defaultHeaders);
+
+        var authdata = $cookieStore.get('authdata');
+        console.log(authdata);
+
+        if(authdata) {
+            defaultHeaders['X-lubycon-Token'] = authdata;
+            Restangular.setDefaultHeaders(defaultHeaders);
+
+            Restangular.one('members/simple').customGET().then(function (res) {
+                if(res.status.code === '0000') {
+                    $rootScope.member = res.result;
+                    $cookieStore.put('member', $rootScope.user);
+                }
+                else {
+                    Authentication.clearCredentials('reload');
+                }
+            });
+        }
+        else {
+            Restangular.setDefaultHeaders(defaultHeaders);
+        }
     }
 
     function toastSetting(toastrConfig) {

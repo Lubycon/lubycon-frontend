@@ -1,5 +1,5 @@
 [{
-	"id" : "0",
+	"id" : 0,
 	"type" : "3d",
 	"name" : "Cloud Sky",
 	"image" : "/assets/images/editor/map/cloud_sky/map.jpg",
@@ -21,7 +21,7 @@
 		"intensity" : 0.5
 	}]
 },{
-	"id" : "1",
+	"id" : 1,
 	"type" : "3d",
 	"name" : "Light Capsule",
 	"image" : "/assets/images/editor/map/light_capsule/map.jpg",
@@ -43,7 +43,7 @@
 		"intensity" : 0.5
 	}]
 },{
-	"id" : "2",
+	"id" : 2,
 	"type" : "3d",
 	"name" : "Sunset",
 	"image" : "/assets/images/editor/map/sunset/map.jpg",

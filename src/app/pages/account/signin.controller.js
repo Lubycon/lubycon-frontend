@@ -12,26 +12,25 @@
         vm.signInfo = {
             email: null,
             password: null,
-            snsCode: null,
-            os: null,
+            snsCode: '0100',
             modelInfo: $rootScope.deviceInfo.detail
         };
-
+        console.log($rootScope.deviceInfo,$rootScope);
         vm.signin = signin;
         function signin(){
-            console.log(Authentication,vm.signInfo);
+            console.log(vm.signInfo);
 
             Authentication.signIn.post(
                 vm.signInfo, undefined, undefined, {'Content-Type':'application/json'}
             ).then(function (res) {
                 console.log(res);
                 if(res.status.code === '0000') {
-                    Authentication.setCredentials(res.token,'reload');
+                    Authentication.setCredentials(res.result.token);
+                }
+                else if(res.status.code === '0014') {
+                    // inactive user
                 }
             });
         }
     }
 })();
-
-
-// jdbc:mysql://zeliter-app-test.cangewyjzrdn.ap-northeast-1.rds.amazonaws.com:3306/zeliter?useUnicode=true&amp;characterEncoding=UTF8&amp;logger=com.mysql.jdbc.log.Slf4JLogger&amp;profileSQL=true&amp;rewriteBatchedStatements=true

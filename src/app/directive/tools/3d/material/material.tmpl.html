@@ -1,11 +1,12 @@
 <div>
-    <selectbox
-        icon=""
-        options="materialList"
-        output="selectedMaterial"
-        theme="black"
-        selected-index="0"
-        change-event="changeEvent"
+    <select
+        chosen
+        inherit-select-classes="true"
+        disable-search="true"
+        class="black"
+        ng-change="changeEvent()"
+        ng-model="output"
+        ng-options="material as material.name for material in materialList"
     >
-    </selectbox>
+    </select>
 </div>

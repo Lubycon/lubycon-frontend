@@ -47,7 +47,6 @@
             <li ng-repeat="tool in vm.config.tools" ng-show="vm.toolEnabled[tool.name]">
                 <h4><i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter}}</h4>
                 <div class="divide20"></div>
-
                 <ul>
                     <li ng-repeat="subTool in tool.subTools" class="sub-tools" data-value="{{subTool.name}}">
                         <h5>{{subTool.name | camelCaseFilter}}</h5>
@@ -73,7 +72,7 @@
 
 
 <!-------------------- THUMBNAIL STEP------------------->
-    <div ng-if="vm.model" class=" modal fade" id="thumbnail-modal" role="dialog">
+    <div ng-if="vm.model" class=" modal fade" data-backdrop="static" id="thumbnail-modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="editor-modal modal-content">
                 <div class="modal-header">
@@ -108,7 +107,7 @@
     </div>
 
     <!-------------------- SETTING STEP------------------->
-    <div ng-if="vm.thumbnail" class=" modal fade" id="setting-modal" role="dialog">
+    <div ng-if="vm.thumbnail" class=" modal fade" data-backdrop="static" id="setting-modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="editor-modal modal-content">
                 <div class="modal-header">
@@ -124,6 +123,8 @@
                             <label>Category</label>
                             <select
                                 chosen
+                                inherit-select-classes="true"
+                                class="black"
                                 multiple
                                 max-selected-options="3"
                                 ng-model="vm.selectedCategories"

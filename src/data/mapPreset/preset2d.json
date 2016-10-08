@@ -1,19 +1,19 @@
 [{
-	"id" : "0",
+	"id" : 0,
 	"type" : "2d",
 	"name" : "None",
 	"image" : "#",
 	"preview" : "",
 	"descript" : ""
 },{
-	"id" : "1",
+	"id" : 1,
 	"type" : "2d",
 	"name" : "Lubycon Text",
 	"image" : "/assets/images/editor/map/lubycon_title/map.svg",
 	"preview" : "/assets/images/editor/map/lubycon_title/map.svg",
 	"descript" : ""
 },{
-	"id" : "2",
+	"id" : 2,
 	"type" : "2d",
 	"name" : "Lubycon Logo",
 	"image" : "/assets/images/editor/map/lubycon_logo/map.svg",

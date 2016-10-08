@@ -23,25 +23,9 @@
 
         function link($scope, $element, $attrs) {
             var object = $scope.scene.getObjectByName('mainObject');
-            $scope.materialList = [];
-            console.log(object,$scope.scene);
-            if(object) {
-                for(var i = 0; i < object.material.materials.length; i++) {
-                    $scope.materialList.push(object.material.materials[i].name);
-                }
-            }
-            else console.log('THERE IS NO OBJECT - Material.controller.js');
 
-            $scope.output = $scope.materialList[0]; // TESTING....
-
-            // GET SELECTED MATERIAL
-            $scope.output = object.material.materials[0];
-
-            $scope.changeEvent = function(index,item) {
-                console.log(index,item);
-                $scope.output = object.material.materials[index];
-                console.log('SELECTED MATERIAL IS : ',$scope.output);
-            };
+            $scope.materialList = object.material.materials;
+            $scope.output = $scope.materialList[0];
         }
         function controller($rootScope, $scope, $element) {
             // console.log($scope.scene,$scope.renderer);

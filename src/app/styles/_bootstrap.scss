@@ -56,6 +56,9 @@
 // FORM CONTROL
 .input-group {
     border-radius: 0;
+    select {
+        width: 100%;
+    }
 }
 .input-group-addon {
     color: #444;

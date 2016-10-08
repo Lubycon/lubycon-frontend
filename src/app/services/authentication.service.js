@@ -24,10 +24,10 @@
         function setCredentials(token, reload) {
             // INIT TOKEN...
             var authdata = token;
-            $rootScope.memberState = { sign: true, state: null };
+            $rootScope.memberState = { sign: true };
 
             // SET COOKIE DATA...
-            $cookieStore.put('authToken', authdata);
+            $cookieStore.put('authdata', authdata);
             $cookieStore.put('memberState', $rootScope.memberState);
 
             // SET HTTP HEADER...
@@ -36,8 +36,9 @@
             Restangular.setDefaultHeaders(defaultHeaders);
 
             // GET MEMBER DATA...
-            Restangular.all('members/simple/').get().then(
+            Restangular.all('members/simple').customGET().then(
                 function (res) {
+                    console.log(res);
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
                         $cookieStore.put('member', $rootScope.member);
@@ -60,10 +61,13 @@
                 $location.path('/main');
                 $window.location.reload();
             }
+            else {
+                $location.path('/main');
+            }
         }
 
         function updateCredentials(callback) {
-            Restangular.one('members/simple/').get().then(
+            Restangular.all('members/simple').customGET().then(
                 function (res) {
                     $rootScope.member = res.result;
                     $cookieStore.put('member', $rootScope.member);

@@ -23,33 +23,29 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            console.log($scope.maps,$scope.output);
 
             $scope.selectedTab = '3d';
             $scope.mapColor = '#222222';
+            $scope.selectedMapIndex = 0;
+
             $scope.output = {
                 type: $scope.selectedTab,
-                index: 0,
+                index: $scope.selectedMapIndex,
                 color: $scope.mapColor
             };
 
-            var _2dMapList = $scope.maps._2d.map(function(v) { return v.name; });
-            var _3dMapList = $scope.maps._3d.map(function(v) { return v.name; });
-            $scope.mapList = {
-                _3d: _3dMapList,
-                _2d: _2dMapList
-            };
-            console.log($scope.mapList);
+            console.log($scope.maps,$scope.output);
             // CONFIG....
         }
         function controller($rootScope, $scope, $element, $timeout, $uibModal) {
-
-            $scope.changeMap = function(index,value){
+            $scope.changeMap = function(){
+                console.log($scope.selectedMapIndex);
                 $scope.output = {
                     type: $scope.selectedTab,
-                    index: index,
+                    index: $scope.selectedMapIndex * 1,
                     color: $scope.mapColor
                 };
+                console.log($scope.maps,$scope.output,$scope.selectedMapIndex);
             };
             $scope.changeColor = function(color){
                 $scope.output = {

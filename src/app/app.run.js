@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$rootScope,DeviceConfig) {
+  function runBlock($cookieStore, $log, $rootScope, DeviceConfig, Authentication) {
     console.log("APP RUNNING - ");
     console.log($rootScope);
 

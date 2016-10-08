@@ -51,6 +51,7 @@
                 <label>Country</label>
                 <select
                     chosen
+                    inherit-select-classes="true"
                     ng-model="vm.member.country"
                 >
                     <option value="{{country.code}}" ng-repeat="country in vm.countryList">{{country.name}}</option>

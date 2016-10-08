@@ -30,8 +30,20 @@
         </ul>
     </div>
     <div class="navbar-header nav-member">
-        <a ui-sref="common.noFooter.signin" class="main-signin">
-            <i class="fa fa-lock"></i>{{'MENU.SIGNIN' | translate}}</a>
+        <a ng-if="!$root.member" ui-sref="common.noFooter.signin" class="main-signin">
+            <i class="fa fa-lock"></i>{{'MENU.SIGNIN' | translate}}
+        </a>
+        <div ng-if="$root.member" uib-dropdown on-toggle="vm.memberToggle">
+            <a href="" class="dropdown-toggle" uib-dropdown-toggle>
+                <figure></figure>
+                <h4>{{$root.member.name}}</h4>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ul>
+        </div>
     </div>
 </nav>
 

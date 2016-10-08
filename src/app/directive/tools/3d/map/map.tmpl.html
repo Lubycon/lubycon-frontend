@@ -4,13 +4,16 @@
         <button type="button" class="btn" ng-class="{'selected' : selectedTab === '2d'}" ng-click="tabAction('2d')">2D</button>
     </div>
     <div class="controller-tab" ng-show="selectedTab === '3d'">
-        <selectbox
-            options="mapList._3d"
-            output="selectedMap._3d.name"
-            selected-index="0"
-            theme="black"
-            change-event="changeMap"
-        ></selectbox>
+        <select
+            chosen
+            inherit-select-classes="true"
+            disable-search="true"
+            class="black"
+            ng-model="selectedMapIndex"
+            ng-change="changeMap()"
+            ng-options="map.id as map.name for map in maps._3d"
+        >
+        </select>
     </div>
     <div class="controller-tab" ng-show="selectedTab === '2d'">
         <spectrum-colorpicker
@@ -24,12 +27,15 @@
             }"
             on-change="changeColor(color)"
         ></spectrum-colorpicker>
-        <selectbox
-            options="mapList._2d"
-            output="selectedMap._2d.name"
-            selected-index="0"
-            theme="black"
-            change-event="changeMap"
-        ></selectbox>
+        <select
+            chosen
+            inherit-select-classes="true"
+            disable-search="true"
+            class="black"
+            ng-model="selectedMapIndex"
+            ng-options="map.id as map.name for map in maps._2d"
+            ng-change="changeMap()"
+        >
+        </select>
     </div>
 </div>

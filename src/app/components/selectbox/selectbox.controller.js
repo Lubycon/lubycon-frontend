@@ -30,6 +30,7 @@
         return directive;
 
         function link($scope, $element) {
+            console.log($scope);
             $scope.isOpen = false;
 
             // GET SELECTED INDEX...

@@ -50,8 +50,8 @@
 {
     "code": "7",
     "utc": "0",
-    "continentCode": "undecided",
-    "region": "undecided",
+    "continentCode": "undefined",
+    "region": "undefined",
     "name": "Antarctica"
 },
 {

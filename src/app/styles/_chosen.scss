@@ -1,9 +1,10 @@
 // CHOSEN TAG BOX
 .chosen-container.chosen-container-multi {
     height: 34px;
+
     .chosen-choices {
-        background: #222;
-        border: 1px solid #333;
+        background: #fff;
+        border: 1px solid #ddd;
         height: 100%;
         .search-field {
             input[type="text"] {
@@ -11,23 +12,23 @@
             }
         }
         .search-choice {
-            background-color: #222;
+            background-color: #fff;
             background-image: none;
-            border: 2px solid #333;
-            color: #fff;
+            border: 2px solid #ddd;
+            color: #444;
             box-shadow: none;
             border-radius: 0px;
             line-height: 14px;
         }
     }
     .chosen-drop {
-        background: #222;
-        border: 1px solid #333;
+        background: #fff;
+        border: 1px solid #ddd;
 
         .chosen-results {
-            color: #eee;
+            color: #444;
             li {
-                color: #eee;
+                color: #444;
                 &.result-selected {
                     color: #48cfad;
                     font-weight: 600;
@@ -35,6 +36,37 @@
                 &.highlighted {
                     background-color: #48cfad;
                     background-image: none;
+                }
+            }
+        }
+    }
+
+    &.black {
+        .chosen-choices {
+            background: #222;
+            border: 1px solid #333;
+
+            .search-choice {
+                background: #444;
+                color: #eee;
+                border: 2px solid #444;
+            }
+            .search-field {
+                background-image: none;
+                color: #eee;
+            }
+        }
+        .chosen-drop {
+            background: #222;
+            border: 1px solid #333;
+            .chosen-results {
+                color: #eee;
+                li {
+                    color: #eee;
+                }
+                li.no-results {
+                    background: #222;
+                    color: #eee;
                 }
             }
         }
@@ -57,6 +89,7 @@
         background: #fff;
         color: #444;
         border-radius: 0;
+        box-shadow: none;
 
         span {
             text-align: center;
@@ -76,6 +109,38 @@
                     background-color: #48cfad;
                     color: #fff;
                     background-image: none;
+                }
+            }
+        }
+    }
+
+    &.black {
+        .chosen-single {
+            background: #222;
+            color: #eee;
+        }
+        .chosen-choices {
+            background: #222;
+            border: 1px solid #333;
+
+            .search-field {
+                background-color: #222;
+                background-image: none;
+                border: 2px solid #333;
+                color: #fff;
+            }
+        }
+        .chosen-drop {
+            background: #222;
+            border: 1px solid #333;
+            .chosen-results {
+                color: #eee;
+                li {
+                    color: #eee;
+                }
+                li.no-results {
+                    background: #222;
+                    color: #eee;
                 }
             }
         }
