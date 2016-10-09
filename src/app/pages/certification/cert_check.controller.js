@@ -35,9 +35,11 @@
         vm.kind = $stateParams.kind;
         vm.submit = submit;
 
+        vm.validateCode = location.href.split('?code=')[1];
+        vm.isValidate = !angular.isUndefined(vm.validateCode);
+        console.log(vm.isValidate,vm.validateCode);
 
         vm.time = 21600; // seconds
-        console.log(vm.time);
 
         function submit() {
             console.log(vm.inputCode);
@@ -49,7 +51,7 @@
             ).then(function(res) {
                 console.log(res);
                 if(res.status.code === '0000') {
-                    if(res.status.result.validity) {
+                    if(res.result.validity) {
                         // 인증 성공
                     }
                     else {

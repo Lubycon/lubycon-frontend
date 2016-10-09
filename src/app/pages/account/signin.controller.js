@@ -27,6 +27,9 @@
                 if(res.status.code === '0000') {
                     Authentication.setCredentials(res.result.token,res.result.condition);
                 }
+                else {
+                    toastr.error('로그인 실패 ' + '(' + res.status.code + ')');
+                }
             });
         }
     }

@@ -34,6 +34,7 @@
         if(authdata) {
             defaultHeaders['X-lubycon-Token'] = authdata;
             Restangular.setDefaultHeaders(defaultHeaders);
+            console.log(Restangular.defaultHeaders);
 
             Restangular.one('members/simple').customGET().then(function (res) {
                 if(res.status.code === '0000') {

@@ -45,7 +45,9 @@
                 Restangular.all('members/signdrop').customPUT(
                     { reasonCode: vm.dropKind, reason: vm.dropReason }
                 ).then(function(res) {
-                    console.log(res);
+                    if(res.status.code === '0000') {
+                        Authentication.clearCredentials('reload');
+                    }
                 });
             }
             else {

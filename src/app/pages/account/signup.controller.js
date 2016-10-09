@@ -14,7 +14,6 @@
         var api = Authentication.signUp;
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
-
         vm.member = {
             email: null,
             nickname: null,
@@ -35,7 +34,8 @@
                 ).then(function(res) {
                     console.log(res);
                     if(res.status.code === "0000") {
-                        $state.go('common.noFooter.certCheck',{ kind: 'signup' });
+                        $state.go('common.noFooter.cert-check',{ kind: 'signup' });
+                        Authentication.setCredentials(res.result.token,res.result.condition);
                     }
                     else {
                         console.log('sign up is failed!!!!',res);
