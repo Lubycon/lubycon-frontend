@@ -80,7 +80,7 @@
         }
 
         function clearCredentials(reload, target) {
-            console.log(Restangular.defaultHeaders);
+            console.log(Restangular.defaultHeaders,$rootScope);
             if(!target) target = '/main';
             if($rootScope.member && ($rootScope.memberState.condition === 'active' || $rootScope.memberState.condition === 'inactive')) {
                 Restangular.all('members/signout').customPUT(

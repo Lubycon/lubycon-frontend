@@ -29,11 +29,14 @@
         Restangular.setDefaultHeaders(defaultHeaders);
 
         var authdata = $cookieStore.get('authdata');
-        console.log(authdata);
+        var memberState = $cookieStore.get('memberState');
+        console.log(authdata,memberState);
 
-        if(authdata) {
+        if(authdata && memberState.sign) {
             defaultHeaders['X-lubycon-Token'] = authdata;
             Restangular.setDefaultHeaders(defaultHeaders);
+            $rootScope.memberState = memberState;
+
             console.log(Restangular.defaultHeaders);
 
             Restangular.one('members/simple').customGET().then(function (res) {
