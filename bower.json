@@ -52,8 +52,7 @@
     "angular-chosen-localytics": "^1.5.0",
     "angular-summernote": "^0.8.1",
     "angular-elastic": "^2.5.1",
-    "threex.domevents": "*",
-    "angular-timer": "^1.3.3"
+    "threex.domevents": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",
