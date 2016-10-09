@@ -20,7 +20,7 @@
                 seconds: '=?'
             },
             link: link,
-            controller: controller
+            controller: ['$scope','$element','$attrs','$interval','$compile',controller]
         };
 
         return directive;
