@@ -8,26 +8,25 @@
     <form ng-submit="vm.signdrop()" class="signup-form">
         <div class="divide20"></div>
         <div class="signup-form-input">
-            <ul>
-                <li>
-                    Why you want to delete your account?
-                    <div class="divide10"></div>
-                    <selectbox
-                        icon="'fa-filter'"
-                        placeholder="Select..."
-                        options="vm.dropKindList"
-                        required="true"
-                        output="vm.dropKind"
-                    >
-                    </selectbox>
-                </li>
-            </ul>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+                <p>Why you want to delete your account?</p>
+                <div class="divide10"></div>
+                <select
+                    chosen
+                    inherit-select-classes="true"
+                    disable-search="true"
+                    ng-model="vm.dropKind"
+                >
+                    <option value="{{kind.code}}" ng-repeat="kind in vm.dropKindList">{{kind.name}}</option>
+                </select>
+            </div>
+            <div ng-if="vm.dropKind==='0200'" class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Reason</label>
                 <input
                     type="text"
                     class="form-control"
-                    placeholder="Reason"
+                    ng-model="vm.dropReason"
+                    placeholder="Don't leave us...."
                 />
             </div>
         </div>
