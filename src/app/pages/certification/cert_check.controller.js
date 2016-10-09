@@ -36,7 +36,7 @@
         vm.submit = submit;
 
 
-        vm.time = 21600; // miliseconds
+        vm.time = 21600; // seconds
         console.log(vm.time);
 
         function submit() {
