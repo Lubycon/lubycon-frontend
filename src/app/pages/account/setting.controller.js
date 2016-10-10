@@ -6,14 +6,17 @@
         .controller('AccountSettingController', AccountSettingController);
 
     /** @ngInject */
-    function AccountSettingController($rootScope, $scope, $state, Restangular, API_CONFIG, $filter) {
+    function AccountSettingController(
+        $rootScope, $scope, $state, Restangular, API_CONFIG, $filter,
+        getCountry, getJob
+    ) {
         var vm = this;
         vm.contentHost = API_CONFIG.content;
         vm.data = {
             userData: {
                 code: 0,
                 name: 'Admin',
-                job: 'Developer',
+                job: 'developer',
                 profile: 'user/0/profile.jpg',
                 email: 'admin@lubycon.com',
                 mobile: '+82-10-4755-6185',
@@ -26,37 +29,37 @@
             },
             language: [
                 {
-                    name: 'Korean',
-                    level: 'Native'
+                    name: 'korean',
+                    level: 'native'
                 },
                 {
-                    name: 'English',
-                    level: 'Beginner'
+                    name: 'english',
+                    level: 'beginner'
                 }
             ],
             history: [
                 {
-                    year: 2015,
-                    month: 'May',
-                    category: 'Work',
+                    year: 2012,
+                    month: 'may',
+                    category: 'work',
                     content: 'Lubycon is started'
                 },
                 {
-                    year: 2017,
-                    month: 'Jan',
-                    category: 'Work',
-                    content: 'Work test data'
+                    year: 2014,
+                    month: 'jan',
+                    category: 'work',
+                    content: 'work test data'
                 },
                 {
-                    year: 2018,
-                    month: 'Feb',
-                    category: 'Education',
+                    year: 2015,
+                    month: 'feb',
+                    category: 'education',
                     content: 'Education test data'
                 },
                 {
-                    year: 2018,
-                    month: 'Jul',
-                    category: 'Awards',
+                    year: 2016,
+                    month: 'jul',
+                    category: 'awards',
                     content: 'Award Test data'
                 }
             ],
@@ -67,22 +70,27 @@
                 website: 'public'
             }
         };
+
+        console.log(getCountry,getJob);
         vm.member = vm.data.userData;
         vm.languages = vm.data.language;
         vm.histories = vm.data.history;
 
         vm.publicOption = vm.data.publicOption;
 
-        // option dummy
-        vm.publicOptionList = ['Public','Private'];
-        vm.historyKind = ['Work Experience','Education','Awards'];
-        vm.yearsDummy = [];
-        vm.monthDummy = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        for(var i = 1950; i < new Date().getFullYear() * 1; i++){
-            vm.yearsDummy.push(i);
-            // console.log(vm.yearsDummy);
+
+        vm.publicOptionList = ['public','private'];
+        vm.languageLevelList = ['beginner','native'];
+        vm.jobList = getJob.data;
+        vm.countryList = getCountry.data;
+        vm.historyKind = ['work','education','awards'];
+        vm.yearList = [];
+        vm.monthList = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+        for(var i = 1950; i <= new Date().getFullYear() * 1; i++){
+            vm.yearList.push(i);
         }
-        // option dummy
+        vm.yearList.reverse();
+
 
         vm.profileChanged = false;
         vm.cropping = false;
@@ -131,8 +139,8 @@
                     var now = new Date();
                     var newHistory = {
                         year: now.getFullYear(),
-                        month: $filter('date')(now, 'MMM'),
-                        category: 'Work',
+                        month: $filter('date')(now, 'MMM').toLowerCase(),
+                        category: 'work',
                         content: ''
                     };
                     vm.histories.push(newHistory);

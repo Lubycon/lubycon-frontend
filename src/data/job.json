@@ -1,10 +1,9 @@
-{"job":
-	[
-	  {"code" : 0, "name" : "Artist"},
-	  {"code" : 1, "name" : "Creator"},
-	  {"code" : 2, "name" : "Designer"},
-	  {"code" : 3, "name" : "Engineer"},
-	  {"code" : 4, "name" : "Student"},
-	  {"code" : 5, "name" : "Other"}
-    ]
-}
+
+[
+  {"id" : 0, "name" : "Artist"},
+  {"id" : 1, "name" : "Creator"},
+  {"id" : 2, "name" : "Designer"},
+  {"id" : 3, "name" : "Engineer"},
+  {"id" : 4, "name" : "Student"},
+  {"id" : 5, "name" : "Other"}
+]

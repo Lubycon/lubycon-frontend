@@ -1,1687 +1,1687 @@
 [{
-    "code": "0",
+    "id": "0",
     "utc": "4",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Afghanistan"
 },
 {
-    "code": "1",
+    "id": "1",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Albania"
 },
 {
-    "code": "2",
+    "id": "2",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Algeria"
 },
 {
-    "code": "3",
+    "id": "3",
     "utc": "-11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "American Samoa"
 },
 {
-    "code": "4",
+    "id": "4",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south west europe",
     "name": "Andorra"
 },
 {
-    "code": "5",
+    "id": "5",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Angola"
 },
 {
-    "code": "6",
+    "id": "6",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Anguilla"
 },
 {
-    "code": "7",
+    "id": "7",
     "utc": "0",
-    "continentCode": "undefined",
+    "continentId": "undefined",
     "region": "undefined",
     "name": "Antarctica"
 },
 {
-    "code": "8",
+    "id": "8",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Antigua and Barbuda"
 },
 {
-    "code": "9",
+    "id": "9",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Argentina"
 },
 {
-    "code": "10",
+    "id": "10",
     "utc": "4",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Armenia"
 },
 {
-    "code": "11",
+    "id": "11",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Aruba"
 },
 {
-    "code": "12",
+    "id": "12",
     "utc": "10",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Australia"
 },
 {
-    "code": "13",
+    "id": "13",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central europe",
     "name": "Austria"
 },
 {
-    "code": "14",
+    "id": "14",
     "utc": "4",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Azerbaijan"
 },
 {
-    "code": "15",
+    "id": "15",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Bahamas"
 },
 {
-    "code": "16",
+    "id": "16",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Bahrain"
 },
 {
-    "code": "17",
+    "id": "17",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Bangladesh"
 },
 {
-    "code": "18",
+    "id": "18",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Barbados"
 },
 {
-    "code": "19",
+    "id": "19",
     "utc": "3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Belarus"
 },
 {
-    "code": "20",
+    "id": "20",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Belgium"
 },
 {
-    "code": "21",
+    "id": "21",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Belize"
 },
 {
-    "code": "22",
+    "id": "22",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Benin"
 },
 {
-    "code": "23",
+    "id": "23",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Bermuda"
 },
 {
-    "code": "24",
+    "id": "24",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Bhutan"
 },
 {
-    "code": "25",
+    "id": "25",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Bolivia"
 },
 {
-    "code": "26",
+    "id": "26",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Bosnia and Herzegovina"
 },
 {
-    "code": "27",
+    "id": "27",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Botswana"
 },
 {
-    "code": "28",
+    "id": "28",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Brazil"
 },
 {
-    "code": "29",
+    "id": "29",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "British Indian Ocean Territory"
 },
 {
-    "code": "30",
+    "id": "30",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "British Virgin Islands"
 },
 {
-    "code": "31",
+    "id": "31",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Brunei"
 },
 {
-    "code": "32",
+    "id": "32",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Bulgaria"
 },
 {
-    "code": "33",
+    "id": "33",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Burkina Faso"
 },
 {
-    "code": "34",
+    "id": "34",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "central africa",
     "name": "Burundi"
 },
 {
-    "code": "35",
+    "id": "35",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Cambodia"
 },
 {
-    "code": "36",
+    "id": "36",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Cameroon"
 },
 {
-    "code": "37",
+    "id": "37",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "north america",
     "name": "Canada"
 },
 {
-    "code": "38",
+    "id": "38",
     "utc": "-1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Cape Verde"
 },
 {
-    "code": "39",
+    "id": "39",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Cayman Islands"
 },
 {
-    "code": "40",
+    "id": "40",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "central africa",
     "name": "Central African Republic"
 },
 {
-    "code": "41",
+    "id": "41",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "central africa",
     "name": "Chad"
 },
 {
-    "code": "42",
+    "id": "42",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Chile"
 },
 {
-    "code": "43",
+    "id": "43",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "China"
 },
 {
-    "code": "44",
+    "id": "44",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Christmas Island"
 },
 {
-    "code": "45",
+    "id": "45",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Cocos Islands"
 },
 {
-    "code": "46",
+    "id": "46",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Colombia"
 },
 {
-    "code": "47",
+    "id": "47",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "indian ocean",
     "name": "Comoros"
 },
 {
-    "code": "48",
+    "id": "48",
     "utc": "-10",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Cook Islands"
 },
 {
-    "code": "49",
+    "id": "49",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Costa Rica"
 },
 {
-    "code": "50",
+    "id": "50",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Croatia"
 },
 {
-    "code": "51",
+    "id": "51",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Cuba"
 },
 {
-    "code": "52",
+    "id": "52",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Curacao"
 },
 {
-    "code": "53",
+    "id": "53",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Cyprus"
 },
 {
-    "code": "54",
+    "id": "54",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central europe",
     "name": "Czech Republic"
 },
 {
-    "code": "55",
+    "id": "55",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Democratic Republic of the Congo"
 },
 {
-    "code": "56",
+    "id": "56",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Denmark"
 },
 {
-    "code": "57",
+    "id": "57",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Djibouti"
 },
 {
-    "code": "58",
+    "id": "58",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Dominica"
 },
 {
-    "code": "59",
+    "id": "59",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Dominican Republic"
 },
 {
-    "code": "60",
+    "id": "60",
     "utc": "9",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "East Timor"
 },
 {
-    "code": "61",
+    "id": "61",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Ecuador"
 },
 {
-    "code": "62",
+    "id": "62",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Egypt"
 },
 {
-    "code": "63",
+    "id": "63",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "El Salvador"
 },
 {
-    "code": "64",
+    "id": "64",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Equatorial Guinea"
 },
 {
-    "code": "65",
+    "id": "65",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Eritrea"
 },
 {
-    "code": "66",
+    "id": "66",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Estonia"
 },
 {
-    "code": "67",
+    "id": "67",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Ethiopia"
 },
 {
-    "code": "68",
+    "id": "68",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Falkland Islands"
 },
 {
-    "code": "69",
+    "id": "69",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Faroe Islands"
 },
 {
-    "code": "70",
+    "id": "70",
     "utc": "12",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Fiji"
 },
 {
-    "code": "71",
+    "id": "71",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Finland"
 },
 {
-    "code": "72",
+    "id": "72",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "France"
 },
 {
-    "code": "73",
+    "id": "73",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "French Guiana"
 },
 {
-    "code": "74",
+    "id": "74",
     "utc": "-10",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "French polynesia"
 },
 {
-    "code": "75",
+    "id": "75",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Gabon"
 },
 {
-    "code": "76",
+    "id": "76",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Gambia"
 },
 {
-    "code": "77",
+    "id": "77",
     "utc": "4",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Georgia"
 },
 {
-    "code": "78",
+    "id": "78",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Germany"
 },
 {
-    "code": "79",
+    "id": "79",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Ghana"
 },
 {
-    "code": "80",
+    "id": "80",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south west europe",
     "name": "Gibraltar"
 },
 {
-    "code": "81",
+    "id": "81",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Greece"
 },
 {
-    "code": "82",
+    "id": "82",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "north america",
     "name": "Greenland"
 },
 {
-    "code": "83",
+    "id": "83",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Grenada"
 },
 {
-    "code": "84",
+    "id": "84",
     "utc": "10",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Guam"
 },
 {
-    "code": "85",
+    "id": "85",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Guatemala"
 },
 {
-    "code": "86",
+    "id": "86",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Guernsey"
 },
 {
-    "code": "87",
+    "id": "87",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Guinea"
 },
 {
-    "code": "88",
+    "id": "88",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Guinea-Bissau"
 },
 {
-    "code": "89",
+    "id": "89",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Guyana"
 },
 {
-    "code": "90",
+    "id": "90",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Haiti"
 },
 {
-    "code": "91",
+    "id": "91",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Honduras"
 },
 {
-    "code": "92",
+    "id": "92",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "Hong Kong"
 },
 {
-    "code": "93",
+    "id": "93",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central europe",
     "name": "Hungary"
 },
 {
-    "code": "94",
+    "id": "94",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Iceland"
 },
 {
-    "code": "95",
+    "id": "95",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "India"
 },
 {
-    "code": "96",
+    "id": "96",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Indonesia"
 },
 {
-    "code": "97",
+    "id": "97",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Iran"
 },
 {
-    "code": "98",
+    "id": "98",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Iraq"
 },
 {
-    "code": "99",
+    "id": "99",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Ireland"
 },
 {
-    "code": "100",
+    "id": "100",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Isle of Man"
 },
 {
-    "code": "101",
+    "id": "101",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Israel"
 },
 {
-    "code": "102",
+    "id": "102",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "southern europe",
     "name": "Italy"
 },
 {
-    "code": "103",
+    "id": "103",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Ivory Coast"
 },
 {
-    "code": "104",
+    "id": "104",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Jamaica"
 },
 {
-    "code": "105",
+    "id": "105",
     "utc": "9",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "Japan"
 },
 {
-    "code": "106",
+    "id": "106",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Jersey"
 },
 {
-    "code": "107",
+    "id": "107",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Jordan"
 },
 {
-    "code": "108",
+    "id": "108",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "central asia",
     "name": "Kazakhstan"
 },
 {
-    "code": "109",
+    "id": "109",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Kenya"
 },
 {
-    "code": "110",
+    "id": "110",
     "utc": "12",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Kiribati"
 },
 {
-    "code": "111",
+    "id": "111",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "southern europe",
     "name": "Kosovo"
 },
 {
-    "code": "112",
+    "id": "112",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Kuwait"
 },
 {
-    "code": "113",
+    "id": "113",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "central asia",
     "name": "Kyrgyzstan"
 },
 {
-    "code": "114",
+    "id": "114",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Laos"
 },
 {
-    "code": "115",
+    "id": "115",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Latvia"
 },
 {
-    "code": "116",
+    "id": "116",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Lebanon"
 },
 {
-    "code": "117",
+    "id": "117",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Lesotho"
 },
 {
-    "code": "118",
+    "id": "118",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Liberia"
 },
 {
-    "code": "119",
+    "id": "119",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Libya"
 },
 {
-    "code": "120",
+    "id": "120",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central europe",
     "name": "Liechtenstein"
 },
 {
-    "code": "121",
+    "id": "121",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Lithuania"
 },
 {
-    "code": "122",
+    "id": "122",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Luxembourg"
 },
 {
-    "code": "123",
+    "id": "123",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "Macau"
 },
 {
-    "code": "124",
+    "id": "124",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Macedonia"
 },
 {
-    "code": "125",
+    "id": "125",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "indian ocean",
     "name": "Madagascar"
 },
 {
-    "code": "126",
+    "id": "126",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Malawi"
 },
 {
-    "code": "127",
+    "id": "127",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Malaysia"
 },
 {
-    "code": "128",
+    "id": "128",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Maldives"
 },
 {
-    "code": "129",
+    "id": "129",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Mali"
 },
 {
-    "code": "130",
+    "id": "130",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "southern europe",
     "name": "Malta"
 },
 {
-    "code": "131",
+    "id": "131",
     "utc": "12",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Marshall Islands"
 },
 {
-    "code": "132",
+    "id": "132",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Mauritania"
 },
 {
-    "code": "133",
+    "id": "133",
     "utc": "4",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "indian ocean",
     "name": "Mauritius"
 },
 {
-    "code": "134",
+    "id": "134",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "indian ocean",
     "name": "Mayotte"
 },
 {
-    "code": "135",
+    "id": "135",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Mexico"
 },
 {
-    "code": "136",
+    "id": "136",
     "utc": "11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Micronesia"
 },
 {
-    "code": "137",
+    "id": "137",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Moldova"
 },
 {
-    "code": "138",
+    "id": "138",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Monaco"
 },
 {
-    "code": "139",
+    "id": "139",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "northern asia",
     "name": "Mongolia"
 },
 {
-    "code": "140",
+    "id": "140",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "southern europe",
     "name": "Montenegro"
 },
 {
-    "code": "141",
+    "id": "141",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Montserrat"
 },
 {
-    "code": "142",
+    "id": "142",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Morocco"
 },
 {
-    "code": "143",
+    "id": "143",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Mozambique"
 },
 {
-    "code": "144",
+    "id": "144",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Myanmar"
 },
 {
-    "code": "145",
+    "id": "145",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Namibia"
 },
 {
-    "code": "146",
+    "id": "146",
     "utc": "12",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Nauru"
 },
 {
-    "code": "147",
+    "id": "147",
     "utc": "6",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Nepal"
 },
 {
-    "code": "148",
+    "id": "148",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "Netherlands"
 },
 {
-    "code": "149",
+    "id": "149",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Netherlands Antilles"
 },
 {
-    "code": "150",
+    "id": "150",
     "utc": "11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "New Caledonia"
 },
 {
-    "code": "151",
+    "id": "151",
     "utc": "-11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "New Zealand"
 },
 {
-    "code": "152",
+    "id": "152",
     "utc": "-6",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Nicaragua"
 },
 {
-    "code": "153",
+    "id": "153",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Niger"
 },
 {
-    "code": "154",
+    "id": "154",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Nigeria"
 },
 {
-    "code": "155",
+    "id": "155",
     "utc": "-11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Niue"
 },
 {
-    "code": "156",
+    "id": "156",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "North Korea"
 },
 {
-    "code": "157",
+    "id": "157",
     "utc": "10",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Northern Mariana Islands"
 },
 {
-    "code": "158",
+    "id": "158",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Norway"
 },
 {
-    "code": "159",
+    "id": "159",
     "utc": "4",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Oman"
 },
 {
-    "code": "160",
+    "id": "160",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "central asia",
     "name": "Pakistan"
 },
 {
-    "code": "161",
+    "id": "161",
     "utc": "9",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Palau"
 },
 {
-    "code": "162",
+    "id": "162",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Palestine"
 },
 {
-    "code": "163",
+    "id": "163",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Panama"
 },
 {
-    "code": "164",
+    "id": "164",
     "utc": "10",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Papua New Guinea"
 },
 {
-    "code": "165",
+    "id": "165",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Paraguay"
 },
 {
-    "code": "166",
+    "id": "166",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Peru"
 },
 {
-    "code": "167",
+    "id": "167",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Philippines"
 },
 {
-    "code": "168",
+    "id": "168",
     "utc": "-8",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Pitcairn"
 },
 {
-    "code": "169",
+    "id": "169",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Poland"
 },
 {
-    "code": "170",
+    "id": "170",
     "utc": "-1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south west europe",
     "name": "Portugal"
 },
 {
-    "code": "171",
+    "id": "171",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Puerto Rico"
 },
 {
-    "code": "172",
+    "id": "172",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Qatar"
 },
 {
-    "code": "173",
+    "id": "173",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "central africa",
     "name": "Republic of the Congo"
 },
 {
-    "code": "174",
+    "id": "174",
     "utc": "4",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "indian ocean",
     "name": "Reunion"
 },
 {
-    "code": "175",
+    "id": "175",
     "utc": "2",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Romania"
 },
 {
-    "code": "176",
+    "id": "176",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "northern asia",
     "name": "Russia"
 },
 {
-    "code": "177",
+    "id": "177",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "central asia",
     "name": "Rwanda"
 },
 {
-    "code": "178",
+    "id": "178",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Saint Barthelemy"
 },
 {
-    "code": "179",
+    "id": "179",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Saint Helena"
 },
 {
-    "code": "180",
+    "id": "180",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Saint Kitts and Nevis"
 },
 {
-    "code": "181",
+    "id": "181",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Saint Lucia"
 },
 {
-    "code": "182",
+    "id": "182",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Saint Martin"
 },
 {
-    "code": "183",
+    "id": "183",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "",
     "name": "Saint Pierre and Miquelon"
 },
 {
-    "code": "184",
+    "id": "184",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Saint Vincent and the Grenadines"
 },
 {
-    "code": "185",
+    "id": "185",
     "utc": "13",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Samoa"
 },
 {
-    "code": "186",
+    "id": "186",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "southern europe",
     "name": "San Marino"
 },
 {
-    "code": "187",
+    "id": "187",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Sao Tome and Principe"
 },
 {
-    "code": "188",
+    "id": "188",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Saudi Arabia"
 },
 {
-    "code": "189",
+    "id": "189",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Senegal"
 },
 {
-    "code": "190",
+    "id": "190",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Serbia"
 },
 {
-    "code": "191",
+    "id": "191",
     "utc": "4",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "indian ocean",
     "name": "Seychelles"
 },
 {
-    "code": "192",
+    "id": "192",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Sierra Leone"
 },
 {
-    "code": "193",
+    "id": "193",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Singapore"
 },
 {
-    "code": "194",
+    "id": "194",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "Sint Maarten"
 },
 {
-    "code": "195",
+    "id": "195",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central europe",
     "name": "Slovakia"
 },
 {
-    "code": "196",
+    "id": "196",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south east europe",
     "name": "Slovenia"
 },
 {
-    "code": "197",
+    "id": "197",
     "utc": "11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Solomon Islands"
 },
 {
-    "code": "198",
+    "id": "198",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Somalia"
 },
 {
-    "code": "199",
+    "id": "199",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "South Africa"
 },
 {
-    "code": "200",
+    "id": "200",
     "utc": "9",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "South Korea"
 },
 {
-    "code": "201",
+    "id": "201",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "South Sudan"
 },
 {
-    "code": "202",
+    "id": "202",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south west europe",
     "name": "Spain"
 },
 {
-    "code": "203",
+    "id": "203",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south asia",
     "name": "Sri Lanka"
 },
 {
-    "code": "204",
+    "id": "204",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Sudan"
 },
 {
-    "code": "205",
+    "id": "205",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Suriname"
 },
 {
-    "code": "206",
+    "id": "206",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Svalbard and Jan Mayen"
 },
 {
-    "code": "207",
+    "id": "207",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Swaziland"
 },
 {
-    "code": "208",
+    "id": "208",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "northern europe",
     "name": "Sweden"
 },
 {
-    "code": "209",
+    "id": "209",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central europe",
     "name": "Switzerland"
 },
 {
-    "code": "210",
+    "id": "210",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Syria"
 },
 {
-    "code": "211",
+    "id": "211",
     "utc": "8",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "east asia",
     "name": "Taiwan"
 },
 {
-    "code": "212",
+    "id": "212",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "central asia",
     "name": "Tajikistan"
 },
 {
-    "code": "213",
+    "id": "213",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Tanzania"
 },
 {
-    "code": "214",
+    "id": "214",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Thailand"
 },
 {
-    "code": "215",
+    "id": "215",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "western africa",
     "name": "Togo"
 },
 {
-    "code": "216",
+    "id": "216",
     "utc": "13",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Tokelau"
 },
 {
-    "code": "217",
+    "id": "217",
     "utc": "13",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Tonga"
 },
 {
-    "code": "218",
+    "id": "218",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Trinidad and Tobago"
 },
 {
-    "code": "219",
+    "id": "219",
     "utc": "1",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Tunisia"
 },
 {
-    "code": "220",
+    "id": "220",
     "utc": "2",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Turkey"
 },
 {
-    "code": "221",
+    "id": "221",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "central asia",
     "name": "Turkmenistan"
 },
 {
-    "code": "222",
+    "id": "222",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "west indies",
     "name": "Turks and Caicos Islands"
 },
 {
-    "code": "223",
+    "id": "223",
     "utc": "12",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Tuvalu"
 },
 {
-    "code": "224",
+    "id": "224",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "central america",
     "name": "U.S. Virgin Islands"
 },
 {
-    "code": "225",
+    "id": "225",
     "utc": "3",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "eastern africa",
     "name": "Uganda"
 },
 {
-    "code": "226",
+    "id": "226",
     "utc": "3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "eastern europe",
     "name": "Ukraine"
 },
 {
-    "code": "227",
+    "id": "227",
     "utc": "4",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "United Arab Emirates"
 },
 {
-    "code": "228",
+    "id": "228",
     "utc": "0",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "western europe",
     "name": "United Kingdom"
 },
 {
-    "code": "229",
+    "id": "229",
     "utc": "-5",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "north america",
     "name": "United States"
 },
 {
-    "code": "230",
+    "id": "230",
     "utc": "-3",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Uruguay"
 },
 {
-    "code": "231",
+    "id": "231",
     "utc": "5",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "central asia",
     "name": "Uzbekistan"
 },
 {
-    "code": "232",
+    "id": "232",
     "utc": "11",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Vanuatu"
 },
 {
-    "code": "233",
+    "id": "233",
     "utc": "1",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "southern europe",
     "name": "Vatican"
 },
 {
-    "code": "234",
+    "id": "234",
     "utc": "-4",
-    "continentCode": "3",
+    "continentId": "3",
     "region": "south america",
     "name": "Venezuela"
 },
 {
-    "code": "235",
+    "id": "235",
     "utc": "7",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south east asia",
     "name": "Vietnam"
 },
 {
-    "code": "236",
+    "id": "236",
     "utc": "12",
-    "continentCode": "4",
+    "continentId": "4",
     "region": "pacific",
     "name": "Wallis and Futuna"
 },
 {
-    "code": "237",
+    "id": "237",
     "utc": "0",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "northern africa",
     "name": "Western Sahara"
 },
 {
-    "code": "238",
+    "id": "238",
     "utc": "3",
-    "continentCode": "1",
+    "continentId": "1",
     "region": "south west asia",
     "name": "Yemen"
 },
 {
-    "code": "239",
+    "id": "239",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Zambia"
 },
 {
-    "code": "240",
+    "id": "240",
     "utc": "2",
-    "continentCode": "0",
+    "continentId": "0",
     "region": "southern africa",
     "name": "Zimbabwe"
 }]

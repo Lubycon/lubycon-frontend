@@ -13,14 +13,15 @@
                     disabled
                     ng-model="vm.member.email"
                 />
-                <selectbox
-                    icon="'fa-lock'"
-                    placeholder="Option"
-                    options="vm.publicOptionList"
-                    required="true"
-                    output="vm.publicOption.email"
+                <select
+                    chosen
+                    required
+                    disable-search="true"
+                    inherit-select-classes="true"
+                    ng-model="vm.publicOption.email"
+                    ng-options="option for option in vm.publicOptionList"
                 >
-                </selectbox>
+                </select>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Name</label>
@@ -65,12 +66,15 @@
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Job</label>
-                <selectbox
-                    placeholder="Option"
-                    options="vm.publicOptionList"
-                    output="vm.member.job"
+                <select
+                    chosen
+                    disable-search="true"
+                    inherit-select-classes="true"
+                    data-placeholder-text-single="'Select your job...'"
+                    ng-model="vm.member.job"
+                    ng-options="job.id as job.name for job in vm.jobList"
                 >
-                </selectbox>
+                </select>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Position</label>
@@ -82,13 +86,14 @@
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Country</label>
-                <selectbox
-                    placeholder="Country"
-                    options="vm.publicOptionList"
-                    required="true"
-                    output="vm.member.country"
+                <select
+                    chosen
+                    disable-search="true"
+                    data-placeholder-text-single="'Where do you live?'"
+                    ng-model="vm.member.country"
+                    ng-options="country.name as country.name for country in vm.countryList"
                 >
-                </selectbox>
+                </select>
                 <input
                     type="text"
                     class="form-control"
@@ -106,13 +111,14 @@
                             placeholder="language..."
                             ng-model="language.name"
                         />
-                        <selectbox
-                            placeholder="Country"
-                            options="vm.publicOptionList"
-                            required="true"
-                            output="language.level"
+                        <select
+                            chosen
+                            disable-search="true"
+                            data-placeholder-text-single="'Select your level...'"
+                            ng-model="language.level"
+                            ng-options="level for level in vm.languageLevelList"
                         >
-                        </selectbox>
+                        </select>
                     </li>
                 </ul>
                 <div class="divide20"></div>
@@ -137,24 +143,32 @@
                 <ul>
                     <li ng-repeat="history in vm.histories">
                         <div class="history-group">
-                            <selectbox
-                                placeholder="Kind"
-                                options="vm.historyKind"
-                                required="true"
-                                output="history.category"
-                            ></selectbox>
-                            <selectbox
-                                placeholder="Year"
-                                options="vm.yearsDummy"
-                                required="true"
-                                output="history.year"
-                            ></selectbox>
-                            <selectbox
-                                placeholder="Month"
-                                options="vm.monthDummy"
-                                required="true"
-                                output="history.month"
-                            ></selectbox>
+                            <select
+                                chosen
+                                disable-search="true"
+                                data-placeholder-text-single="'Kind...'"
+                                ng-model="history.category"
+                                ng-options="kind for kind in vm.historyKind"
+                            >
+                            </select>
+                            <select
+                                chosen
+                                disable-search="true"
+                                data-placeholder-text-single="'Year'"
+                                class="history-date"
+                                ng-model="history.year"
+                                ng-options="year for year in vm.yearList"
+                            >
+                            </select>
+                            <select
+                                chosen
+                                disable-search="true"
+                                data-placeholder-text-single="'Month'"
+                                class="history-date"
+                                ng-model="history.month"
+                                ng-options="month for month in vm.monthList"
+                            >
+                            </select>
                             <input
                                 type="text"
                                 class="form-control"
@@ -179,14 +193,15 @@
                     class="form-control"
                     ng-model="vm.member.mobile"
                 />
-                <selectbox
-                    icon="'fa-lock'"
-                    placeholder="Option"
-                    options="vm.publicOptionList"
-                    required="true"
-                    output="vm.publicOption.mobile"
+                <select
+                    chosen
+                    required
+                    disable-search="true"
+                    inherit-select-classes="true"
+                    ng-model="vm.publicOption.mobile"
+                    ng-options="option for option in vm.publicOptionList"
                 >
-                </selectbox>
+                </select>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Fax</label>
@@ -195,14 +210,15 @@
                     class="form-control"
                     ng-model="vm.member.fax"
                 />
-                <selectbox
-                    icon="'fa-lock'"
-                    placeholder="Option"
-                    options="vm.publicOptionList"
-                    required="true"
-                    output="vm.publicOption.fax"
+                <select
+                    chosen
+                    required
+                    disable-search="true"
+                    inherit-select-classes="true"
+                    ng-model="vm.publicOption.fax"
+                    ng-options="option for option in vm.publicOptionList"
                 >
-                </selectbox>
+                </select>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Website</label>
@@ -212,14 +228,15 @@
                     class="form-control"
                     ng-model="vm.member.website"
                 />
-                <selectbox
-                    icon="'fa-lock'"
-                    placeholder="Option"
-                    options="vm.publicOptionList"
-                    required="true"
-                    output="vm.publicOption.website"
+                <select
+                    chosen
+                    required
+                    disable-search="true"
+                    inherit-select-classes="true"
+                    ng-model="vm.publicOption.website"
+                    ng-options="option for option in vm.publicOptionList"
                 >
-                </selectbox>
+                </select>
             </div>
         </div>
         <div class="divide20"></div>

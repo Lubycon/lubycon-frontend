@@ -41,10 +41,11 @@
         vm.signdrop = signdrop;
         function signdrop(){
             console.log(vm.dropKind,vm.dropReason);
-            if(vm.dropKind) {
+            if(vm.dropKind && $rootScope.member) {
                 Restangular.all('members/signdrop').customPUT(
                     { reasonCode: vm.dropKind, reason: vm.dropReason }
                 ).then(function(res) {
+                    console.log(res);
                     if(res.status.code === '0000') {
                         Authentication.clearCredentials('reload');
                     }
@@ -53,7 +54,6 @@
             else {
                 toastr.error('회원탈퇴 이유를 선택해라 닝겐');
             }
-
         }
     }
 })();

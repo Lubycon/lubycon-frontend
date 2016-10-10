@@ -36,7 +36,15 @@
                 url: '/setting',
                 templateUrl: 'app/pages/account/setting.tmpl.html',
                 controller: 'AccountSettingController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    getCountry: function($http) {
+                        return $http.get('/data/country.json').then();
+                    },
+                    getJob: function($http) {
+                        return $http.get('/data/job.json').then();
+                    }
+                }
             })
             ;
     }

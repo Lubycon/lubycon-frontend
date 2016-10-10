@@ -8,14 +8,15 @@
     <div ng-show="isOpen" class="filter-dropdown" role="menu">
         <ul class="row">
             <li class="col-xs-12 col-sm-12 col-lg-2" ng-repeat="filter in filters">
-                <selectbox
-                    icon="filter.icon"
-                    options="filter.options"
-                    output="filter.data"
-                    theme="white"
-                    selected-index="0"
+                <select
+                    chosen
+                    disable-search="true"
+                    inherit-select-classes="true"
+                    ng-init="filter.data = filter.options[0]"
+                    ng-model="filter.data"
+                    ng-options="option for option in filter.options"
                 >
-                </selectbox>
+                </select>
             </li>
             <li class="col-xs-12 col-sm-12 col-lg-1 col-lg-offset-lg-3">
                 <button ng-click="submit()" class="btn btn-mint">SEARCH</button>

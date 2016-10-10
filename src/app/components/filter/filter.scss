@@ -31,8 +31,8 @@
         padding: 10px;
         li {
             padding-right: 0;
-            .select-body {
-                max-width: none;
+            select {
+                width: 100%;
             }
         }
     }

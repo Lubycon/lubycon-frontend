@@ -33,9 +33,9 @@
         <a ng-if="!$root.member" ui-sref="common.noFooter.signin" class="main-signin">
             <i class="fa fa-lock"></i>{{'MENU.SIGNIN' | translate}}
         </a>
-        <div ng-if="$root.member" uib-dropdown on-toggle="vm.memberToggle">
+        <div ng-if="$root.member" uib-dropdown on-toggle="vm.memberToggle" class="main-user-display">
             <a href="" class="dropdown-toggle" uib-dropdown-toggle>
-                <figure></figure>
+                <figure><img ng-src="{{$root.member.profile ? $root.member.profile : '/assets/images/no_images/user.jpg'}}"></figure>
                 <h4>{{$root.member.name}}</h4>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">

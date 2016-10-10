@@ -129,21 +129,18 @@
             float: none;
         }
 
-        .selectBox {
-            min-width: 150px;
-            max-width: 300px;
+        select {
+            max-width: 200px;
             display: inline-block;
-            margin: 0 5px;
-            background: #fff;
+        }
 
-            .select-body {
-                border: 1px solid #ccc;
-            }
+        .chosen-container {
+            display: inline-block;
         }
 
         .history-group {
-            .selectBox {
-                min-width: 110px;
+            .history-date {
+                width: 80px;
             }
         }
 
