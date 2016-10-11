@@ -4,7 +4,19 @@
             <span class="main-text">{{vm.mainText}}</span>
             <div>
                 <a class="btn btn-ghost" ui-sref="common.figure.contents({ category: '3d' })">MORE CONTENTS</a>
-                <a class="btn btn-mint" ui-sref="common.noFooter.signin">SIGN IN</a>
+                <a ng-show="!$root.member" class="btn btn-mint" ui-sref="common.noFooter.signin">SIGN IN</a>
+                <a ng-show="$root.member && $root.memberState.condition === 'inactive'"
+                    class="btn btn-mint"
+                    ui-sref="common.noFooter.cert-check({kind:'signup'})"
+                >
+                    Authenticaion
+                </a>
+                <a ng-show="$root.member && $root.memberState.condition === 'active'"
+                    class="btn btn-mint"
+                    ui-sref="common.noFooter.editor3d"
+                >
+                    Upload Model
+                </a>
             </div>
         </section>
     </figure>

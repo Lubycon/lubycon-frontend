@@ -5,7 +5,7 @@
         .module('app')
         .factory('Authentication', Authentication);
 
-    function Authentication($cookieStore, $cookies, $rootScope, Restangular, $window, $location) {
+    function Authentication($cookieStore, $cookies, $rootScope, Restangular, $window, $location, toastr) {
 
         var defaultHeaders = Restangular.defaultHeaders;
         Restangular.setDefaultHeaders(defaultHeaders);
@@ -24,7 +24,24 @@
         function setCredentials(token, memberState, reload) {
             // INIT TOKEN...
             var authdata = token;
-            var destination = memberState === 'active' ? '/main' : '/certs/code/signup';
+            var destination;
+
+            // SET DESCTINATION
+            if(memberState) {
+                destination = $rootScope.clientLocation.from.url !== '^' ?
+                    $rootScope.clientLocation.from.url :
+                    '/main';
+                if(memberState === 'inactive') {
+                    toastr.warning('아직 인증이 끝나지 않았습니다. 이 메세지를 클릭하시면 인증페이지로 이동합니다.',{
+                        closeDuration: 10000,
+                        onTap: function() {
+                            $location.path('/certs/code/signup');
+                        }
+                    });
+                }
+            }
+            else return false;
+
 
             $rootScope.memberState = {
                 sign: true,

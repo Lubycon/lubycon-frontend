@@ -48,7 +48,7 @@
         $scope.isMain = vm.isMain;
 
         vm.doSignOut = function(){
-                Authentication.clearCredentials('reload');
+            Authentication.clearCredentials('reload');
         };
     }
 })();

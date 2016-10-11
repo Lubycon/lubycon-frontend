@@ -14,9 +14,6 @@
                 templateUrl: 'app/pages/editor/editor.tmpl.html',
                 controller: 'Editor3dController',
                 controllerAs: 'vm',
-                params: {
-                    category: null
-                },
                 resolve: {
                     get3dMaps: function($http) {
                         return $http.get('/data/mapPreset/preset3d.json').then();

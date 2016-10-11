@@ -25,6 +25,7 @@
         'angularSpectrumColorpicker', // COLOR PICKER MODULE
         'switcher', // CHECKBOX SWITCH MODE MODULE
         'toastr', // TOAST MESSAGE MODULE
+        'summernote', // TEXT EDITOR MODULE
         'monospaced.elastic' // TEXTAREA AUTOMATICALLY SIZE
     ])
     .constant('APP_LANGUAGES', [

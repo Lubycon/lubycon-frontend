@@ -24,8 +24,8 @@
                     // }
                 }
             })
-            .state('common.default.community-view',{
-                url: '/community/:category/:boardId',
+            .state('common.default.community-view', {
+                url: '/community/:category/view/:boardId',
                 templateUrl: 'app/pages/community/community_view.tmpl.html',
                 controller: 'CommunityViewController',
                 controllerAs: 'vm',
@@ -39,6 +39,22 @@
                     //     return api.customGET().then();
                     // }
                 }
-            });
+            })
+            .state('common.noFooter.community-write', {
+                url: '/community/:category/write',
+                templateUrl: 'app/pages/community/community_write.tmpl.html',
+                controller: 'CommunityWriteController',
+                controllerAs: 'vm',
+                params: {
+                    category: null
+                },
+                resolve: {
+                    // getContent: function($stateParams, Restangular) {
+                    //     var api = Restangular.all('community/' + $stateParams.category + '/' + $stateParams.boardId);
+                    //     return api.customGET().then();
+                    // }
+                }
+            })
+            ;
     }
 })();

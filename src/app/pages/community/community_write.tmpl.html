@@ -1,0 +1,39 @@
+
+<div class="community-write row">
+    <div class="input-group col-sm-12 col-lg-offset-2 col-lg-8">
+        <label>TITLE</label>
+        <input type="text" class="form-control" ng-model="vm.title"/>
+    </div>
+    <div class="input-group col-sm-12 col-lg-offset-2 col-lg-8">
+        <label>CONTENT</label>
+        <summernote
+            config="vm.summernoteConfig"
+            ng-model="vm.content"
+        ></summernote>
+    </div>
+    <div class="input-group col-sm-12 col-lg-offset-2 col-lg-8">
+        <label>ATTACHMENT</label>
+        <input type="text" class="form-control" />
+        <button
+            class="btn"
+            ngf-select
+            type="file"
+            name="files"
+            ng-model="vm.attachedFiles"
+            ngf-change="vm.changedFile($files,$file,$newFiles,$invalidFiles)"
+            ngf-max-size="10MB"
+            ngf-max-files="1"
+            ngf-fix-orientation="true"
+        >
+            <i class="fa fa-cloud-upload"></i>
+        </button>
+    </div>
+    <div class="input-group col-sm-12 col-lg-offset-2 col-lg-8">
+        <button
+            class="btn btn-mint"
+            type="submit"
+            ng-click="vm.submit()"
+            onclick="return false;"
+        >SUBMIT</button>
+    </div>
+</div>

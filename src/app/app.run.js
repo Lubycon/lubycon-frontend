@@ -19,7 +19,7 @@
             from : fromState,
             to : toState
         };
-        
+
         var stateClass = toState.name
             .replace(/^(common|aside|full)\.(default|figure|noFooter)\./g,'state-')
             .replace(/(\.|\_)/gi,'-');

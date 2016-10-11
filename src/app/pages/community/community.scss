@@ -63,3 +63,20 @@
         }
     }
 }
+
+.community-write {
+    label {
+        display: block;
+    }
+
+    // SUMMERNOTE....
+    .note-editor {
+        // TOOLBAR...
+        .note-toolbar.panel-heading {
+            .note-btn-group.btn-group {
+                .note-btn.btn {
+                }
+            }
+        }
+    }
+}
