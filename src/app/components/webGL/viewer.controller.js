@@ -25,6 +25,7 @@
         return directive;
 
         function link($scope, $element, $attrs) {
+            console.log($scope.model);
             $scope.$watch('map',function(newValue,oldValue) {
                 console.log('MAP CHANGED : ',oldValue,'=>',newValue);
                 if(newValue.type === '3d') $scope.initSkyBox();
@@ -32,7 +33,6 @@
             },true);
 
             $scope.$watch('model',function(newValue,oldValue) {
-                console.log(oldValue,newValue);
                 var oldModel = $scope.scene.getObjectByName('mainObject');
 
                 if(oldModel) $scope.scene.remove(oldModel);
@@ -40,9 +40,8 @@
                 if(newValue && (newValue.constructor.name === 'Mesh' || newValue.constructor.name === 'Group')) {
                     $scope.scene.add(newValue);
                 }
-                else if(newValue && newValue.constructor.name === 'String') { // JSON일 경우
-                    var modelJSON = $.parseJSON(newValue);
-                    var loader = new THREE.ObjectLoader().parse(modelJSON);
+                else if(newValue && newValue.constructor.name === 'Object') { // JSON일 경우
+                    var loader = new THREE.ObjectLoader().parse(newValue);
                     $scope.scene.add(loader);
                 }
             });

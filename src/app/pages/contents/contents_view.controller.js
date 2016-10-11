@@ -8,10 +8,13 @@
     /** @ngInject */
     function ContentsViewController(
         $rootScope, $scope, $state, $stateParams,
-        $sce, API_CONFIG, toastr
+        $sce, API_CONFIG, toastr,
+        getDummyContent, getDummyMap, getDummyLight, get3dMaps, get2dMaps
     ) {
+
         var vm = this;
         console.log($state);
+
         // DUMMY DATA
         vm.contentHost = API_CONFIG.content;
         vm.data = {
@@ -19,7 +22,11 @@
                 code: $state.params.boardId,
                 title: 'Test Title',
                 subCate: 'category1, category2',
-                content: '<div style="font-weight: 600";>TEST CONTENT</div>',
+                content: {
+                    model: getDummyContent.data,
+                    map: getDummyMap.data,
+                    lights: getDummyLight.data
+                },
                 description: 'This is test description',
                 bookmark: true,
                 like: false,
@@ -39,30 +46,23 @@
                 city: 'Seoul'
             }
         };
-        vm.comments = [
-            {
-                userCode: 5,
-                code: 1,
-                name: 'Test member1',
-                profile: 'user/5/profile.jpg',
-                date: '2016-08-17 12:32:01',
-                content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
-            },
-            {
-                userCode: 5,
-                code: 1,
-                name: 'Test member1',
-                profile: 'user/5/profile.jpg',
-                date: '2016-08-17 12:32:01',
-                content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
-            }
-        ];
+        vm.comments = [{
+            userCode: 5,
+            code: 1,
+            name: 'Test member1',
+            profile: 'user/5/profile.jpg',
+            date: '2016-08-17 12:32:01',
+            content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
+        },{
+            userCode: 5,
+            code: 1,
+            name: 'Test member1',
+            profile: 'user/5/profile.jpg',
+            date: '2016-08-17 12:32:01',
+            content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
+        }];
         // DUMMY DATA
-        vm.model = {
-            map: {"threed":true,"skymap":1,"image":0,"color":"rgb(34, 34, 34)"},
-            lights: [],
-            model: -1
-        };
+
         vm.init = (init)();
         vm.viewerType = $stateParams.category;
         if(vm.viewerType === '3d') {
@@ -72,6 +72,8 @@
 
         function init(){
             vm.contents = vm.data.contents;
+            vm.mapObject = {};
+
             vm.category = $stateParams.category;
             vm.is3D = vm.category === '3d';
 
@@ -87,6 +89,21 @@
             vm.member = vm.data.userData;
 
             vm.convertToHTML = convertToHTML;
+
+            loadMapData();
+        }
+
+        function loadMapData() {
+            var mapData = vm.contents.content.map;
+            var map;
+            console.log(mapData);
+            if(mapData.type === '3d') {
+                vm.mapObject = get3dMaps.data[mapData.index];
+            }
+            else {
+                vm.mapObject = get2dMaps.data[mapData.index];
+                vm.mapObject.color = mapData.color;
+            }
         }
 
         function convertToHTML(string){
