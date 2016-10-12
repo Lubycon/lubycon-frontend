@@ -9,7 +9,7 @@
     function CertCheckController(
         $rootScope, $scope, $location, $state,
         $timeout, $stateParams, $translate,
-        Restangular
+        Restangular, getCodeTime
     ) {
         var vm = this;
 
@@ -23,9 +23,14 @@
             inputLabel: 'Code',
             inputType: 'text',
             buttons: [{
+                kind: 'resend-bt',
+                type: 'button',
+                method: resendMail,
+                content: 'RESEND'
+            },{
                 kind: 'submit-bt',
                 type: 'submit',
-                func: null,
+                method: null,
                 content: 'SUBMIT'
             }]
         };
@@ -33,14 +38,22 @@
         vm.inputCode = null;
         vm.success = $stateParams.success;
         vm.kind = $stateParams.kind;
-        vm.submit = submit;
 
         vm.validateCode = location.href.split('?code=')[1];
         vm.isValidate = !angular.isUndefined(vm.validateCode);
-        console.log(vm.isValidate,vm.validateCode);
+        vm.time = getCodeTime.result.time; // seconds
 
-        vm.time = 21600; // seconds
 
+        function resendMail() {
+            console.log('resendMail');
+            Restangular.all('certs/signup/code').customPUT(
+                {data: ''}
+            ).then(function(res) {
+                console.log(res);
+            });
+        }
+
+        vm.submit = submit;
         function submit() {
             console.log(vm.inputCode);
             Restangular.all('certs/signup/code').customPOST(

@@ -35,7 +35,7 @@
 				class="btn {{button.kind}}"
 				type="{{button.type}}"
 				ng-repeat="button in vm.message.buttons"
-				ng-click="button.func()"
+				ng-click="button.method()"
 			>
 				{{button.content}}
 			</button>
