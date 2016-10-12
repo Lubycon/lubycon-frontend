@@ -15,25 +15,16 @@
         vm.dropKind = null;
         vm.dropKindList = [{
             code: '0201',
-            name: 'Reason0'
+            name: 'The service is not suitable for me'
         },{
             code: '0202',
-            name: 'Reason1'
+            name: 'Unsatisfying customer service'
         },{
             code: '0203',
-            name: 'Reason2'
-        },{
-            code: '0204',
-            name: 'Reason3'
-        },{
-            code: '0205',
-            name: 'Reason4'
-        },{
-            code: '0206',
-            name: 'Reason5'
+            name: 'I am using other service'
         },{
             code: '0200',
-            name: 'ETC'
+            name: 'Other'
         }];
         vm.dropReason = null;
 

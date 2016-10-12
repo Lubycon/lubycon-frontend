@@ -9,12 +9,13 @@
         <div class="divide20"></div>
         <div class="signup-form-input">
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <p>Why you want to delete your account?</p>
+                <p>What is your reason for leaving Lubycon?</p>
                 <div class="divide10"></div>
                 <select
                     chosen
                     inherit-select-classes="true"
                     disable-search="true"
+                    data-placeholder-text-single="'Select a reason...'"
                     ng-model="vm.dropKind"
                 >
                     <option value="{{kind.code}}" ng-repeat="kind in vm.dropKindList">{{kind.name}}</option>
@@ -26,7 +27,7 @@
                     type="text"
                     class="form-control"
                     ng-model="vm.dropReason"
-                    placeholder="Don't leave us...."
+                    placeholder="Please write your reason for Other..."
                 />
             </div>
         </div>
