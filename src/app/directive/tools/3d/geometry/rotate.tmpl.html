@@ -3,4 +3,21 @@
         ng-model="toggleOn"
         ng-change="toggleAction(newValue,oldValue)"
     ></switcher>
+    <div>
+        <div class="btn-group">
+            <label>X 90 digree</label>
+            <button type="button" class="btn" ng-click="rotateCW('x')">+</button>
+            <button type="button" class="btn" ng-click="rotateCCW('x')">-</button>
+        </div>
+        <div class="btn-group">
+            <label>Y 90 digree</label>
+            <button type="button" class="btn" ng-click="rotateCW('y')">+</button>
+            <button type="button" class="btn" ng-click="rotateCCW('y')">-</button>
+        </div>
+        <div class="btn-group">
+            <label>Z 90 digree</label>
+            <button type="button" class="btn" ng-click="rotateCW('z')">+</button>
+            <button type="button" class="btn" ng-click="rotateCCW('z')">-</button>
+        </div>
+    </div>
 </div>

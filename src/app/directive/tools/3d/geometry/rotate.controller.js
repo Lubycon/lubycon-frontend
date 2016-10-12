@@ -34,6 +34,19 @@
                     ModelControlService.remove($scope.scene);
                 }
             };
+
+            $scope.rotateCW = function(coordinate) { // +
+                var object = $scope.scene.getObjectByName('mainObject');
+
+                object.rotation[coordinate] += Math.PI / 2;
+                console.log(object.rotation);
+            };
+            $scope.rotateCCW = function(coordinate) { // -
+                var object = $scope.scene.getObjectByName('mainObject');
+
+                object.rotation[coordinate] -= (Math.PI / 2);
+                console.log(object.rotation);
+            };
         }
     }
 })();

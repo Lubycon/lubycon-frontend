@@ -89,6 +89,7 @@
                     usedMaterials[i].side = THREE.DoubleSide;
                     usedMaterials[i].transparent = true;
                     usedMaterials[i].needsUpdate = true;
+                    usedMaterials[i].index = materials.length;
                     materials.push(usedMaterials[i]);
                 }
             }

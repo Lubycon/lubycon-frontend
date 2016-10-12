@@ -70,6 +70,7 @@
                 cameraLight.receiveShadow = true;
                 cameraLight.target.position.set(0, 1, -1);
                 cameraLight.position.copy(camera.position);
+            var animationRequest;
 
             scene.add(camera, cameraLight);
 
@@ -91,7 +92,7 @@
         	gl.addEventListener("webglcontextlost", function(event){
         		event.preventDefault();
         		alert("context is lost");
-        		cancelAnimationFrame(animationID);
+        		destoryGL();
         	},false);
         	// console.log(renderer);
         	gl.appendChild(renderer.domElement);
@@ -120,15 +121,22 @@
                 }
             }
 
-            function animateGL(){
+            function animateGL(time) {
             	controls.update();
-            	requestAnimationFrame(animateGL);
+            	animationRequest = requestAnimationFrame(animateGL);
         	    renderGL();
             }
 
-            function renderGL(){
+            function renderGL() {
             	renderer.render(scene, camera);
             	cameraLight.position.copy(camera.position);
+            }
+
+            function destoryGL() {
+                cancelAnimationFrame(animationRequest);
+                scene = null;
+                camera = null;
+                controls = null;
             }
 
             function windowResizeGL(){
@@ -237,7 +245,7 @@
             }
 
             $rootScope.$on('$stateChangeStart', function() {
-                cancelAnimationFrame(animationID);
+                destoryGL();
             });
         }
     }

@@ -29,6 +29,7 @@
         }
         function controller($rootScope, $scope, $element) {
             // console.log($scope.scene,$scope.renderer);
+            
         }
     }
 })();
