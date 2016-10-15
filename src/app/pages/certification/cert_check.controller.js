@@ -3,7 +3,12 @@
 
     angular
         .module('messages')
-        .controller('CertCheckController', CertCheckController);
+        .controller('CertCheckController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            'Restangular', 'getCodeTime',
+            CertCheckController
+        ]);
 
     /* @ngInject */
     function CertCheckController(

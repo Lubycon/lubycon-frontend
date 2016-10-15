@@ -3,7 +3,12 @@
 
     angular
         .module('app.pages.contents')
-        .controller('ContentsViewController', ContentsViewController);
+        .controller('ContentsViewController', [
+            '$rootScope', '$scope', '$state', '$stateParams',
+            '$sce', 'API_CONFIG', 'toastr',
+            'getDummyContent', 'getDummyMap', 'getDummyLight', 'get3dMaps', 'get2dMaps',
+            ContentsViewController
+        ]);
 
     /** @ngInject */
     function ContentsViewController(

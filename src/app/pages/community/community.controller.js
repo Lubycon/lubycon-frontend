@@ -3,7 +3,10 @@
 
     angular
         .module('app.pages.community')
-        .controller('CommunityController', CommunityController);
+        .controller('CommunityController', [
+            '$rootScope','$scope',
+            CommunityController
+        ]);
 
     /** @ngInject */
     function CommunityController($rootScope,$scope) {

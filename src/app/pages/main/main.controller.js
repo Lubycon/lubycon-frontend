@@ -3,7 +3,10 @@
 
     angular
         .module('app.pages.main')
-        .controller('MainController', MainController);
+        .controller('MainController', [
+            '$timeout', 'toastr', 'toastrConfig', 'API_CONFIG',
+            MainController
+        ]);
 
     /** @ngInject */
     function MainController($timeout, toastr, toastrConfig, API_CONFIG) {

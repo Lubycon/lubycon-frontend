@@ -3,7 +3,9 @@
 
     angular
         .module('app.pages.member')
-        .controller('DashboardController', DashboardController);
+        .controller('DashboardController', [
+            '$rootScope', '$scope', 'API_CONFIG', DashboardController
+        ]);
 
     /** @ngInject */
     function DashboardController($rootScope,$scope,API_CONFIG) {

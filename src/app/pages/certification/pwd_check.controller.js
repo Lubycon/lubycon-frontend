@@ -3,7 +3,11 @@
 
     angular
         .module('messages')
-        .controller('PwdCheckController', PwdCheckController);
+        .controller('PwdCheckController', [
+            '$rootScope', '$scope', '$location', '$state', '$timeout',
+            '$stateParams', '$translate',
+            PwdCheckController
+        ]);
 
     /* @ngInject */
     function PwdCheckController(

@@ -3,7 +3,10 @@
 
     angular
         .module('app.pages.member')
-        .controller('MemberAsideController', MemberAsideController);
+        .controller('MemberAsideController', [
+            '$rootScope', '$scope', 'API_CONFIG',
+            MemberAsideController
+        ]);
 
     /** @ngInject */
     function MemberAsideController($rootScope, $scope, API_CONFIG) {

@@ -3,7 +3,9 @@
 
     angular
         .module('app.pages.company')
-        .controller('AboutUsController', AboutUsController);
+        .controller('AboutUsController', [
+            '$rootScope', '$scope', AboutUsController
+        ]);
 
     /** @ngInject */
     function AboutUsController($rootScope,$scope) {

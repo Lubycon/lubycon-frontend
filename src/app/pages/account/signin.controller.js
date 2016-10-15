@@ -3,7 +3,10 @@
 
     angular
         .module('app.pages.account')
-        .controller('SigninController', SigninController);
+        .controller('SigninController', [
+            '$rootScope', '$scope', '$state', 'Restangular', 'Authentication', 'toastr',
+            SigninController
+        ]);
 
     /** @ngInject */
     function SigninController($rootScope, $scope, $state, Restangular, Authentication, toastr) {

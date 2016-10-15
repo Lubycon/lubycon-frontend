@@ -3,7 +3,9 @@
 
     angular
         .module('app.pages.contents')
-        .controller('ContentsController', ContentsController);
+        .controller('ContentsController', [
+            '$rootScope', '$scope', ContentsController
+        ]);
 
     /** @ngInject */
     function ContentsController($rootScope,$scope) {

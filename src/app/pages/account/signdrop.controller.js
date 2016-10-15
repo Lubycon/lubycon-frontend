@@ -3,7 +3,10 @@
 
     angular
         .module('app.pages.account')
-        .controller('SigndropController', SigndropController);
+        .controller('SigndropController', [
+            '$rootScope', '$scope', 'Restangular', 'Authentication', 'toastr',
+            SigndropController
+        ]);
 
     /** @ngInject */
     function SigndropController($rootScope, $scope, Restangular, Authentication, toastr) {

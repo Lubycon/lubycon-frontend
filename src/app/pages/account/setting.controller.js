@@ -3,7 +3,11 @@
 
     angular
         .module('app.pages.account')
-        .controller('AccountSettingController', AccountSettingController);
+        .controller('AccountSettingController', [
+            '$rootScope', '$scope', '$state', 'Restangular',
+            'API_CONFIG', '$filter',
+            'getCountry', 'getJob', AccountSettingController
+        ]);
 
     /** @ngInject */
     function AccountSettingController(

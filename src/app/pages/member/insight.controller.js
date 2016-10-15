@@ -3,7 +3,9 @@
 
     angular
         .module('app.pages.member')
-        .controller('InsightController', InsightController);
+        .controller('InsightController', [
+            '$rootScope','$scope',InsightController
+        ]);
 
     /** @ngInject */
     function InsightController($rootScope,$scope) {

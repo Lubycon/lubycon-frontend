@@ -3,7 +3,9 @@
 
     angular
         .module('app.pages.creator')
-        .controller('CreatorController', CreatorController);
+        .controller('CreatorController', [
+            '$rootScope','$scope', CreatorController
+        ]);
 
     /** @ngInject */
     function CreatorController($rootScope,$scope) {

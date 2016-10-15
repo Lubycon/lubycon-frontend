@@ -3,10 +3,13 @@
 
     angular
     .module('app.pages.community')
-    .controller('CommunityWriteController', CommunityWriteController);
+    .controller('CommunityWriteController', [
+        '$rootScope', '$scope', 'toastr',
+        CommunityWriteController
+    ]);
 
     /** @ngInject */
-    function CommunityWriteController($rootScope, $scope, toastr ) {
+    function CommunityWriteController($rootScope, $scope, toastr) {
         var vm = this;
 
         vm.init = (init)();

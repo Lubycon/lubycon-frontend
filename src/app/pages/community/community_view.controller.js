@@ -3,7 +3,10 @@
 
     angular
         .module('app.pages.community')
-        .controller('CommunityViewController', CommunityViewController);
+        .controller('CommunityViewController', [
+            '$rootScope', '$scope', '$sce', 'toastr', 'API_CONFIG',
+            CommunityViewController
+        ]);
 
     /** @ngInject */
     function CommunityViewController($rootScope, $scope, $sce, toastr, API_CONFIG) {

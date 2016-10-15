@@ -3,7 +3,11 @@
 
     angular
         .module('app.pages.account')
-        .controller('SignupController', SignupController);
+        .controller('SignupController', [
+            '$rootScope', '$scope', 'Restangular', 'Authentication', '$state', 'toastr',
+            'getCountry',
+            SignupController
+        ]);
 
     /** @ngInject */
     function SignupController(
