@@ -34,7 +34,6 @@
                 ).then(function(res) {
                     console.log(res);
                     if(res.status.code === "0000") {
-                        $state.go('common.noFooter.cert-check',{ kind: 'signup' });
                         Authentication.setCredentials(res.result.token,res.result.condition);
                     }
                     else {

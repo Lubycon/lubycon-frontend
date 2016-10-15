@@ -46,7 +46,7 @@
 
         function resendMail() {
             console.log('resendMail');
-            Restangular.all('certs/signup/code').customPUT(
+            Restangular.all('/mail/signup').customPUT(
                 {data: ''}
             ).then(function(res) {
                 console.log(res);

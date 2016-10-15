@@ -22,6 +22,10 @@
         return service;
 
         function setCredentials(token, memberState, reload) {
+            if(!token) {
+                toastr.error('토큰이 없습니다.');
+                return false;
+            }
             // INIT TOKEN...
             var authdata = token;
             var destination;

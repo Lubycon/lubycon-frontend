@@ -1,5 +1,17 @@
 
 <!-- THIS IS FOOTER COMPONENT -->
-<nav class="navbar-fixed-bottom navbar main-footer">
-
+<nav class="navbar navbar-fixed-bottom navbar-light main-footer">
+    <!--LEFTSIDE MENU-->
+    <ul>
+        <li class="dropdown navbar-menu" uib-dropdown on-toggle="vm.CommunityToggle">
+            <a href="" class="dropdown-toggle" uib-dropdown-toggle>
+                language <i class="fa fa-angle-up"></i>
+            </a>
+            <ul class="dropdown-menu main-nav-menu" role="menu">
+                <li ng-repeat="language in vm.languages" ng-click="vm.changeLanguage(language.value)">
+                    {{language.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
 </nav>
