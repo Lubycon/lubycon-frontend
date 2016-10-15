@@ -10,12 +10,13 @@
 
         $stateProvider
             .state('common.noFooter.cert-check', {
-                url: '/certs/code/:kind',
+                url: '/certs/code/:kind?code',
                 templateUrl: 'app/pages/certification/certification.tmpl.html',
                 controller: 'CertCheckController',
                 controllerAs: 'vm',
                 params: {
-                    kind: null
+                    kind: null,
+                    code: null
                 },
                 resolve: {
                     getCodeTime: function(Restangular) {

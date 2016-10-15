@@ -13,7 +13,8 @@
                 url: '/signin',
                 templateUrl: 'app/pages/account/signin.tmpl.html',
                 controller: 'SigninController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                authenticate: 'no-member'
             })
             .state('common.noFooter.signup', {
                 url: '/signup',
@@ -24,27 +25,37 @@
                     getCountry: function($http) {
                         return $http.get('/data/country.json').then();
                     }
-                }
+                },
+                authenticate: 'no-member'
             })
             .state('common.noFooter.signdrop', {
                 url: '/signdrop',
                 templateUrl: 'app/pages/account/signdrop.tmpl.html',
                 controller: 'SigndropController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                authenticate: 'member'
             })
             .state('common.default.accountSetting', {
-                url: '/setting',
+                url: '/setting/:memberId',
                 templateUrl: 'app/pages/account/setting.tmpl.html',
                 controller: 'AccountSettingController',
                 controllerAs: 'vm',
+                params: {
+                    memberId: null
+                },
                 resolve: {
+                    getMember: function(Restangular, $stateParams) {
+                        var api = Restangular.all('members/detail/'+$stateParams.memberId);
+                        return api.customGET().then();
+                    },
                     getCountry: function($http) {
                         return $http.get('/data/country.json').then();
                     },
                     getJob: function($http) {
                         return $http.get('/data/job.json').then();
                     }
-                }
+                },
+                authenticate: 'member'
             })
             ;
     }

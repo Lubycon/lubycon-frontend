@@ -38,7 +38,7 @@
                 ).then(function(res) {
                     console.log(res);
                     if(res.status.code === "0000") {
-                        Authentication.setCredentials(res.result.token,res.result.condition);
+                        Authentication.setCredentials(res.result.token,'inactive');
                     }
                     else {
                         console.log('sign up is failed!!!!',res);

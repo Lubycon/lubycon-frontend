@@ -4,76 +4,24 @@
     angular
         .module('app.pages.account')
         .controller('AccountSettingController', [
-            '$rootScope', '$scope', '$state', 'Restangular',
+            '$rootScope', '$scope', '$state',
+            '$stateParams', 'Restangular',
             'API_CONFIG', '$filter',
-            'getCountry', 'getJob', AccountSettingController
+            'getMember','getCountry', 'getJob', AccountSettingController
         ]);
 
     /** @ngInject */
     function AccountSettingController(
-        $rootScope, $scope, $state, Restangular, API_CONFIG, $filter,
-        getCountry, getJob
+        $rootScope, $scope, $state, $stateParams,
+        Restangular, API_CONFIG, $filter,
+        getMember, getCountry, getJob
     ) {
+
+        console.log(getMember);
+
         var vm = this;
         vm.contentHost = API_CONFIG.content;
-        vm.data = {
-            userData: {
-                code: 0,
-                name: 'Admin',
-                job: 'developer',
-                profile: 'user/0/profile.jpg',
-                email: 'admin@lubycon.com',
-                mobile: '+82-10-4755-6185',
-                fax: "+82-2-6091-9776",
-                website: 'aws.lubycon.com',
-                country: 'South Korea',
-                city: 'Seoul',
-                position: 'Lubycon co.',
-                description: 'Test Description'
-            },
-            language: [
-                {
-                    name: 'korean',
-                    level: 'native'
-                },
-                {
-                    name: 'english',
-                    level: 'beginner'
-                }
-            ],
-            history: [
-                {
-                    year: 2012,
-                    month: 'may',
-                    category: 'work',
-                    content: 'Lubycon is started'
-                },
-                {
-                    year: 2014,
-                    month: 'jan',
-                    category: 'work',
-                    content: 'work test data'
-                },
-                {
-                    year: 2015,
-                    month: 'feb',
-                    category: 'education',
-                    content: 'Education test data'
-                },
-                {
-                    year: 2016,
-                    month: 'jul',
-                    category: 'awards',
-                    content: 'Award Test data'
-                }
-            ],
-            publicOption: {
-                email: 'public',
-                mobile: 'public',
-                fax: 'public',
-                website: 'public'
-            }
-        };
+        vm.data = getMember.result;
 
         console.log(getCountry,getJob);
         vm.member = vm.data.userData;

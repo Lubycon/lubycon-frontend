@@ -91,11 +91,23 @@
             if(reload === 'reload') $window.location.reload();
         }
 
-        function updateCredentials(callback) {
+        function updateCredentials(memberState,destination) {
+            $rootScope.memberState.condition = memberState;
+            $cookieStore.put('memberState', $rootScope.memberState);
+
             Restangular.all('members/simple').customGET().then(
                 function (res) {
-                    $rootScope.member = res.result;
-                    $cookieStore.put('member', $rootScope.member);
+                    if(res.status.code === '0000') {
+                        $rootScope.member = res.result;
+                        $cookieStore.put('member', $rootScope.member);
+
+                        if(destination) $location.path(destination);
+                        else $location.path('/main');
+                    }
+                    else {
+                        console.log(res.status);
+                        service.clearCredentials();
+                    }
                 }
             );
         }
