@@ -18,7 +18,7 @@
                 lights: '='
             },
             link: link,
-            controller: controller,
+            controller: ['$rootScope','$scope','$element',controller],
             controllerAs: 'webGLViewer'
         };
 
