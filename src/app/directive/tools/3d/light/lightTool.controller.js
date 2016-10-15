@@ -16,7 +16,7 @@
                 output: '='
             },
             link: link,
-            controller: controller
+            controller: ['$rootScope', '$scope', '$element', '$timeout', 'LightGenerateService', controller]
         };
 
         return directive;

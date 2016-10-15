@@ -3,7 +3,10 @@
 
     angular
         .module('error')
-        .controller('ErrorController', ErrorController);
+        .controller('ErrorController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            ErrorController]);
 
     /* @ngInject */
     function ErrorController(

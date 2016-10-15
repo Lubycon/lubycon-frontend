@@ -3,7 +3,10 @@
 
     angular
         .module('app')
-        .factory('ControllerKeyActionService', ControllerKeyActionService);
+        .factory('ControllerKeyActionService', [
+            '$rootScope', '$document',
+            ControllerKeyActionService
+        ]);
 
     function ControllerKeyActionService($rootScope,$document) {
         var service = {

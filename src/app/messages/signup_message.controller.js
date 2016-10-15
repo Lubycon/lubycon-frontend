@@ -3,7 +3,11 @@
 
     angular
         .module('messages')
-        .controller('SignupMessageController', SignupMessageController);
+        .controller('SignupMessageController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            SignupMessageController
+        ]);
 
     /* @ngInject */
     function SignupMessageController(

@@ -3,7 +3,11 @@
 
     angular
         .module('messages')
-        .controller('SettingMessageController', SettingMessageController);
+        .controller('SettingMessageController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            SettingMessageController
+        ]);
 
     /* @ngInject */
     function SettingMessageController(

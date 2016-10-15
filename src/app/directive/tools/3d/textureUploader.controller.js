@@ -3,7 +3,7 @@
 
     angular
         .module('app.pages.editor')
-        .controller('textureUploaderController', textureUploaderController);
+        .controller('textureUploaderController', ['$scope', '$uibModalInstance', 'info', textureUploaderController]);
 
     /** @ngInject */
     function textureUploaderController($scope, $uibModalInstance, info) {

@@ -3,7 +3,11 @@
 
     angular
         .module('messages')
-        .controller('ContentsMessageController', ContentsMessageController);
+        .controller('ContentsMessageController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            ContentsMessageController
+        ]);
 
     /* @ngInject */
     function ContentsMessageController(

@@ -3,7 +3,10 @@
 
     angular
         .module('app')
-        .factory('ModelLoadService', ModelLoadService);
+        .factory('ModelLoadService', [
+            '$rootScope', 'ArrayService',
+            ModelLoadService
+        ]);
 
     function ModelLoadService($rootScope, ArrayService) {
         var service = {

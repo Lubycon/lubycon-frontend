@@ -3,7 +3,10 @@
 
     angular
         .module('app')
-        .factory('ModelControlService', ModelControlService);
+        .factory('ModelControlService', [
+            '$rootScope', 'ControllerKeyActionService',
+            ModelControlService
+        ]);
 
     function ModelControlService($rootScope, ControllerKeyActionService) {
         var service = {

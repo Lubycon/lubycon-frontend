@@ -15,7 +15,7 @@
                 renderer: '='
             },
             link: link,
-            controller: controller
+            controller: ['$rootScope', '$scope', '$element', 'ModelControlService', controller]
         };
 
         return directive;

@@ -3,7 +3,11 @@
 
     angular
         .module('messages')
-        .controller('pwdMessageController', pwdMessageController);
+        .controller('pwdMessageController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            pwdMessageController
+        ]);
 
     /* @ngInject */
     function pwdMessageController(

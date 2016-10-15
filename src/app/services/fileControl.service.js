@@ -3,7 +3,9 @@
 
     angular
         .module('app')
-        .factory('FileControlService', FileControlService);
+        .factory('FileControlService', [
+            '$rootScope', FileControlService
+        ]);
 
     function FileControlService($rootScope) {
 

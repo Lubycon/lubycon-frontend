@@ -3,7 +3,11 @@
 
     angular
         .module('app')
-        .factory('Authentication', Authentication);
+        .factory('Authentication', [
+            '$cookieStore', '$cookies', '$rootScope', 'Restangular',
+            '$window', '$location', 'toastr',
+            Authentication
+        ]);
 
     function Authentication($cookieStore, $cookies, $rootScope, Restangular, $window, $location, toastr) {
 

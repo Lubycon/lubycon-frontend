@@ -17,7 +17,7 @@
                 maps: '='
             },
             link: link,
-            controller: controller
+            controller: ['$rootScope', '$scope', '$element', '$timeout', '$uibModal',controller]
         };
 
         return directive;

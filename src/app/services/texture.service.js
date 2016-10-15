@@ -3,7 +3,10 @@
 
     angular
         .module('app')
-        .factory('TextureService', TextureService);
+        .factory('TextureService', [
+            '$rootScope',
+            TextureService
+        ]);
 
     function TextureService($rootScope) {
         var service = {

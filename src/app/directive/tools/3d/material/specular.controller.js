@@ -17,7 +17,7 @@
                 textures: '='
             },
             link: link,
-            controller: controller
+            controller: ['$rootScope', '$scope', '$element', '$timeout', '$uibModal', 'TextureService', controller]
         };
 
         return directive;

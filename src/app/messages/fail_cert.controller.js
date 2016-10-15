@@ -3,7 +3,11 @@
 
     angular
         .module('messages')
-        .controller('FailCertMessageController', FailCertMessageController);
+        .controller('FailCertMessageController', [
+            '$rootScope', '$scope', '$location', '$state',
+            '$timeout', '$stateParams', '$translate',
+            FailCertMessageController
+        ]);
 
     /* @ngInject */
     function FailCertMessageController(

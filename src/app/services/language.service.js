@@ -3,7 +3,10 @@
 
     angular
         .module('app')
-        .factory('LanguageService', LanguageService);
+        .factory('LanguageService', [
+            '$rootScope', '$http',
+            LanguageService
+        ]);
 
     function LanguageService($rootScope, $http) {
 

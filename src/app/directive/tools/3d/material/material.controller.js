@@ -16,7 +16,7 @@
                 output: '='
             },
             link: link,
-            controller: controller
+            controller: ['$rootScope', '$scope', '$element', controller]
         };
 
         return directive;
@@ -29,7 +29,7 @@
         }
         function controller($rootScope, $scope, $element) {
             // console.log($scope.scene,$scope.renderer);
-            
+
         }
     }
 })();
