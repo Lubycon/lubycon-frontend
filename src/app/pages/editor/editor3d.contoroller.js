@@ -3,7 +3,13 @@
 
     angular
         .module('app.pages.editor')
-        .controller('Editor3dController', Editor3dController);
+        .controller('Editor3dController', [
+            '$rootScope','$scope','$filter','$compile','$timeout','toastr',
+            'ModelLoadService','FileControlService','LightGenerateService',
+            'ModelControlService',
+            'get3dMaps','get2dMaps','getCategory','getCreativeCommons',
+            Editor3dController
+        ]);
 
     /** @ngInject */
     function Editor3dController(
