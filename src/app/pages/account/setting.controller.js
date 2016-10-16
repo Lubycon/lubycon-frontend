@@ -27,6 +27,15 @@
         vm.member = vm.data.userData;
         vm.languages = vm.data.language;
         vm.histories = vm.data.history;
+        // vm.histories = [{
+        //     category: 'work',
+        //     date: '2016-08-25 00:00:00',
+        //     content: 'Test history0'
+        // },{
+        //     category: 'education',
+        //     date: '2015-06-25 00:00:00',
+        //     content: 'Test history1'
+        // }];
 
         vm.publicOption = vm.data.publicOption;
 
@@ -37,19 +46,41 @@
         vm.countryList = getCountry.data;
         vm.historyKind = ['work','education','awards'];
         vm.yearList = [];
-        vm.monthList = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-        for(var i = 1950; i <= new Date().getFullYear() * 1; i++){
-            vm.yearList.push(i);
+        vm.monthList = [];
+
+        for(var year = 1950; year <= new Date().getFullYear() * 1; year++){
+            vm.yearList.push(year);
         }
         vm.yearList.reverse();
 
+        for(var month = 1; month < 13; month++){
+            vm.monthList.push(month);
+        }
 
         vm.profileChanged = false;
         vm.cropping = false;
 
         vm.init = (init)();
-        function init(){
 
+        function init() {
+            vm.histories = vm.histories.map(function(v) {
+                v.date = encodeDate(v.date);
+                return v;
+            });
+        }
+
+        function encodeDate(date) {
+            date = new Date(date);
+            date = {
+                year: date.getFullYear(),
+                month: date.getMonth() + 1
+            };
+            console.log(date);
+            return date;
+        }
+        function decodeDate(date) {
+            date = new Date(date.year,date.month - 1);
+            return date;
         }
 
         vm.changedFile = function(files,file,newFiles,invalidFiles){
@@ -90,8 +121,10 @@
                 if(vm.histories.length < 20){
                     var now = new Date();
                     var newHistory = {
-                        year: now.getFullYear(),
-                        month: $filter('date')(now, 'MMM').toLowerCase(),
+                        date: {
+                            year: now.getFullYear(),
+                            month: now.getMonth() + 1
+                        },
                         category: 'work',
                         content: ''
                     };
@@ -104,7 +137,13 @@
             }
         };
 
-        vm.postSetting = function(){
+        vm.submit = function(){
+            vm.histories = vm.histories.map(function(v) {
+                v.date = decodeDate(v.date);
+                return v;
+            });
+            console.log(vm.histories);
+
             console.log(vm.data);
         };
     }

@@ -1,7 +1,7 @@
 <!-- SETTING PAGE -->
 
 <div class="col-xs-12 col-sm-12 col-lg-12 account-page account-setting">
-    <form ng-submit="vm.postSetting()">
+    <form ng-submit="vm.submit()">
         <div class="card">
             <h4 class="card-title">Account Setting</h4>
             <div class="divide20"></div>
@@ -156,7 +156,7 @@
                                 disable-search="true"
                                 data-placeholder-text-single="'Year'"
                                 class="history-date"
-                                ng-model="history.year"
+                                ng-model="history.date.year"
                                 ng-options="year for year in vm.yearList"
                             >
                             </select>
@@ -165,7 +165,7 @@
                                 disable-search="true"
                                 data-placeholder-text-single="'Month'"
                                 class="history-date"
-                                ng-model="history.month"
+                                ng-model="history.date.month"
                                 ng-options="month for month in vm.monthList"
                             >
                             </select>

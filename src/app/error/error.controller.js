@@ -32,7 +32,7 @@
         vm.goBack = goBack;
 
         function goHome(){
-            $state.go('common.default.main');
+            $state.go('common.figure.main');
         }
         function goBack(){
             location.href = document.referrer;
