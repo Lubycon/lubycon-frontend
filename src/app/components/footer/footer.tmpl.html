@@ -2,7 +2,7 @@
 <!-- THIS IS FOOTER COMPONENT -->
 <nav class="navbar navbar-fixed-bottom navbar-light main-footer">
     <!--LEFTSIDE MENU-->
-    <ul>
+    <!-- <ul class="pull-left">
         <li class="dropdown navbar-menu" uib-dropdown on-toggle="vm.CommunityToggle">
             <a href="" class="dropdown-toggle" uib-dropdown-toggle>
                 language <i class="fa fa-angle-up"></i>
@@ -13,5 +13,11 @@
                 </li>
             </ul>
         </li>
+    </ul> -->
+    <!--RIGHTSIDE MENU-->
+    <ul class="pull-right">
+        <li><a ui-sref="common.noFooter.aboutus">Terms of service</a></li>
+        <li><a ui-sref="common.noFooter.aboutus">Private policy</a></li>
+        <li><a ui-sref="common.noFooter.aboutus">ABOUT</a></li>
     </ul>
 </nav>

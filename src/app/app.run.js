@@ -26,11 +26,11 @@
         function authenticate(toState) {
             console.log(toState,$rootScope);
             if(toState.authenticate === 'no-member' && $rootScope.memberState && $rootScope.memberState.sign) {
-                console.log('only for member');
+                console.log('only for visitor');
                 $location.path('/main');
             }
             else if(toState.authenticate === 'member' && !$rootScope.memberState) {
-                console.log(403);
+                console.log('only for member');
                 $location.path('/main');
             }
             else {

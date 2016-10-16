@@ -2,4 +2,10 @@
     min-height: 35px;
     background: rgba(255,255,255,0.8);
     border-top: 1px solid #fff;
+
+    .pull-left, .pull-right {
+        li {
+            display: inline-block;
+        }
+    }
 }

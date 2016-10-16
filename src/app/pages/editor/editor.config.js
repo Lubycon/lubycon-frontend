@@ -27,7 +27,8 @@
                     getCreativeCommons: function($http) {
                         return $http.get('/data/creative_commons.json').then();
                     }
-                }
+                },
+                authenticate: 'member'
             })
             // .state('common.noFooter.editor2d', {
             //     url: '/editor/2d',

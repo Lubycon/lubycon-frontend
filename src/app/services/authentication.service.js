@@ -102,7 +102,7 @@
                         $cookieStore.put('member', $rootScope.member);
 
                         if(destination) $location.path(destination);
-                        else $location.path('/main');
+                        else return false;
                     }
                     else {
                         console.log(res.status);

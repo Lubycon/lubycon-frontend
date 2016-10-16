@@ -4,7 +4,7 @@
 		<article class="main-message">{{vm.message.title}}</article>
 		<article class="sub-message">{{vm.message.content}}</article>
 	</div>
-	<div class="message-box">
+	<div class="message-box" ng-if="vm.message.timer">
 		<article class="time-wrapper">
 			<timer
 				time="vm.time"
@@ -19,14 +19,14 @@
 	</div>
 	<div class="message-box">
 		<form ng-submit="vm.submit()">
-			<div class="input-group col-xs-12 col-sm-12 col-lg-6 col-lg-offset-3">
-                <label>{{vm.message.inputLabel}}</label>
+			<div class="input-group col-xs-12 col-sm-12 col-lg-6 col-lg-offset-3" ng-repeat="input in vm.message.inputs">
+                <label>{{input.label}}</label>
                 <input
                     required
-                    type="{{vm.message.inputType}}"
+                    type="{{input.type}}"
                     class="form-control"
-                    placeholder=""
-                    ng-model="vm.validateCode"
+                    placeholder="{{input.placeholder || ''}}"
+                    ng-model="vm.message.inputs[$index].model"
 					ng-pattern=""
                 />
             </div>

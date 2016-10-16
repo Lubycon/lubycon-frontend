@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('messages')
+        .module('app.pages.certification')
         .controller('CertCheckController', [
             '$rootScope', '$scope', '$location', '$state',
             '$timeout', '$stateParams', '$translate',
@@ -19,6 +19,7 @@
     ) {
         var vm = this;
 
+        vm.code = $stateParams.code;
         vm.message = {
             animation: 'bounceInDown',
             icon: 'fa-lock',
@@ -26,8 +27,11 @@
             iconAnimation: '',
             title: 'Certification',
             content: 'Please insert your certification code.',
-            inputLabel: 'Code',
-            inputType: 'text',
+            inputs: [{
+                label: 'Code',
+                type: 'code',
+                model: vm.code
+            }],
             buttons: [{
                 kind: 'resend-bt',
                 type: 'button',
@@ -38,20 +42,19 @@
                 type: 'submit',
                 method: null,
                 content: 'SUBMIT'
-            }]
+            }],
+            timer: true
         };
+
+        vm.submit = submit;
+        // AUTOMATICALLY SUBMIT
+        if(vm.code) vm.submit();
 
         vm.success = $stateParams.success;
         vm.kind = $stateParams.kind;
 
-        vm.validateCode = $stateParams.code;
-        vm.isValidate = !angular.isUndefined(vm.validateCode);
+        vm.isValidate = !angular.isUndefined(vm.code);
         vm.time = getCodeTime.result.time; // seconds
-
-        vm.submit = submit;
-
-        // AUTOMATICALLY SUBMIT
-        if(vm.validateCode) vm.submit();
 
         function resendMail() {
             console.log('resendMail');
@@ -64,9 +67,11 @@
 
 
         function submit() {
-            console.log(vm.validateCode);
+            console.log(vm.code);
+            vm.code = vm.message.inputs[0].model;
+
             Restangular.all('certs/signup/code').customPOST(
-                {code: vm.validateCode},
+                {code: vm.code},
                 undefined,
                 undefined,
                 {'Content-Type': 'application/json'}

@@ -57,6 +57,12 @@
                 },
                 authenticate: 'member'
             })
+            .state('common.default.findPassword', {
+                url: '/findpassword',
+                templateUrl: 'app/pages/certification/certification.tmpl.html',
+                controller: 'FindPasswordController',
+                controllerAs: 'vm'
+            })
             ;
     }
 })();
