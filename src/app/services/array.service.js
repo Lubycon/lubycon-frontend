@@ -8,13 +8,13 @@
     function ArrayService($rootScope) {
 
         var service = {
-            makeUniq: makeUniq,
-
+            unique: unique,
+            clean: clean
         };
 
         return service;
 
-        function makeUniq(array) {
+        function unique(array) {
             return array.reduce(function(a,b){
                 if(a.indexOf(b) < 0) a.push(b);
                 return a;

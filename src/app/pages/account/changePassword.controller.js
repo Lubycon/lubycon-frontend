@@ -2,16 +2,16 @@
     'use strict';
 
     angular
-        .module('messages')
-        .controller('PwdCertCheckController', [
+        .module('app.pages.account')
+        .controller('ChangePasswordController', [
             '$rootScope', '$scope', '$location', '$state', '$timeout',
-            '$stateParams', '$translate', 'Restangular',
-            PwdCertCheckController
+            '$stateParams', '$translate', 'Restangular', 'toastr',
+            ChangePasswordController
         ]);
 
     /* @ngInject */
-    function PwdCertCheckController(
-        $rootScope, $scope, $location, $state, $timeout, $stateParams, $translate, Restangular
+    function ChangePasswordController(
+        $rootScope, $scope, $location, $state, $timeout, $stateParams, $translate, Restangular, toastr
     ) {
         var vm = this;
         vm.timer = false;
@@ -21,7 +21,7 @@
             iconColor: 'orange',
             iconAnimation: '',
             title: 'Security',
-            content: 'Please insert your new password.',
+            content: 'Please insert your new password.\nIf you refresh this page, certiication code will not saved',
             inputs: [{
                 label: 'Password',
                 type: 'password',
@@ -48,7 +48,19 @@
         vm.submit = submit;
 
         function submit() {
-            console.log("submit",vm.inputCode);
+            vm.password = vm.message.inputs[0].model;
+            vm.repeatPassword = vm.message.inputs[1].model;
+            if(vm.password === vm.repeatPassword) {
+                console.log("submit",vm.password,$stateParams.code);
+                Restangular.all('/members/pwd/reset').customPUT(
+                    { code: $stateParams.code, newPassword: vm.password }
+                ).then(function(res) {
+                    console.log(res);
+                });
+            }
+            else {
+                toastr.error('비밀번호를 다시 한번 확인하세요');
+            }
         }
     }
 })();

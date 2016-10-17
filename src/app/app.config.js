@@ -32,7 +32,7 @@
         var memberState = $cookieStore.get('memberState');
         console.log(authdata,memberState);
 
-        if(authdata && memberState.sign) {
+        if(authdata && memberState && memberState.sign) {
             defaultHeaders['X-lubycon-Token'] = authdata;
             Restangular.setDefaultHeaders(defaultHeaders);
             $rootScope.memberState = memberState;

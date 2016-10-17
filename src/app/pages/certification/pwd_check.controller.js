@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('messages')
+        .module('app.pages.certification')
         .controller('PwdCheckController', [
             '$rootScope', '$scope', '$location', '$state', '$timeout',
             '$stateParams', '$translate',

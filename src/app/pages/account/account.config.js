@@ -63,6 +63,15 @@
                 controller: 'FindPasswordController',
                 controllerAs: 'vm'
             })
+            .state('common.noFooter.changePassword', {
+                url: '/changePassword',
+                templateUrl: 'app/pages/certification/certification.tmpl.html',
+                controller: 'ChangePasswordController',
+                controllerAs: 'vm',
+                params: {
+                    code: null
+                }
+            })
             ;
     }
 })();

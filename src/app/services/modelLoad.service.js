@@ -4,11 +4,11 @@
     angular
         .module('app')
         .factory('ModelLoadService', [
-            '$rootScope', 'ArrayService',
+            '$rootScope',
             ModelLoadService
         ]);
 
-    function ModelLoadService($rootScope, ArrayService) {
+    function ModelLoadService($rootScope) {
         var service = {
             combine: combine,
             setMesh: setMesh

@@ -18,6 +18,7 @@
         getCodeTime
     ) {
         var vm = this;
+        var api = 'certs/' + $stateParams.type + '/code';
 
         vm.code = $stateParams.code;
         vm.message = {
@@ -58,7 +59,7 @@
 
         function resendMail() {
             console.log('resendMail');
-            Restangular.all('/mail/signup').customPUT(
+            Restangular.all('/mail/' + $stateParams.type).customPUT(
                 {data: ''}
             ).then(function(res) {
                 console.log(res);
@@ -70,27 +71,46 @@
             console.log(vm.code);
             vm.code = vm.message.inputs[0].model;
 
-            Restangular.all('certs/signup/code').customPOST(
+            Restangular.all(api).customPOST(
                 {code: vm.code},
                 undefined,
                 undefined,
                 {'Content-Type': 'application/json'}
             ).then(function(res) {
-                console.log(res.result);
                 if(res.status.code === '0000') {
-                    if(res.result.validity) {
-                        var token = Restangular.defaultHeaders['X-lubycon-Token'];
-                        $state.go('common.noFooter.signupMessage',{success: true});
-                        Authentication.updateCredentials('active');
+                    if($stateParams.type === 'signup') {
+                        activatingAccount(res);
+                    }
+                    else if($stateParams.type === 'password') {
+                        goChangePasswordPage(res);
                     }
                     else {
-                        toastr.error('토큰이 잘못되었습니다.');
+
                     }
                 }
                 else {
                     // 전송 실패
                 }
             });
+        }
+
+        function activatingAccount(res) {
+            if(res.result.validity) {
+                var token = Restangular.defaultHeaders['X-lubycon-Token'];
+                $state.go('common.noFooter.signupMessage',{success: true});
+                Authentication.updateCredentials('active');
+            }
+            else {
+                toastr.error('토큰이 잘못되었습니다. (회원가입)');
+            }
+        }
+        function goChangePasswordPage(res) {
+            if(res.result.validaity) {
+                $state.go('common.noFooter.changePassword',{code: $stateParams.code});
+            }
+            else {
+                toastr.error('토큰이 잘못되었습니다. (패스워드)');
+            }
         }
     }
 })();

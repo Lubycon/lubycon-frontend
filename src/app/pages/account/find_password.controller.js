@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.pages.certification')
+        .module('app.pages.account')
         .controller('FindPasswordController', [
             '$rootScope', '$scope', '$location', '$state', '$timeout',
             '$stateParams', '$translate', 'Restangular',
@@ -48,7 +48,15 @@
                 undefined,
                 {'Content-Type': 'application/json'})
             .then(function(res) {
-                console.log(res);
+                res = {
+                    status : {
+                        code: '0000'
+                    }
+                };
+                if(res.status.code === '0000') {
+                    $state.go('common.noFooter.cert',{type:'password'});
+                }
+                else console.log(res.status.code);
             });
         }
     }
