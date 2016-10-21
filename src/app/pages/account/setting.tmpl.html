@@ -62,13 +62,12 @@
                     ><i class="fa fa-cloud-upload"></i></button>
                     <span class="btn" ng-show="vm.cropping"><i class="fa fa-crop" ng-click="vm.crop()"></i></span>
                 </div>
-                <img cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
+                <img ng-show="vm.cropping" cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Job</label>
                 <select
                     chosen
-                    disable-search="true"
                     inherit-select-classes="true"
                     data-placeholder-text-single="'Select your job...'"
                     ng-model="vm.member.job"
@@ -88,7 +87,6 @@
                 <label>Country</label>
                 <select
                     chosen
-                    disable-search="true"
                     data-placeholder-text-single="'Where do you live?'"
                     ng-model="vm.member.country"
                     ng-options="country.name as country.name for country in vm.countryList"

@@ -142,9 +142,13 @@
                 v.date = decodeDate(v.date);
                 return v;
             });
-            console.log(vm.histories);
+            vm.data.history = vm.histories;
 
             console.log(vm.data);
+
+            Restangular.all('members/detail/' + $stateParams.memberId).customPOST(vm.data).then(function(res) {
+                console.log(res);
+            });
         };
     }
 })();
