@@ -40,7 +40,7 @@
                 <label>Profile Photo</label>
                 <div>
                     <div class="cropper-window cropped">
-                        <img ng-src="{{vm.profileChanged ? vm.member.profile : vm.contentHost + vm.member.profile}}" />
+                        <img ng-src="{{vm.profileChanged ? vm.member.profile : 'assets/images/no_images/user.jpg'}}" />
                     </div>
                     <i ng-show="vm.cropping" class="fa fa-arrow-left" aria-hidden="true"></i>
                     <div ng-show="vm.cropping" class="cropper-window cropper-preview"></div>
