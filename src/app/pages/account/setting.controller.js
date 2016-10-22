@@ -17,7 +17,7 @@
         getMember, getCountry, getJob
     ) {
 
-        console.log(getMember);
+        console.log(getMember.result);
 
         var vm = this;
         vm.contentHost = API_CONFIG.content;
@@ -27,24 +27,14 @@
         vm.member = vm.data.userData;
         vm.languages = vm.data.language;
         vm.histories = vm.data.history;
-        // vm.histories = [{
-        //     category: 'work',
-        //     date: '2016-08-25 00:00:00',
-        //     content: 'Test history0'
-        // },{
-        //     category: 'education',
-        //     date: '2015-06-25 00:00:00',
-        //     content: 'Test history1'
-        // }];
 
         vm.publicOption = vm.data.publicOption;
 
-
-        vm.publicOptionList = ['public','private'];
-        vm.languageLevelList = ['beginner','native'];
-        vm.jobList = getJob.data;
-        vm.countryList = getCountry.data;
-        vm.historyKind = ['work','education','awards'];
+        vm.publicOptionList = ['Public','Private'];
+        vm.languageLevelList = ['Beginner','Advanced','Fluent'];
+        vm.jobList = getJob.result;
+        vm.countryList = getCountry.result;
+        vm.historyKind = ['Work Experience','Education','Awards'];
         vm.yearList = [];
         vm.monthList = [];
 
@@ -125,7 +115,7 @@
                             year: now.getFullYear(),
                             month: now.getMonth() + 1
                         },
-                        category: 'work',
+                        category: 'Work Experience',
                         content: ''
                     };
                     vm.histories.push(newHistory);
@@ -141,9 +131,13 @@
             vm.histories = vm.histories.map(function(v) {
                 v.date = decodeDate(v.date);
                 return v;
+            }).sort(function(a,b){
+                return a.date > b.date ? 1 : a.date < b.date ? -1 : 0;
             });
+
             vm.data.history = vm.histories;
 
+            console.log(vm.data.history);
             console.log(vm.data);
 
             Restangular.all('members/detail/' + $stateParams.memberId).customPOST(vm.data).then(function(res) {

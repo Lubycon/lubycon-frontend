@@ -15,11 +15,21 @@
                 controller: 'AboutUsController',
                 controllerAs: 'vm',
                 resolve: {
-                    // getCreatorRsv: function($stateParams, Restangular) {
-                    //     var api = Restangular.all('cretors');
-                    //     return api.customGET().then();
-                    // }
+                    
                 }
-            });
+            })
+            .state('common.noFooter.terms-of-service', {
+                url: '/docs/terms',
+                templateUrl: 'app/pages/company/termsOfService.tmpl.html',
+                controller: 'DocsController',
+                controllerAs: 'vm'
+            })
+            .state('common.noFooter.private-policy', {
+                url: '/docs/privatepolicy',
+                templateUrl: 'app/pages/company/privatePolicy.tmpl.html',
+                controller: 'DocsController',
+                controllerAs: 'vm'
+            })
+            ;
     }
 })();

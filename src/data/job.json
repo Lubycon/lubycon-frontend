@@ -1,9 +1,0 @@
-
-[
-  {"id" : 0, "name" : "Artist"},
-  {"id" : 1, "name" : "Creator"},
-  {"id" : 2, "name" : "Designer"},
-  {"id" : 3, "name" : "Engineer"},
-  {"id" : 4, "name" : "Student"},
-  {"id" : 5, "name" : "Other"}
-]

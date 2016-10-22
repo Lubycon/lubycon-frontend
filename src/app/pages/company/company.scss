@@ -153,3 +153,78 @@
         }
     }
 }
+
+
+.state-terms-of-service, .state-private-policy {
+    .doc-wrapper {
+        .doc-nav {
+            background: #fff;
+            width: 100%;
+            margin: 30px 0;
+
+            ul {
+                margin: 0 auto;
+                li {
+                    display: inline-block;
+                    padding: 20px;
+                    color: #444;
+                    font-size: 20px;
+                    &.selected {
+                        border-bottom: 5px solid #48cfad;
+                    }
+                }
+            }
+        }
+
+        .doc-inner-wrapper {
+            padding: 70px;
+        	background: #fff;
+        	text-align: left;
+            margin: 30px 0;
+
+            .doc-body {
+                margin: 50px 0;
+                padding-right: 70px;
+
+                &.doc-title {
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #ccc;
+
+                    .doc-headline {
+                        font-size: 36px;
+                    }
+                }
+
+                .doc-headline {
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+                .doc-content {
+                    font-size: 15px;
+                    font-weight: 400;
+
+                    p {
+                        margin-bottom: 20px;
+                    }
+                    a {
+                        color: #48cfad;
+                        text-decoration: underline;
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+
+                    ol {
+                        margin: 15px 0;
+                        margin-left: 20px;
+
+                        li {
+                            list-style: square;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

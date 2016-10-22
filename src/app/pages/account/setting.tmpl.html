@@ -39,15 +39,7 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Profile Photo</label>
                 <div>
-                    <div class="cropper-window cropped">
-                        <img ng-src="{{vm.profileChanged ? vm.member.profile : 'assets/images/no_images/user.jpg'}}" />
-                    </div>
-                    <i ng-show="vm.cropping" class="fa fa-arrow-left" aria-hidden="true"></i>
-                    <div ng-show="vm.cropping" class="cropper-window cropper-preview"></div>
-                </div>
-                <div>
-                    <button
-                        class="btn"
+                    <div class="cropper-window cropped"
                         ngf-select
                         type="file"
                         name="files"
@@ -58,8 +50,18 @@
                         ngf-max-size="10MB"
                         ngf-max-files="1"
                         ngf-fix-orientation="true"
-                        ng-show="!vm.cropping"
-                    ><i class="fa fa-cloud-upload"></i></button>
+                    >
+                        <div class="overlay">
+                            <span>
+                                <i class="fa fa-cloud-upload"></i><p>Change</p>
+                            </span>
+                        </div>
+                        <img ng-src="{{vm.profileChanged ? vm.member.profile : 'assets/images/no_images/user.jpg'}}" />
+                    </div>
+                    <i ng-show="vm.cropping" class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <div ng-show="vm.cropping" class="cropper-window cropper-preview"></div>
+                </div>
+                <div>
                     <span class="btn" ng-show="vm.cropping"><i class="fa fa-crop" ng-click="vm.crop()"></i></span>
                 </div>
                 <img ng-show="vm.cropping" cropper cropping="vm.cropping" previewer="'.preview'" class="cropper" ngf-src="vm.uploadedProfile" ngf-no-object-url="true" />
@@ -71,7 +73,7 @@
                     inherit-select-classes="true"
                     data-placeholder-text-single="'Select your job...'"
                     ng-model="vm.member.job"
-                    ng-options="job.id as job.name for job in vm.jobList"
+                    ng-options="job.name as job.name for job in vm.jobList"
                 >
                 </select>
             </div>
@@ -103,12 +105,6 @@
                 <label>Language</label>
                 <ul>
                     <li ng-repeat="language in vm.languages">
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="language..."
-                            ng-model="language.name"
-                        />
                         <select
                             chosen
                             disable-search="true"
@@ -117,6 +113,12 @@
                             ng-options="level for level in vm.languageLevelList"
                         >
                         </select>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="language..."
+                            ng-model="language.name"
+                        />
                     </li>
                 </ul>
                 <div class="divide20"></div>
@@ -126,11 +128,12 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>Description</label>
                 <textarea
+                    msd-elastic="\n"
                     type="text"
                     rows="5"
                     ng-maxlength="1000"
                     class="form-control"
-                    ng-model="vm.member.desciption"
+                    ng-model="vm.member.description"
                 ></textarea>
             </div>
         </div>
@@ -145,6 +148,7 @@
                                 chosen
                                 disable-search="true"
                                 data-placeholder-text-single="'Kind...'"
+                                class="history-kind"
                                 ng-model="history.category"
                                 ng-options="kind for kind in vm.historyKind"
                             >

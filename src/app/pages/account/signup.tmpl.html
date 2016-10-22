@@ -53,8 +53,8 @@
                     chosen
                     inherit-select-classes="true"
                     ng-model="vm.member.country"
+                    ng-options="country.name as country.name for country in vm.countryList"
                 >
-                    <option value="{{country.id}}" ng-repeat="country in vm.countryList">{{country.name}}</option>
                 </select>
             </div>
         </div>

@@ -123,14 +123,14 @@
         }
 
         .form-control {
-            width: 200px;
-            height: 36px;
+            width: 47%;
+            height: 30px;
             margin: 0 5px;
             float: none;
         }
 
         select {
-            max-width: 200px;
+            max-width: 47%;
             display: inline-block;
         }
 
@@ -139,6 +139,9 @@
         }
 
         .history-group {
+            .history-kind {
+                width: 130px;
+            }
             .history-date {
                 width: 80px;
             }
@@ -152,6 +155,37 @@
             height: 100px;
             display: inline-block;
             vertical-align: bottom;
+            position: relative;
+
+            .overlay {
+                display: table;
+                opacity: 0;
+                position: absolute;
+                background: rgba(0,0,0,0.5);
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: #eee;
+                transition: opacity 0.4s;
+
+                span {
+                    display: table-cell;
+                    vertical-align: middle;
+                    i {
+                        font-size: 30px;
+                    }
+                    p {
+                        color: #eee;
+                    }
+                }
+            }
+            &:hover {
+                cursor: pointer;
+
+                .overlay {
+                    opacity: 1;
+                }
+            }
 
             &.cropper-preview {
                 width: 100px;

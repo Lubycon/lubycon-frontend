@@ -25,7 +25,7 @@
             country: null
         };
         vm.rePassword = null;
-        vm.countryList = getCountry.data;
+        vm.countryList = getCountry.result;
         vm.signup = signup;
 
         function signup(){
