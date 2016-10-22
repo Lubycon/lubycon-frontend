@@ -24,7 +24,6 @@
                     ['fontclr', ['color']],
                     ['alignment', ['ul', 'ol', 'paragraph', 'lineheight']],
                     ['height', ['height']],
-                    ['table', ['table']],
                     ['insert', ['link','picture','hr']]
                 ]
             };

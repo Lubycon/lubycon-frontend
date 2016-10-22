@@ -40,22 +40,19 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
                 <li>
-                    <a ui-sref="aside.default.dashboard({memberId:$root.member.id})">
-                        <i class="fa fa-tachometer"></i>Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a ui-sref="aside.default.insight({memberId:$root.member.id})">
-                        <i class="fa fa-line-chart"></i>Insight
-                    </a>
-                </li>
-                <li>
                     <a ui-sref="common.default.accountSetting({memberId:$root.member.id})">
                         <i class="fa fa-gear"></i>Setting
                     </a>
                 </li>
                 <li>
-                    <a href="#" ng-click="vm.doSignOut()" onclick="return false;">Sign out</a>
+                    <a ui-sref="common.noFooter.cert-pwd">
+                        <i class="fa fa-gear"></i>Password Setting
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="vm.doSignOut()" onclick="return false;">
+                        <i class="fa fa-gear"></i>Sign out
+                    </a>
                 </li>
             </ul>
         </div>

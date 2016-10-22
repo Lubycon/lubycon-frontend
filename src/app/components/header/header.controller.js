@@ -29,17 +29,17 @@
                     name: 'Forum',
                     icon: 'fa fa-comments',
                     link: 'common.figure.community({ category: "forum" })'
-                },
-                {
-                    name: 'Tutorial',
-                    icon: 'fa fa-book',
-                    link: 'common.figure.community({ category: "tutorial" })'
-                },
-                {
-                    name: 'Q&A',
-                    icon: 'fa fa-question',
-                    link: 'common.figure.community({ category: "qna" })'
                 }
+                // {
+                //     name: 'Tutorial',
+                //     icon: 'fa fa-book',
+                //     link: 'common.figure.community({ category: "tutorial" })'
+                // },
+                // {
+                //     name: 'Q&A',
+                //     icon: 'fa fa-question',
+                //     link: 'common.figure.community({ category: "qna" })'
+                // }
             ]
         };
 

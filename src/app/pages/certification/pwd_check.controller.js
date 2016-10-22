@@ -5,13 +5,14 @@
         .module('app.pages.certification')
         .controller('PwdCheckController', [
             '$rootScope', '$scope', '$location', '$state', '$timeout',
-            '$stateParams', '$translate',
+            '$stateParams', '$translate', 'Restangular',
             PwdCheckController
         ]);
 
     /* @ngInject */
     function PwdCheckController(
-        $rootScope, $scope, $location, $state, $timeout, $stateParams, $translate
+        $rootScope, $scope, $location, $state, $timeout, $stateParams,
+        $translate, Restangular
     ) {
         var vm = this;
         vm.timer = false;
@@ -22,8 +23,11 @@
             iconAnimation: '',
             title: 'Security',
             content: 'Please insert your password again.',
-            inputLabel: 'Password',
-            inputType: 'password',
+            inputs: [{
+                label: 'Password',
+                type: 'password',
+                model: vm.password
+            }],
             buttons: [
                 {
                     kind: 'submit-bt',
@@ -33,14 +37,17 @@
                 }
             ]
         };
-        vm.certCode = null; // Password
 
         vm.success = $stateParams.success;
         vm.kind = $stateParams.kind;
         vm.submit = submit;
 
         function submit() {
-            console.log("submit",vm.inputCode);
+            Restangular.all('certs/pwd').customPOST({
+                password: vm.password
+            }).then(function(res) {
+                console.log(res);
+            });
         }
     }
 })();

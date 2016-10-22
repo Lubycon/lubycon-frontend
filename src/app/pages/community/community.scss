@@ -65,18 +65,27 @@
 }
 
 .community-write {
-    label {
-        display: block;
+    .input-group {
+        margin-bottom: 10px;
+        label {
+            display: block;
+        }
     }
+
 
     // SUMMERNOTE....
     .note-editor {
         // TOOLBAR...
         .note-toolbar.panel-heading {
+            background: #222;
             .note-btn-group.btn-group {
                 .note-btn.btn {
+                    background: #444;
                 }
             }
+        }
+        .note-statusbar {
+            background-color: #222;
         }
     }
 }

@@ -103,6 +103,17 @@
                 display: inline-block;
                 vertical-align: middle;
             }
+
+            .dropdown-menu {
+                li {
+                    a {
+                        padding: 3px 10px;
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
