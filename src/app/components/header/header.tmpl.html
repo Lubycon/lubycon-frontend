@@ -13,17 +13,14 @@
     </div>
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="navbar-menu">
-                <a ui-sref="{{vm.menuList.content.link}}">{{vm.menuList.content.name}}</a>
-            </li>
-            <li class="dropdown navbar-menu" uib-dropdown on-toggle="vm.CommunityToggle">
+            <li ng-repeat="menu in vm.menuList" class="dropdown navbar-menu" uib-dropdown on-toggle>
                 <a href="" class="dropdown-toggle" uib-dropdown-toggle>
-                    COMMUNITY <i class="fa fa-angle-down"></i>
+                    {{menu.name}} <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu main-nav-menu" role="menu">
-                    <li ng-repeat="menu in vm.menuList.community">
-                        <a ui-sref="{{menu.link}}">
-                            <i class="{{menu.icon}}"></i>{{menu.name}}</a>
+                    <li ng-repeat="subMenu in menu.subMenu">
+                        <a ui-sref="{{subMenu.link}}">
+                            <i class="fa {{subMenu.icon}}"></i>{{subMenu.name}}</a>
                     </li>
                 </ul>
             </li>
