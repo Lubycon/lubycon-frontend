@@ -23,8 +23,7 @@
             title: null,
             content: null
         };
-
-        vm.success = $stateParams.success;
+        vm.success = $rootScope.memberState.condition === 'active';
 
         if(vm.success){
             vm.message.icon = 'fa-thumbs-o-up';

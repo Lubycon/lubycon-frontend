@@ -97,7 +97,7 @@
         function activatingAccount(res) {
             if(res.result.validity) {
                 var token = Restangular.defaultHeaders['X-lubycon-Token'];
-                $state.go('common.noFooter.signupMessage',{success: true});
+                $state.go('common.noFooter.signupMessage');
                 Authentication.updateCredentials('active');
             }
             else {

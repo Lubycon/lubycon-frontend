@@ -13,10 +13,7 @@
                 url: '/message/signup',
                 templateUrl: 'app/messages/message.tmpl.html',
                 controller: 'SignupMessageController',
-                controllerAs: 'vm',
-                params: {
-                    success: null
-                }
+                controllerAs: 'vm'
             })
             .state('common.noFooter.contentMessage', {
                 url: '/message/contents',
