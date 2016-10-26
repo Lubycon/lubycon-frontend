@@ -56,8 +56,7 @@
 
                 // POST TO SERVER...
                 // Restangular.all('bookmark/contents/3d' + item.code)
-                //     .customPOST(params, undefined, undefined, {'Content-Type':'application/json'})
-                //     .then(function(res){
+                //     .customPOST(params).then(function(res){
                 //
                 //     });
             }

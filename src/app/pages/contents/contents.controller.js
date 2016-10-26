@@ -127,7 +127,6 @@
             options: ['Recent','Featured','Downalod','View'],
             data: vm.filterData.sort
         }];
-
         vm.filterSubmit = function() {
             vm.filterData.category = vm.filters[0].data;
             vm.filterData.license = vm.filters[1].data;

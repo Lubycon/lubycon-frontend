@@ -41,19 +41,21 @@
                 }
             })
             .state('common.noFooter.community-write', {
-                url: '/community/:category/write',
+                url: '/community/:category/write?:postId',
                 templateUrl: 'app/pages/community/community_write.tmpl.html',
                 controller: 'CommunityWriteController',
                 controllerAs: 'vm',
                 params: {
-                    category: null
+                    category: null,
+                    postId: null
                 },
                 resolve: {
                     // getContent: function($stateParams, Restangular) {
                     //     var api = Restangular.all('community/' + $stateParams.category + '/' + $stateParams.boardId);
                     //     return api.customGET().then();
                     // }
-                }
+                },
+                authenticate: 'member'
             })
             ;
     }

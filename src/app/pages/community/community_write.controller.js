@@ -4,12 +4,14 @@
     angular
     .module('app.pages.community')
     .controller('CommunityWriteController', [
-        '$rootScope', '$scope', 'toastr',
+        '$rootScope', '$scope', 'toastr', 'Restangular', '$state', '$stateParams',
         CommunityWriteController
     ]);
 
     /** @ngInject */
-    function CommunityWriteController($rootScope, $scope, toastr) {
+    function CommunityWriteController(
+        $rootScope, $scope, toastr, Restangular, $state, $stateParams
+    ) {
         var vm = this;
 
         vm.init = (init)();
@@ -27,6 +29,8 @@
                     ['insert', ['link','picture','hr']]
                 ]
             };
+            vm.postId = $stateParams.postId;
+
             vm.attachedFiles = [];
             vm.title = null;
             vm.content = null;
@@ -42,6 +46,18 @@
                 title: vm.title,
                 content: vm.content
             };
+            if(vm.postId) { // MODIFY DATA
+                Restangular.all('post/'+$stateParams.category+'/'+vm.postId).customPUT(vm.data).then(function(){
+                    console.log(res);
+                });
+            }
+            else { // POST NEW DATA
+                Restangular.all('post/'+$stateParams.category).customPOST(vm.data).then(function(res) {
+                    console.log(res);
+                });
+            }
+
+
             console.log(vm.data);
         };
     }

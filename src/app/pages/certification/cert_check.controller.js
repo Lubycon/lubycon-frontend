@@ -71,12 +71,9 @@
             console.log(vm.code);
             vm.code = vm.message.inputs[0].model;
 
-            Restangular.all(api).customPOST(
-                {code: vm.code},
-                undefined,
-                undefined,
-                {'Content-Type': 'application/json'}
-            ).then(function(res) {
+            Restangular.all(api).customPOST({
+                code: vm.code
+            }).then(function(res) {
                 if(res.status.code === '0000') {
                     if($stateParams.type === 'signup') {
                         activatingAccount(res);

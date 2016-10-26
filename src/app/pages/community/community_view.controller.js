@@ -97,8 +97,7 @@
 
             // POST TO SERVER...
             // Restangular.all('like/community/' + $stateParams.category + vm.contents.code)
-            //     .customPOST(params, undefined, undefined, {'Content-Type':'application/json'})
-            //     .then(function(res){
+            //     .customPOST(params).then(function(res){
             //
             //     });
         }
