@@ -1,41 +1,45 @@
 <div class="row">
-    <div class="table-wrap col-sm-6 col-lg-12">
-        <div class="table-header">
-            <div class="board-name"><!--$stateParam.category--></div>
-            <div class="board-data-title">
+    <div class="table-wrap col-sm-12 col-md-12 col-lg-12">
+        <!-- <div class="table-header">
+            <h5>{{$stateParam.category}}</h5>
+            <div class="board-data">
                 <span class="table-date">Date</span>
                 <span class="table-view"><i class="fa fa-heart"></i></span>
                 <span class="table-like"><i class="fa fa-eye"></i></span>
             </div>
-        </div>
+        </div> -->
         <div class="table-body">
-            <ul class="table-list-wrap">
-                <li class="table-list" ng-repeat="list in lists">
-                    <div class="table-list-inner">
-                        <span class="table-tag-wrap hidden-mb-ib">
-                            <span class="table-tag">
+            <ul>
+                <li ng-repeat="list in lists">
+                    <div class="list-wrapper col-sm-8 col-md-8 col-lg-8">
+                        <div class="post-data">
+                            <span class="post-label">
                                 <i class="fa fa-circle"></i>
+                                <p>{{list.content.code}}</p>
                             </span>
-                            <span class="table-number">{{list.content.code}}</span>
-                        </span>
-                        <span class="table-user-img">
-                            <img ng-src="{{contentHost + list.userData.profile}}">
-                        </span>
-                        <span class="table-info">
-                            <a ui-sref="common.default.community-view({category: 'forum', boardId: list.content.code})">
-                                <span class="table-subject">{{list.content.title}}</span>
-                                <span class="table-comments">[{{list.content.comment}}]</span>
-                            </a>
-                            <span class="table-writer">
-                                <a href="">
-                                    {{list.userData.name}}
-                                </a>
+                            <span class="post-body">
+                                <div class="post-info">
+                                    <a ui-sref="common.default.community-view({category: 'forum', boardId: list.content.code})">
+                                        <h3>{{list.content.title}}</h3>
+                                        <p>[{{list.content.comment}}]</p>
+                                    </a>
+                                </div>
+                                <div class="post-counts">
+                                    <!-- <span class="table-date">{{list.content.date}}</span> -->
+                                    <span>{{list.content.view}}</span>
+                                    <span>{{list.content.like}}</span>
+                                </div>
                             </span>
-                        </span>
-                        <div class="table-counts">
-                            <span class="table-date">{{list.content.date}}</span>
-                            <span class="table-view table-counter">{{list.content.view}}</span>
-                            <span class="table-view table-counter">{{list.content.like}}</span>
+                        </div>
+                    </div>
+                    <div class="list-wrapper col-sm-4 col-md-4 col-lg-4">
+                        <div class="author-data">
+                            <span class="user-img">
+                                <img ng-src="{{contentHost + list.userData.profile}}">
+                            </span>
+                            <h4>
+                                <a href="">{{list.userData.name}}</a>
+                            </h4>
                         </div>
                     </div>
                 </li>
