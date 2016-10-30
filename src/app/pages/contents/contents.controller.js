@@ -14,14 +14,14 @@
         // DUMMY DATA
         vm.contents = [
             {
-                code : 1,
+                id : 1,
                 title: "The AR Machine",
                 category: "3D",
                 image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
                 userData: {
-                    code: 1,
+                    id: 1,
                     name: "Adrian Joy",
                     profile: "user/1/profile.jpg"
                 },
@@ -32,14 +32,14 @@
                 }
             },
             {
-                code : 2,
+                id : 2,
                 title: "Prison",
                 category: "3D",
                 image: "contents/threed/Audrey_Wickham20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: false,
                 userData: {
-                    code: 1,
+                    id: 1,
                     name: "Audrey Wickham",
                     profile: "user/15/profile.jpg"
                 },
@@ -50,14 +50,14 @@
                 }
             },
             {
-                code : 3,
+                id : 3,
                 title: "Sweeeety Apples",
                 category: "3D",
                 image: "contents/threed/Robert_Beasley20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
                 userData: {
-                    code: 1,
+                    id: 1,
                     name: "Robert Beasley",
                     profile: "user/1/profile.jpg"
                 },
@@ -68,14 +68,14 @@
                 }
             },
             {
-                code : 4,
+                id : 4,
                 title: "Mirror",
                 category: "3D",
                 image: "contents/threed/Steven_Watkins20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: false,
                 userData: {
-                    code: 2,
+                    id: 2,
                     name: "Steven Watkins",
                     profile: "user/2/profile.jpg"
                 },
@@ -86,14 +86,14 @@
                 }
             },
             {
-                code : 5,
+                id : 5,
                 title: "Blue Chairs",
                 category: "3D",
                 image: "contents/threed/Terence_Bingham20160414050808/thumbnail/thumbnail.jpg",
                 license: "Free",
                 bookmark: true,
                 userData: {
-                    code: 5,
+                    id: 5,
                     name: "Terence Bingham",
                     profile: "user/5/profile.jpg"
                 },

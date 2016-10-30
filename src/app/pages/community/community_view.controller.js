@@ -4,53 +4,22 @@
     angular
         .module('app.pages.community')
         .controller('CommunityViewController', [
-            '$rootScope', '$scope', '$sce', 'toastr', 'API_CONFIG',
+            '$rootScope', '$scope', '$sce', 'toastr', 'API_CONFIG', 'getPostRsv',
+            '$state', '$stateParams',
             CommunityViewController
         ]);
 
     /** @ngInject */
-    function CommunityViewController($rootScope, $scope, $sce, toastr, API_CONFIG) {
+    function CommunityViewController(
+        $rootScope, $scope, $sce, toastr, API_CONFIG, getPostRsv,
+        $state, $stateParams
+    ) {
         var vm = this;
         vm.contentHost = API_CONFIG.content;
         //DUMMY DATA
-        vm.data = {
-            contents: {
-                code: 0,
-                title: 'Test Title',
-                date: '2016-08-18 13:03:12',
-                content: '<b>Quis habitasse in urna</b>, ac sagittis scelerisque sociis, elementum sociis pid pulvinar facilisis integer magnis dapibus! Enim enim pulvinar hac urna pulvinar placerat dictumst risus dolor, lacus aenean magna auctor vut, mauris! Ac ac augue mattis? Tempor phasellus, elementum tincidunt dapibus et ultrices adipiscing natoque cursus et, enim. Natoque amet cras enim, a porta, amet integer. Nunc aenean, odio magnis! Sagittis duis sociis. Proin, rhoncus tincidunt, tincidunt integer, pellentesque rhoncus elit dignissim non sit tincidunt elementum, turpis nec vel, ut, nec odio tristique ultrices nunc. Turpis aenean dolor vel mid! Parturient, egestas massa rhoncus aliquet, dapibus. Rhoncus a placerat, odio? Platea sit! Dignissim urna amet et augue amet risus risus, augue, et pellentesque, mauris? Sed porttitor, elit porta odio sagittis.',
-                likeCount: 3,
-                viewCount: 25,
-                like: true
-            },
-            userData: {
-                code: 0,
-                name: 'Admin',
-                profile: 'user/0/profile.jpg',
-                job: 'Developer',
-                country: 'South Korea',
-                city: 'Seoul'
-            }
-        };
+        vm.data = getPostRsv.result;
+        console.log(vm.data);
 
-        vm.comments = [
-            {
-                userCode: 5,
-                code: 1,
-                name: 'Test member1',
-                profile: 'user/5/profile.jpg',
-                date: '2016-08-17 12:32:01',
-                content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
-            },
-            {
-                userCode: 5,
-                code: 1,
-                name: 'Test member1',
-                profile: 'user/5/profile.jpg',
-                date: '2016-08-17 12:32:01',
-                content: 'Habitasse aliquet. Enim amet adipiscing quis. Elementum? Nec et augue purus ac mauris, est facilisis. Massa, porttitor scelerisque sed dolor, proin nisi, elit ultricies! Pulvinar tristique, mauris phasellus amet duis sed non dictumst habitasse integer lundium! Urna ac? Sagittis? '
-            }
-        ];
         //DUMMY DATA
 
         vm.init = (init)();
@@ -61,7 +30,7 @@
 
             vm.counts = [
                 { icon: 'fa fa-eye', data: vm.contents.viewCount },
-                { icon: 'fa fa-cloud-download', data: vm.contents.downloadCount },
+                // { icon: 'fa fa-cloud-download', data: vm.contents.downloadCount },
                 { icon: 'fa fa-heart', data: vm.contents.likeCount }
             ];
 
@@ -70,6 +39,14 @@
 
         function convertToHTML(string){
             return $sce.trustAsHtml(string);
+        }
+
+        vm.modify = goModify;
+        function goModify() {
+            $state.go('common.noFooter.community-write',{
+                category: $stateParams.category,
+                postId: $stateParams.postId
+            });
         }
 
         vm.likeAction = likeAction;

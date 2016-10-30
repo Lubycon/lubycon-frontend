@@ -4,15 +4,18 @@
     angular
     .module('app.pages.community')
     .controller('CommunityWriteController', [
-        '$rootScope', '$scope', 'toastr', 'Restangular', '$state', '$stateParams',
+        '$rootScope', '$scope', 'toastr', 'Restangular',
+        '$state', '$stateParams', 'getPostRsv',
         CommunityWriteController
     ]);
 
     /** @ngInject */
     function CommunityWriteController(
-        $rootScope, $scope, toastr, Restangular, $state, $stateParams
+        $rootScope, $scope, toastr, Restangular,
+        $state, $stateParams, getPostRsv
     ) {
         var vm = this;
+        var isModifyMode = getPostRsv ? true : false;
 
         vm.init = (init)();
 
@@ -29,11 +32,12 @@
                     ['insert', ['link','picture','hr']]
                 ]
             };
-            vm.postId = $stateParams.postId;
-
+            vm.postId = isModifyMode ? getPostRsv.result.contents.id : null;
+            vm.title = isModifyMode ? getPostRsv.result.contents.title : null;
+            vm.content = isModifyMode ? getPostRsv.result.contents.content : null;
             vm.attachedFiles = [];
-            vm.title = null;
-            vm.content = null;
+
+            console.log(getPostRsv);
         }
 
         vm.changedFile = function(files,file,newFiles,invalidFiles) {
@@ -47,13 +51,25 @@
                 content: vm.content
             };
             if(vm.postId) { // MODIFY DATA
-                Restangular.all('post/'+$stateParams.category+'/'+vm.postId).customPUT(vm.data).then(function(){
-                    console.log(res);
+                Restangular.all('post/'+$stateParams.category+'/'+vm.postId).customPUT(vm.data)
+                .then(function(res){
+                    $state.go('common.noFooter.contentMessage',{
+                        success: true,
+                        kind: 'posts',
+                        id: vm.postId
+                    });
                 });
             }
             else { // POST NEW DATA
-                Restangular.all('post/'+$stateParams.category).customPOST(vm.data).then(function(res) {
-                    console.log(res);
+                Restangular.all('post/'+$stateParams.category).customPOST(vm.data)
+                .then(function(res) {
+                    if(res.status.code === '0000') {
+                        $state.go('common.noFooter.contentMessage',{
+                            success: true,
+                            kind: 'posts',
+                            id: vm.postId
+                        });
+                    }
                 });
             }
 

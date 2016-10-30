@@ -1,19 +1,12 @@
 .comments {
+    .comment-note {
+        .user-profile {
+            
+        }
+    }
     .comment{
         position: relative;
         padding: 10px;
-
-        .comment-profile {
-            width: 60px;
-            height: 60px;
-            overflow: hidden;
-            float: left;
-            margin-right: 10px;
-
-            img {
-                width: 100%;
-            }
-        }
         .comment-main {
             position: relative;
             text-align: left;
@@ -23,13 +16,20 @@
                 margin-bottom: 10px;
             }
             h5 {}
-
             .comment-date {
                 color: #aaa;
                 position: absolute;
                 top: 0;
                 right: 0;
             }
+        }
+    }
+
+    .comment-profile {
+        padding: 0;
+
+        img {
+            width: 100%;
         }
     }
 }

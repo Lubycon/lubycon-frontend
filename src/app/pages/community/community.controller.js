@@ -15,7 +15,7 @@
         vm.lists = [
             {
                 content:{
-                    code: 0,
+                    id: 1,
                     title: "Test Row",
                     comment: 17,
                     like: 21,
@@ -23,14 +23,14 @@
                     date: "2016-08-14"
                 },
                 userData:{
-                    code: 0,
+                    id: 0,
                     name: "Test Member",
                     profile: "user/3/profile.jpg"
                 }
             },
             {
                 content:{
-                    code: 1,
+                    id: 2,
                     title: "Test Row1",
                     comment: 22,
                     like: 6,
@@ -38,14 +38,14 @@
                     date: "2016-08-14"
                 },
                 userData:{
-                    code: 1,
+                    id: 1,
                     name: "Test Member1",
                     profile: "user/5/profile.jpg"
                 }
             },
             {
                 content:{
-                    code: 3,
+                    id: 3,
                     title: "Test Row2",
                     comment: 7,
                     like: 81,
@@ -53,7 +53,7 @@
                     date: "2016-08-14"
                 },
                 userData:{
-                    code: 2,
+                    id: 2,
                     name: "Test Member2",
                     profile: "user/0/profile.jpg"
                 }

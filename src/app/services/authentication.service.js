@@ -5,11 +5,14 @@
         .module('app')
         .factory('Authentication', [
             '$cookieStore', '$cookies', '$rootScope', 'Restangular',
-            '$window', '$location', 'toastr',
+            '$window', '$location', 'toastr', '$state',
             Authentication
         ]);
 
-    function Authentication($cookieStore, $cookies, $rootScope, Restangular, $window, $location, toastr) {
+    function Authentication(
+        $cookieStore, $cookies, $rootScope, Restangular,
+        $window, $location, toastr, $state
+    ) {
 
         var defaultHeaders = Restangular.defaultHeaders;
         Restangular.setDefaultHeaders(defaultHeaders);
@@ -32,13 +35,12 @@
             }
             // INIT TOKEN...
             var authdata = token;
-            var destination;
+            var isExistBackState;
 
             // SET DESCTINATION
             if(memberState) {
-                destination = $rootScope.clientLocation.from.url !== '^' ?
-                    $rootScope.clientLocation.from.url :
-                    '/main';
+                isExistBackState = $rootScope.clientLocation.from.url !== '^';
+
                 if(memberState === 'inactive') {
                     toastr.warning('아직 인증이 끝나지 않았습니다. 이 메세지를 클릭하시면 인증페이지로 이동합니다.',{
                         closeDuration: 10000,
@@ -49,7 +51,6 @@
                 }
             }
             else return false;
-
 
             $rootScope.memberState = {
                 sign: true,
@@ -72,7 +73,15 @@
                         $rootScope.member = res.result;
                         $cookieStore.put('member', $rootScope.member);
 
-                        $location.path(destination);
+                        if(isExistBackState) {
+                            var stateName = $rootScope.clientLocation.from.name,
+                                stateParams = $rootScope.clientLocation.from.params;
+
+                            if(stateParams) $state.go(stateName,stateParams);
+                            else $state.go(stateName);
+                        }
+                        else $state.go('common.figure.main');
+
                     }
                     else {
                         console.log(res.status);

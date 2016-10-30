@@ -22,7 +22,8 @@
                 controllerAs: 'vm',
                 params: {
                     success: null,
-                    kind: null
+                    kind: null,
+                    id: null
                 }
             })
             .state('common.noFooter.settingMessage', {

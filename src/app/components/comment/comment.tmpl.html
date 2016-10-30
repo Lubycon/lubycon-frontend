@@ -1,10 +1,27 @@
 <div class="comments">
-    <div class="comment" ng-repeat="comment in comments">
-        <div class="comment-profile">
-            <img ng-src="{{contentHost + comment.profile}}" />
+    <div class="comment col-sm-12 col-md-12 col-lg-12">
+        <div class="comment-profile user-profile col-sm-1 col-md-1 col-lg-1">
+            <img ng-src="{{me && me.profile ? me.profile : '/assets/images/no_images/user.jpg'}}" />
         </div>
-        <div class="comment-main">
-            <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">
+        <div class="col-sm-11 col-md-11 col-lg-11">
+            <textarea
+                ng-disabled="me && isActiveUser ? false : true"
+                msd-elastic="\n"
+                rows="5"
+                placeholder="{{me ? 'max length 255' : 'You need Sign in'}}"
+                ng-maxlength="255"
+                class="form-control"
+                ng-model="vm.member.description"
+            ></textarea>
+        </div>
+    </div>
+    <div class="divide-horizental col-sm-12 col-md-12 col-lg-12"></div>
+    <div class="comment col-sm-12 col-md-12 col-lg-12" ng-repeat="comment in comments">
+        <div class="comment-profile col-sm-1 col-md-1 col-lg-1">
+            <img ng-src="{{comment.profile ? contentHost + comment.profile : '/assets/images/no_images/user.jpg'}}" />
+        </div>
+        <div class="comment-main col-sm-11 col-md-11 col-lg-11">
+            <a ui-sref="aside.default.dashboard({memberId: item.userData.id})">
                 <h4>{{comment.name}}</h4>
             </a>
             <h5>{{comment.content}}</h5>
@@ -12,6 +29,6 @@
                 {{comment.date}}
             </div>
         </div>
-        <div class="divide-horizental"></div>
+        <div class="divide-horizental col-sm-12 col-md-12 col-lg-12"></div>
     </div>
 </div>

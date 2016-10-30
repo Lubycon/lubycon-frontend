@@ -22,6 +22,10 @@
 
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event,toState,toParams,fromState,fromParams){
+            console.log(toParams);
+            fromState.params = fromParams;
+            toState.params = toParams;
+
             $rootScope.clientLocation = {
                 from : fromState,
                 to : toState

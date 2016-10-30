@@ -26,19 +26,19 @@
                 authenticate: 'all'
             })
             .state('common.default.community-view', {
-                url: '/community/:category/view/:boardId',
+                url: '/community/:category/view/:postId',
                 templateUrl: 'app/pages/community/community_view.tmpl.html',
                 controller: 'CommunityViewController',
                 controllerAs: 'vm',
                 params: {
                     category: null,
-                    boardId: null
+                    postId: null
                 },
                 resolve: {
-                    // getBoardRsv: function($stateParams, Restangular) {
-                    //     var api = Restangular.all('community/' + $stateParams.category + '/' + $stateParams.boardId);
-                    //     return api.customGET().then();
-                    // }
+                    getPostRsv: function($stateParams, Restangular) {
+                        var api = Restangular.all('post/' + $stateParams.category + '/' + $stateParams.postId);
+                        return api.customGET().then();
+                    }
                 },
                 authenticate: 'all'
             })
@@ -52,10 +52,13 @@
                     postId: null
                 },
                 resolve: {
-                    // getContent: function($stateParams, Restangular) {
-                    //     var api = Restangular.all('community/' + $stateParams.category + '/' + $stateParams.boardId);
-                    //     return api.customGET().then();
-                    // }
+                    getPostRsv: function($stateParams, Restangular) {
+                        if($stateParams.postId) {
+                            var api = Restangular.all('post/' + $stateParams.category + '/' + $stateParams.postId);
+                            return api.customGET().then();
+                        }
+                        else return null;
+                    }
                 },
                 authenticate: 'active'
             })

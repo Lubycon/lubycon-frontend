@@ -32,28 +32,24 @@
             </div>
             <div class="col-sm-6 col-lg-6 clear-right">
                 <!--INFO 2-->
-                <div class="card"></div>
+                <div class="card">
+
+                </div>
             </div>
             <div class="card col-sm-12 col-lg-12 comment-info">
-
                 <div class="divide20"></div>
-                <div class="divide-horizental"></div>
-                <div class="divide20"></div>
-
                 <comment comments="vm.comments"></comment>
             </div>
         </section>
-
-
 
         <aside class="col-xs-12 col-sm-12 col-lg-3">
             <div class="content-aside card">
                 <div class="creator-info col-sm-12 col-lg-12">
                     <figure class="col-sm-4 col-lg-4">
-                        <img ng-src="{{vm.contentHost + vm.member.profile}}" />
+                        <img ng-src="{{vm.member.profile ? vm.contentHost + vm.member.profile : '/assets/images/no_images/user.jpg'}}" />
                     </figure>
                     <span class="col-sm-8 col-lg-8">
-                        <h4><a ng-href="creators/dashboard/{{vm.member.code}}">
+                        <h4><a ng-href="creators/dashboard/{{vm.member.id}}">
                                 {{vm.member.name}}
                             </a>
                         </h4>
@@ -64,42 +60,26 @@
                     </span>
                 </div>
             </div>
-            <div class="action-area card">
-                <div
+            <div class="action-area card" ng-if="$root.member && vm.member.id === $root.member.id">
+                <!-- <div
                     class="btn btn-like"
                     ng-class="{selected : vm.contents.like}"
                     ng-click="vm.likeAction()"
                 >
                     <i class="fa fa-heart"></i>like
-                </div>
+                </div> -->
                 <div ng-if="vm.downloadable" class="btn">
                     <i class="fa fa-cloud-download"></i>Download
+                </div>
+                <div
+                    class="btn"
+                    ng-if="$root.member && vm.member.id === $root.member.id"
+                    ng-click="vm.modify()"
+                >
+                    <i class="fa fa-gear"></i>Modify
                 </div>
             </div>
         </aside>
     </div>
-
-
     <div class="divide60"></div>
-    </div>
-
-
-    Contents Data<br/><br/>
-
-    code: {{vm.contents.code}}<br/>
-    title: {{vm.contents.title}}<br/>
-    date: {{vm.contents.date}}<br/>
-    content: {{vm.contents.content}}<br/>
-    like: {{vm.contents.like}}<br/>
-    likeCount: {{vm.contents.likeCount}}<br/>
-    viewCount: {{vm.contents.viewCount}}<br/>
-
-    User Data<br/><br/>
-
-    profile: <img ng-src="{{vm.contentHost + vm.member.profile}}" /><br/>
-    code: {{vm.member.code}}<br/>
-    name: {{vm.member.name}}<br/>
-    job: {{vm.member.job}}<br/>
-    country: {{vm.member.country}}<br/>
-    city: {{vm.member.city}}<br/>
 </div>

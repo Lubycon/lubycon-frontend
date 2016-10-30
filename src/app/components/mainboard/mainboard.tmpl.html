@@ -15,11 +15,11 @@
                         <div class="post-data">
                             <span class="post-label">
                                 <i class="fa fa-circle"></i>
-                                <p>{{list.content.code}}</p>
+                                <p>{{list.content.id}}</p>
                             </span>
                             <span class="post-body">
                                 <div class="post-info">
-                                    <a ui-sref="common.default.community-view({category: 'forum', boardId: list.content.code})">
+                                    <a ui-sref="common.default.community-view({category: 'forum', postId: list.content.id})">
                                         <h3>{{list.content.title}}</h3>
                                         <p>[{{list.content.comment}}]</p>
                                     </a>
