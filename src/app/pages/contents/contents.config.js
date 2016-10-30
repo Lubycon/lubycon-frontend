@@ -22,7 +22,8 @@
                     //     var api = Restangular.all('contents/'+ $stateParams.category);
                     //     return api.customGET().then();
                     // }
-                }
+                },
+                authenticate: 'all'
             })
             .state('common.default.contents-view', {
                 url: '/contents/:category/:boardId',
@@ -49,7 +50,8 @@
                     get2dMaps: function($http) {
                         return $http.get('/data/mapPreset/preset2d.json').then();
                     }
-                }
+                },
+                authenticate: 'all'
             });
     }
 })();

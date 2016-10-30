@@ -31,7 +31,8 @@
                     //     var api = Restangular.all('cretors/dashboard' + $stateParams.memberId);
                     //     return api.customGET().then();
                     // }
-                }
+                },
+                authenticate: 'active'
             })
             .state('aside.default.insight', {
                 url: '/creator/insight/:memberId',
@@ -55,7 +56,9 @@
                     //     var api = Restangular.all('cretors/insight' + $stateParams.memberId);
                     //     return api.customGET().then();
                     // }
-                }
-            });
+                },
+                authenticate: 'active'
+            })
+            ;
     }
 })();

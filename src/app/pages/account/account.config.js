@@ -14,7 +14,7 @@
                 templateUrl: 'app/pages/account/signin.tmpl.html',
                 controller: 'SigninController',
                 controllerAs: 'vm',
-                authenticate: 'no-member'
+                authenticate: 'visitor'
             })
             .state('common.noFooter.signup', {
                 url: '/signup',
@@ -26,14 +26,14 @@
                         return Restangular.all('data/countries').customGET().then();
                     }
                 },
-                authenticate: 'no-member'
+                authenticate: 'visitor'
             })
             .state('common.noFooter.signdrop', {
                 url: '/signdrop',
                 templateUrl: 'app/pages/account/signdrop.tmpl.html',
                 controller: 'SigndropController',
                 controllerAs: 'vm',
-                authenticate: 'member'
+                authenticate: 'active'
             })
             .state('common.default.accountSetting', {
                 url: '/setting/:memberId',
@@ -55,13 +55,14 @@
                         return Restangular.all('data/jobs').customGET().then();
                     }
                 },
-                authenticate: 'member'
+                authenticate: 'active'
             })
             .state('common.default.findPassword', {
                 url: '/findpassword',
                 templateUrl: 'app/pages/certification/certification.tmpl.html',
                 controller: 'FindPasswordController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                authenticate: 'active'
             })
             .state('common.noFooter.changePassword', {
                 url: '/changePassword',
@@ -70,7 +71,8 @@
                 controllerAs: 'vm',
                 params: {
                     code: null
-                }
+                },
+                authenticate: 'active'
             })
             ;
     }

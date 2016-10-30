@@ -28,7 +28,7 @@
                         return $http.get('/data/creative_commons.json').then();
                     }
                 },
-                authenticate: 'member'
+                authenticate: 'active'
             })
             // .state('common.noFooter.editor2d', {
             //     url: '/editor/2d',

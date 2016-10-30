@@ -123,7 +123,11 @@
 
                     // DESTORY TOKEN AND SIGN DATA
                     $cookieStore.remove('authdata');
-                    $cookieStore.remove('memberState');
+
+                    $rootScope.memberState.sign = false;
+                    delete $rootScope.memberState.condition;
+
+                    $cookieStore.put('memberState',$rootScope.memberState);
                     if(reload === 'reload') {
                         $location.path(target);
                         $window.location.reload();

@@ -22,7 +22,8 @@
                     //     var api = Restangular.all('community/'+ $stateParams.category);
                     //     return api.customGET().then();
                     // }
-                }
+                },
+                authenticate: 'all'
             })
             .state('common.default.community-view', {
                 url: '/community/:category/view/:boardId',
@@ -38,7 +39,8 @@
                     //     var api = Restangular.all('community/' + $stateParams.category + '/' + $stateParams.boardId);
                     //     return api.customGET().then();
                     // }
-                }
+                },
+                authenticate: 'all'
             })
             .state('common.noFooter.community-write', {
                 url: '/community/:category/write?:postId',
@@ -55,7 +57,7 @@
                     //     return api.customGET().then();
                     // }
                 },
-                authenticate: 'member'
+                authenticate: 'active'
             })
             ;
     }

@@ -19,7 +19,8 @@
                         // var api = Restangular.all('main');
                         // return api.customGET().then();
                     }
-                }
+                },
+                authenticate: 'all'
             });
     }
 })();

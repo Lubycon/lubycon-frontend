@@ -30,13 +30,15 @@
                         };
                         // return Restangular.all('certs/' + $stateParmas.type + '/time').customGET().then();
                     }
-                }
+                },
+                authenticate: 'inactive'
             })
             .state('common.noFooter.cert-pwd', {
                 url: '/certs/pwd',
                 templateUrl: 'app/pages/certification/certification.tmpl.html',
                 controller: 'PwdCheckController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                authenticate: 'inactive'
             })
             ;
     }

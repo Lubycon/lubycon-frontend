@@ -22,7 +22,9 @@
                     //     var api = Restangular.all('cretors');
                     //     return api.customGET().then();
                     // }
-                }
-            });
+                },
+                authenticate: 'not-allowed'
+            })
+            ;
     }
 })();

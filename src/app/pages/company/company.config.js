@@ -15,20 +15,23 @@
                 controller: 'AboutUsController',
                 controllerAs: 'vm',
                 resolve: {
-                    
-                }
+
+                },
+                authenticate: 'all'
             })
             .state('common.noFooter.terms-of-service', {
                 url: '/docs/terms',
                 templateUrl: 'app/pages/company/termsOfService.tmpl.html',
                 controller: 'DocsController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                authenticate: 'all'
             })
             .state('common.noFooter.private-policy', {
                 url: '/docs/privatepolicy',
                 templateUrl: 'app/pages/company/privatePolicy.tmpl.html',
                 controller: 'DocsController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                authenticate: 'all'
             })
             ;
     }

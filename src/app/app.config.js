@@ -51,6 +51,10 @@
         }
         else {
             Restangular.setDefaultHeaders(defaultHeaders);
+            $rootScope.memberState = {
+                sign: false
+            };
+            $cookieStore.put('memberState',$rootScope.memberState);
         }
     }
 
