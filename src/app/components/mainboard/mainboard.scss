@@ -18,8 +18,13 @@
     .table-body {
         ul {
             li {
-                height: 70px;
                 margin-bottom: 15px;
+                .list-wrapper {
+                    margin-bottom: 15px;
+                    &>div {
+                        height: 80px;
+                    }
+                }
 
                 .post-data {
                     display: inline-block;
