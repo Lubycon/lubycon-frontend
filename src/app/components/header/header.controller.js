@@ -34,6 +34,10 @@
         $scope.scrollDetect = false;
         $scope.isMain = vm.isMain;
 
+        vm.mobileMenuToggle = function() {
+            var menuDOM = angular.element('.mobile-menu-list');
+        };
+
         vm.doSignOut = function(){
             Authentication.clearCredentials('reload');
         };

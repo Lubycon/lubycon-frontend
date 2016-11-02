@@ -54,7 +54,7 @@
             <div class="content-aside card">
                 <div class="creator-info col-sm-12 col-lg-12">
                     <figure class="col-sm-4 col-lg-4">
-                        <img ng-src="{{vm.contentHost + vm.member.profile}}" />
+                        <img ng-src="{{vm.member.profile ?  vm.contentHost + vm.member.profile : '/assets/images/no_images/user.jpg'}}" />
                     </figure>
                     <span class="col-sm-8 col-lg-8">
                         <h4><a ui-sref="aside.default.dashboard({memberId: item.userData.code})">

@@ -15,19 +15,19 @@
                         <div class="post-data">
                             <span class="post-label">
                                 <i class="fa fa-circle"></i>
-                                <p>{{list.content.id}}</p>
+                                <p>{{list.contents.id}}</p>
                             </span>
                             <span class="post-body">
                                 <div class="post-info">
-                                    <a ui-sref="common.default.community-view({category: 'forum', postId: list.content.id})">
-                                        <h3>{{list.content.title}}</h3>
-                                        <p>[{{list.content.comment}}]</p>
+                                    <a ui-sref="common.default.community-view({category: 'forum', postId: list.contents.id})">
+                                        <h3>{{list.contents.title}}</h3>
+                                        <p>[{{list.contents.comment}}]</p>
                                     </a>
                                 </div>
                                 <div class="post-counts">
                                     <!-- <span class="table-date">{{list.content.date}}</span> -->
-                                    <span>{{list.content.view}}</span>
-                                    <span>{{list.content.like}}</span>
+                                    <span>{{list.contents.view}}</span>
+                                    <span>{{list.contents.like}}</span>
                                 </div>
                             </span>
                         </div>
@@ -35,7 +35,7 @@
                     <div class="list-wrapper col-sm-4 col-md-4 col-lg-4">
                         <div class="author-data">
                             <span class="user-img">
-                                <img ng-src="{{contentHost + list.userData.profile}}">
+                                <img ng-src="{{list.userData.profile ? contentHost + list.userData.profile : '/assets/images/no_images/user.jpg'}}">
                             </span>
                             <h4>
                                 <a href="">{{list.userData.name}}</a>
