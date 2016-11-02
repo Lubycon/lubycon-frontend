@@ -4,12 +4,15 @@
     angular
         .module('app.pages.community')
         .controller('CommunityController', [
-            '$rootScope','$scope',
+            '$rootScope', '$scope', 'getCommunityRsv',
             CommunityController
         ]);
 
     /** @ngInject */
-    function CommunityController($rootScope,$scope) {
+    function CommunityController(
+        $rootScope, $scope, getCommunityRsv
+    ) {
+        console.log(getCommunityRsv);
         var vm = this;
         //DUMMY DATA
         vm.lists = [

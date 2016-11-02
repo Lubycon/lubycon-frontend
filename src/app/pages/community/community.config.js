@@ -18,15 +18,15 @@
                     category: null
                 },
                 resolve: {
-                    // getCommunityRsv: function($stateParams, Restangular) {
-                    //     var api = Restangular.all('community/'+ $stateParams.category);
-                    //     return api.customGET().then();
-                    // }
+                    getCommunityRsv: function($stateParams, Restangular) {
+                        var api = Restangular.all('posts/'+ $stateParams.category);
+                        return api.customGET().then();
+                    }
                 },
                 authenticate: 'all'
             })
             .state('common.default.community-view', {
-                url: '/community/:category/view/:postId',
+                url: '/community/:category/:postId',
                 templateUrl: 'app/pages/community/community_view.tmpl.html',
                 controller: 'CommunityViewController',
                 controllerAs: 'vm',
@@ -36,7 +36,7 @@
                 },
                 resolve: {
                     getPostRsv: function($stateParams, Restangular) {
-                        var api = Restangular.all('post/' + $stateParams.category + '/' + $stateParams.postId);
+                        var api = Restangular.all('posts/' + $stateParams.category + '/' + $stateParams.postId);
                         return api.customGET().then();
                     }
                 },
@@ -54,7 +54,7 @@
                 resolve: {
                     getPostRsv: function($stateParams, Restangular) {
                         if($stateParams.postId) {
-                            var api = Restangular.all('post/' + $stateParams.category + '/' + $stateParams.postId);
+                            var api = Restangular.all('posts/' + $stateParams.category + '/' + $stateParams.postId);
                             return api.customGET().then();
                         }
                         else return null;
