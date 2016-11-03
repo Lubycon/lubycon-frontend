@@ -11,7 +11,7 @@
 
     function infiniteScrollService(
         $cookieStore, $cookies, $rootScope, Restangular,
-        $window, $location, toastr
+        $window, $location
     ) {
         var service = {
             get: getResources
