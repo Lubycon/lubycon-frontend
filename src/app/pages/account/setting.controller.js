@@ -7,7 +7,7 @@
             '$rootScope', '$scope', '$state',
             '$stateParams', 'Restangular',
             'API_CONFIG', '$filter',
-            'getMember','getCountry', 'getJob', AccountSettingController
+            'getMember','getData', AccountSettingController
         ]);
 
     /** @ngInject */
@@ -32,8 +32,10 @@
 
         vm.publicOptionList = ['Public','Private'];
         vm.languageLevelList = ['Beginner','Advanced','Fluent'];
-        vm.jobList = getJob.result;
-        vm.countryList = getCountry.result;
+
+        vm.countryList = getData.result.country;
+        vm.jobList = getData.result.job;
+
         vm.historyKind = ['Work Experience','Education','Awards'];
         vm.yearList = [];
         vm.monthList = [];

@@ -1,5 +1,12 @@
 <filter filters="vm.filters" submit="vm.filterSubmit"></filter>
 <div class="container">
-    <mainboard lists="vm.lists"></mainboard>
+    <div
+        class="infinite-scroll-wrapper"
+        infinite-scroll="vm.onScroll()"
+        infinite-scroll-disabled="vm.scrollDisabled"
+        infinite-scroll-distance="0"
+    >
+        <mainboard lists="vm.lists"></mainboard>
+    </div>
     <a class="btn" ui-sref="common.noFooter.community-write">WRITE</a>
 </div>

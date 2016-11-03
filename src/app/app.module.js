@@ -26,6 +26,7 @@
         'switcher', // CHECKBOX SWITCH MODE MODULE
         'toastr', // TOAST MESSAGE MODULE
         'summernote', // TEXT EDITOR MODULE
+        'infinite-scroll', // INFINITE SCROLL
         'monospaced.elastic' // TEXTAREA AUTOMATICALLY SIZE
     ])
     .constant('APP_LANGUAGES', [

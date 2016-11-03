@@ -5,14 +5,14 @@
         .module('app.pages.account')
         .controller('SignupController', [
             '$rootScope', '$scope', 'Restangular', 'Authentication', '$state', 'toastr',
-            'getCountry',
+            'getData',
             SignupController
         ]);
 
     /** @ngInject */
     function SignupController(
         $rootScope, $scope, Restangular, Authentication, $state, toastr,
-        getCountry
+        getData
     ) {
         var vm = this;
         var api = Authentication.signUp;
@@ -27,7 +27,7 @@
             newsletter: false
         };
         vm.rePassword = null;
-        vm.countryList = getCountry.result;
+        vm.countryList = getData.result.country;
         vm.signup = signup;
 
         vm.agree = {

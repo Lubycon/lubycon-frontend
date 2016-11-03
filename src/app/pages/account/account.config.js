@@ -22,8 +22,10 @@
                 controller: 'SignupController',
                 controllerAs: 'vm',
                 resolve: {
-                    getCountry: function(Restangular) {
-                        return Restangular.all('data/countries').customGET().then();
+                    getData: function(Restangular) {
+                        return Restangular.all('data').customGET('',{
+                            data: 'country'
+                        }).then();
                     }
                 },
                 authenticate: 'visitor'
@@ -48,11 +50,11 @@
                         var api = Restangular.all('members/detail/'+$stateParams.memberId);
                         return api.customGET().then();
                     },
-                    getCountry: function(Restangular) {
-                        return Restangular.all('data/countries').customGET().then();
-                    },
-                    getJob: function(Restangular) {
-                        return Restangular.all('data/jobs').customGET().then();
+                    getData: function() {
+                        var api = Restangular.all('data').customGET({
+                            country: 'country',
+                            job: 'job'
+                        }).then();
                     }
                 },
                 authenticate: 'active'
