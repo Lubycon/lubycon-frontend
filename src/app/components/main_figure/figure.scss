@@ -31,16 +31,42 @@
 
             .main-section {
                 display: block;
+
                 .main-text {
                     font-size: 36px;
                     font-weight: 600;
                 }
-                .btn {
-                    width: 150px;
-                    font-size: 15px;
-                    margin: 0px 10px;
-                    &:hover {
-                        @include elasticAction(170px);
+                div {
+                    .btn {
+                        width: 150px;
+                        font-size: 15px;
+                        margin: 0 10px;
+                        &:hover {
+                            @include elasticAction(170px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .main-figure {
+            figure {
+                height: 200px;
+                padding-top: 40px;
+                .main-section {
+                    .main-text {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                    div {
+                        line-height: 0;
+                        .btn {
+                            width: 135px;
+                            font-size: 12px;
+                            margin: 0 5px;
+                        }
                     }
                 }
             }

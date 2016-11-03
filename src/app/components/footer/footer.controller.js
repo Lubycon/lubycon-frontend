@@ -11,6 +11,7 @@
         Restangular, $timeout, LanguageService
     ) {
         var vm = this;
+        vm.isMobile = $rootScope.deviceInfo.isMobile;
 
         $http.get('/data/languages.json').then(function(res) {
             vm.languages = res.data;

@@ -59,13 +59,12 @@
 
 <!-- FOR MOBILE START -->
 <nav
-    class="navbar navbar-inverse navbar-fixed-top main-header visible"
+    class="navbar navbar-fixed-top main-header mobile"
      ng-if="vm.isMobile"
-    scroll-event
 >
     <div class="navbar-header main-logo">
         <a href="/">
-            <img src="assets/images/logo/svg/title_white.svg" />
+            <img src="assets/images/logo/svg/title_black.svg" />
         </a>
     </div>
 
@@ -74,6 +73,7 @@
     </button>
 
     <div class="mobile-menu-list">
+        <a ui-sref="common.figure.main"><i class="fa fa-home"></i></a>
         <ul>
             <li ng-repeat="menu in vm.menuList">
                 <h3>{{menu.name}}</h3>
@@ -87,4 +87,5 @@
             </li>
         </ul>
     </div>
+    <div class="overlay" ng-click=""></div>
 </nav>

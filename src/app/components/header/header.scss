@@ -8,12 +8,22 @@
     background: rgba(255,255,255,0.8);
     border-bottom: 1px solid #fff;
     transition: background 0.2s, border 0.2s;
-    // &.visible {
-    //     background: rgba(0,0,0,0.8);
-    //     border: 1px solid #000;
-    // }
+
+    &.mobile {
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+        }
+    }
 
     .mobile-menu-button {
+        position: relative;
+        z-index: 1000;
         float: right;
         font-size: 20px;
         color: #444;
@@ -24,21 +34,42 @@
     }
     .mobile-menu-list {
         position: fixed;
+        z-index: 500;
         top: 0;
-        right: 100%;
+        right: -300px;
         width: 250px;
         height: 100vh;
-        background: rgba(0,0,0,0.9);
-        transition: right 0.3s;
+        padding: 50px 15px;
+        background: rgba(0,0,0,0.93);
+        transition: all .5s cubic-bezier(.67,.02,.23,1);
+
+        .fa-home {
+            position: absolute;
+            top: 14px;
+            left: 11px;
+            color: #fff;
+            font-size: 25px;
+        }
+
         ul {
+            color: #fff;
             li {
                 h3 {
-
+                    color: #eee;
+                    font-size: 14px;
+                    border-bottom: 1px solid #444;
+                    padding: 7px 0;
                 }
                 ul {
                     li {
+                        padding: 7px;
+                        font-size: 14px;
                         a {
-
+                            color: #aaa;
+                            font-weight: 200;
+                            i {
+                                margin-right: 10px;
+                            }
                         }
                     }
                 }
