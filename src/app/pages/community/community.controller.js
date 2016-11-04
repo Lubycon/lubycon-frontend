@@ -5,16 +5,18 @@
         .module('app.pages.community')
         .controller('CommunityController', [
             '$window', '$rootScope', '$scope', '$state', '$stateParams',
-            'Restangular', 'infiniteScrollService', 'getCommunityRsv',
+            'Restangular', 'infiniteScrollService',
+            'getFilterData', 'getCommunityRsv',
             CommunityController
         ]);
 
     /** @ngInject */
     function CommunityController(
         $window, $rootScope, $scope, $state, $stateParams,
-        Restangular, infiniteScrollService, getCommunityRsv
+        Restangular, infiniteScrollService,
+        getFilterData, getCommunityRsv
     ) {
-        console.log(getCommunityRsv);
+        console.log(getCommunityRsv,getFilterData);
         var vm = this;
         var api = Restangular.all('posts/'+ $stateParams.category);
         var pageIndex = 1;
@@ -46,7 +48,7 @@
         };
         vm.filters = [{
             icon: 'fa-filter',
-            options: ['Recent','Featured','Like','Download','Comment'],
+            options: getFilterData.result[0].postSort,
             data: vm.filterData.sort
         }];
         vm.filterSubmit = function() {

@@ -79,7 +79,7 @@
                 <h3>{{menu.name}}</h3>
                 <ul>
                     <li ng-repeat="subMenu in menu.subMenu">
-                        <a ui-sref="{{subMenu.link}}">
+                        <a ui-sref="{{subMenu.link}}" ng-click="vm.mobileMenuToggle()">
                             <i class="fa {{subMenu.icon}}"></i>{{subMenu.name}}
                         </a>
                     </li>

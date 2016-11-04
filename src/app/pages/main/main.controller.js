@@ -4,15 +4,18 @@
     angular
         .module('app.pages.main')
         .controller('MainController', [
-            '$timeout', 'toastr', 'toastrConfig', 'API_CONFIG',
+            '$rootScope', '$scope', '$timeout', 'toastr', 'toastrConfig', 'API_CONFIG',
             MainController
         ]);
 
     /** @ngInject */
-    function MainController($timeout, toastr, toastrConfig, API_CONFIG) {
+    function MainController(
+        $rootScope, $scope, $timeout, toastr, toastrConfig, API_CONFIG
+    ) {
         console.log("MAIN PAGE IS LOADED");
 
         var vm = this;
+        vm.isMobile = $rootScope.deviceInfo.isMobile;
         vm.contentHost = API_CONFIG.content;
         vm.data = {
             contents: [

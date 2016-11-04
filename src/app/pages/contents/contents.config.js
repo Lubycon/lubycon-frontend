@@ -22,6 +22,11 @@
                     //     var api = Restangular.all('contents/'+ $stateParams.category);
                     //     return api.customGET().then();
                     // }
+                    getFilterData: function(Restangular) {
+                        return Restangular.all('data').customGET('',{
+                            contentSort: 'contentSort'
+                        }).then();
+                    }
                 },
                 authenticate: 'all'
             })

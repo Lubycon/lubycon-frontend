@@ -4,108 +4,102 @@
     angular
         .module('app.pages.contents')
         .controller('ContentsController', [
-            '$rootScope', '$scope', ContentsController
+            '$rootScope', '$scope', 'getData', ContentsController
         ]);
 
     /** @ngInject */
-    function ContentsController($rootScope,$scope) {
+    function ContentsController($rootScope, $scope, getFilterData) {
         var vm = this;
 
         // DUMMY DATA
-        vm.contents = [
-            {
-                id : 1,
-                title: "The AR Machine",
-                category: "3D",
-                image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
-                license: "Free",
-                bookmark: true,
-                userData: {
-                    id: 1,
-                    name: "Adrian Joy",
-                    profile: "user/1/profile.jpg"
-                },
-                contentCount: {
-                    view: 15,
-                    comment: 23,
-                    like: 12
-                }
+        vm.contents = [{
+            id : 1,
+            title: "The AR Machine",
+            category: "3D",
+            image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
+            license: "Free",
+            bookmark: true,
+            userData: {
+                id: 1,
+                name: "Adrian Joy",
+                profile: "user/1/profile.jpg"
             },
-            {
-                id : 2,
-                title: "Prison",
-                category: "3D",
-                image: "contents/threed/Audrey_Wickham20160414050808/thumbnail/thumbnail.jpg",
-                license: "Free",
-                bookmark: false,
-                userData: {
-                    id: 1,
-                    name: "Audrey Wickham",
-                    profile: "user/15/profile.jpg"
-                },
-                contentCount: {
-                    view: 15,
-                    comment: 23,
-                    like: 12
-                }
-            },
-            {
-                id : 3,
-                title: "Sweeeety Apples",
-                category: "3D",
-                image: "contents/threed/Robert_Beasley20160414050808/thumbnail/thumbnail.jpg",
-                license: "Free",
-                bookmark: true,
-                userData: {
-                    id: 1,
-                    name: "Robert Beasley",
-                    profile: "user/1/profile.jpg"
-                },
-                contentCount: {
-                    view: 15,
-                    comment: 23,
-                    like: 12
-                }
-            },
-            {
-                id : 4,
-                title: "Mirror",
-                category: "3D",
-                image: "contents/threed/Steven_Watkins20160414050808/thumbnail/thumbnail.jpg",
-                license: "Free",
-                bookmark: false,
-                userData: {
-                    id: 2,
-                    name: "Steven Watkins",
-                    profile: "user/2/profile.jpg"
-                },
-                contentCount: {
-                    view: 15,
-                    comment: 23,
-                    like: 12
-                }
-            },
-            {
-                id : 5,
-                title: "Blue Chairs",
-                category: "3D",
-                image: "contents/threed/Terence_Bingham20160414050808/thumbnail/thumbnail.jpg",
-                license: "Free",
-                bookmark: true,
-                userData: {
-                    id: 5,
-                    name: "Terence Bingham",
-                    profile: "user/5/profile.jpg"
-                },
-                contentCount: {
-                    view: 15,
-                    comment: 23,
-                    like: 12
-                }
+            contentCount: {
+                view: 15,
+                comment: 23,
+                like: 12
             }
-        ];
+        },{
+            id : 2,
+            title: "Prison",
+            category: "3D",
+            image: "contents/threed/Audrey_Wickham20160414050808/thumbnail/thumbnail.jpg",
+            license: "Free",
+            bookmark: false,
+            userData: {
+                id: 1,
+                name: "Audrey Wickham",
+                profile: "user/15/profile.jpg"
+            },
+            contentCount: {
+                view: 15,
+                comment: 23,
+                like: 12
+            }
+        },{
+            id : 3,
+            title: "Sweeeety Apples",
+            category: "3D",
+            image: "contents/threed/Robert_Beasley20160414050808/thumbnail/thumbnail.jpg",
+            license: "Free",
+            bookmark: true,
+            userData: {
+                id: 1,
+                name: "Robert Beasley",
+                profile: "user/1/profile.jpg"
+            },
+            contentCount: {
+                view: 15,
+                comment: 23,
+                like: 12
+            }
+        },{
+            id : 4,
+            title: "Mirror",
+            category: "3D",
+            image: "contents/threed/Steven_Watkins20160414050808/thumbnail/thumbnail.jpg",
+            license: "Free",
+            bookmark: false,
+            userData: {
+                id: 2,
+                name: "Steven Watkins",
+                profile: "user/2/profile.jpg"
+            },
+            contentCount: {
+                view: 15,
+                comment: 23,
+                like: 12
+            }
+        },{
+            id : 5,
+            title: "Blue Chairs",
+            category: "3D",
+            image: "contents/threed/Terence_Bingham20160414050808/thumbnail/thumbnail.jpg",
+            license: "Free",
+            bookmark: true,
+            userData: {
+                id: 5,
+                name: "Terence Bingham",
+                profile: "user/5/profile.jpg"
+            },
+            contentCount: {
+                view: 15,
+                comment: 23,
+                like: 12
+            }
+        }];
         // DUMMY DATA
-
+        console.log(getFilterData.result[0]);
         // BIND FILTERS...
         vm.filterData = {
             category: null,
@@ -114,17 +108,17 @@
         };
         vm.filters = [{
             icon: 'fa-bars',
-            options: ['All Category','category1','category2','category3'],
+            options: getFilterData.result[0].contentSort,
             data: vm.filterData.category
         },
         {
             icon: 'fa-creative-commons',
-            options: ['All license','Free','Non commercial'],
+            options: getFilterData.result[0].contentSort,
             data: vm.filterData.license
         },
         {
             icon: 'fa-filter',
-            options: ['Recent','Featured','Downalod','View'],
+            options: getFilterData.result[0].contentSort,
             data: vm.filterData.sort
         }];
         vm.filterSubmit = function() {

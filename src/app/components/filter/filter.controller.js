@@ -23,6 +23,7 @@
         return directive;
 
         function link($scope, $element) {
+            console.log($scope.filters);
             $scope.isOpen = false;
 
             $scope.toggleAction = function() {

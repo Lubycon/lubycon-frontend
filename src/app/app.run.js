@@ -68,12 +68,16 @@
             }
         }
 
+
+
         function stateChangeRejected(target,param) {
             $timeout(function() {
                 if(!target) $state.go('common.noFooter.signin');
                 else $state.go(target,param);
             });
         }
+
+
 
         function setStateClassDOM(toState) {
             var stateClass = toState.name

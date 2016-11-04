@@ -21,6 +21,11 @@
                     getCommunityRsv: function($stateParams, Restangular) {
                         var api = Restangular.all('posts/'+ $stateParams.category);
                         return api.customGET().then();
+                    },
+                    getFilterData: function(Restangular) {
+                        return Restangular.all('data').customGET('',{
+                            postSort: 'postSort'
+                        }).then();
                     }
                 },
                 authenticate: 'all'

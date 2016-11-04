@@ -1,6 +1,6 @@
 <div class="filter" ng-class="{'open' : isOpen}">
     <div class="filter-body row">
-        <a href="#" ng-click="toggleAction()" class="filter-button btn col-xs-4 col-sm-4 col-lg-1">
+        <a href="#" ng-click="toggleAction()" class="filter-button btn col-xs-4 col-sm-4 col-lg-2">
             <i class="fa fa-plus"></i> Filter setting
         </a>
         <!--SEARCH BAR POSITION-->
@@ -8,18 +8,19 @@
     <div ng-show="isOpen" class="filter-dropdown" role="menu">
         <ul class="row">
             <li class="col-xs-12 col-sm-12 col-lg-2" ng-repeat="filter in filters">
+                <i class="fa {{filter.icon}} filter-icon"></i>
                 <select
                     chosen
                     disable-search="true"
                     inherit-select-classes="true"
-                    ng-init="filter.data = filter.options[0]"
+                    ng-init="filter.data = filter.data ? filter.data : filter.options[0].name"
                     ng-model="filter.data"
-                    ng-options="option for option in filter.options"
+                    ng-options="option.name as option.name for option in filter.options"
                 >
                 </select>
             </li>
             <li class="col-xs-12 col-sm-12 col-lg-1 col-lg-offset-lg-3">
-                <button type="submit" ng-click="submit()" class="btn btn-mint">SEARCH</button>
+                <button type="submit" ng-click="submit()" class="btn btn-mint"><i class="fa fa-search"></i></button>
             </li>
         </ul>
     </div>
