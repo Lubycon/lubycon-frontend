@@ -4,7 +4,7 @@
 <div class="container main-contents">
     <div class="row">
         <div class="card col-sm-6 col-md-4 col-lg-3" ng-repeat="item in vm.data.contents">
-            <div class="content-wrapper" ng-style="{'background-image': 'url('+vm.contentHost + item.img+')'}">
+            <div class="content-wrapper" ng-style="{'background-image': 'url('+item.img+')'}">
                 <div class="overlay" ui-sref="common.default.contents-view({category: '3d', boardId: item.code})">
                     <p>
                         <a class="content-info" ui-sref="common.default.contents-view({category: '3d', boardId: item.code})"><span>{{item.title}}</span></a>
@@ -17,7 +17,7 @@
     <div class="row">
         <div
             class="card col-sm-12 col-md-12 col-lg-12 creator-section"
-            ng-style="{'background-image': 'url(https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/14727721_218230961932676_7730732637907582976_n.jpg?ig_cache_key=MTM3NDYxOTM1MjI4ODMyNjIxNg%3D%3D.2)'}"
+            ng-style="{'background-image': 'url('+vm.data.bestCreator.contentImg+')'}"
         >
             <h4 ng-if="!vm.isMobile">CREATOR OF THE MONTH</h4>
             <div class="overlay col-sm-12 col-md-12 col-lg-4">
