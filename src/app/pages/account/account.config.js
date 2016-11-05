@@ -24,7 +24,7 @@
                 resolve: {
                     getData: function(Restangular) {
                         return Restangular.all('data').customGET('',{
-                            data: 'country'
+                            country: 'country'
                         }).then();
                     }
                 },
