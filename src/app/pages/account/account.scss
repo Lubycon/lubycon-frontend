@@ -98,6 +98,8 @@
     }
     p {
         display: inline-block;
+        vertical-align: middle;
+        vertical-align: -webkit-baseline-middle;
     }
     a {
         color: #48cfad;

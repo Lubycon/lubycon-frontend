@@ -58,13 +58,16 @@
                 </select>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <checkbox data-index="0" output="vm.agree.terms" change-event="vm.onChange"></checkbox>
-                <p>I read <a ui-sref="common.noFooter.terms-of-service">Terms of Service</a> and I agree it</p>
-
-                <checkbox data-index="0" output="vm.agree.privatePolicy" change-event="vm.onChange"></checkbox>
-                <p>I read <a ui-sref="common.noFooter.private-policy">Private policy</a> and I agree it</p>
+                <div>
+                    <checkbox data-index="0" output="vm.agree.terms" change-event="vm.onChange"></checkbox>
+                    <p>I read <a ui-sref="common.noFooter.terms-of-service">Terms of Service</a> and I agree it</p>
+                </div>
+                <div>
+                    <checkbox data-index="0" output="vm.agree.privatePolicy" change-event="vm.onChange"></checkbox>
+                    <p>I read <a ui-sref="common.noFooter.private-policy">Private policy</a> and I agree it</p>
+                </div>
             </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <checkbox data-index="0" output="vm.member.newsletter" change-event="vm.onChange"></checkbox>
                 <p>Would like to receive newsletter by e-mail?</p>
             </div>

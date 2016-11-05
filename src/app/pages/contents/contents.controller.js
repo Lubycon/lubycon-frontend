@@ -4,7 +4,7 @@
     angular
         .module('app.pages.contents')
         .controller('ContentsController', [
-            '$rootScope', '$scope', 'getData', ContentsController
+            '$rootScope', '$scope', 'getFilterData', ContentsController
         ]);
 
     /** @ngInject */
@@ -16,7 +16,7 @@
             id : 1,
             title: "The AR Machine",
             category: "3D",
-            image: "contents/threed/Adrian_Joy20160414050808/thumbnail/thumbnail.jpg",
+            image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/s750x750/sh0.08/e35/14714541_607631282760789_8741561106645909504_n.jpg?ig_cache_key=MTM3MTc5MjcyMDA3NTIxMzUyOQ%3D%3D.2",
             license: "Free",
             bookmark: true,
             userData: {
@@ -33,7 +33,7 @@
             id : 2,
             title: "Prison",
             category: "3D",
-            image: "contents/threed/Audrey_Wickham20160414050808/thumbnail/thumbnail.jpg",
+            image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/14733357_144357662698411_9131144726639017984_n.jpg?ig_cache_key=MTM2OTcxOTQ2MzMyNzE2OTMxNA%3D%3D.2",
             license: "Free",
             bookmark: false,
             userData: {
@@ -50,7 +50,7 @@
             id : 3,
             title: "Sweeeety Apples",
             category: "3D",
-            image: "contents/threed/Robert_Beasley20160414050808/thumbnail/thumbnail.jpg",
+            image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/14677334_211252245964924_6353392409115623424_n.jpg?ig_cache_key=MTM2NjA3NDcwMzY1NTk3MTA0OA%3D%3D.2",
             license: "Free",
             bookmark: true,
             userData: {
@@ -67,7 +67,7 @@
             id : 4,
             title: "Mirror",
             category: "3D",
-            image: "contents/threed/Steven_Watkins20160414050808/thumbnail/thumbnail.jpg",
+            image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/14730475_317621848605004_4781162743572987904_n.jpg?ig_cache_key=MTM2MTcwNDEyODA1NzY3MzUzMw%3D%3D.2",
             license: "Free",
             bookmark: false,
             userData: {
@@ -84,7 +84,7 @@
             id : 5,
             title: "Blue Chairs",
             category: "3D",
-            image: "contents/threed/Terence_Bingham20160414050808/thumbnail/thumbnail.jpg",
+            image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/14350488_1757973007786990_8998723841156972544_n.jpg?ig_cache_key=MTM0ODc3Mzc4MzAxNjM4NTY5NA%3D%3D.2.c",
             license: "Free",
             bookmark: true,
             userData: {
@@ -99,7 +99,7 @@
             }
         }];
         // DUMMY DATA
-        console.log(getFilterData.result[0]);
+
         // BIND FILTERS...
         vm.filterData = {
             category: null,
@@ -108,17 +108,17 @@
         };
         vm.filters = [{
             icon: 'fa-bars',
-            options: getFilterData.result[0].contentSort,
+            options: getFilterData.result.contentSort,
             data: vm.filterData.category
         },
         {
             icon: 'fa-creative-commons',
-            options: getFilterData.result[0].contentSort,
+            options: getFilterData.result.contentSort,
             data: vm.filterData.license
         },
         {
             icon: 'fa-filter',
-            options: getFilterData.result[0].contentSort,
+            options: getFilterData.result.contentSort,
             data: vm.filterData.sort
         }];
         vm.filterSubmit = function() {

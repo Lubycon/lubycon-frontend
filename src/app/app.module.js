@@ -29,16 +29,13 @@
         'infinite-scroll', // INFINITE SCROLL
         'monospaced.elastic' // TEXTAREA AUTOMATICALLY SIZE
     ])
-    .constant('APP_LANGUAGES', [
-        {
-            name: 'LANGUAGES.ENGLISH',
-            key: 'en'
-        },
-        {
-            name: 'LANGUAGES.KOREAN',
-            key: 'ko'
-        }
-    ])
+    .constant('APP_LANGUAGES', [{
+        name: 'LANGUAGES.ENGLISH',
+        key: 'en'
+    },{
+        name: 'LANGUAGES.KOREAN',
+        key: 'ko'
+    }])
     .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {
         // THIS IS SERVER LOCATION SWITCH

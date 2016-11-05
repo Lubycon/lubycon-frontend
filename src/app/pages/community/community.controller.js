@@ -48,7 +48,7 @@
         };
         vm.filters = [{
             icon: 'fa-filter',
-            options: getFilterData.result[0].postSort,
+            options: getFilterData.result.postSort,
             data: vm.filterData.sort
         }];
         vm.filterSubmit = function() {

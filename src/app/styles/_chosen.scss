@@ -145,4 +145,38 @@
             }
         }
     }
+
+    &.ghost {
+        .chosen-single {
+            background: transparent;
+            color: #eee;
+            border: 1px solid #eee;
+        }
+        .chosen-choices {
+            background: rgba(0,0,0,0.93);
+            border: 1px solid #eee;
+
+            .search-field {
+                background-color: rgba(0,0,0,0.93);
+                background-image: none;
+                border: 2px solid #333;
+                color: #fff;
+            }
+        }
+        .chosen-drop {
+            background: rgba(0,0,0,0.93);
+            border: 1px solid #eee;
+            border-top: none;
+            .chosen-results {
+                color: #eee;
+                li {
+                    color: #eee;
+                }
+                li.no-results {
+                    background: rgba(0,0,0,0.93);
+                    color: #eee;
+                }
+            }
+        }
+    }
 }

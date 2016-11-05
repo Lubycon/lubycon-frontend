@@ -7,7 +7,7 @@
 .main-header {
     background: rgba(255,255,255,0.8);
     border-bottom: 1px solid #fff;
-    transition: background 0.2s, border 0.2s;
+    transition: all 0.2s;
 
     &.mobile {
         .overlay {
@@ -41,7 +41,7 @@
         height: 100vh;
         padding: 50px 15px;
         background: rgba(0,0,0,0.93);
-        transition: all .5s cubic-bezier(.67,.02,.23,1);
+        transition: all 0.5s cubic-bezier(.67,.02,.23,1);
 
         .fa-home {
             position: absolute;
