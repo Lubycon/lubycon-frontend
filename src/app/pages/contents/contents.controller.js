@@ -14,7 +14,7 @@
         // DUMMY DATA
         vm.contents = [{
             id : 1,
-            title: "The AR Machine",
+            title: "The Girl",
             category: "3D",
             image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/s750x750/sh0.08/e35/14714541_607631282760789_8741561106645909504_n.jpg?ig_cache_key=MTM3MTc5MjcyMDA3NTIxMzUyOQ%3D%3D.2",
             license: "Free",
@@ -48,7 +48,7 @@
             }
         },{
             id : 3,
-            title: "Sweeeety Apples",
+            title: "진가쿠노 쿄진 리바이 헤이죠",
             category: "3D",
             image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/14677334_211252245964924_6353392409115623424_n.jpg?ig_cache_key=MTM2NjA3NDcwMzY1NTk3MTA0OA%3D%3D.2",
             license: "Free",
@@ -65,7 +65,7 @@
             }
         },{
             id : 4,
-            title: "Mirror",
+            title: "옴닉",
             category: "3D",
             image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/e35/14730475_317621848605004_4781162743572987904_n.jpg?ig_cache_key=MTM2MTcwNDEyODA1NzY3MzUzMw%3D%3D.2",
             license: "Free",
@@ -82,7 +82,7 @@
             }
         },{
             id : 5,
-            title: "Blue Chairs",
+            title: "Sad romance",
             category: "3D",
             image: "https://scontent-icn1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.135.1080.1080/14350488_1757973007786990_8998723841156972544_n.jpg?ig_cache_key=MTM0ODc3Mzc4MzAxNjM4NTY5NA%3D%3D.2.c",
             license: "Free",
