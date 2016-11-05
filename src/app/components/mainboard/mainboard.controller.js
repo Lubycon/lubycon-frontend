@@ -16,13 +16,15 @@
             },
             //transclude: true,
             link: link,
-            controller: controller
+            controller: [
+                '$scope', '$element', 'API_CONFIG', controller
+            ]
         };
 
         return directive;
 
         function link($scope, $element) {
-            
+
         }
         function controller($scope, $element, API_CONFIG) {
             $scope.contentHost = API_CONFIG.content;

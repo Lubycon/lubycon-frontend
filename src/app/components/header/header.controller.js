@@ -3,7 +3,11 @@
 
     angular
         .module('components')
-        .controller('HeaderController', headerController);
+        .controller('HeaderController', [
+            '$rootScope', '$scope', '$location', '$state', '$stateParams',
+            'Restangular', '$timeout', '$window', 'Authentication',
+            headerController
+        ]);
 
     /* @ngInject */
     function headerController(

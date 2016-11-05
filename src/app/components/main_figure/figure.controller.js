@@ -3,7 +3,11 @@
 
     angular
         .module('components')
-        .controller('FigureController', FigureController);
+        .controller('FigureController', [
+            '$rootScope', '$scope', '$location', '$state', 'Restangular', '$timeout',
+            'DeviceConfig',
+            FigureController
+        ]);
 
     /* @ngInject */
     function FigureController(

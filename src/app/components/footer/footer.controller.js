@@ -3,7 +3,11 @@
 
     angular
         .module('components')
-        .controller('FooterController', footerController);
+        .controller('FooterController', [
+            '$rootScope', '$scope', '$location', '$state', '$http',
+            'Restangular', '$timeout', 'LanguageService',
+            footerController
+        ]);
 
     /* @ngInject */
     function footerController(

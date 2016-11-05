@@ -3,7 +3,9 @@
 
     angular
     .module('app')
-    .config(routerConfig);
+    .config([
+        '$stateProvider', '$urlRouterProvider', routerConfig
+    ]);
 
     /** @ngInject */
     function routerConfig($stateProvider, $urlRouterProvider) {

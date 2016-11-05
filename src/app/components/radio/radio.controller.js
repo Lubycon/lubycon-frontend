@@ -19,7 +19,9 @@
             },
             //transclude: true,
             link: link,
-            controller: controller
+            controller: [
+                '$rootScope', '$scope', '$element', '$attrs', '$timeout', controller
+            ]
         };
 
         return directive;

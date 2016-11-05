@@ -15,7 +15,8 @@
             },
             link: link,
             controller: [
-                '$scope','$element','$attrs','$interval','$compile','$window',controller
+                '$scope', '$element', '$attrs', '$interval', '$compile', '$window',
+                controller
             ]
         };
 

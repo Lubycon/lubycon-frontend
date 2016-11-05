@@ -16,7 +16,9 @@
             },
             //transclude: true,
             link: link,
-            controller: controller
+            controller: [
+                '$scope', '$element', 'API_CONFIG', controller
+            ]
         };
 
         return directive;

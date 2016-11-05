@@ -3,14 +3,36 @@
 
     angular
         .module('app')
-        .config(config)
-        .config(toastSetting)
-        .config(locationProvider)
-        .config(restangularProvider)
-        .config(cookiesProvider)
-        .config(translateConfig)
-        .run(authenticationDetect)
-        .run(run);
+        .config([
+            '$logProvider', config
+        ])
+        .config([
+            'toastrConfig', toastSetting
+        ])
+        .config([
+            '$locationProvider', '$httpProvider', locationProvider
+        ])
+        .config([
+            'RestangularProvider', 'API_CONFIG', restangularProvider
+        ])
+        .config([
+            '$cookiesProvider', cookiesProvider
+        ])
+        .config([
+            '$translateProvider', '$translatePartialLoaderProvider', 'APP_LANGUAGES',
+            translateConfig
+        ])
+        .run([
+            '$rootScope', '$state', '$cookieStore',
+            'Restangular', '$translate', 'Authentication',
+            authenticationDetect
+        ])
+        .run([
+            '$rootScope', '$location', '$state',
+            '$cookieStore', 'Restangular', 'commonLayout',
+            '$window', 'CONSOLE_LOG', '$timeout',
+            run
+        ]);
 
     /** @ngInject */
     function config($logProvider) {
@@ -121,17 +143,6 @@
         RestangularProvider.setDefaultHeaders(defaultHeaders);
         RestangularProvider.setBaseUrl(API_CONFIG.host);
         console.log("Server Location : " + API_CONFIG.host);
-        RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
-            var extractedData;
-            if (operation === "getList") {
-                extractedData = [];
-                extractedData.status = data.status;
-                extractedData.resut = data.result;
-            } else {
-                extractedData = data;
-            }
-            return extractedData;
-        });
     }
 
     function translateConfig($translateProvider, $translatePartialLoaderProvider, APP_LANGUAGES) {

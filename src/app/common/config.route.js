@@ -3,7 +3,9 @@
 
     angular
         .module('common')
-        .config(routeConfig);
+        .config([
+            '$stateProvider', routeConfig
+        ]);
 
     /* @ngInject */
     function routeConfig($stateProvider) {

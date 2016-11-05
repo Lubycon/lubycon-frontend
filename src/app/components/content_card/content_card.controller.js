@@ -16,7 +16,10 @@
             },
             //transclude: true,
             link: link,
-            controller: controller
+            controller: [
+                '$scope', '$element', 'Restangular', 'toastr', 'API_CONFIG',
+                controller
+            ]
         };
 
         return directive;
