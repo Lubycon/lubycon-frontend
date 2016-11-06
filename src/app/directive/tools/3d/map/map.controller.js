@@ -56,6 +56,7 @@
             };
             $scope.tabAction = function(value) {
                 $scope.selectedTab = value;
+                $scope.selectedMapIndex = 0;
                 $scope.output = {
                     type: $scope.selectedTab,
                     index: 0,
