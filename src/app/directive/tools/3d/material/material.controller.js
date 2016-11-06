@@ -23,7 +23,7 @@
 
         function link($scope, $element, $attrs) {
             var object = $scope.scene.getObjectByName('mainObject');
-            console.log(object);
+            console.log(object, $scope);
 
             $scope.materialList = object.material.materials;
             $scope.output = $scope.materialList[0];
