@@ -29,7 +29,6 @@
             $scope.$watch('map',function(newValue,oldValue) {
                 console.log('MAP CHANGED : ',oldValue,'=>',newValue);
 
-                $scope.renderer.clearColor(0x222222,1);
                 if(newValue.type === '3d') $scope.initSkyBox();
                 else if(newValue.type === '2d') $scope.init2DMap();
             },true);
@@ -174,7 +173,6 @@
                     skybox.add(newLight);
                 }
                 scene.add(skybox);
-                $scope.renderer.setClearColor(0x222222,1);
             }
 
             function init2DMap() {

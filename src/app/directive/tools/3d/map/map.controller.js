@@ -57,9 +57,11 @@
             $scope.tabAction = function(value) {
                 $scope.selectedTab = value;
                 $scope.selectedMapIndex = 0;
+                $scope.mapColor = '#222222';
+
                 $scope.output = {
                     type: $scope.selectedTab,
-                    index: 0,
+                    index: $scope.selectedMapIndex,
                     color: $scope.mapColor
                 };
             };

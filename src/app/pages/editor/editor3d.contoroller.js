@@ -168,17 +168,23 @@
         }
 
         vm.toolboxToggle = function(name){
-            var keys = Object.keys(vm.toolEnabled);
-            for(var i = 0; i < keys.length; i++){
-                if(keys[i] === name) {
-                    console.log('this tool is on',name);
-                    vm.turnOnThisTool(name);
-                    vm.toolEnabled[keys[i]] = true;
-                }
-                else {
-                    console.log('this tool is off',keys[i]);
-                    vm.turnOffThisTool(keys[i]);
-                    vm.toolEnabled[keys[i]] = false;
+
+            if(vm.toolEnabled[name]) {
+                vm.toolEnabled[name] = false;
+            }
+            else {
+                var keys = Object.keys(vm.toolEnabled);
+                for(var i = 0; i < keys.length; i++){
+                    if(keys[i] === name) {
+                        console.log('this tool is on',name);
+                        vm.turnOnThisTool(name);
+                        vm.toolEnabled[keys[i]] = true;
+                    }
+                    else {
+                        console.log('this tool is off',keys[i]);
+                        vm.turnOffThisTool(keys[i]);
+                        vm.toolEnabled[keys[i]] = false;
+                    }
                 }
             }
 
