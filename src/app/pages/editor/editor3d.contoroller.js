@@ -159,6 +159,7 @@
                 if(subTools.length > 0){
                     for(var j = 0; j < subTools.length; j++){
                         var target = angular.element(document).find('.sub-tools[data-value="'+subTools[j].name+'"]');
+                        console.log(subTools[j].name,'is Loaded');
                         subTools[j].directive = $compile(subTools[j].directive)($scope);
                         subTools[j].directive.appendTo(target);
                     }
