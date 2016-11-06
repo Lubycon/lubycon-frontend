@@ -52,7 +52,7 @@
             console.log($scope.map);
             $scope.isMobile = $rootScope.deviceInfo.isMobile;
             var windowWidth = $element.find('.webgl-viewer').width(),
-                windowHeight = $element.find('.webgl-viewer').width() * 0.6;
+                windowHeight = $element.find('.webgl-viewer').height();
             console.log('canvas size : ' + windowWidth + ' X ' + windowHeight);
 
             var gl = $element.find('.webgl-viewer')[0];

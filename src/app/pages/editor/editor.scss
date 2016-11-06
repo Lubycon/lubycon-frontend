@@ -1,6 +1,11 @@
 
 
 .editor {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 100px);
     .editor-header {
         position: fixed;
         width: 100%;
