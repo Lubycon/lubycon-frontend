@@ -64,7 +64,7 @@
                 templateUrl: 'app/pages/certification/certification.tmpl.html',
                 controller: 'FindPasswordController',
                 controllerAs: 'vm',
-                authenticate: 'active'
+                authenticate: 'visitor'
             })
             .state('common.noFooter.changePassword', {
                 url: '/changePassword',
