@@ -4,7 +4,7 @@
     angular
         .module('app')
         .factory('LightGenerateService', [
-            '$rootScope',LightGenerateService
+            '$rootScope', LightGenerateService
         ]);
 
     function LightGenerateService($rootScope) {
