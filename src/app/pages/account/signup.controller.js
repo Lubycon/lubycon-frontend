@@ -27,7 +27,6 @@
             newsletter: false
         };
         vm.rePassword = null;
-        console.log(getData);
         vm.countryList = getData.result.country;
         vm.signup = signup;
 
