@@ -146,7 +146,7 @@
 
         #mailadress {
             font-weight: 600;
-            color: #48cfad;
+            color: $mint-color;
             &:hover {
                 text-decoration: underline;
             }
@@ -170,7 +170,7 @@
                     color: #444;
                     font-size: 20px;
                     &.selected {
-                        border-bottom: 5px solid #48cfad;
+                        border-bottom: 5px solid $mint-color;
                     }
                 }
             }
@@ -208,7 +208,7 @@
                         margin-bottom: 20px;
                     }
                     a {
-                        color: #48cfad;
+                        color: $mint-color;
                         text-decoration: underline;
                         &:hover {
                             opacity: 0.8;

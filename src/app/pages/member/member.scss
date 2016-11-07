@@ -100,9 +100,9 @@
 
         i.fa-circle {
             &.work {
-                color: #48cfad;
+                color: $mint-color;
                 &:after {
-                    background: #48cfad;
+                    background: $mint-color;
                 }
             }
             &.education {

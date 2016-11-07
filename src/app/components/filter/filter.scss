@@ -18,7 +18,7 @@
             padding: 15px 10px;
             border-right: 1px solid #aaa;
             &:hover {
-                background-color: #48cfad;
+                background-color: $mint-color;
                 color: #fff;
             }
             i {
@@ -61,8 +61,8 @@
                 width: 100%;
                 height: 30px;
                 padding: 0 20px;
-                border: 1px solid #48cfad;
-                color: #48cfad;
+                border: 1px solid $mint-color;
+                color: $mint-color;
             }
         }
     }

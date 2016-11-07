@@ -50,7 +50,7 @@
                 margin-left: 15px;
             }
             &:hover {
-                color: #48cfad;
+                color: $mint-color;
                 background: #555;
             }
         }
@@ -112,7 +112,7 @@
                     }
                     .switcher {
                         &.active .switcher-label.true {
-                            color: #48cfad;
+                            color: $mint-color;
                         }
                     }
                     .btn-group-wrapper {
@@ -188,7 +188,7 @@
                 display: inline-block;
                 margin: 5px;
                 &.selected {
-                    border: 1px solid #48cfad;
+                    border: 1px solid $mint-color;
                 }
             }
         }

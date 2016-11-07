@@ -1,0 +1,27 @@
+// MIXIN......
+@mixin elasticAction($width){
+    width: $width;
+    opacity: 0.8;
+}
+
+@mixin ellipsis{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+
+// variables.....
+
+///////////// COLORS ///////////////
+// app concept color
+$mint-color: #48cfad;
+$red-color: #ec6446;
+$blue-color: #488ccb;
+$orange-color: #ffbe54;
+$glay-color: #444;
+
+// sns colors...
+$facebook-color: #3b5998;
+$google-color: #d34836;
+///////////// COLORS ///////////////

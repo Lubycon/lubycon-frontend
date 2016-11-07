@@ -92,7 +92,7 @@
             text-decoration: none;
             @include ellipsis;
             &:hover {
-                color: #48cfad;
+                color: $mint-color;
                 text-decoration: underline;
             }
         }

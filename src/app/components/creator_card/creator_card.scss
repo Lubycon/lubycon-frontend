@@ -17,7 +17,7 @@
             font-size: 17px;
             font-weight: 600;
             .this-month {
-                color: #48cfad;
+                color: $mint-color;
                 font-size: 21px;
                 font-weight: 600;
                 margin-left: 4px;
@@ -61,7 +61,7 @@
                 }
                 &:hover a {
                     text-decoration: underline;
-                    color: #48cfad;
+                    color: $mint-color;
                 }
             }
         }
@@ -127,7 +127,7 @@
 
         &.open {
             .creator-menu-icon {
-                color: #48cfad;
+                color: $mint-color;
             }
         }
 

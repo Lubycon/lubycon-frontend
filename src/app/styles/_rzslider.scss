@@ -1,6 +1,6 @@
 .rzslider {
     .rz-bar.rz-selection {
-        background: #48cfad;
+        background: $mint-color;
     }
     .rz-pointer {
         &:after {
@@ -13,6 +13,6 @@
         height: 20px;
         top: -8px;
         border-radius: 50%;
-        background: #48cfad;
+        background: $mint-color;
     }
 }

@@ -1,16 +1,4 @@
 
-// MIXIN......
-@mixin elasticAction($width){
-    width: $width;
-    opacity: 0.8;
-}
-
-@mixin ellipsis{
-    overflow: hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-}
-
 #container {
     padding-top: 90px;
 }

@@ -81,7 +81,7 @@
         font-size: 15px;
         color: #444444;
         padding: 12px;
-        border: 2px dashed #48cfad;
+        border: 2px dashed $mint-color;
     }
     .time-box {
         color: #444;
@@ -111,7 +111,7 @@
         }
 
         &.submit-bt {
-            background: #48cfad;
+            background: $mint-color;
         }
         &.cancel-bt {
             background: #ec6446;
@@ -124,7 +124,7 @@
         color: #444;
     }
     &.mint {
-        color: #48cfad;
+        color: $mint-color;
     }
     &.red {
         color: #ec6446;

@@ -30,11 +30,11 @@
             li {
                 color: #444;
                 &.result-selected {
-                    color: #48cfad;
+                    color: $mint-color;
                     font-weight: 600;
                 }
                 &.highlighted {
-                    background-color: #48cfad;
+                    background-color: $mint-color;
                     background-image: none;
                 }
             }
@@ -102,11 +102,11 @@
         .chosen-results {
             li {
                 &.result-selected {
-                    color: #48cfad;
+                    color: $mint-color;
                     font-weight: 600;
                 }
                 &.highlighted {
-                    background-color: #48cfad;
+                    background-color: $mint-color;
                     color: #fff;
                     background-image: none;
                 }
