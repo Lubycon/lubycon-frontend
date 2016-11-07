@@ -18,7 +18,7 @@
         }
         h4 { // CATEGORY...
             display: inline-block;
-            border: 1px solid #444;
+            border: 1px solid $glay-color;
             padding: 5px 15px;
             font-size: 12px;
         }
@@ -66,10 +66,10 @@
     .info-wrap {
         &[data-value='tag'] {
             ul {
-                border: 1px solid #444;
+                border: 1px solid $glay-color;
                 li {
                     display: inline-block;
-                    border: 1px solid #444;
+                    border: 1px solid $glay-color;
                     padding: 3px 12px;
                     margin: 5px;
                 }

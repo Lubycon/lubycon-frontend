@@ -15,7 +15,7 @@
             background-color: #fff;
             background-image: none;
             border: 2px solid #ddd;
-            color: #444;
+            color: $glay-color;
             box-shadow: none;
             border-radius: 0px;
             line-height: 14px;
@@ -26,9 +26,9 @@
         border: 1px solid #ddd;
 
         .chosen-results {
-            color: #444;
+            color: $glay-color;
             li {
-                color: #444;
+                color: $glay-color;
                 &.result-selected {
                     color: $mint-color;
                     font-weight: 600;
@@ -47,9 +47,9 @@
             border: 1px solid #333;
 
             .search-choice {
-                background: #444;
+                background: $glay-color;
                 color: #eee;
-                border: 2px solid #444;
+                border: 2px solid $glay-color;
             }
             .search-field {
                 background-image: none;
@@ -87,7 +87,7 @@
         height: 30px;
         line-height: 28px;
         background: #fff;
-        color: #444;
+        color: $glay-color;
         border-radius: 0;
         box-shadow: none;
 

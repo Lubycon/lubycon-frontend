@@ -13,7 +13,7 @@
         height: 22px;
         text-align: left;
         .card-label {
-            color: #444;
+            color: $glay-color;
             font-size: 17px;
             font-weight: 600;
             .this-month {
@@ -57,7 +57,7 @@
                 overflow: hidden;
                 a {
                     width: 100%;
-                    color: #444;
+                    color: $glay-color;
                 }
                 &:hover a {
                     text-decoration: underline;
@@ -145,7 +145,7 @@
                     margin-right: 5px;
                 }
                 a {
-                    color: #444;
+                    color: $glay-color;
                     padding: 3px 10px;
                 }
             }

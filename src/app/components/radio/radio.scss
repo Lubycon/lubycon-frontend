@@ -23,7 +23,7 @@
         font-size: 14px;
     }
     &.black .radio-body {
-        border: 1px solid #444;
+        border: 1px solid $glay-color;
     }
     &.white .radio-body {
         border: 1px solid #222;
@@ -31,7 +31,7 @@
     &.disabled .radio-body {
         background: #666;
         .fa-check {
-            color: #444;
+            color: $glay-color;
         }
     }
 }

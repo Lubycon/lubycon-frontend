@@ -21,7 +21,7 @@
     }
 
     &.toast-bookmark {
-        background-color: #ffbe54;
+        background-color: $orange-color;
         &:before {
             content: "\f005";
         }
@@ -33,7 +33,7 @@
         }
     }
     &.toast-remove {
-        background-color: #ec6446;
+        background-color: $red-color;
         &:before {
             content: "\f1f8";
         }

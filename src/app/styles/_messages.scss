@@ -50,21 +50,21 @@
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        color: #444444;
+        color: $glay-color;
     }
     .main-message {
-        color: #444;
+        color: $glay-color;
         font-weight: 600;
         padding: 10px;
     }
     .sub-message {
-        color: #444;
+        color: $glay-color;
     }
     .input-wrapper {
         padding: 10px;
     }
     .label-message {
-        color: #444;
+        color: $glay-color;
         font-size: 20px;
         margin-right: 10px;
     }
@@ -79,12 +79,12 @@
     }
     .time-wrapper {
         font-size: 15px;
-        color: #444444;
+        color: $glay-color;
         padding: 12px;
         border: 2px dashed $mint-color;
     }
     .time-box {
-        color: #444;
+        color: $glay-color;
         font-size: 20px;
         font-weight: 600;
         margin-left: 10px;
@@ -114,25 +114,25 @@
             background: $mint-color;
         }
         &.cancel-bt {
-            background: #ec6446;
+            background: $red-color;
         }
     }
 }
 
 .message-icon {
     &.black {
-        color: #444;
+        color: $glay-color;
     }
     &.mint {
         color: $mint-color;
     }
     &.red {
-        color: #ec6446;
+        color: $red-color;
     }
     &.blue {
-        color: #488ccb;
+        color: $blue-color;
     }
     &.orange {
-        color: #ffbe54;
+        color: $orange-color;
     }
 }

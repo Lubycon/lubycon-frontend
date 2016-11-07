@@ -13,7 +13,7 @@
         height: 50px;
         top: 50px;
         left: 0;
-        background: #444;
+        background: $glay-color;
 
         ul.headerTools {
             display: inline-block;
@@ -73,7 +73,7 @@
                     color: #eee;
                     font-size: 14px;
                     &:hover {
-                        background: #444;
+                        background: $glay-color;
                     }
                     &.selected {
                         background: #222;
@@ -162,7 +162,7 @@
         border: none;
         padding: 15px 0;
         .btn {
-            background: #444;
+            background: $glay-color;
             padding: 10px 20px;
         }
     }
@@ -232,7 +232,7 @@
                         }
                     }
                     li.tags {
-                        border: 1px solid #444;
+                        border: 1px solid $glay-color;
                         padding: 0 5px;
                         margin: 3px 5px 3px 0;
                     }

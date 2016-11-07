@@ -1,5 +1,5 @@
 .sp-replacer {
-    background: #444;
+    background: $glay-color;
     color: #eee;
     border: none;
 
@@ -9,7 +9,7 @@
 }
 
 .sp-container {
-    background: #444;
+    background: $glay-color;
     border: 1px solid #222;
 
     .sp-picker-container {
@@ -20,7 +20,7 @@
                 background: #fff;
                 border: 1px solid #fff;
                 border-radius: 0;
-                color: #444;
+                color: $glay-color;
             }
         }
 

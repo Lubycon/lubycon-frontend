@@ -44,7 +44,7 @@
 }
 .btn-bookmark {
     &.selected {
-        background: #ffbe54;
+        background: $orange-color;
     }
 }
 .btn-like {
@@ -61,7 +61,7 @@
     }
 }
 .input-group-addon {
-    color: #444;
+    color: $glay-color;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -74,5 +74,5 @@
 .form-control:focus {
     border-color: $mint-color;
     box-shadow: 0 0 8px rgba(72,207,173,0.6);
-    color: #444;
+    color: $glay-color;
 }

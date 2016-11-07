@@ -106,15 +106,15 @@
                 }
             }
             &.education {
-                color: #488ccb;
+                color: $blue-color;
                 &:after {
-                    background: #488ccb;
+                    background: $blue-color;
                 }
             }
             &.awards {
-                color: #ffbe54;
+                color: $orange-color;
                 &:after {
-                    background: #ffbe54;
+                    background: $orange-color;
                 }
             }
         }

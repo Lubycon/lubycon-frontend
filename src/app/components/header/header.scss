@@ -27,7 +27,7 @@
         z-index: 1000;
         float: right;
         font-size: 20px;
-        color: #444;
+        color: $glay-color;
         margin-top: 11px;
         margin-right: 5px;
         border: none;
@@ -58,7 +58,7 @@
                 h3 {
                     color: #eee;
                     font-size: 14px;
-                    border-bottom: 1px solid #444;
+                    border-bottom: 1px solid $glay-color;
                     padding: 7px 0;
                 }
                 ul {
@@ -100,7 +100,7 @@
 
     // DESIGN FOR MENU BUTTONS
     .navbar-nav a {
-        color: #444;
+        color: $glay-color;
         i {
             margin-right: 10px;
         }
@@ -126,7 +126,7 @@
     // MENU LISTS HOVER, FOCUS
     .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
         background-color: $mint-color;
-        color: #444;
+        color: $glay-color;
     }
 
     // MEMEBER MENU
@@ -134,7 +134,7 @@
         position: absolute;
         right: 10px;
         top: 14px;
-        color: #444;
+        color: $glay-color;
 
         a.main-signin {
             font-size: 16px;

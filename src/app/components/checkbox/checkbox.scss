@@ -26,7 +26,7 @@
         vertical-align: middle;
     }
     &.black .checkbox-body {
-        border: 1px solid #444;
+        border: 1px solid $glay-color;
     }
     &.white .checkbox-body {
         border: 1px solid #222;
@@ -34,7 +34,7 @@
     &.disabled .checkbox-body {
         background: #666;
         .fa-check {
-            color: #444;
+            color: $glay-color;
             font-size: 16px;
         }
     }

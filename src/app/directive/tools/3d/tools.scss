@@ -1,7 +1,7 @@
 .editor-aside {
     .btn {
         border: none;
-        background: #444;
+        background: $glay-color;
         min-width: 43px;
         min-height: 43px;
         background-size: cover;
@@ -42,7 +42,7 @@
     light-tool {
         .light-generator {
             position: relative;
-            border: 1px solid #444;
+            border: 1px solid $glay-color;
             padding: 10px;
             &.selected {
                 border: 1px solid $mint-color;
