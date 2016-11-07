@@ -46,7 +46,7 @@
         <ul class="toolboxes">
             <li ng-repeat="tool in vm.config.tools" ng-show="vm.toolEnabled[tool.name]">
                 <h4><i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter}}</h4>
-                <div class="divide20"></div>
+                <div class="divide15"></div>
                 <ul>
                     <li ng-repeat="subTool in tool.subTools" class="sub-tools" data-value="{{subTool.name}}">
                         <h5>{{subTool.name | camelCaseFilter}}</h5>

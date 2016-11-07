@@ -40,7 +40,7 @@
     .constant('API_CONFIG', {
         // THIS IS SERVER LOCATION SWITCH
         // port = { APACHE: 8888, mySql: 8889 }
-        'host': 'http://52.42.84.192/', // TEST SERVER
+        'host': 'http://35.163.31.137/', // TEST SERVER
         'content': 'http://localhost:8888/contents/', // MY LOCAL
         'appkey': 'lubycon-back'
     })
