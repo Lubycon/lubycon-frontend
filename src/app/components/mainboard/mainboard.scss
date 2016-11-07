@@ -18,12 +18,14 @@
     .table-body {
         ul {
             li {
-                margin-bottom: 15px;
+                display: inline-block;
+                width: 100%;
+                background-color: #fff;
+                margin-bottom: 5px;
+                padding: 10px;
+
                 .list-wrapper {
-                    margin-bottom: 15px;
-                    &>div {
-                        height: 80px;
-                    }
+                    padding: 0;
                 }
 
                 .post-data {
@@ -85,6 +87,14 @@
                     }
                 }
             }
+        }
+    }
+
+    // CATEGORIZING
+
+    &.forum {
+        .post-label {
+            border: 2px solid $mint-color;
         }
     }
 }
