@@ -14,9 +14,9 @@
                     disable-search="true"
                     inherit-select-classes="true"
                     class="ghost"
-                    ng-init="filter.data = filter.data ? filter.data : filter.options[0].name"
+                    ng-init="filter.data = filter.data ? filter.data.id : filter.options[0].id"
                     ng-model="filter.data"
-                    ng-options="option.name as option.name for option in filter.options"
+                    ng-options="option.id as option.name for option in filter.options"
                 >
                 </select>
             </li>

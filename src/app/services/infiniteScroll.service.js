@@ -3,27 +3,44 @@
 
     angular
         .module('app')
-        .factory('infiniteScrollService', [
+        .factory('InfiniteScrollService', [
             '$cookieStore', '$cookies', '$rootScope', 'Restangular',
-            '$window', '$location',
-            infiniteScrollService
+            '$window', '$location', InfiniteScrollService
         ]);
 
-    function infiniteScrollService(
+    function InfiniteScrollService(
         $cookieStore, $cookies, $rootScope, Restangular,
         $window, $location
     ) {
+        var pageIndex;
+        var filterData;
+        var callCount;
+
         var service = {
+            init: init,
             get: getResources
         };
 
-        function getResources(uri,pageIndex) {
-            pageIndex++;
-            return Restangular.all(uri).customGET('',{
-                pageIndex: pageIndex
-            });
+        return service;
+
+        // PUBLIC
+        function init(params) {
+            pageIndex = 1;
+            callCount = 0;
+            filterData = params || {};
         }
 
-        return service;
+        function getResources(uri) { // return -> promise
+            console.log(filterData,pageIndex);
+
+            if(callCount > 0) pageIndex++;
+            callCount++;
+
+            filterData.pageIndex = pageIndex;
+
+            return Restangular.all(uri).customGET('', filterData);
+        }
+
+        //PRIVATE
     }
 })();

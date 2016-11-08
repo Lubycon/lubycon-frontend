@@ -5,55 +5,72 @@
         .module('app.pages.community')
         .controller('CommunityController', [
             '$window', '$rootScope', '$scope', '$state', '$stateParams',
-            'Restangular', 'infiniteScrollService',
-            'getFilterData', 'getCommunityRsv',
+            'Restangular', 'InfiniteScrollService', 'FilterService',
+            'getFilterData',
             CommunityController
         ]);
 
     /** @ngInject */
     function CommunityController(
         $window, $rootScope, $scope, $state, $stateParams,
-        Restangular, infiniteScrollService,
-        getFilterData, getCommunityRsv
+        Restangular, InfiniteScrollService, FilterService,
+        getFilterData
     ) {
-        console.log(getCommunityRsv,getFilterData);
         var vm = this;
-        var api = Restangular.all('posts/'+ $stateParams.category);
+        var apiURI = 'posts/' + $stateParams.category;
         var pageIndex = 1;
 
-        vm.lists = getCommunityRsv.result;
-        vm.scrollDisabled = false;
+        vm.scrollDisabled = true;
+
+        vm.init = (init)();
+
+        function init() {
+            // BIND FILTERS...
+            vm.filterData = FilterService.getParams();
+            if(!vm.filterData) {
+                vm.filterData = {
+                    sort: null
+                };
+            }
+
+            vm.filters = [{
+                icon: 'fa-filter',
+                options: getFilterData.result.postSort,
+                data: vm.filterData.sort
+            }];
+
+            console.log(vm.filterData);
+            InfiniteScrollService.init(vm.filterData);
+
+            InfiniteScrollService.get(apiURI).then(function(res) {
+                bindList(res.result);
+                vm.scrollDisabled = false;
+            });
+        }
+
+        function getList() {
+            InfiniteScrollService.get(apiURI).then(function(res) {
+                bindList(res.result);
+
+                vm.scrollDisabled = false;
+            });
+        }
+
+        function bindList(newList) {
+            if(!vm.list) vm.list = [];
+
+            if(newList) vm.list = $.merge(vm.list, newList);
+        }
 
         vm.onScroll = function() {
             vm.scrollDisabled = true;
             getList();
         };
 
-        function getList() {
-            api.customGET('',{
-                pageIndex: pageIndex
-            }).then(function(res) {
-                pageIndex++;
-
-                vm.lists = $.merge(vm.lists,res.result);
-                console.log(vm.lists.length);
-
-                vm.scrollDisabled = false;
-            });
-        }
-
-        // BIND FILTERS...
-        vm.filterData = {
-            sort: null
-        };
-        vm.filters = [{
-            icon: 'fa-filter',
-            options: getFilterData.result.postSort,
-            data: vm.filterData.sort
-        }];
         vm.filterSubmit = function() {
             vm.filterData.sort = vm.filters[0].data;
-            console.log(vm.filterData);
+
+            FilterService.search(vm.filterData);
         };
     }
 })();
