@@ -21,11 +21,12 @@
                 display: inline-block;
                 width: 100%;
                 background-color: #fff;
-                margin-bottom: 5px;
-                padding: 10px;
+                padding: 10px 15px;
 
                 .list-wrapper {
-                    padding: 0;
+                    &:first-child {
+                        padding-left: 0;
+                    }
                 }
 
                 .post-data {
@@ -33,26 +34,28 @@
                     width: 100%;
                     background-color: #fff;
                     .post-label {
-                        display: inline-block;
-                        text-align: center;
-                        padding: 25px;
-                        i {
-                            display: table-cell;
-                            vertical-align: middle;
-                        }
+                        position: absolute;
+                        top: 0;
+                        left: 0;
                         p {
                             display: table-cell;
                             vertical-align: middle;
                         }
                     }
                     .post-body {
-                        display: inline-block;
+                        display: block;
+                        vertical-align: middle;
+                        padding-left: 50px;
                         .post-info {
                             h3 {
-
+                                display: inline-block;
+                                font-size: 20px;
+                                font-weight: 600;
+                                color: $glay-color;
                             }
                             p {
-
+                                display: inline-block;
+                                font-size: 12px;
                             }
                         }
                         .post-counts {
@@ -71,16 +74,20 @@
                     background-color: #fff;
                     .user-img {
                         display: inline-block;
-                        width: 65px;
-                        height: 65px;
+                        width: 40px;
+                        height: 40px;
                         border-radius: 50%;
                         overflow: hidden;
+                        vertical-align: middle;
+                        margin-right: 10px;
                         img {
                             width: 100%;
                         }
                     }
                     h4 {
                         display: inline-block;
+                        vertical-align: middle;
+                        font-size: 14px;
                         a {
 
                         }
@@ -90,11 +97,11 @@
         }
     }
 
-    // CATEGORIZING
 
+    // CATEGORIZING
     &.forum {
-        .post-label {
-            border: 2px solid $mint-color;
+        .table-body > ul > li{
+            border-left: 3px solid $mint-color;
         }
     }
 }
