@@ -32,14 +32,19 @@
                     sort: null
                 };
             }
+            console.log(vm.filterData);
 
+            // vm.filter -> data 필드가 undefined로 들어가는 중
+            // 밑에 어딘가 로직에서 엎어 쳐지는 듯 하다
+            // 엎어쳐지는 부분 찾아서 수정할 것
+            // 2016.11.09 23:09 -evan
             vm.filters = [{
                 icon: 'fa-filter',
                 options: getFilterData.result.postSort,
                 data: vm.filterData.sort
             }];
+            console.log(vm.filters[0].data);
 
-            console.log(vm.filterData);
             InfiniteScrollService.init(vm.filterData);
 
             InfiniteScrollService.get(apiURI).then(function(res) {
@@ -53,8 +58,8 @@
                 bindList(res.result);
 
                 vm.scrollDisabled = false;
-                return false;
             });
+            return false;
         }
 
         function bindList(newList) {
@@ -70,6 +75,7 @@
 
         vm.filterSubmit = function() {
             vm.filterData.sort = vm.filters[0].data;
+            console.log(vm.filterData);
 
             FilterService.search(vm.filterData);
         };

@@ -27,7 +27,7 @@
         function init(params) {
             pageIndex = 0;
             callCount = 0;
-            filterData = params || {};
+            filterData = angular.copy(params) || {};
         }
 
         function getResources(uri) { // return -> promise
