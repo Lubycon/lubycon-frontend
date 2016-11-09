@@ -53,6 +53,7 @@
                 bindList(res.result);
 
                 vm.scrollDisabled = false;
+                return false;
             });
         }
 

@@ -25,7 +25,7 @@
 
         // PUBLIC
         function init(params) {
-            pageIndex = 1;
+            pageIndex = 0;
             callCount = 0;
             filterData = params || {};
         }
