@@ -49,19 +49,29 @@
                         .post-info {
                             h3 {
                                 display: inline-block;
+                                max-width: 95%;
                                 font-size: 20px;
                                 font-weight: 600;
                                 color: $glay-color;
+                                vertical-align: middle;
+                                @include ellipsis;
                             }
                             p {
                                 display: inline-block;
                                 font-size: 12px;
+                                vertical-align: middle;
                             }
                         }
                         .post-counts {
                             span {
+                                margin-right: 10px;
+                                color: $glay-color;
+                                font-size: 14px;
                                 i {
-
+                                    font-size: 12px;
+                                    &.fa-heart {
+                                        color: $mint-color;
+                                    }
                                 }
                             }
                         }
@@ -102,6 +112,26 @@
     &.forum {
         .table-body > ul > li{
             border-left: 3px solid $mint-color;
+        }
+    }
+
+    // MEDIA QUERY
+    @media screen and (max-width: 640px) {
+        .table-body {
+            ul {
+                li {
+                    margin-bottom: 5px;
+                    .post-data {
+                        .post-body {
+                            .post-info {
+                                h3 {
+                                    max-width: 87%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
