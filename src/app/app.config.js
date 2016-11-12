@@ -4,13 +4,13 @@
     angular
         .module('app')
         .config([
-            '$logProvider', config
+            '$httpProvider', httpConfig
         ])
         .config([
             'toastrConfig', toastSetting
         ])
         .config([
-            '$locationProvider', '$httpProvider', locationProvider
+            '$locationProvider', locationProvider
         ])
         .config([
             'RestangularProvider', 'API_CONFIG', restangularProvider
@@ -35,8 +35,10 @@
         ]);
 
     /** @ngInject */
-    function config($logProvider) {
-        $logProvider.debugEnabled(true);
+    function httpConfig($httpProvider) {
+        $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+
+        $httpProvider.interceptors.push('httpInterceptor');
     }
 
     function authenticationDetect($rootScope, $state, $cookieStore, Restangular, $translate, Authentication) {
@@ -101,15 +103,11 @@
         console.log($cookiesProvider.defaults);
     }
 
-    function locationProvider($locationProvider, $httpProvider) {
+    function locationProvider($locationProvider) {
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: true
         }).hashPrefix('!');
-
-        //$httpProvider.defaults.useXDomain = true;
-        $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
-        //delete $httpProvider.defaults.headers.common["X-Requested-With"];
     }
 
     function restangularProvider(RestangularProvider, API_CONFIG) {
@@ -128,7 +126,7 @@
             }
 
             //DEFAULT LANGUAGE IS ENGLISH....
-            if(('ko en').indexOf(result.lang) == -1) result.lang = 'en';
+            if(('ko en').indexOf(result.lang) === -1) result.lang = 'en';
 
             return result;
         }());
@@ -212,8 +210,6 @@
             window.console = console;
         }
         // CONSOLE LOG SWITCH
-
-
     }
 
 })();
