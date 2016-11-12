@@ -18,15 +18,17 @@
         return service;
 
         function getParams() {
-            var params = $location.search()  || null;
-            var keys;
+            var params = $location.search();
+            var keys = Object.keys(params);
 
-            if(params) {
+            if(keys.length > 0) {
                 keys = Object.keys(params);
                 keys.map(function(v) {
                     params[v] = /^[0-9]*$/gi.test(params[v]) ? parseInt(params[v]) : params[v];
                 });
             }
+            else params = null;
+
             return params;
         }
 

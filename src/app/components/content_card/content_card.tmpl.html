@@ -13,13 +13,13 @@
                         <i class="fa fa-search-plus"></i>
                         <ul>
                             <li>
-                                <i class="fa fa-eye"></i><span>{{item.contentCount.view}}</span>
+                                <i class="fa fa-eye"></i><span>{{item.contentsData.view}}</span>
                             </li>
                             <li>
-                                <i class="fa fa-comment-o"></i><span>{{item.contentCount.comment}}</span>
+                                <i class="fa fa-comment-o"></i><span>{{item.contentsData.comment}}</span>
                             </li>
                             <li>
-                                <i class="fa fa-heart"></i><span>{{item.contentCount.like}}</span>
+                                <i class="fa fa-heart"></i><span>{{item.contentsData.like}}</span>
                             </li>
                         </ul>
                     </div>
@@ -28,8 +28,8 @@
             <div class="content-desc">
                 <div class="contents-info">
                     <a href="">
-                        <h4 class="content-title">{{item.title}}</h4>
-                        <h5>{{item.license}}</h5>
+                        <h4 class="content-title">{{item.contentsData.title}}</h4>
+                        <h5>{{item.contentsData.license}}</h5>
                     </a>
                 </div>
                 <span class="creator-info">
@@ -39,7 +39,12 @@
                         <span class="user-name">{{item.userData.name}}</span>
                     </a>
                 </span>
-                <i class="fa fa-star bookmark-bt" ng-class="{selected : item.bookmark}" ng-click="bookmarkAction(item)"></i>
+                <i
+                    ng-if="false"
+                    class="fa fa-star bookmark-bt"
+                    ng-class="{selected : item.bookmark}"
+                    ng-click="bookmarkAction(item)">
+                </i><!-- 북마크 : 정책 상 반영 보류 -->
             </div>
         </div>
     </div>

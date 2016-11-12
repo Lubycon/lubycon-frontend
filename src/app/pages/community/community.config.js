@@ -24,7 +24,7 @@
                     },
                     getFilterData: function(Restangular) {
                         return Restangular.all('data').customGET('',{
-                            postSort: 'postSort'
+                            data: 'postSort'
                         }).then();
                     }
                 },

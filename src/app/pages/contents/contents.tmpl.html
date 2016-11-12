@@ -1,4 +1,11 @@
 <filter filters="vm.filters" submit="vm.filterSubmit"></filter>
 <div class="container">
-    <content-card contents="vm.contents"></content-card>
+    <div
+        class="infinite-scroll-wrapper"
+        infinite-scroll="vm.onScroll()"
+        infinite-scroll-disabled="vm.scrollDisabled"
+        infinite-scroll-distance="0"
+    >
+        <content-card contents="vm.list"></content-card>
+    </div>
 </div>

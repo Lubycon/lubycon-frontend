@@ -28,8 +28,6 @@
                 position: $element.css('position'),
                 top: $element.css('top')
             };
-
-            console.log('limitValue : ',$scope.limitValue);
         }
         function controller(
             $scope, $element, $attrs, $interval, $compile, $window

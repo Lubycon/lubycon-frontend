@@ -25,7 +25,7 @@
 
         // PUBLIC
         function init(params) {
-            pageIndex = 0;
+            pageIndex = 1;
             callCount = 0;
             filterData = angular.copy(params) || {};
         }
