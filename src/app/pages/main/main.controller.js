@@ -77,7 +77,7 @@
                 }
             ],
             bestCreator: {
-                profile: 'user/12/profile.jpg',
+                profile: 'http://lorempixel.com/640/640/',
                 userCode: 0,
                 code: 0,
                 name: 'Mohammad Anwar',

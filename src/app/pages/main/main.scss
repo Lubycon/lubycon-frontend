@@ -102,10 +102,12 @@
             .creator-pic {
                 display: inline-block;
                 position: relative;
+                width: 80px;
 
                 .profile {
                     border-radius: 50%;
                     overflow: hidden;
+                    width: 100%;
                 }
                 .medal {
                     position: absolute;

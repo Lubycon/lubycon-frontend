@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('httpInterceptor', ['$rootScope','$injector',httpInterceptor])
+        .factory('httpInterceptor', ['$rootScope', '$injector', httpInterceptor])
         ;
 
     function httpInterceptor($rootScope, $injector) {
