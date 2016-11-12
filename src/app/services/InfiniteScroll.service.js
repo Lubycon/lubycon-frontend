@@ -1,3 +1,7 @@
+// INFINTE SCROLL SERVICE
+// TODO 연속해서 요청이 날라가지 않도록 타이머를 걸까 생각 중
+// 2016.11.12 -evan
+
 (function () {
     'use strict';
 

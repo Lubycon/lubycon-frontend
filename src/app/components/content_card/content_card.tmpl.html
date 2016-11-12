@@ -6,20 +6,20 @@
                 ng-class="selected"
                 ng-mouseenter="selected = 'selected'"
                 ng-mouseleave="selected = ''"
-                ng-style="{'background-image':'url(' + item.image + ')'}"
+                ng-style="{'background-image':'url(' + item.contentData.image + ')'}"
             >
-                <a ui-sref="common.default.contents-view({category: '3d', boardId: item.code})">
+                <a ui-sref="common.default.contents-view({category: '3d', boardId: item.contentData.id})">
                     <div class="contents-overlay">
                         <i class="fa fa-search-plus"></i>
                         <ul>
                             <li>
-                                <i class="fa fa-eye"></i><span>{{item.contentsData.view}}</span>
+                                <i class="fa fa-eye"></i><span>{{item.contentData.view}}</span>
                             </li>
                             <li>
-                                <i class="fa fa-comment-o"></i><span>{{item.contentsData.comment}}</span>
+                                <i class="fa fa-comment-o"></i><span>{{item.contentData.comment}}</span>
                             </li>
                             <li>
-                                <i class="fa fa-heart"></i><span>{{item.contentsData.like}}</span>
+                                <i class="fa fa-heart"></i><span>{{item.contentData.like}}</span>
                             </li>
                         </ul>
                     </div>
@@ -28,13 +28,13 @@
             <div class="content-desc">
                 <div class="contents-info">
                     <a href="">
-                        <h4 class="content-title">{{item.contentsData.title}}</h4>
-                        <h5>{{item.contentsData.license}}</h5>
+                        <h4 class="content-title">{{item.contentData.title}}</h4>
+                        <h5>{{item.contentData.license.code | licenseFilter}}</h5>
                     </a>
                 </div>
                 <span class="creator-info">
                     <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">
-                        <img ng-src="{{contentHost + item.userData.profile}}" />
+                        <img ng-src="{{item.userData.profile}}" />
                         <span class="by">by</span>
                         <span class="user-name">{{item.userData.name}}</span>
                     </a>
