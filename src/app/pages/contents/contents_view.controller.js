@@ -33,7 +33,6 @@
 
             vm.contents = vm.data.contents;
             vm.member = vm.data.userData;
-            vm.setting = vm.data.setting;
 
             vm.mapObject = {};
 
@@ -50,7 +49,7 @@
 
             vm.convertToHTML = convertToHTML;
 
-            loadMapData();
+            // loadMapData(); s3 활성화 전까지는 잠시 꺼놓음
         }
 
         function loadMapData() {
