@@ -4,11 +4,13 @@
     angular
         .module('app')
         .factory('UserActionService', [
-            '$rootScope', '$location', '$window',
+            '$rootScope', '$location', '$window', 'Restangular',
             UserActionService
         ]);
 
-    function UserActionService($rootScope, $location, $window) {
+    function UserActionService(
+        $rootScope, $location, $window, Restangular
+    ) {
 
         var service = {
             post: post,
@@ -25,9 +27,9 @@
         ///////////////////////////////////////////////////////////
 
         // PUBLIC METHOD
-        function post(params) {
-            console.log('comment Params : ',params);
-            
+        function post(uriParams,contentParams) {
+            var uri = URIGenerator(uriParams);
+            return Restangular.all(uri).customPOST(contentParams);
         }
 
         function put(params) {
@@ -39,8 +41,13 @@
         }
 
         //PRIVATE METHOD
-        function URIGenerator() {
+        function URIGenerator(params) {
+            var result = '';
 
+            params.map(function(v) {
+                result += (v+'/');
+            });
+            return result.slice(0,-1);
         }
 
     }

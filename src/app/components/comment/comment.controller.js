@@ -12,13 +12,14 @@
             templateUrl: 'app/components/comment/comment.tmpl.html',
             replace: true,
             scope: {
-                comments: '='
+                comments: '=',
+                getMember: '='
             },
             //transclude: true,
             link: link,
             controller: [
                 '$rootScope', '$scope', '$element', 'Restangular', 'toastr',
-                'UserActionService', '$stateParams',
+                'UserActionService', '$stateParams', '$window',
                 controller
             ]
         };
@@ -30,7 +31,7 @@
         }
         function controller(
             $rootScope, $scope, $element, Restangular, toastr,
-            UserActionService, $stateParams
+            UserActionService, $stateParams, $window
         ){
             $scope.me = $rootScope.member;
             $scope.isActiveUser = $scope.me && $rootScope.memberState.condition === 'active';
@@ -41,12 +42,21 @@
                 });
             }
 
+            $scope.myComment = null;
+
             $scope.commentSubmit = function() {
                 UserActionService.post([
                     'comments',
                     $stateParams.category,
                     $stateParams.id
-                ]);
+                ],{
+                    content: $scope.myComment,
+                    getUserId: $scope.getMember
+                }).then(function(res) {
+                    if(res.status.code === '0000') {
+                        $window.location.reload();
+                    }
+                });
             };
         }
     }

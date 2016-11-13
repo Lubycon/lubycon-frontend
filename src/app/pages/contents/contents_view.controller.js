@@ -4,7 +4,7 @@
     angular
         .module('app.pages.contents')
         .controller('ContentsViewController', [
-            '$rootScope', '$scope', '$state', '$stateParams',
+            '$rootScope', '$scope', '$state', '$stateParams', 'Restangular',
             '$sce', 'API_CONFIG', 'toastr', 'InfiniteScrollService', 'UserActionService',
             'getContentRsv', 'get3dMaps', 'get2dMaps',
             ContentsViewController
@@ -12,14 +12,16 @@
 
     /** @ngInject */
     function ContentsViewController(
-        $rootScope, $scope, $state, $stateParams,
+        $rootScope, $scope, $state, $stateParams, Restangular,
         $sce, API_CONFIG, toastr, InfiniteScrollService, UserActionService,
         getContentRsv, get3dMaps, get2dMaps
     ) {
+        loadContent();
 
         var vm = this;
         var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.id;
 
+        vm.isMobile = $rootScope.deviceInfo.isMobile;
         vm.data = getContentRsv.result;
         vm.scrollDisabled = true;
 
@@ -47,8 +49,6 @@
 
             vm.downloadable = vm.contents.filePath !== null;
 
-            loadMapData();
-
             InfiniteScrollService.init();
 
             InfiniteScrollService.get(commentAPI).then(function(res) {
@@ -58,8 +58,16 @@
             });
         }
 
+        function loadContent() {
+            Restangular.all('contents/' + $stateParams.category + '/' + $stateParams.id + '/data')
+            .customGET().then(function(res) {
+                vm.contentData = res.result.contents['3d'];
+                loadMapData();
+            });
+        }
+
         function loadMapData() {
-            var mapData = vm.contents.content.map;
+            var mapData = vm.contentData.map;
             var map;
             console.log(mapData);
             if(mapData.type === '3d') {

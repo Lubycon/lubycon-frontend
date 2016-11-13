@@ -1,9 +1,9 @@
 <div class="comments">
-    <div class="comment col-sm-12 col-md-12 col-lg-12">
-        <div class="comment-profile user-profile col-sm-1 col-md-1 col-lg-1">
+    <div class="comment col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="comment-profile user-profile col-xs-1 col-sm-1 col-md-1 col-lg-1">
             <img ng-src="{{me && me.profile ? me.profile : '/assets/images/no_images/user.jpg'}}" />
         </div>
-        <div class="col-sm-11 col-md-11 col-lg-11">
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
             <textarea
                 ng-disabled="me && isActiveUser ? false : true"
                 msd-elastic="\n"
@@ -11,17 +11,17 @@
                 placeholder="{{me ? 'max length 255' : 'You need Sign in'}}"
                 ng-maxlength="255"
                 class="form-control"
-                ng-model="vm.member.description"
+                ng-model="myComment"
             ></textarea>
         </div>
         <a class="btn btn-mint comment-submit-bt" ng-click="commentSubmit()">SUBMIT</a>
     </div>
-    <div class="divide-horizental col-sm-12 col-md-12 col-lg-12"></div>
-    <div class="comment col-sm-12 col-md-12 col-lg-12" ng-repeat="comment in comments">
-        <div class="comment-profile col-sm-1 col-md-1 col-lg-1">
+    <div class="divide-horizental col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+    <div class="comment col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-repeat="comment in comments">
+        <div class="comment-profile col-xs-1 col-sm-1 col-md-1 col-lg-1">
             <img ng-src="{{comment.userData.profile ? comment.userData.profile : '/assets/images/no_images/user.jpg'}}" />
         </div>
-        <div class="comment-main col-sm-11 col-md-11 col-lg-11">
+        <div class="comment-main col-xs-11 col-sm-11 col-md-11 col-lg-11">
             <a ui-sref="aside.default.dashboard({memberId: comment.userData.id})">
                 <h4>{{comment.userData.name}}</h4>
             </a>
@@ -30,6 +30,6 @@
                 {{comment.commentData.date}}
             </div>
         </div>
-        <div class="divide-horizental col-sm-12 col-md-12 col-lg-12"></div>
+        <div class="divide-horizental col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
     </div>
 </div>

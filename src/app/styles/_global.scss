@@ -19,6 +19,9 @@ label {
     padding: 10px;
     margin: 10px 0px;
     box-shadow: 0 0 7px 0px rgba(0,0,0,0.2);
+    &.no-padding {
+        padding: 0;
+    }
 }
 
 // FOR BOOTSTRAP GRID....

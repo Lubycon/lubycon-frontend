@@ -25,7 +25,6 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-            console.log($scope.model);
             $scope.$watch('map',function(newValue,oldValue) {
                 console.log('MAP CHANGED : ',oldValue,'=>',newValue);
 
@@ -49,7 +48,7 @@
         }
         function controller($rootScope, $scope, $element) {
             'use stict';
-            console.log($scope.map);
+
             $scope.isMobile = $rootScope.deviceInfo.isMobile;
             var windowWidth = $element.find('.webgl-viewer').width(),
                 windowHeight = $element.find('.webgl-viewer').height();
@@ -76,7 +75,7 @@
             scene.add(camera, cameraLight);
 
             // MAP SETTING...FOR 3D
-            initSkyBox();
+            if(Object.keys($scope.map).length > 0) initSkyBox();
             // MAP SETTING...FOR 2D
             // NOTHING
 
@@ -150,6 +149,7 @@
             }
 
             function initSkyBox() {
+                console.log('initSkyBox');
                 var oldLight = $scope.scene.getObjectByName('2dLight');
                 if(oldLight) $scope.scene.remove(oldLight);
 

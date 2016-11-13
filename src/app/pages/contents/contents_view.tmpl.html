@@ -2,24 +2,25 @@
 <div class="container content-view">
     <div class="row">
         <section class="col-xs-12 col-sm-12 col-lg-9">
-            <div class="card">
+            <div class="card no-padding">
                 <div class="content-info">
                     <h1>{{vm.data.contents.title}}</h1>
                     <div class="divide10"></div>
 
-                    <h4>{{vm.category}} &gt; {{vm.contents.subCate[0]}}, {{vm.contents.subCate[1]}}</h4>
+                    <ul class="category">
+                        <li>{{vm.category}} &gt;</li>
+                        <li class="sub-categories" ng-repeat="category in vm.data.contents.subCategory track by $index">
+                            {{category}}
+                        </li>
+                    </ul>
                     <div class="divide10"></div>
 
-                    <ul>
+                    <ul class="count">
                         <li ng-repeat="count in vm.counts">
                             <i class="{{count.icon}}"></i>{{count.data}}
                         </li>
                     </ul>
                 </div>
-
-                <div class="divide20"></div>
-                <div class="divide-horizental"></div>
-                <div class="divide20"></div>
 
                 <div class="content-body">
                     <!-- <ng-bind-html ng-if="vm.viewerType === '2d'" ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html> -->
@@ -27,24 +28,24 @@
                         ng-if="vm.viewerType === '3d'"
                         scene="vm.scene"
                         renderer="vm.renderer"
-                        model="vm.contents.content.model"
+                        model="vm.contentData.model"
                         map="vm.mapObject"
-                        light="vm.content.content.lights"
+                        light="vm.contentData.lights"
                     ></webgl-viewer>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-lg-6 clear-left">
+            <div class="col-xs-12 col-sm-6 col-lg-6" ng-class="{'clear-left' : !vm.isMobile}">
                 <!--INFO 1-->
                 <div class="card">
 
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-6 clear-right">
+            <div class="col-xs-12 col-sm-6 col-lg-6" ng-class="{'clear-right' : !vm.isMobile}">
                 <!--INFO 2-->
                 <div class="card"></div>
             </div>
-            <div class="card col-sm-12 col-lg-12 comment-info">
+            <div class="card col-xs-12 col-sm-12 col-lg-12 comment-info">
                 <div class="divide20"></div>
                 <div
                     class="infinite-scroll-wrapper"
@@ -52,7 +53,7 @@
                     infinite-scroll-disabled="vm.scrollDisabled"
                     infinite-scroll-distance="0"
                 >
-                    <comment comments="vm.commentList"></comment>
+                    <comment comments="vm.commentList" get-member="vm.member.id"></comment>
                 </div>
             </div>
         </section>
@@ -87,6 +88,9 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="divide-horizental"></div>
+
                 <div class="info-wrap" data-value="descript">
                     <p class="info-title"><i class="fa fa-info-circle"></i>Description</p>
                     <div class="info-content">
