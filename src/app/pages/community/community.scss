@@ -32,24 +32,6 @@
 }
 
 .community-view aside {
-    @media (min-width: 1200px){
-        .content-aside.card {
-            position: fixed;
-            max-width: 300px;
-            text-align: left;
-        }
-        .action-area.card{
-            position: fixed;
-            max-width: 300px;
-            top: 215px;
-
-            .btn {
-                width: 260px;
-                margin: 5px 0px;
-            }
-        }
-    }
-
     .creator-info {
         padding: 0;
         figure { // CREATOR PROFILE SIZE...

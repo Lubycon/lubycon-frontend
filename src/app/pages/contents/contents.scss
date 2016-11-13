@@ -36,51 +36,62 @@
 }
 
 .content-view aside {
-    @media (min-width: 1200px){
-        .content-aside.card {
-            position: fixed;
-            max-width: 300px;
+    .content-aside {
+        &.card {
             text-align: left;
-        }
-        .action-area.card{
-            position: fixed;
-            max-width: 300px;
-            top: 294px;
 
-            .btn {
-                width: 260px;
-                margin: 5px 0px;
-            }
-        }
-    }
-
-    .creator-info {
-        padding: 0;
-        figure { // CREATOR PROFILE SIZE...
-            padding: 0;
-            img {
-                width: 100%;
-            }
-        }
-        span { // CREATOR INFO...
-            text-align: left;
-        }
-    }
-
-    .info-wrap {
-        &[data-value='tag'] {
-            ul {
-                border: 1px solid $glay-color;
-                li {
+            .creator-info {
+                padding: 0;
+                figure { // CREATOR PROFILE SIZE...
                     display: inline-block;
-                    border: 1px solid $glay-color;
-                    padding: 3px 12px;
-                    margin: 5px;
+                    width: 50px;
+                    padding: 0;
+                    vertical-align: top;
+                    margin-right: 5px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                span { // CREATOR INFO...
+                    text-align: left;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+
+            .info-wrap {
+                margin-bottom: 15px;
+                .info-title {
+                    margin-bottom: 5px;
+                    padding: 5px;
+                    background: #aaa;
+                    color: #fff;
+                }
+                &[data-value='tag'] {
+                    ul {
+                        border: 1px solid $glay-color;
+                        text-align: left;
+                        li {
+                            display: inline-block;
+                            border: 1px solid $glay-color;
+                            padding: 3px 12px;
+                            margin: 5px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+                &[data-value='descript'] {
+
                 }
             }
         }
-        &[data-value='descript'] {
-
+    }
+    .action-area {
+        &.card {
+            .btn {
+                display: block;
+                margin: 5px 0;
+            }
         }
     }
 }

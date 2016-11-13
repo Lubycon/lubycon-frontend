@@ -26,7 +26,8 @@
 
         // PUBLIC METHOD
         function post(params) {
-            console.log(params);
+            console.log('comment Params : ',params);
+            
         }
 
         function put(params) {
@@ -38,6 +39,9 @@
         }
 
         //PRIVATE METHOD
+        function URIGenerator() {
+
+        }
 
     }
 })();

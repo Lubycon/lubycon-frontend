@@ -29,12 +29,13 @@
                 <div class="contents-info">
                     <a href="">
                         <h4 class="content-title">{{item.contentData.title}}</h4>
+                        {{item.contentData.license.code}}
                         <h5>{{item.contentData.license.code | licenseFilter}}</h5>
                     </a>
                 </div>
                 <span class="creator-info">
                     <a ui-sref="aside.default.dashboard({memberId: item.userData.code})">
-                        <img ng-src="{{item.userData.profile}}" />
+                        <img ng-src="{{item.userData.profile ? item.userData.profile : '/assets/images/no_images/user.jpg'}}" />
                         <span class="by">by</span>
                         <span class="user-name">{{item.userData.name}}</span>
                     </a>

@@ -6,7 +6,7 @@
         .controller('Editor3dController', [
             '$rootScope','$scope','$filter','$compile','$timeout','toastr',
             'ModelLoadService','FileControlService','LightGenerateService',
-            'ModelControlService',
+            'ModelControlService', 'Restangular', '$state',
             'get3dMaps','get2dMaps','getCategory','getCreativeCommons',
             Editor3dController
         ]);
@@ -15,7 +15,7 @@
     function Editor3dController(
         $rootScope, $scope, $filter, $compile ,$timeout, toastr,
         ModelLoadService, FileControlService, LightGenerateService,
-        ModelControlService,
+        ModelControlService, Restangular, $state,
         get3dMaps, get2dMaps, getCategory, getCreativeCommons
     ) {
 
@@ -339,6 +339,7 @@
 
         vm.postData = function() {
             console.log(vm.model);
+            console.time('Data submit');
 
             // LIGHT REDEFINE...
             vm.selectedLight.map(function(v){
@@ -365,10 +366,9 @@
                     title: vm.title,
                     description: vm.description,
                     thumbnail: vm.thumbnail,
-                    category: vm.selectedCategories,
+                    category: vm.selectedCategories.map(function(v){ return parseInt(v); }),
                     tags: vm.tags,
-                    cc: {
-                        ccUsed: vm.ccUsage,
+                    license: {
                         by: vm.creativeCommons[1].check,
                         nc: vm.creativeCommons[2].check,
                         nd: vm.creativeCommons[3].check,
@@ -377,7 +377,19 @@
                 }
             };
             console.log(vm.editorData);
-            console.time('Data submit');
+
+            Restangular.all('contents/3d').customPOST(vm.editorData)
+            .then(function(res) {
+                if(res.status.code === '0000') {
+                    angular.element('.modal-backdrop').remove();
+                    $state.go('common.noFooter.contentMessage',{
+                        success: true,
+                        kind: 'contents',
+                        id: vm.boardId
+                    });
+                }
+            });
+
             console.timeEnd('Data submit');
         };
     }
