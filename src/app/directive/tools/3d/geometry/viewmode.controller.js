@@ -91,19 +91,22 @@
             }
 
             function wireframeViewControl(bool,helper) {
+                var model = $scope.scene.getObjectByName('mainObject');
+
                 if(bool){
-                    var exist = $scope.scene.getObjectByName("wireframeHelper");
+                    var exist = model.getObjectByName('wireframeHelper');
+
                     if(!exist){
                         var wireframeHelper = new THREE.WireframeHelper($scope.object,0x48cfad);
                         wireframeHelper.name = "wireframeHelper";
-                        $scope.scene.add(wireframeHelper);
+                        model.add(wireframeHelper);
                     }
                     if(!helper) $scope.material.visible = false;
                     else $scope.material.visible = true;
                 }
                 else{
                     $scope.material.visible = true;
-                    $scope.scene.remove($scope.scene.getObjectByName("wireframeHelper"));
+                    model.remove($scope.scene.getObjectByName('wireframeHelper'));
                 }
             }
         }
