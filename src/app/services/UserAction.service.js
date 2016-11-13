@@ -32,12 +32,14 @@
             return Restangular.all(uri).customPOST(contentParams);
         }
 
-        function put(params) {
-            console.log(params);
+        function put(params,contentParams) {
+            var uri = URIGenerator(uriParams);
+            return Restangular.all(uri).customPUT(contentParams);
         }
 
         function remove(params) {
-            console.log(params);
+            var uri = URIGenerator(uriParams);
+            return Restangular.all(uri).customDELETE();
         }
 
         //PRIVATE METHOD

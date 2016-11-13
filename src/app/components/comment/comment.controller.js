@@ -53,6 +53,7 @@
                     content: $scope.myComment,
                     getUserId: $scope.getMember
                 }).then(function(res) {
+                    console.log(res);
                     if(res.status.code === '0000') {
                         $window.location.reload();
                     }
