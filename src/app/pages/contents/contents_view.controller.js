@@ -5,7 +5,7 @@
         .module('app.pages.contents')
         .controller('ContentsViewController', [
             '$rootScope', '$scope', '$state', '$stateParams',
-            '$sce', 'API_CONFIG', 'toastr',
+            '$sce', 'API_CONFIG', 'toastr', 'InfiniteScrollService', 'UserActionService',
             'getContentRsv', 'get3dMaps', 'get2dMaps',
             ContentsViewController
         ]);
@@ -13,15 +13,15 @@
     /** @ngInject */
     function ContentsViewController(
         $rootScope, $scope, $state, $stateParams,
-        $sce, API_CONFIG, toastr,
+        $sce, API_CONFIG, toastr, InfiniteScrollService, UserActionService,
         getContentRsv, get3dMaps, get2dMaps
     ) {
 
         var vm = this;
-        console.log($state);
+        var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.boardId;
 
-        // DUMMY DATA
         vm.data = getContentRsv.result;
+        vm.scrollDisabled = true;
 
         vm.init = (init)();
         function init(){
@@ -47,9 +47,15 @@
 
             vm.downloadable = vm.contents.filePath !== null;
 
-            vm.convertToHTML = convertToHTML;
-
             // loadMapData(); s3 활성화 전까지는 잠시 꺼놓음
+
+            InfiniteScrollService.init();
+
+            InfiniteScrollService.get(commentAPI).then(function(res) {
+                bindCommentList(res.result.comments);
+                vm.totalCount = res.result.totalCount;
+                vm.scrollDisabled = false;
+            });
         }
 
         function loadMapData() {
@@ -65,71 +71,32 @@
             }
         }
 
+        vm.convertToHTML = convertToHTML;
         function convertToHTML(string){
             return $sce.trustAsHtml(string);
         }
 
-        vm.bookmarkAction = bookmarkAction;
-        function bookmarkAction(){
-            // BOOKMARK CHECKING...
-            if(vm.contents.bookmark) { // OFF
-                vm.contents.bookmark = false;
-                toastr.success(vm.contents.title+' is removed at your bookmark',{
-                    iconClass: 'toast-remove'
-                });
-            }
-            else if(!vm.contents.bookmark) { // ON
-                vm.contents.bookmark = true;
-                toastr.success(vm.contents.title+' is saved to your bookmark',{
-                    iconClass: 'toast-bookmark'
-                });
-            }
-            else return false;
-            // BOOKMARK CHECKING END
-            // CREATE POST PARAM
-            var params = {
-                checked: vm.contents.bookmark,
-                getUserCode: vm.member.code
-                //giveUserCode: $rootScope.member.code // 미구현
-            };
+        // PRIVATE METHOD
+        function getCommentList() {
+            console.log(vm.commentList);
+            // FULL ITEM EXCPETION
+            if(vm.commentList.length >= vm.totalCount) return false;
+            // FULL ITEM EXCEPTION
 
-            console.log(params);
+            InfiniteScrollService.get(commentAPI).then(function(res) {
+                bindCommentList(res.result.comments);
 
-            // POST TO SERVER...
-            // Restangular.all('bookmark/contents/' + $stateParams.category + vm.contents.code)
-            //     .customPOST(params).then(function(res){
-            //
-            //     });
+                vm.scrollDisabled = false;
+            });
+            return false;
         }
 
-        vm.likeAction = likeAction;
-        function likeAction(){
-            // BOOKMARK CHECKING...
-            if(vm.contents.like) { // OFF
-                vm.contents.like = false;
-            }
-            else if(!vm.contents.like) { // ON
-                vm.contents.like = true;
-                toastr.success('Thanks!! - ' + vm.member.name + ' -',{
-                    iconClass: 'toast-like'
-                });
-            }
-            else return false;
-            // BOOKMARK CHECKING END
-            // CREATE POST PARAM
-            var params = {
-                checked: vm.contents.like,
-                getUserCode: vm.member.code
-                //giveUserCode: $rootScope.member.code // 미구현
-            };
+        function bindCommentList(newList) {
+            console.log(newList);
+            if(!vm.commentList) vm.commentList = [];
 
-            console.log(params);
-
-            // POST TO SERVER...
-            // Restangular.all('like/contents/' + $stateParams.category + vm.contents.code)
-            //     .customPOST(params).then(function(res){
-            //
-            //     });
+            if(newList) vm.commentList = $.merge(vm.commentList, newList);
+            console.log(vm.commentList);
         }
     }
 })();

@@ -17,7 +17,7 @@
             //transclude: true,
             link: link,
             controller: [
-                '$rootScope', '$scope', '$element', 'Restangular', 'toastr', 'API_CONFIG',
+                '$rootScope', '$scope', '$element', 'Restangular', 'toastr',
                 controller
             ]
         };
@@ -27,8 +27,7 @@
         function link($scope, $element) {
 
         }
-        function controller($rootScope, $scope, $element, Restangular, toastr, API_CONFIG){
-            $scope.contentHost = API_CONFIG.content;
+        function controller($rootScope, $scope, $element, Restangular, toastr){
             $scope.me = $rootScope.member;
             $scope.isActiveUser = $scope.me && $rootScope.memberState.condition === 'active';
 

@@ -5,38 +5,41 @@
         .module('app.pages.community')
         .controller('CommunityViewController', [
             '$rootScope', '$scope', '$sce', 'toastr', 'API_CONFIG', 'getPostRsv',
-            '$state', '$stateParams',
+            '$state', '$stateParams', 'UserActionService', 'InfiniteScrollService',
             CommunityViewController
         ]);
 
     /** @ngInject */
     function CommunityViewController(
         $rootScope, $scope, $sce, toastr, API_CONFIG, getPostRsv,
-        $state, $stateParams
+        $state, $stateParams, UserActionService, InfiniteScrollService
     ) {
         var vm = this;
-        vm.contentHost = API_CONFIG.content;
-        //DUMMY DATA
-        vm.data = getPostRsv.result;
-        console.log(vm.data);
+        var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.postId;
 
-        //DUMMY DATA
+        vm.data = getPostRsv.result;
+        vm.scrollDisabled = true;
 
         vm.init = (init)();
-
         function init(){
             vm.contents = vm.data.contents;
             vm.member = vm.data.userData;
 
             vm.counts = [
                 { icon: 'fa fa-eye', data: vm.contents.viewCount },
-                // { icon: 'fa fa-cloud-download', data: vm.contents.downloadCount },
                 { icon: 'fa fa-heart', data: vm.contents.likeCount }
             ];
 
-            vm.convertToHTML = convertToHTML;
+            InfiniteScrollService.init();
+
+            InfiniteScrollService.get(commentAPI).then(function(res) {
+                bindCommentList(res.result.comments);
+                vm.totalCount = res.result.totalCount;
+                vm.scrollDisabled = false;
+            });
         }
 
+        vm.convertToHTML = convertToHTML;
         function convertToHTML(string){
             return $sce.trustAsHtml(string);
         }
@@ -49,36 +52,32 @@
             });
         }
 
-        vm.likeAction = likeAction;
-        function likeAction(){
-            // BOOKMARK CHECKING...
-            if(vm.contents.like) { // OFF
-                vm.contents.like = false;
-            }
-            else if(!vm.contents.like) { // ON
-                vm.contents.like = true;
-                toastr.success('Thanks!! - ' + vm.member.name + ' -',{
-                    iconClass: 'toast-like'
-                });
-            }
-            else return false;
-            // BOOKMARK CHECKING END
-            // CREATE POST PARAM
-            var params = {
-                checked: vm.contents.like,
-                getUserCode: vm.member.code
-                //giveUserCode: $rootScope.member.code // 미구현
-            };
+        vm.onScroll = function() {
+            vm.scrollDisabled = true;
+            getCommentList();
+        };
 
-            console.log(params);
+        // PRIVATE METHOD
+        function getCommentList() {
+            console.log(vm.commentList);
+            // FULL ITEM EXCPETION
+            if(vm.commentList.length >= vm.totalCount) return false;
+            // FULL ITEM EXCEPTION
 
-            // POST TO SERVER...
-            // Restangular.all('like/community/' + $stateParams.category + vm.contents.code)
-            //     .customPOST(params).then(function(res){
-            //
-            //     });
+            InfiniteScrollService.get(commentAPI).then(function(res) {
+                bindCommentList(res.result.comments);
+
+                vm.scrollDisabled = false;
+            });
+            return false;
         }
 
+        function bindCommentList(newList) {
+            console.log(newList);
+            if(!vm.commentList) vm.commentList = [];
 
+            if(newList) vm.commentList = $.merge(vm.commentList, newList);
+            console.log(vm.commentList);
+        }
     }
 })();

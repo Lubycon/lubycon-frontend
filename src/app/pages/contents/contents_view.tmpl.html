@@ -44,7 +44,14 @@
             </div>
             <div class="card col-sm-12 col-lg-12 comment-info">
                 <div class="divide20"></div>
-                <comment comments="vm.comments"></comment>
+                <div
+                    class="infinite-scroll-wrapper"
+                    infinite-scroll="vm.onScroll()"
+                    infinite-scroll-disabled="vm.scrollDisabled"
+                    infinite-scroll-distance="0"
+                >
+                    <comment comments="vm.commentList"></comment>
+                </div>
             </div>
         </section>
 

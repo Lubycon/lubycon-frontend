@@ -38,7 +38,14 @@
             </div>
             <div class="card col-sm-12 col-lg-12 comment-info">
                 <div class="divide20"></div>
-                <comment comments="vm.comments"></comment>
+                <div
+                    class="infinite-scroll-wrapper"
+                    infinite-scroll="vm.onScroll()"
+                    infinite-scroll-disabled="vm.scrollDisabled"
+                    infinite-scroll-distance="0"
+                >
+                    <comment comments="vm.commentList"></comment>
+                </div>
             </div>
         </section>
 
@@ -46,7 +53,7 @@
             <div class="content-aside card">
                 <div class="creator-info col-sm-12 col-lg-12">
                     <figure class="col-sm-4 col-lg-4">
-                        <img ng-src="{{vm.member.profile ? vm.contentHost + vm.member.profile : '/assets/images/no_images/user.jpg'}}" />
+                        <img ng-src="{{vm.member.profile ? vm.member.profile : '/assets/images/no_images/user.jpg'}}" />
                     </figure>
                     <span class="col-sm-8 col-lg-8">
                         <h4><a ng-href="creators/dashboard/{{vm.member.id}}">
