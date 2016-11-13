@@ -1,0 +1,40 @@
+.loading-icon {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    float: left;
+    width: 100px;
+    height: 100px;
+
+    .loading-icon-1 {
+        width: 24px;
+        height: 24px;
+        border-top: 2px solid #ccc;
+        border-right: 2px solid #222;
+        -webkit-animation: animate1 1s ease infinite;
+        animation: animate1 1s ease infinite;
+        border-radius: 100%;
+    }
+    @-webkit-keyframes animate1 {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes animate1 {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+}

@@ -14,19 +14,19 @@
                     <div class="list-wrapper col-sm-8 col-md-8 col-lg-8">
                         <div class="post-data">
                             <span class="post-label">
-                                <p>{{list.contents.id}}</p>
+                                <p>{{list.postData.id}}</p>
                             </span>
                             <span class="post-body">
                                 <div class="post-info">
-                                    <a ui-sref="common.default.community-view({category: 'forum', postId: list.contents.id})">
-                                        <h3>{{list.contents.title}}</h3>
-                                        <p>[{{list.contents.comment}}]</p>
+                                    <a ui-sref="common.default.community-view({category: 'forum', postId: list.postData.id})">
+                                        <h3>{{list.postData.title}}</h3>
+                                        <p>[{{list.postData.comment}}]</p>
                                     </a>
                                 </div>
                                 <div class="post-counts">
                                     <!-- <span class="table-date">{{list.content.date}}</span> -->
-                                    <span><i class="fa fa-eye"></i> {{list.contents.view}}</span>
-                                    <span><i class="fa fa-heart"></i> {{list.contents.like}}</span>
+                                    <span><i class="fa fa-eye"></i> {{list.postData.view}}</span>
+                                    <span><i class="fa fa-heart"></i> {{list.postData.like}}</span>
                                 </div>
                             </span>
                         </div>

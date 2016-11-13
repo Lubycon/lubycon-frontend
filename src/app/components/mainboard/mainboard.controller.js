@@ -17,7 +17,7 @@
             //transclude: true,
             link: link,
             controller: [
-                '$scope', '$element', 'API_CONFIG', '$state', '$stateParams', controller
+                '$scope', '$element', '$state', '$stateParams', controller
             ]
         };
 
@@ -26,8 +26,7 @@
         function link($scope, $element) {
 
         }
-        function controller($scope, $element, API_CONFIG, $state, $stateParams) {
-            $scope.contentHost = API_CONFIG.content;
+        function controller($scope, $element, $state, $stateParams) {
             $scope.boardCategory = $stateParams.category;
         }
     }

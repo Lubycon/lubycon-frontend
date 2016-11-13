@@ -68,7 +68,6 @@
             // FULL ITEM EXCEPTION
 
             InfiniteScrollService.get(apiURI).then(function(res) {
-                console.log(res.result.contents);
                 bindList(res.result.contents);
 
                 vm.scrollDisabled = false;
@@ -80,6 +79,7 @@
             if(!vm.list) vm.list = [];
 
             if(newList) vm.list = $.merge(vm.list, newList);
+            console.log(vm.list);
         }
     }
 })();
