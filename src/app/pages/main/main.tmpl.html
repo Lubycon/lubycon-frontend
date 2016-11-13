@@ -5,9 +5,9 @@
     <div class="row">
         <div class="card col-sm-6 col-md-4 col-lg-3" ng-repeat="item in vm.data.contents">
             <div class="content-wrapper" ng-style="{'background-image': 'url('+item.img+')'}">
-                <div class="overlay" ui-sref="common.default.contents-view({category: '3d', boardId: item.code})">
+                <div class="overlay" ui-sref="common.default.contents-view({category: '3d', id: item.code})">
                     <p>
-                        <a class="content-info" ui-sref="common.default.contents-view({category: '3d', boardId: item.code})"><span>{{item.title}}</span></a>
+                        <a class="content-info" ui-sref="common.default.contents-view({category: '3d', id: item.code})"><span>{{item.title}}</span></a>
                         <a class="member-info" ui-sref="aside.default.dashboard({memberId: item.userCode})">by <span>{{item.creator}}</span></a>
                     </p>
                 </div>

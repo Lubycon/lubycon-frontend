@@ -27,17 +27,17 @@
                 authenticate: 'all'
             })
             .state('common.default.contents-view', {
-                url: '/contents/:category/:boardId',
+                url: '/contents/:category/:id',
                 templateUrl: 'app/pages/contents/contents_view.tmpl.html',
                 controller: 'ContentsViewController',
                 controllerAs: 'vm',
                 params: {
                     category: null,
-                    boardId: null
+                    id: null
                 },
                 resolve: {
                     getContentRsv: function($stateParams, Restangular) {
-                        var api = Restangular.all('contents/' + $stateParams.category + '/' + $stateParams.boardId);
+                        var api = Restangular.all('contents/' + $stateParams.category + '/' + $stateParams.id);
                         return api.customGET().then();
                     },
                     get3dMaps: function($http) {

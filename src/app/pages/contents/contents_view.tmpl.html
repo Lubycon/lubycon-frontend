@@ -21,15 +21,17 @@
                 <div class="divide-horizental"></div>
                 <div class="divide20"></div>
 
-                <!-- <ng-bind-html ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html> -->
-                <webgl-viewer
-                    ng-if="vm.viewerType === '3d'"
-                    scene="vm.scene"
-                    renderer="vm.renderer"
-                    model="vm.contents.content.model"
-                    map="vm.mapObject"
-                    light="vm.content.content.lights"
-                ></webgl-viewer>
+                <div class="content-body">
+                    <!-- <ng-bind-html ng-if="vm.viewerType === '2d'" ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html> -->
+                    <webgl-viewer
+                        ng-if="vm.viewerType === '3d'"
+                        scene="vm.scene"
+                        renderer="vm.renderer"
+                        model="vm.contents.content.model"
+                        map="vm.mapObject"
+                        light="vm.content.content.lights"
+                    ></webgl-viewer>
+                </div>
             </div>
 
             <div class="col-sm-6 col-lg-6 clear-left">
@@ -60,10 +62,10 @@
         <aside class="col-xs-12 col-sm-12 col-lg-3">
             <div class="content-aside card">
                 <div class="creator-info col-sm-12 col-lg-12">
-                    <figure class="col-sm-4 col-lg-4">
+                    <figure class="col-sm-3 col-lg-3">
                         <img ng-src="{{vm.member.profile ?  vm.contentHost + vm.member.profile : '/assets/images/no_images/user.jpg'}}" />
                     </figure>
-                    <span class="col-sm-8 col-lg-8">
+                    <span class="col-sm-9 col-lg-9">
                         <h4><a ui-sref="aside.default.dashboard({memberId: item.userData.code})">
                                 {{vm.member.name}}
                             </a>
@@ -100,14 +102,14 @@
                     ng-class="{selected : vm.contents.bookmark}"
                     ng-click="vm.bookmarkAction()"
                 >
-                    <i class="fa fa-star"></i>BOOKMARK
+                    <i class="fa fa-star"></i>Bookmark
                 </div>
                 <div
                     class="btn btn-like"
                     ng-class="{selected : vm.contents.like}"
                     ng-click="vm.likeAction()"
                 >
-                    <i class="fa fa-heart"></i>like
+                    <i class="fa fa-heart"></i>Like
                 </div>
                 <div ng-if="vm.downloadable" class="btn">
                     <i class="fa fa-cloud-download"></i>Download

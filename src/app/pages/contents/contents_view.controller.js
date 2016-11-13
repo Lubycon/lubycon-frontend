@@ -18,7 +18,7 @@
     ) {
 
         var vm = this;
-        var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.boardId;
+        var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.id;
 
         vm.data = getContentRsv.result;
         vm.scrollDisabled = true;
@@ -47,7 +47,7 @@
 
             vm.downloadable = vm.contents.filePath !== null;
 
-            // loadMapData(); s3 활성화 전까지는 잠시 꺼놓음
+            loadMapData();
 
             InfiniteScrollService.init();
 

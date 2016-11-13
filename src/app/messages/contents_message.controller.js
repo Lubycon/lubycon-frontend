@@ -54,10 +54,10 @@
 
         function goToMyContents(){
             if(vm.kind === 'contents') {
-                $state.go('common.default.contents-view',{ category: '3d', boardId: $stateParams.id });
+                $state.go('common.default.contents-view',{ category: '3d', id: $stateParams.id });
             }
             else if(vm.kind === 'posts') {
-                $state.go('common.default.community-view',{ category: 'forum', postId: $stateParams.id });
+                $state.go('common.default.community-view',{ category: 'forum', id: $stateParams.id });
             }
         }
         function goToMain(){

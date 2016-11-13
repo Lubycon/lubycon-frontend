@@ -31,35 +31,35 @@
                 authenticate: 'all'
             })
             .state('common.default.community-view', {
-                url: '/community/:category/:postId',
+                url: '/community/:category/:id',
                 templateUrl: 'app/pages/community/community_view.tmpl.html',
                 controller: 'CommunityViewController',
                 controllerAs: 'vm',
                 params: {
                     category: null,
-                    postId: null
+                    id: null
                 },
                 resolve: {
                     getPostRsv: function($stateParams, Restangular) {
-                        var api = Restangular.all('posts/' + $stateParams.category + '/' + $stateParams.postId);
+                        var api = Restangular.all('posts/' + $stateParams.category + '/' + $stateParams.id);
                         return api.customGET().then();
                     }
                 },
                 authenticate: 'all'
             })
             .state('common.noFooter.community-write', {
-                url: '/community/:category/write?:postId',
+                url: '/community/:category/write?:id',
                 templateUrl: 'app/pages/community/community_write.tmpl.html',
                 controller: 'CommunityWriteController',
                 controllerAs: 'vm',
                 params: {
                     category: null,
-                    postId: null
+                    id: null
                 },
                 resolve: {
                     getPostRsv: function($stateParams, Restangular) {
-                        if($stateParams.postId) {
-                            var api = Restangular.all('posts/' + $stateParams.category + '/' + $stateParams.postId);
+                        if($stateParams.id) {
+                            var api = Restangular.all('posts/' + $stateParams.category + '/' + $stateParams.id);
                             return api.customGET().then();
                         }
                         else return null;

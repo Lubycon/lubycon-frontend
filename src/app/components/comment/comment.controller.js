@@ -18,6 +18,7 @@
             link: link,
             controller: [
                 '$rootScope', '$scope', '$element', 'Restangular', 'toastr',
+                'UserActionService', '$stateParams',
                 controller
             ]
         };
@@ -27,7 +28,10 @@
         function link($scope, $element) {
 
         }
-        function controller($rootScope, $scope, $element, Restangular, toastr){
+        function controller(
+            $rootScope, $scope, $element, Restangular, toastr,
+            UserActionService, $stateParams
+        ){
             $scope.me = $rootScope.member;
             $scope.isActiveUser = $scope.me && $rootScope.memberState.condition === 'active';
 
@@ -36,6 +40,14 @@
                     v.date = v.date.split(" ")[0];
                 });
             }
+
+            $scope.commentSubmit = function() {
+                UserActionService.post([
+                    'comments',
+                    $stateParams.category,
+                    $stateParams.id
+                ]);
+            };
         }
     }
 })();

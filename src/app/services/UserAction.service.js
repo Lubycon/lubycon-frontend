@@ -18,17 +18,23 @@
 
         return service;
 
+        // API PARAMS /////////////////////////////////////////////
+        // bookmark : /bookmark/{boardType}/{category}/{boardId} //
+        // like : /like/{boardType}/{category}/{boardId}         //
+        // comment : /comments/{category}/{boardId}              //
+        ///////////////////////////////////////////////////////////
+
         // PUBLIC METHOD
-        function post() {
-
+        function post(params) {
+            console.log(params);
         }
 
-        function put() {
-
+        function put(params) {
+            console.log(params);
         }
 
-        function remove() {
-
+        function remove(params) {
+            console.log(params);
         }
 
         //PRIVATE METHOD

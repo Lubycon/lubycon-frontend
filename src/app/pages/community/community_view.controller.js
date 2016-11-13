@@ -15,7 +15,7 @@
         $state, $stateParams, UserActionService, InfiniteScrollService
     ) {
         var vm = this;
-        var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.postId;
+        var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.id;
 
         vm.data = getPostRsv.result;
         vm.scrollDisabled = true;
@@ -48,7 +48,7 @@
         function goModify() {
             $state.go('common.noFooter.community-write',{
                 category: $stateParams.category,
-                postId: $stateParams.postId
+                id: $stateParams.id
             });
         }
 
