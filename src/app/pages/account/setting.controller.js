@@ -14,7 +14,7 @@
     function AccountSettingController(
         $rootScope, $scope, $state, $stateParams,
         Restangular, API_CONFIG, $filter,
-        getMember, getCountry, getJob
+        getMember, getData
     ) {
 
         console.log(getMember.result);
@@ -23,7 +23,6 @@
         vm.contentHost = API_CONFIG.content;
         vm.data = getMember.result;
 
-        console.log(getCountry,getJob);
         vm.member = vm.data.userData;
         vm.languages = vm.data.language;
         vm.histories = vm.data.history;
@@ -33,6 +32,7 @@
         vm.publicOptionList = ['Public','Private'];
         vm.languageLevelList = ['Beginner','Advanced','Fluent'];
 
+        console.log(getData);
         vm.countryList = getData.result.country;
         vm.jobList = getData.result.job;
 
