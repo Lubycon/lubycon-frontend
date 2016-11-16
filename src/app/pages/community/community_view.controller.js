@@ -17,6 +17,7 @@
         var vm = this;
         var commentAPI = 'comments/' + $stateParams.category + '/' + $stateParams.id;
 
+        vm.isMobile = $rootScope.deviceInfo.isMobile;
         vm.data = getPostRsv.result;
         vm.scrollDisabled = true;
 

@@ -67,7 +67,7 @@
 
             $scope.commentModify = function(comment) {
                 UserAction.put([
-                    'comment',
+                    'comments',
                     $stateParams.category,
                     $stateParams.id,
                     comment.commentData.id
@@ -81,7 +81,7 @@
 
             $scope.deleteComment = function(comment) {
                 UserActionService.delete([
-                    'comment',
+                    'comments',
                     $stateParams.category,
                     $stateParams.id,
                     comment.commentData.id
