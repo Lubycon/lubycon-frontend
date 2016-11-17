@@ -30,7 +30,9 @@
                 from : fromState,
                 to : toState
             };
+        });
 
+        $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams) {
             StateAuthentication.detect(toState);
         });
     }

@@ -26,17 +26,18 @@
                 case 'all' :
                     stateChangeResolve(toState);
                 break;
+                case 'visitor' :
+                    if(!isSigned) stateChangeResolve(toState);
+                    else stateChangeReject('common.figure.main');
+                break;
                 case 'inactive' :
                     if(isSigned) stateChangeResolve(toState);
                     else stateChangeReject();
                 break;
                 case 'active' :
-                    if(isSigned && condition === 'active') stateChangeResolve(toState);
-                    else stateChangeReject('common.noFooter.cert',{type: 'signup'});
-                break;
-                case 'visitor' :
-                    if(!isSigned) stateChangeResolve(toState);
-                    else stateChangeReject('common.figure.main');
+                    if(isSigned && condition !== 'inactive') stateChangeResolve(toState);
+                    else if(isSigned && condition === 'inactive') stateChangeReject('common.noFooter.cert',{type: 'signup'});
+                    else stateChangeReject();
                 break;
                 case 'admin' :
                     if(isSigned && condition === 'admin') stateChangeResolve(toState);

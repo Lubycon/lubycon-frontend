@@ -74,6 +74,7 @@
                         $cookieStore.put('member', $rootScope.member);
 
                         if(isExistBackState) {
+                            console.log($rootScope.clientLocation);
                             var stateName = $rootScope.clientLocation.from.name,
                                 stateParams = $rootScope.clientLocation.from.params;
 
