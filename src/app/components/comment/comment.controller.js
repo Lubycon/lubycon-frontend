@@ -42,7 +42,12 @@
                 });
             }
 
-            $scope.myComment = null;
+            $scope.myComment = null; // 최상단 인풋
+
+            $scope.setEditableMyComment = function(comment,bool) {
+                console.log(comment,bool);
+                comment.editable = bool;
+            };
 
             $scope.commentSubmit = function() {
                 UserActionService.post([
@@ -53,6 +58,34 @@
                     content: $scope.myComment,
                     getUserId: $scope.getMember
                 }).then(function(res) {
+                    console.log(res);
+                    if(res.status.code === '0000') {
+                        $window.location.reload();
+                    }
+                });
+            };
+
+            $scope.commentModify = function(comment) {
+                UserAction.put([
+                    'comments',
+                    $stateParams.category,
+                    $stateParams.id,
+                    comment.commentData.id
+                ]).then(function(res) {
+                    console.log(res);
+                    if(res.status.code === '0000') {
+                        $window.location.reload();
+                    }
+                });
+            };
+
+            $scope.deleteComment = function(comment) {
+                UserActionService.delete([
+                    'comments',
+                    $stateParams.category,
+                    $stateParams.id,
+                    comment.commentData.id
+                ]).then(function(res) {
                     console.log(res);
                     if(res.status.code === '0000') {
                         $window.location.reload();

@@ -32,16 +32,48 @@
 }
 
 .community-view aside {
-    .creator-info {
-        padding: 0;
-        figure { // CREATOR PROFILE SIZE...
-            padding: 0;
-            img {
-                width: 100%;
-            }
-        }
-        span { // CREATOR INFO...
+    .content-aside {
+        &.card {
             text-align: left;
+            padding: 0;
+
+            .creator-info {
+                padding: 15px;
+                figure { // CREATOR PROFILE SIZE...
+                    display: inline-block;
+                    width: 50px;
+                    padding: 0;
+                    vertical-align: top;
+                    margin-right: 5px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                span { // CREATOR INFO...
+                    text-align: left;
+                    display: inline-block;
+                    vertical-align: top;
+
+                    h4 {
+                        font-weight: 600;
+                    }
+                    h5 {
+                        color: #aaa;
+                        font-weight: 200;
+                        font-size: 12px;
+                        margin: 2px 0;
+                        &[data-value="job"] {
+
+                        }
+                        &[data-value="location"] {
+                            i {
+                                font-size: 14px;
+                                color: $mint-color;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

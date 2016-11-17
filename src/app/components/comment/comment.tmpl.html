@@ -8,7 +8,7 @@
                 ng-disabled="me && isActiveUser ? false : true"
                 msd-elastic="\n"
                 rows="5"
-                placeholder="{{me ? 'max length 255' : 'You need Sign in'}}"
+                placeholder="{{me ? '최대 255자까지 입력 가능합니다' : '로그인이 필요합니다'}}"
                 ng-maxlength="255"
                 class="form-control"
                 ng-model="myComment"
@@ -26,9 +26,34 @@
                 <h4>{{comment.userData.name}}</h4>
             </a>
             <h5>{{comment.commentData.content}}</h5>
+            <h5 ng-if="comment.editable && (me && me.id === comment.userData.id)">
+                <input class="form-control" ng-model="comment.commentData.content" />
+            </h5>
             <div class="comment-date">
                 {{comment.commentData.date}}
             </div>
+        </div>
+        <div class="comment-control btn-group" ng-if="me && me.id === comment.userData.id">
+            <button
+                class="btn"
+                ng-click="setEditableMyComment(comment,true)"
+            >
+                <i class="fa fa-pencil"></i>
+            </button>
+            <button
+                ng-show="comment.editable"
+                class="btn"
+                ng-click="setEditableMyComment(comment,false)"
+            >
+                <i class="fa fa-close"></i>
+            </button>
+            <button
+                ng-hide="comment.editable"
+                class="btn btn-red"
+                ng-click="deleteComment(comment)"
+            >
+                <i class="fa fa-close"></i>
+            </button>
         </div>
         <div class="divide-horizental col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
     </div>

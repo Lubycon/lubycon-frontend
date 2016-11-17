@@ -50,8 +50,8 @@
                         var api = Restangular.all('members/detail/'+$stateParams.memberId);
                         return api.customGET().then();
                     },
-                    getData: function() {
-                        var api = Restangular.all('data').customGET({
+                    getData: function(Restangular) {
+                        return Restangular.all('data').customGET('',{
                             country: 'country',
                             job: 'job'
                         }).then();

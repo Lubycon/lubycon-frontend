@@ -32,13 +32,14 @@
             return Restangular.all(uri).customPOST(contentParams);
         }
 
-        function put(params,contentParams) {
+        function put(uriParams,contentParams) {
             var uri = URIGenerator(uriParams);
             return Restangular.all(uri).customPUT(contentParams);
         }
 
-        function remove(params) {
+        function remove(uriParams) {
             var uri = URIGenerator(uriParams);
+            console.log(uri);
             return Restangular.all(uri).customDELETE();
         }
 
@@ -51,6 +52,5 @@
             });
             return result.slice(0,-1);
         }
-
     }
 })();

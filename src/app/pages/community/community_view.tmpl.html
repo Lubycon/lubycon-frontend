@@ -24,19 +24,15 @@
                 </section>
             </div>
 
-            <div class="col-sm-6 col-lg-6 clear-left">
+            <div class="col-xs-12 col-sm-6 col-lg-6" ng-class="{'clear-left' : !vm.isMobile}">
                 <!--INFO 1-->
-                <div class="card">
-
-                </div>
+                <div class="card"></div>
             </div>
-            <div class="col-sm-6 col-lg-6 clear-right">
+            <div class="col-xs-12 col-sm-6 col-lg-6" ng-class="{'clear-right' : !vm.isMobile}">
                 <!--INFO 2-->
-                <div class="card">
-
-                </div>
+                <div class="card"></div>
             </div>
-            <div class="card col-sm-12 col-lg-12 comment-info">
+            <div class="card col-xs-12 col-sm-12 col-lg-12 comment-info">
                 <div class="divide20"></div>
                 <div
                     class="infinite-scroll-wrapper"
@@ -52,10 +48,10 @@
         <aside class="col-xs-12 col-sm-12 col-lg-3">
             <div class="content-aside card">
                 <div class="creator-info">
-                    <figure class="col-sm-4 col-lg-4">
+                    <figure>
                         <img ng-src="{{vm.member.profile ? vm.member.profile : '/assets/images/no_images/user.jpg'}}" />
                     </figure>
-                    <span class="col-sm-8 col-lg-8">
+                    <span>
                         <h4><a ng-href="creators/dashboard/{{vm.member.id}}">
                                 {{vm.member.name}}
                             </a>

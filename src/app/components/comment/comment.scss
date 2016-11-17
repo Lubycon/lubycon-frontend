@@ -26,6 +26,17 @@
                 right: 0;
             }
         }
+        .comment-control {
+            float: right;
+            border-radius: 4px;
+            overflow: hidden;
+            .btn {
+                i {
+                    font-size: 12px;
+                    margin: 0;
+                }
+            }
+        }
     }
     .btn {
         &.comment-submit-bt {
