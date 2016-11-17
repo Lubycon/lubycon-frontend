@@ -4,7 +4,7 @@
     <div class="main-logo">
         <img src="assets/images/logo/svg/logo_black.svg" />
     </div>
-    <h4>SIGN IN</h4>
+    <h4>{{'ACCOUNT.SIGNIN' | translate}}</h4>
     <form ng-submit="vm.signin()" class="signin-form">
         <div class="divide20"></div>
         <div class="signin-form-input">
@@ -16,7 +16,7 @@
                     required
                     type="email"
                     class="form-control"
-                    placeholder="E-mail"
+                    placeholder="{{'LABEL.EMAIL' | translate}}"
                     ng-model="vm.signInfo.email"
                     ng-focus="vm.emailFocused = true"
                     ng-blur="vm.emailFocused = false"
@@ -30,7 +30,7 @@
                     required
                     type="password"
                     class="form-control"
-                    placeholder="Password"
+                    placeholder="{{'LABEL.PASSWORD' | translate}}"
                     ng-model="vm.signInfo.password"
                     ng-focus="vm.passwordFocused = true"
                     ng-blur="vm.passwordFocused = false"
@@ -38,11 +38,11 @@
             </div>
         </div>
         <div class="divide20"></div>
-        <button class="btn btn-mint" type="submit">SIGN IN</button>
+        <button class="btn btn-mint" type="submit">{{'ACCOUNT.SIGNIN' | translate}}</button>
         <div class="divide10"></div>
-        <a class="btn" ui-sref="common.noFooter.signup">SIGN UP</a>
+        <a class="btn" ui-sref="common.noFooter.signup">{{'ACCOUNT.SIGNUP' | translate}}</a>
     </form>
     <div class="signin-action-input">
-        <a ui-sref="common.default.findPassword" class="forgot-password">Forgot your password?</a>
+        <a ui-sref="common.default.findPassword" class="forgot-password">{{'ACCOUNT.FIND_PASSWORD' | translate}}</a>
     </div>
 </div>

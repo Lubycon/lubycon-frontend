@@ -1,4 +1,72 @@
 {
+    "ACCOUNT" : {
+        "SIGNIN" : "로그인",
+        "SIGNUP" : "회원가입",
+        "SIGNOUT" : "로그아웃",
+        "SIGNDROP" : "회원탈퇴",
+
+        "FIND_PASSWORD" : "혹시 비밀번호를 잊으셨나요?",
+        "SETTING" : "내 정보 수정하기",
+        "PASSWORD_SETTING" : "비밀번호 변경",
+        "AUTHENTICATION" : "인증",
+        "AUTHENTICATION_MENT" : "인증하기"
+    },
+    "SIGNUP" : {
+        "DOCUMENT_NOTICE" : "을 읽었고 이에 동의합니다",
+        "NEWSLETTER_NOTICE" : "뉴스레터 이메일 수신에 동의하세요?"
+    },
+    "LABEL" : {
+        "EMAIL" : "이메일",
+        "PASSWORD" : "비밀번호",
+        "PASSWORD_REPEAT" : "비밀번호 재입력",
+
+        "NICKNAME" : "닉네임",
+        "LOCATION" : "지역",
+        "COUNTRY" : "국가",
+        "CITY" : "도시",
+        "JOB" : "직업",
+        "POSITION" : "소속",
+        "LANGUAGE" : "언어",
+        "DESCRIPTION" : "소개",
+        "PROFILE_PIC" : "프로필 사진",
+
+        "MOBILE" : "모바일",
+        "FAX" : "팩스",
+        "WEBSITE" : "웹사이트",
+
+        "TERMS_OF_SERVICE" : "이용약관",
+        "PRIVATE_POLICE" : "개인정보보호정책"
+    },
+    "LICENSE" : {
+
+    },
+    "FORM" : {
+        "SUBMIT" : "등록",
+        "CONFIRM" : "확인",
+        "CANCLE" : "취소",
+        "DELETE" : "삭제",
+        "MODIFY" : "수정",
+        "NEXT" : "다음",
+        "PREV" : "이전",
+        "FINISH" : "완료",
+        "CONTINUE" : "계속",
+        "CHANGE" : "변경"
+    },
+    "USER_ACTION" : {
+        "BOOKMARK" : "북마크",
+        "LIKE" : "좋아요"
+    },
+    "SETTING" : {
+        "BASIC_INFO" : "기본정보",
+        "HISTORY" : "발자취",
+        "CONTACT" : "연락처",
+        "HISTORY_PLACEHOLDER" : {
+            "KIND" : "분류",
+            "YEAR" : "년도",
+            "MONTH" : "월",
+            "CONTENT" : "무슨 일을 하셨나요?"
+        }
+    },
     "ERROR" : {
         "403" : "허가받지 않은 접근 입니다",
         "404" : "페이지를 찾을 수 없습니다",
@@ -7,5 +75,16 @@
         "502" : "서버가 응답하지 않습니다",
         "503" : "서버에 요청이 너무 많습니다",
         "504" : "요청 시간이 초과하였습니다"
+    },
+
+
+
+    "CONTENTS_VIEW" : {
+        "TAG" : "태그",
+        "DESCRIPTION" : "제작자 설명"
+    },
+    "FIGURE" : {
+        "MORE_CONTENTS" : "더 많은 작품 보러가기",
+        "MODEL_UPLOAD" : "3D모델 업로드하기"
     }
 }

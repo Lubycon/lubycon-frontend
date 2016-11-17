@@ -6,12 +6,12 @@
     <div class="main-logo">
         <img src="assets/images/logo/svg/logo_black.svg" />
     </div>
-    <h4>SIGN UP</h4>
+    <h4>{{'ACCOUNT.SIGNUP' | translate}}</h4>
     <form ng-submit="vm.signup()" class="signup-form">
         <div class="divide20"></div>
         <div class="signup-form-input">
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <label>E-mail</label>
+                <label>{{'LABEL.EMAIL' | translate}}</label>
                 <input
                     required
                     type="text"
@@ -21,7 +21,7 @@
                 />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <label>Password</label>
+                <label>{{'LABEL.PASSWORD' | translate}}</label>
                 <input
                     required
                     type="password"
@@ -30,7 +30,7 @@
                 />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <label>Password Repeat</label>
+                <label>{{'LABEL.PASSWORD_REPEAT' | translate}}</label>
                 <input
                     required
                     type="password"
@@ -39,7 +39,7 @@
                 />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <label>Nickname</label>
+                <label>{{'LABEL.NICKNAME' | translate}}</label>
                 <input
                     required
                     type="text"
@@ -48,7 +48,7 @@
                 />
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
-                <label>Country</label>
+                <label>{{'LABEL.COUNTRY' | translate}}</label>
                 <select
                     chosen
                     inherit-select-classes="true"
@@ -60,19 +60,19 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <div>
                     <checkbox data-index="0" output="vm.agree.terms" change-event="vm.onChange"></checkbox>
-                    <p>I read <a ui-sref="common.noFooter.terms-of-service">Terms of Service</a> and I agree it</p>
+                    <p><a ui-sref="common.noFooter.terms-of-service">{{'LABEL.TERMS_OF_SERVICE' | translate}}</a>{{'SIGNUP.DOCUMENT_NOTICE' | translate}}</p>
                 </div>
                 <div>
                     <checkbox data-index="0" output="vm.agree.privatePolicy" change-event="vm.onChange"></checkbox>
-                    <p>I read <a ui-sref="common.noFooter.private-policy">Private policy</a> and I agree it</p>
+                    <p><a ui-sref="common.noFooter.private-policy">{{'LABEL.PRIVATE_POLICE' | translate}}</a>{{'SIGNUP.DOCUMENT_NOTICE' | translate}}</p>
                 </div>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <checkbox data-index="0" output="vm.member.newsletter" change-event="vm.onChange"></checkbox>
-                <p>Would like to receive newsletter by e-mail?</p>
+                <p>{{'SIGNUP.NEWSLETTER_NOTICE' | translate}}</p>
             </div>
         </div>
         <div class="divide10"></div>
-        <button type="submit" class="btn btn-mint">APPLY</button>
+        <button type="submit" class="btn btn-mint">{{'FORM.CONTINUE' | translate}}</button>
     </form>
 </div>

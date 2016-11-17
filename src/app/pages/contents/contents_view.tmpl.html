@@ -79,7 +79,7 @@
                 <div class="divide-horizental"></div>
 
                 <div class="info-wrap" data-value="tag">
-                    <p class="info-title"><i class="fa fa-tag"></i>Tags</p>
+                    <p class="info-title"><i class="fa fa-tag"></i>{{'CONTENTS_VIEW.TAG' | translate}}</p>
                     <div class="info-content">
                         <ul>
                             <li ng-repeat="tag in vm.contents.tags">{{tag}}</li>
@@ -90,7 +90,7 @@
                 <div class="divide-horizental"></div>
 
                 <div class="info-wrap" data-value="descript">
-                    <p class="info-title"><i class="fa fa-info-circle"></i>Description</p>
+                    <p class="info-title"><i class="fa fa-info-circle"></i>{{'CONTENTS_VIEW.DESCRIPTION' | translate}}</p>
                     <div class="info-content">
                         <p>
                             {{vm.data.contents.description}}
@@ -104,14 +104,14 @@
                     ng-class="{selected : vm.contents.bookmark}"
                     ng-click="vm.bookmarkAction()"
                 >
-                    <i class="fa fa-star"></i>Bookmark
+                    <i class="fa fa-star"></i>{{'USER_ACTION.BOOKMARK' | translate}}
                 </div>
                 <div
                     class="btn btn-like"
                     ng-class="{selected : vm.contents.like}"
                     ng-click="vm.likeAction()"
                 >
-                    <i class="fa fa-heart"></i>Like
+                    <i class="fa fa-heart"></i>{{'USER_ACTION.LIKE' | translate}}
                 </div>
                 <div ng-if="vm.downloadable" class="btn">
                     <i class="fa fa-cloud-download"></i>Download

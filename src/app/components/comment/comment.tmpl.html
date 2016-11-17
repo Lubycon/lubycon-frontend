@@ -14,7 +14,7 @@
                 ng-model="myComment"
             ></textarea>
         </div>
-        <a class="btn btn-mint comment-submit-bt" ng-click="commentSubmit()">SUBMIT</a>
+        <a class="btn btn-mint comment-submit-bt" ng-click="commentSubmit()">{{'FORM.SUBMIT' | translate}}</a>
     </div>
     <div class="divide-horizental col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
     <div class="comment col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-repeat="comment in comments">

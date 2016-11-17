@@ -156,7 +156,7 @@
 
         $translateProvider.useLoader('$translatePartialLoader', {
             //urlTemplate: 'app/language/{lang}.json'
-            urlTemplate: 'app/language/en.json' // ENGLISH TESTING....
+            urlTemplate: 'app/language/ko.json' // ENGLISH TESTING....
         });
 
 

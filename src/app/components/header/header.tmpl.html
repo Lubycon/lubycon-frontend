@@ -29,7 +29,7 @@
     </div>
     <div class="navbar-header nav-member">
         <a ng-if="!$root.member" ui-sref="common.noFooter.signin" class="main-signin">
-            <i class="fa fa-lock"></i>{{'MENU.SIGNIN' | translate}}
+            <i class="fa fa-lock"></i>{{'ACCOUNT.SIGNIN' | translate}}
         </a>
         <div ng-if="$root.member" uib-dropdown on-toggle="vm.memberToggle" class="main-user-display">
             <a href="" class="dropdown-toggle" uib-dropdown-toggle>
@@ -39,17 +39,17 @@
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
                 <li>
                     <a ui-sref="common.default.accountSetting({memberId:$root.member.id})">
-                        <i class="fa fa-gear"></i>Setting
+                        <i class="fa fa-gear"></i>{{'ACCOUNT.SETTING' | translate}}
                     </a>
                 </li>
                 <li>
                     <a ui-sref="common.noFooter.cert-pwd">
-                        <i class="fa fa-gear"></i>Password Setting
+                        <i class="fa fa-gear"></i>{{'ACCOUNT.PASSWORD_SETTING' | translate}}
                     </a>
                 </li>
                 <li>
                     <a ng-click="vm.doSignOut()" onclick="return false;">
-                        <i class="fa fa-gear"></i>Sign out
+                        <i class="fa fa-gear"></i>{{'ACCOUNT.SIGNOUT' | translate}}
                     </a>
                 </li>
             </ul>
