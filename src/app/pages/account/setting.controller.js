@@ -20,7 +20,6 @@
         console.log(getMember.result);
 
         var vm = this;
-        vm.contentHost = API_CONFIG.content;
         vm.data = getMember.result;
 
         vm.member = vm.data.userData;
@@ -40,39 +39,23 @@
         vm.yearList = [];
         vm.monthList = [];
 
-        for(var year = 1950; year <= new Date().getFullYear() * 1; year++){
-            vm.yearList.push(year);
-        }
-        vm.yearList.reverse();
-
-        for(var month = 1; month < 13; month++){
-            vm.monthList.push(month);
-        }
-
         vm.profileChanged = false;
         vm.cropping = false;
 
-        vm.init = (init)();
+        vm.selectBoxOptionsNoSearch = {
+            minimumResultsForSearch: Infinity
+        };
 
+
+        vm.init = (init)();
         function init() {
             vm.histories = vm.histories.map(function(v) {
                 v.date = encodeDate(v.date);
                 return v;
             });
-        }
 
-        function encodeDate(date) {
-            date = new Date(date);
-            date = {
-                year: date.getFullYear(),
-                month: date.getMonth() + 1
-            };
-            console.log(date);
-            return date;
-        }
-        function decodeDate(date) {
-            date = new Date(date.year,date.month - 1);
-            return date;
+            setYear();
+            setMonth();
         }
 
         vm.changedFile = function(files,file,newFiles,invalidFiles){
@@ -146,5 +129,30 @@
                 console.log(res);
             });
         };
+
+        function encodeDate(date) {
+            date = new Date(date);
+            date = {
+                year: date.getFullYear(),
+                month: date.getMonth() + 1
+            };
+            console.log(date);
+            return date;
+        }
+        function decodeDate(date) {
+            date = new Date(date.year,date.month - 1);
+            return date;
+        }
+        function setYear() {
+            for(var year = 1950; year <= new Date().getFullYear() * 1; year++){
+                vm.yearList.push(year);
+            }
+            vm.yearList.reverse();
+        }
+        function setMonth() {
+            for(var month = 1; month < 13; month++){
+                vm.monthList.push(month);
+            }
+        }
     }
 })();

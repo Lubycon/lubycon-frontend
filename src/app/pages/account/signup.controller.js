@@ -17,6 +17,11 @@
         var vm = this;
         var api = Authentication.signUp;
 
+        vm.selectBoxOptions = {
+            containerCssClass: 'full-width',
+            placeholder: '국가를 선택하세요'
+        };
+
         vm.isMobile = $rootScope.deviceInfo.isMobile;
         vm.member = {
             email: null,

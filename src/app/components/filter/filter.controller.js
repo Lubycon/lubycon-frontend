@@ -24,6 +24,12 @@
         return directive;
 
         function link($scope, $element) {
+            $scope.selectBoxOptions = {
+                minimumResultsForSearch: Infinity,
+                containerCssClass: 'ghost full-width',
+                dropdownCssClass: 'ghost'
+            };
+
             console.log($scope.filters);
             $scope.isOpen = false;
             $scope.optionComponent = $element.find('.filter-dropdown');

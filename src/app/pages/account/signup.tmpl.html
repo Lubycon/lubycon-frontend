@@ -50,8 +50,7 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>{{'LABEL.COUNTRY' | translate}}</label>
                 <select
-                    chosen
-                    inherit-select-classes="true"
+                    ui-select2="vm.selectBoxOptions"
                     ng-model="vm.member.country"
                     ng-options="country.name as country.name for country in vm.countryList"
                 >

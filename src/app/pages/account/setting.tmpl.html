@@ -14,10 +14,8 @@
                     ng-model="vm.member.email"
                 />
                 <select
-                    chosen
+                    ui-select2="vm.selectBoxOptionsNoSearch"
                     required
-                    disable-search="true"
-                    inherit-select-classes="true"
                     ng-model="vm.publicOption.email"
                     ng-options="option for option in vm.publicOptionList"
                 >
@@ -69,9 +67,8 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>{{'LABEL.JOB' | translate}}</label>
                 <select
-                    chosen
-                    inherit-select-classes="true"
-                    data-placeholder-text-single="'Select your job...'"
+                    ui-select2
+                    class="half-width"
                     ng-model="vm.member.job"
                     ng-options="job.name as job.name for job in vm.jobList"
                 >
@@ -88,8 +85,8 @@
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
                 <label>{{'LABEL.LOCATION' | translate}}</label>
                 <select
-                    chosen
-                    data-placeholder-text-single="'Where do you live?'"
+                    ui-select2
+                    class="half-width"
                     ng-model="vm.member.country"
                     ng-options="country.name as country.name for country in vm.countryList"
                 >
@@ -106,9 +103,8 @@
                 <ul>
                     <li ng-repeat="language in vm.languages">
                         <select
-                            chosen
-                            disable-search="true"
-                            data-placeholder-text-single="'Select your level...'"
+                            ui-select2="vm.selectBoxOptionsNoSearch"
+                            class="half-width"
                             ng-model="language.level"
                             ng-options="level for level in vm.languageLevelList"
                         >
@@ -145,24 +141,21 @@
                     <li ng-repeat="history in vm.histories">
                         <div class="history-group">
                             <select
-                                chosen
-                                disable-search="true"
+                                ui-select2="vm.selectBoxOptionsNoSearch"
                                 class="history-kind"
                                 ng-model="history.category"
                                 ng-options="kind for kind in vm.historyKind"
                             >
                             </select>
                             <select
-                                chosen
-                                disable-search="true"
+                                ui-select2="vm.selectBoxOptionsNoSearch"
                                 class="history-date"
                                 ng-model="history.date.year"
                                 ng-options="year for year in vm.yearList"
                             >
                             </select>
                             <select
-                                chosen
-                                disable-search="true"
+                                ui-select2="vm.selectBoxOptionsNoSearch"
                                 class="history-date"
                                 ng-model="history.date.month"
                                 ng-options="month for month in vm.monthList"
@@ -193,10 +186,8 @@
                     ng-model="vm.member.mobile"
                 />
                 <select
-                    chosen
+                    ui-select2="vm.selectBoxOptionsNoSearch"
                     required
-                    disable-search="true"
-                    inherit-select-classes="true"
                     ng-model="vm.publicOption.mobile"
                     ng-options="option for option in vm.publicOptionList"
                 >
@@ -210,10 +201,8 @@
                     ng-model="vm.member.fax"
                 />
                 <select
-                    chosen
+                    ui-select2="vm.selectBoxOptionsNoSearch"
                     required
-                    disable-search="true"
-                    inherit-select-classes="true"
                     ng-model="vm.publicOption.fax"
                     ng-options="option for option in vm.publicOptionList"
                 >
@@ -228,10 +217,8 @@
                     ng-model="vm.member.website"
                 />
                 <select
-                    chosen
+                    ui-select2="vm.selectBoxOptionsNoSearch"
                     required
-                    disable-search="true"
-                    inherit-select-classes="true"
                     ng-model="vm.publicOption.website"
                     ng-options="option for option in vm.publicOptionList"
                 >

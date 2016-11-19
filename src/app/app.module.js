@@ -16,7 +16,7 @@
         'ngSanitize', // STRING TO HTML CONVERT MODULE
         'ngMessages', // INFO OR ERROR MESSAGE MODULE
         'ngAria', // FORM CONTROL MODULE
-        'localytics.directives', // ANGULAR CHOSEN MODULE(MULTIPLE SELECTOR)
+        'ui.select2', // SELECT BOX MODULE
         'restangular', // REST API MODULE
         'ui.router', // ROUTING MODULE
         'ui.bootstrap', // BOOTSTRAP

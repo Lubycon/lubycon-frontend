@@ -8,18 +8,12 @@
     <div class="filter-dropdown" role="menu">
         <ul class="row">
             <li ng-repeat="filter in filters">
-                <i class="fa {{filter.icon}} filter-icon"></i>
                 <select
-                    chosen
-                    disable-search="true"
-                    inherit-select-classes="true"
-                    class="ghost"
+                    ui-select2="selectBoxOptions"
                     ng-init="filter.data = filter.data || filter.options[0].id"
                     ng-model="filter.data"
                     ng-options="option.id as option.name for option in filter.options"
-                    ng-change="test()"
-                >
-                </select>
+                ></select>
             </li>
             <li>
                 <button type="submit" ng-click="submit()" class="btn btn-ghost"><i class="fa fa-search"></i></button>

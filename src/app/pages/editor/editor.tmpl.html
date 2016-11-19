@@ -122,13 +122,14 @@
                         <div class="input-group">
                             <label>Category</label>
                             <select
-                                chosen
-                                inherit-select-classes="true"
-                                class="black"
+                                ui-select2="{
+                                    containerCssClass: 'black full-width',
+                                    dropdownCssClass: 'black'
+                                }"
                                 multiple
                                 max-selected-options="3"
                                 ng-model="vm.selectedCategories"
-                                data-placeholder="Select Categories (max 3)"
+                                data-placeholder="카테고리를 선택해주세요. (최대 3개)"
                             >
                                 <option value="{{item.id}}" ng-repeat="item in vm.categories">{{item.name}}</option>
                             </select>
