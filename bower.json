@@ -51,8 +51,8 @@
     "angular-switcher": "^0.2.7",
     "angular-summernote": "^0.8.1",
     "angular-elastic": "^2.5.1",
-    "threex.domevents": "*",
-    "angular-ui-select2": "^0.0.5"
+    "angular-ui-select2": "^0.0.5",
+    "threex.domevents": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",
