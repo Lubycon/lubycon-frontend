@@ -52,7 +52,7 @@
 
         Restangular.setDefaultHeaders(defaultHeaders);
 
-        var authdata = $cookieStore.get('authdata');
+        var authdata = $cookieStore.get('lubycon-authdata');
         var memberState = $cookieStore.get('memberState');
         console.log(authdata,memberState);
 

@@ -58,7 +58,7 @@
             };
 
             // SET COOKIE DATA...
-            $cookieStore.put('authdata', authdata);
+            $cookieStore.put('lubycon-authdata', authdata);
             $cookieStore.put('memberState', $rootScope.memberState);
 
             // SET HTTP HEADER...
@@ -132,7 +132,7 @@
                     delete $rootScope.member;
 
                     // DESTORY TOKEN AND SIGN DATA
-                    $cookieStore.remove('authdata');
+                    $cookieStore.remove('lubycon-authdata');
 
                     $rootScope.memberState.sign = false;
                     delete $rootScope.memberState.condition;
