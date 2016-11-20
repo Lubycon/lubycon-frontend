@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('services')
         .factory('FilterService', [
             '$rootScope', '$location', '$window',
             FilterService

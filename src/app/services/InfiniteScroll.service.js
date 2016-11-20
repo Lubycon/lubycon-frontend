@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('services')
         .factory('InfiniteScrollService', [
             '$cookieStore', '$cookies', '$rootScope', 'Restangular',
             '$window', '$location', InfiniteScrollService

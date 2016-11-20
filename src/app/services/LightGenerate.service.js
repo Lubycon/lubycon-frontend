@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('services')
         .factory('LightGenerateService', [
             '$rootScope', LightGenerateService
         ]);

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('services')
         .factory('Authentication', [
             '$cookieStore', '$cookies', '$rootScope', 'Restangular',
             '$window', '$location', 'toastr', '$state',

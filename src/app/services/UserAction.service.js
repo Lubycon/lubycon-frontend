@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('services')
         .factory('UserActionService', [
             '$rootScope', '$location', '$window', 'Restangular',
             UserActionService
