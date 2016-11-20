@@ -28,8 +28,11 @@
             $scope.output = $scope.materialList[0];
         }
         function controller($rootScope, $scope, $element) {
-            // console.log($scope.scene,$scope.renderer);
-
+            $scope.selectBoxOptions = {
+                containerCssClass: 'black full-width',
+                dropdownCssClass: 'black',
+                minimumResultsForSearch: Infinity
+            };
         }
     }
 })();

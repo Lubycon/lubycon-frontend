@@ -50,7 +50,7 @@
 
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
-
+                $scope.modelNormalScale = $scope.output.normalScale.x * 100;
                 // console.log($scope.currentTextureIndex,$scope.selectedTexture);
             });
 

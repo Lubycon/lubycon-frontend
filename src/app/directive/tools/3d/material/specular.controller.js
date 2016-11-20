@@ -53,7 +53,7 @@
 
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
-
+                $scope.modelShininess = $scope.output.shininess;
                 // console.log($scope.currentTextureIndex,$scope.selectedTexture);
             });
 

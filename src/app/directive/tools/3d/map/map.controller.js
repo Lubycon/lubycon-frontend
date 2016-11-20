@@ -23,7 +23,6 @@
         return directive;
 
         function link($scope, $element, $attrs) {
-
             $scope.selectedTab = '3d';
             $scope.mapColor = '#222222';
             $scope.selectedMapIndex = 0;
@@ -38,6 +37,12 @@
             // CONFIG....
         }
         function controller($rootScope, $scope, $element, $timeout, $uibModal) {
+            $scope.selectBoxOptions = {
+                containerCssClass: 'black full-width',
+                dropdownCssClass: 'black',
+                minimumResultsForSearch: Infinity
+            };
+            
             $scope.changeMap = function(){
                 console.log($scope.selectedMapIndex);
                 $scope.output = {

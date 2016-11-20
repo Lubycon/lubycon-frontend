@@ -43,10 +43,10 @@
             $scope.selectedTab = 'texture';
 
             $scope.$watch('output',function(newValue, oldValue){
-                // console.log('-----------------------------DIFFUSE TOOL CATCHED---------------------------------');
-                // console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
-                // console.log(oldValue,'->',newValue);
-                // console.log($scope);
+                console.log('-----------------------------DIFFUSE TOOL CATCHED---------------------------------');
+                console.log('-----------------------------MATERIAL IS CHANGED-----------------------------------');
+                console.log(oldValue,'->',newValue);
+                console.log($scope);
 
                 $scope.currentTextureIndex = ($scope.output && $scope.output.map) ?
                     $scope.output.map.textureIndex : -1;
@@ -54,6 +54,7 @@
                 $scope.selectedTexture = $scope.currentTextureIndex >= 0 ?
                     $scope.textures[$scope.currentTextureIndex] : null;
 
+                $scope.modelOpacity = $scope.output.opacity * 100;
                 // console.log($scope.currentTextureIndex,$scope.selectedTexture);
             });
 

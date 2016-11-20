@@ -5,9 +5,7 @@
     </div>
     <div class="controller-tab" ng-show="selectedTab === '3d'">
         <select
-            chosen
-            inherit-select-classes="true"
-            disable-search="true"
+            ui-select2="selectBoxOptions"
             class="black"
             ng-model="selectedMapIndex"
             ng-change="changeMap()"
@@ -28,10 +26,7 @@
             on-change="changeColor(color)"
         ></spectrum-colorpicker>
         <select
-            chosen
-            inherit-select-classes="true"
-            disable-search="true"
-            class="black"
+            ui-select2="selectBoxOptions"
             ng-model="selectedMapIndex"
             ng-options="map.id as map.name for map in maps._2d"
             ng-change="changeMap()"

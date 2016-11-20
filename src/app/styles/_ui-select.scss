@@ -57,6 +57,17 @@
             }
         }
     }
+
+    &.black {
+        .select2-choice {
+            border: 1px solid #333;
+            background-color: #222;
+            color: #fff;
+            .select2-arrow {
+                color: #ddd;
+            }
+        }
+    }
 }
 
 .select2-container-multi {
