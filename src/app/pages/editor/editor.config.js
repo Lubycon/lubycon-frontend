@@ -26,6 +26,9 @@
                     },
                     getCreativeCommons: function($http) {
                         return $http.get('/data/creative_commons.json').then();
+                    },
+                    getTools: function($http) {
+                        return $http.get('/data/editor/3dTools.json').then();
                     }
                 },
                 authenticate: 'active'

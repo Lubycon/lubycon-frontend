@@ -1,0 +1,63 @@
+{
+    "headerTools": [{
+        "name": "EDITOR.FILE_UPLOAD",
+        "icon": "fa-folder"
+    }],
+    "tools": [{
+        "name": "lightTool",
+        "type": "open",
+        "icon": "fa-lightbulb-o",
+        "subTools": [{
+            "name": "lights",
+            "category": "switch",
+            "directive": "<light-tool scene='vm.scene' renderer='vm.renderer' output='vm.selectedLight'></light-tool>"
+        }]
+    },{
+        "name": "geometryTool",
+        "type": "open",
+        "icon": "fa-cube",
+        "subTools": [{
+            "name": "rotate",
+            "category": "switch",
+            "directive": "<rotate-tool scene='vm.scene' renderer='vm.renderer'></rotate-tool>"
+        },{
+            "name": "reset",
+            "category": "buttons",
+            "directive": "<rotate-reset-tool scene='vm.scene' renderer='vm.renderer'></rotate-reset-tool>"
+        },{
+            "name": "mode",
+            "category": "buttons",
+            "directive": "<view-mode-tool scene='vm.scene' renderer='vm.renderer'></view-mode-tool>"
+        }]
+    },{
+        "name": "materialTool",
+        "type": "open",
+        "icon": "fa-square",
+        "subTools": [{
+            "name": "materials",
+            "category": "selectbox",
+            "directive": "<material-selector scene='vm.scene' renderer='vm.renderer' output='vm.selectedMaterial'></material-selector>"
+        },{
+            "name": "diffuse",
+            "category": "tab",
+            "directive": "<diffuse-tool scene='vm.scene' renderer='vm.renderer' output='vm.selectedMaterial' textures='vm.uploadedMaterials'></diffuse-tool>"
+        },{
+            "name": "specular",
+            "category": "tab",
+            "directive": "<specular-tool scene='vm.scene' renderer='vm.renderer' output='vm.selectedMaterial' textures='vm.uploadedMaterials'></specular-tool>"
+        },{
+            "name": "normal",
+            "category": "tab",
+            "directive": "<normal-tool scene='vm.scene' renderer='vm.renderer' output='vm.selectedMaterial' textures='vm.uploadedMaterials'></normal-tool>"
+        }]
+    },{
+        "name": "mapTool",
+        "type": "open",
+        "icon": "fa-picture-o",
+        "subTools": [{
+            "name": "presets",
+            "category": "tab",
+            "directive": "<map-tool scene='vm.scene' renderer='vm.renderer' output='vm.selectedMapData' maps='vm.maps'></map-tool>"
+        }]
+    }]
+}

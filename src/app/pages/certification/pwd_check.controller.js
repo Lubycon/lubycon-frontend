@@ -43,6 +43,8 @@
         vm.submit = submit;
 
         function submit() {
+            vm.password = vm.message.inputs[0].model;
+            
             Restangular.all('certs/pwd').customPOST({
                 password: vm.password
             }).then(function(res) {

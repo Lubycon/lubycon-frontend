@@ -3,7 +3,7 @@
         <div class="radio-body" >
             <i ng-if="output === value" class="fa fa-circle"></i>
         </div>
-        <span class="radio-label">{{label}}</span>
+        <span class="radio-label">{{label | translate}}</span>
         <input type="radio" ng-value="value" ng-model="output" style="display: none" />
     </label>
 </div>

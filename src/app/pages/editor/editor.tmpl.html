@@ -16,7 +16,7 @@
                     ngf-max-files="1"
                     ngf-accept="'.obj, .stl, .fbx'"
                 >
-                    <i class="fa {{tool.icon}}"></i>{{tool.name | camelCaseFilter | uppercase}}
+                    <i class="fa {{tool.icon}}"></i>{{tool.name | translate}}
                 </button>
             </li>
         </ul>
@@ -26,7 +26,10 @@
             data-target="#thumbnail-modal"
             data-toggle="modal"
             ng-click="vm.capture()"
-        >NEXT<i class="fa fa-arrow-right"></i></button>
+        >
+            {{'FORM.NEXT' | translate}}
+            <i class="fa fa-arrow-right"></i>
+        </button>
     </div>
 
     <!----- TOOLBAR ----->
@@ -76,7 +79,7 @@
         <div class="modal-dialog modal-lg">
             <div class="editor-modal modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Thumbnail</h3>
+                    <h3 class="modal-title">{{'EDITOR.THUMBNAIL' | translate}}</h3>
                 </div>
                 <div class="modal-body">
                     <div ng-if="vm.editorSet === '3d'">
@@ -92,7 +95,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal">BACK</button>
+                    <button type="button" class="btn" data-dismiss="modal">
+                        {{'FORM.PREV' | translate}}
+                    </button>
                     <button
                         type="button"
                         class="btn"
@@ -100,7 +105,9 @@
                         data-dismiss="modal"
                         data-target="#setting-modal"
                         data-toggle="modal"
-                    >NEXT</button>
+                    >
+                        {{'FORM.NEXT' | translate}}
+                    </button>
                 </div>
             </div>
         </div>
@@ -111,16 +118,16 @@
         <div class="modal-dialog modal-lg">
             <div class="editor-modal modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Setting</h3>
+                    <h3 class="modal-title">{{'EDITOR.SETTINGS' | translate}}</h3>
                 </div>
                 <div class="modal-body row">
                     <div class="divided-form col-xs-12 col-sm-12 col-lg-6">
                         <div class="input-group">
-                            <label>Title</label>
+                            <label>{{'LABEL.TITLE' | translate}}</label>
                             <input type="text" ng-model="vm.title" class="form-control" />
                         </div>
                         <div class="input-group">
-                            <label>Category</label>
+                            <label>{{'LABEL.CATEGORY' | translate}}</label>
                             <select
                                 ui-select2="{
                                     containerCssClass: 'black full-width',
@@ -135,10 +142,10 @@
                             </select>
                         </div>
                         <div class="input-group">
-                            <label>Tags</label>
+                            <label>{{'LABEL.TAG' | translate}}</label>
                             <div class="form-control tags-form">
                                 <ul>
-                                    <li class="tags" ng-repeat="tag in vm.tags">
+                                    <li class="tags" ng-repeat="tag in vm.tags track by $index">
                                         {{tag}}
                                         <i class="fa fa-close" ng-click="vm.removeTag($index)"></i>
                                     </li>
@@ -154,13 +161,13 @@
                             </div>
                         </div>
                         <div class="input-group">
-                            <label>Descript</label>
+                            <label>{{'LABEL.DESCRIPTION' | translate}}</label>
                             <textarea msd-elastic="\n" type="text" class="form-control" ng-model="vm.description"></textarea>
                         </div>
                     </div>
                     <div class="divided-form col-xs-12 col-sm-12 col-lg-6">
                         <div class="input-group">
-                            <label>Creative Commons</label>
+                            <label>{{'LABEL.CC' | translate}}</label>
                             <div class="cc-box">
                                 <ul>
                                     <li ng-repeat="item in vm.creativeCommons" ng-show="item.check && vm.ccUsage">
@@ -178,18 +185,18 @@
                                         <checkbox data-index="{{$index}}" output="item.check" theme="black" disabled="item.disabled" label="item.descript" change-event="vm.changeCC"></checkbox>
                                     </li>
                                 </ul>
-                                <radio output="vm.ccUsage" label="NO USAGE WITHOUT OWNER`S PERMISSION" value="false" theme="black"></radio>
+                                <radio output="vm.ccUsage" label="LICENSE.DESCRIPTION.WITHOUT" value="false" theme="black"></radio>
                             </div>
                         </div>
                         <div class="input-group">
-                            <label>Downloadable</label>
+                            <label>{{'EDITOR.DOWNLOADABLE' | translate}}</label>
                             <checkbox output="vm.downloadable" theme="black" label="'If you check this, anyone will can download your model'"></checkbox>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-target="#thumbnail-modal" data-toggle="modal">BACK</button>
-                    <button type="submit" ng-click="vm.postData()" class="btn">SUBMIT</button>
+                    <button type="button" class="btn" data-dismiss="modal" data-target="#thumbnail-modal" data-toggle="modal">{{'FORM.PREV' | translate}}</button>
+                    <button type="submit" ng-click="vm.postData()" class="btn">{{'FORM.SUBMIT' | translate}}</button>
                 </div>
             </div>
         </div>

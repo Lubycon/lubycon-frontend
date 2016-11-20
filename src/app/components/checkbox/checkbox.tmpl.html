@@ -3,7 +3,7 @@
         <div class="checkbox-body" >
             <i ng-if="output" class="fa fa-check"></i>
         </div>
-        <span class="checkbox-label">{{label}}</span>
+        <span class="checkbox-label">{{label | translate}}</span>
         <input type="checkbox" ng-model="output" ng-disabled="disabled" style="display: none" />
     </label>
 </div>
