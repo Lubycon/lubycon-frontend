@@ -4,7 +4,7 @@
     angular
         .module('services')
         .factory('Authentication', [
-            'CookieService', '$cookies', '$rootScope', 'Restangular',
+            'CookieService', '$rootScope', 'Restangular',
             '$window', '$location', 'toastr', '$state',
             Authentication
         ]);
