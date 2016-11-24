@@ -8,12 +8,12 @@
     angular
         .module('services')
         .factory('InfiniteScrollService', [
-            '$cookieStore', '$cookies', '$rootScope', 'Restangular',
+            'CookieService', '$cookies', '$rootScope', 'Restangular',
             '$window', '$location', InfiniteScrollService
         ]);
 
     function InfiniteScrollService(
-        $cookieStore, $cookies, $rootScope, Restangular,
+        CookieService, $cookies, $rootScope, Restangular,
         $window, $location
     ) {
         var pageIndex;

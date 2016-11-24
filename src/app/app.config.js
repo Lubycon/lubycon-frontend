@@ -23,13 +23,13 @@
             translateConfig
         ])
         .run([
-            '$rootScope', '$state', '$cookieStore',
+            '$rootScope', '$state', 'CookieService',
             'Restangular', '$translate', 'Authentication',
             authenticationDetect
         ])
         .run([
             '$rootScope', '$location', '$state',
-            '$cookieStore', 'Restangular', 'commonLayout',
+            'CookieService', 'Restangular', 'commonLayout',
             '$window', 'CONSOLE_LOG', '$timeout',
             run
         ]);
@@ -41,7 +41,7 @@
         $httpProvider.interceptors.push('httpInterceptor');
     }
 
-    function authenticationDetect($rootScope, $state, $cookieStore, Restangular, $translate, Authentication) {
+    function authenticationDetect($rootScope, $state, CookieService, Restangular, $translate, Authentication) {
 
         var defaultHeaders = angular.extend({}, Restangular.defaultHeaders, {
             "Content-Type": "application/json",
@@ -52,12 +52,12 @@
 
         Restangular.setDefaultHeaders(defaultHeaders);
 
-        var authdata = $cookieStore.get('lubycon-authdata');
-        var memberState = $cookieStore.get('memberState');
-        console.log(authdata,memberState);
+        var oauthData = CookieService.getDecrypt('oauth');
+        var memberState = CookieService.getDecrypt('memberState');
+        console.log(oauthData,memberState);
 
-        if(authdata && memberState && memberState.sign) {
-            defaultHeaders['X-lubycon-Token'] = authdata;
+        if(oauthData && memberState && memberState.sign) {
+            defaultHeaders['X-lubycon-Token'] = oauthData;
             Restangular.setDefaultHeaders(defaultHeaders);
             $rootScope.memberState = memberState;
 
@@ -66,7 +66,7 @@
             Restangular.one('members/simple').customGET().then(function (res) {
                 if(res.status.code === '0000') {
                     $rootScope.member = res.result;
-                    $cookieStore.put('member', $rootScope.user);
+                    CookieService.put('member', $rootScope.user);
                 }
                 else {
                     Authentication.clearCredentials('reload');
@@ -78,7 +78,7 @@
             $rootScope.memberState = {
                 sign: false
             };
-            $cookieStore.put('memberState',$rootScope.memberState);
+            CookieService.putEncrypt('memberState',$rootScope.memberState);
         }
     }
 
@@ -193,7 +193,7 @@
     }
 
     function run(
-        $rootScope, $location, $state, $cookieStore, Restangular,
+        $rootScope, $location, $state, CookieService, Restangular,
         commonLayout,
         $window, CONSOLE_LOG , $timeout
     ) {

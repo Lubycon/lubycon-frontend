@@ -3,7 +3,7 @@
 
     angular
         .module('common')
-        .run(['$rootScope', '$cookieStore', 'commonLayout', layoutRunner])
+        .run(['$rootScope', 'CookieService', 'commonLayout', layoutRunner])
         .provider('commonLayout', layoutProvider);
 
     /* @ngInject */
@@ -14,7 +14,7 @@
     }
 
     /* @ngInject */
-    function layoutRunner($rootScope, $cookieStore, commonLayout) {
+    function layoutRunner($rootScope, CookieService, commonLayout) {
 
     }
 })();

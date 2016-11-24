@@ -4,14 +4,14 @@
     angular
     .module('app')
     .run([
-        '$cookieStore','$log','$rootScope','$location',
+        'CookieService','$log','$rootScope','$location',
         'DeviceConfig','StateAuthentication','Authentication','$state',
         runBlock
     ]);
 
     /** @ngInject */
     function runBlock(
-            $cookieStore, $log, $rootScope, $location,
+            CookieService, $log, $rootScope, $location,
             DeviceConfig, StateAuthentication, Authentication, $state
         ) {
         console.log("APP RUNNING - ");

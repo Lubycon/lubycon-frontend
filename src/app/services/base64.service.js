@@ -4,12 +4,12 @@
     angular
         .module('services')
         .factory('Base64Service', [
-            '$rootScope',
+            '$rootScope', 'UTF8Service',
             Base64Service
         ]);
 
     function Base64Service(
-        $rootScope
+        $rootScope, UTF8Service
     ) {
         var KEY_STR = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
@@ -23,6 +23,7 @@
 
         // PUBLIC
         function encode(input) {
+            input = UTF8Service.encode(input);
             var output = '';
 
             var char1, char2, char3 = '';
@@ -73,7 +74,7 @@
                 return false;
             }
 
-            input = input.replace(regx,'');
+            input = input.replace(base64regx,'');
 
             do {
                 enc1 = KEY_STR.indexOf(input.charAt(i++));
@@ -100,54 +101,10 @@
             }
             while (i < input.length);
 
-            return output;
-
-
+            return UTF8Service.decode(output);
         }
 
 
         // PRIVATE
     }
 })();
-
-//         decode: function (input) {
-//             var output = "";
-//             var char1, char2, char3 = "";
-//             var enc1, enc2, enc3, enc4 = "";
-//             var i = 0;
-//
-//             // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
-//             var base64test = /[^A-Za-z0-9\+\/\=]/g;
-//             if (base64test.exec(input)) {
-//                 window.alert("There were invalid base64 characters in the input text.\n" +
-//                     "Valid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\n" +
-//                     "Expect errors in decoding.");
-//             }
-//             input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-//
-            // do {
-            //     enc1 = KEY_STR.indexOf(input.charAt(i++));
-            //     enc2 = KEY_STR.indexOf(input.charAt(i++));
-            //     enc3 = KEY_STR.indexOf(input.charAt(i++));
-            //     enc4 = KEY_STR.indexOf(input.charAt(i++));
-            //
-            //     char1 = (enc1 << 2) | (enc2 >> 4);
-            //     char2 = ((enc2 & 15) << 4) | (enc3 >> 2);
-            //     char3 = ((enc3 & 3) << 6) | enc4;
-            //
-            //     output = output + String.fromCharCode(char1);
-            //
-            //     if (enc3 != 64) {
-            //         output = output + String.fromCharCode(char2);
-            //     }
-            //     if (enc4 != 64) {
-            //         output = output + String.fromCharCode(char3);
-            //     }
-            //
-            //     char1 = char2 = char3 = "";
-            //     enc1 = enc2 = enc3 = enc4 = "";
-            //
-            // } while (i < input.length);
-            //
-            // return output;
-//         }

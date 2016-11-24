@@ -4,13 +4,13 @@
     angular
         .module('services')
         .factory('Authentication', [
-            '$cookieStore', '$cookies', '$rootScope', 'Restangular',
+            'CookieService', '$cookies', '$rootScope', 'Restangular',
             '$window', '$location', 'toastr', '$state',
             Authentication
         ]);
 
     function Authentication(
-        $cookieStore, $cookies, $rootScope, Restangular,
+        CookieService, $cookies, $rootScope, Restangular,
         $window, $location, toastr, $state
     ) {
 
@@ -58,8 +58,8 @@
             };
 
             // SET COOKIE DATA...
-            $cookieStore.put('lubycon-authdata', authdata);
-            $cookieStore.put('memberState', $rootScope.memberState);
+            CookieService.putEncrypt('oauth', authdata);
+            CookieService.putEncrypt('memberState', $rootScope.memberState);
 
             // SET HTTP HEADER...
             defaultHeaders = Restangular.defaultHeaders;
@@ -71,7 +71,7 @@
                 function (res) {
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
-                        $cookieStore.put('member', $rootScope.member);
+                        CookieService.put('member', $rootScope.member);
 
                         if(isExistBackState) {
                             console.log($rootScope.clientLocation);
@@ -96,20 +96,20 @@
             );
 
             // REFRESH COOKIE...
-            $cookieStore.put('memberState', $rootScope.memberState);
+            CookieService.putEncrypt('memberState', $rootScope.memberState);
 
             if(reload === 'reload') $window.location.reload();
         }
 
         function updateCredentials(memberState,destination) {
             $rootScope.memberState.condition = memberState;
-            $cookieStore.put('memberState', $rootScope.memberState);
+            CookieService.putEncrypt('memberState', $rootScope.memberState);
 
             Restangular.all('members/simple').customGET().then(
                 function (res) {
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
-                        $cookieStore.put('member', $rootScope.member);
+                        CookieService.put('member', $rootScope.member);
 
                         if(destination) $location.path(destination);
                         else return false;
@@ -132,12 +132,12 @@
                     delete $rootScope.member;
 
                     // DESTORY TOKEN AND SIGN DATA
-                    $cookieStore.remove('lubycon-authdata');
+                    CookieService.remove('oauth');
 
                     $rootScope.memberState.sign = false;
                     delete $rootScope.memberState.condition;
 
-                    $cookieStore.put('memberState',$rootScope.memberState);
+                    CookieService.putEncrypt('memberState',$rootScope.memberState);
                     if(reload === 'reload') {
                         $location.path(target);
                         $window.location.reload();
