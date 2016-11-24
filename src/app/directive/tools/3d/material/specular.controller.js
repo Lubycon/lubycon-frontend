@@ -30,7 +30,7 @@
             $scope.modelColor = $scope.output ?
                 '#' + $scope.output.specular.getHexString():
                 '#' + $scope.object.material.materials[0].specular.getHexString();
-            // console.log($scope.modelColor);
+            console.log($scope.modelColor);
 
             $scope.sliderOptions = {
                 floor: 0,

@@ -55,7 +55,7 @@
                     $scope.textures[$scope.currentTextureIndex] : null;
 
                 $scope.modelOpacity = $scope.output.opacity * 100;
-                // console.log($scope.currentTextureIndex,$scope.selectedTexture);
+                $scope.modelColor = '#' + $scope.output.color.getHexString();
             });
 
         }
