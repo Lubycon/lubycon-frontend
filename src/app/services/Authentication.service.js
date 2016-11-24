@@ -4,7 +4,7 @@
     angular
         .module('services')
         .factory('Authentication', [
-            'CookieService', '$rootScope', 'Restangular',
+            'CookieService', '$rootScope', '$rootScope', 'Restangular',
             '$window', '$location', 'toastr', '$state',
             Authentication
         ]);
@@ -13,7 +13,7 @@
         CookieService, $cookies, $rootScope, Restangular,
         $window, $location, toastr, $state
     ) {
-
+        console.log(Restangular);
         var defaultHeaders = Restangular.defaultHeaders;
         Restangular.setDefaultHeaders(defaultHeaders);
         console.log(defaultHeaders);
