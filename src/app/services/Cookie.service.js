@@ -33,6 +33,7 @@
         function getDecrypt(key) {
             console.log('COOKIE GET DECRYPT KEY => ',key);
             key = encode(key);
+            console.log('COOKIE GET DECRIPTED KEY => ',key);
             var value = decodeValue($cookies.get(key));
             console.log('COOKIE GET DECRYPT VALUE => ',value);
 

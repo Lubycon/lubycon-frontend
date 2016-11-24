@@ -34,7 +34,7 @@
                 return false;
             }
             // INIT TOKEN...
-            var authdata = token;
+            var oauthdata = token;
             var isExistBackState;
 
             // SET DESCTINATION
@@ -58,12 +58,12 @@
             };
 
             // SET COOKIE DATA...
-            CookieService.putEncrypt('oauth', authdata);
+            CookieService.putEncrypt('oauth', oauthdata);
             CookieService.putEncrypt('memberState', $rootScope.memberState);
 
             // SET HTTP HEADER...
             defaultHeaders = Restangular.defaultHeaders;
-            defaultHeaders["X-lubycon-Token"] = authdata;
+            defaultHeaders["X-lubycon-Token"] = oauthdata;
             Restangular.setDefaultHeaders(defaultHeaders);
 
             // GET MEMBER DATA...
