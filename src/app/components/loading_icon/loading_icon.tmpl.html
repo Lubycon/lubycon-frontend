@@ -1,3 +1,13 @@
 <div class="loading-icon">
-    <div class="loading-icon-{{icon}}"></div>
+    <div class="icon-dom loading-icon-1" ng-if="icon === '1'"></div>
+    <div class="icon-dom loading-icon-2" ng-if="icon === '2'">
+        <div class="spinner">
+            LOADING...
+            <div class="loading-rect loading-rect1"></div>
+            <div class="loading-rect loading-rect2"></div>
+            <div class="loading-rect loading-rect3"></div>
+            <div class="loading-rect loading-rect4"></div>
+            <div class="loading-rect loading-rect5"></div>
+        </div>
+    </div>
 </div>

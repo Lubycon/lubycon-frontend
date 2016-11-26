@@ -25,6 +25,7 @@
         return directive;
 
         function link($scope, $element, $attrs) {
+            $scope.loadingComplete = false;
             $scope.$watch('map',function(newValue,oldValue) {
                 console.log('MAP CHANGED : ',oldValue,'=>',newValue);
 
@@ -50,6 +51,12 @@
                 console.log('viewer will be destoried');
                 $scope.destroyGL();
             });
+
+            THREE.DefaultLoadingManager.onLoad = function(loaded, total) {
+                console.log('loading complete',$scope);
+                $scope.loadingComplete = true;
+                $scope.$apply();
+            };
         }
         function controller($rootScope, $scope, $element) {
             'use stict';

@@ -71,7 +71,8 @@
                         </h4>
                         <h5 data-value="job">{{vm.member.job}}</h5>
                         <h5 data-value="location">
-                            <i class="fa fa-map-marker"></i>{{vm.member.city}}, {{vm.member.country}}
+                            <i class="fa fa-map-marker"></i>
+                            {{vm.member.city ? vm.member.city + ',' : ''}} {{vm.member.country}}
                         </h5>
                     </span>
                 </div>
