@@ -7,7 +7,7 @@ git - https://Dart_@bitbucket.org/Dart_/lubycon-web-app-front.git
 ```
 #!git
 
-git clone https://Dart_@bitbucket.org/Dart_/lubycon-web-app-front-git
+git clone https://Dart_@bitbucket.org/Dart_/lubycon-web-app-front.git
 ```
 **2. or use source tree**
 
