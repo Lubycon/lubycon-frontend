@@ -1,0 +1,2 @@
+div	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^<div class="webgl-viewer" tabindex="1">$/;"	function	line:1
+loading	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^    <loading-icon ng-if="!loadingComplete || true" icon="2"><\/loading-icon>$/;"	function	line:2
