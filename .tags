@@ -1,5 +1,3 @@
-div	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^<div class="webgl-viewer" tabindex="1">$/;"	function	line:1
-loading	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^    <loading-icon ng-if="!loadingComplete || true" icon="2"><\/loading-icon>$/;"	function	line:2
 .loading-icon	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^.loading-icon {$/;"	function	line:1
 .loading-icon-1	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^    .loading-icon-1 {$/;"	function	line:19
 @-webkit-keyframes animate1	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^    @-webkit-keyframes animate1 {$/;"	function	line:28
@@ -19,3 +17,5 @@ to	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading
 @keyframes sk-stretchdelay	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        @keyframes sk-stretchdelay {$/;"	function	line:86
 0%, 40%, 100%	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^            0%, 40%, 100% {$/;"	function	line:87
 }  20%	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^            }  20% {$/;"	function	line:90
+div	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^<div class="webgl-viewer" tabindex="1">$/;"	function	line:1
+loading	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^    <loading-icon ng-if="!loadingComplete" icon="2"><\/loading-icon>$/;"	function	line:2
