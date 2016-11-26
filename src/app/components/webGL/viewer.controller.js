@@ -45,73 +45,99 @@
                     $scope.scene.add(loader);
                 }
             });
+
+            $scope.$on('$destroy', function() {
+                console.log('viewer will be destoried');
+                $scope.destroyGL();
+            });
         }
         function controller($rootScope, $scope, $element) {
             'use stict';
 
-            $scope.isMobile = $rootScope.deviceInfo.isMobile;
-            var windowWidth = $element.find('.webgl-viewer').width(),
-                windowHeight = $element.find('.webgl-viewer').height();
-            console.log('canvas size : ' + windowWidth + ' X ' + windowHeight);
+            // PUBLIC VALUES
+            var gl, scene, camera, cameraLight, animationRequest, renderer, controls;
 
-            var gl = $element.find('.webgl-viewer')[0];
-            var scene = $scope.scene;
-            $scope.initSkyBox = initSkyBox;
-            $scope.init2DMap = init2DMap;
+            // PUBLIC METHOD
 
-            // CAMERA SETTING....
-            var camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
-                camera.position.x = -2;
-                camera.position.y = 1;
-                camera.position.z = 3;
-                camera.name = 'mainCamera';
-            var cameraLight = new THREE.SpotLight(0xffffff,0.1);
-                cameraLight.castShadow = true;
-                cameraLight.receiveShadow = true;
-                cameraLight.target.position.set(0, 1, -1);
-                cameraLight.position.copy(camera.position);
-            var animationRequest;
+            $scope.init = (initViewer)();
+            function initViewer() {
+                $scope.isMobile = $rootScope.deviceInfo.isMobile;
+                var windowWidth = $element.find('.webgl-viewer').width(),
+                    windowHeight = $element.find('.webgl-viewer').height();
+                console.log('canvas size : ' + windowWidth + ' X ' + windowHeight);
 
-            scene.add(camera, cameraLight);
+                gl = $element.find('.webgl-viewer')[0];
+                scene = $scope.scene;
+                $scope.initSkyBox = initSkyBox;
+                $scope.init2DMap = init2DMap;
 
-            // MAP SETTING...FOR 3D
-            if(Object.keys($scope.map).length > 0) initSkyBox();
-            // MAP SETTING...FOR 2D
-            // NOTHING
+                // CAMERA SETTING....
+                camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
+                    camera.position.x = -2;
+                    camera.position.y = 1;
+                    camera.position.z = 3;
+                    camera.name = 'mainCamera';
+                cameraLight = new THREE.SpotLight(0xffffff,0.1);
+                    cameraLight.castShadow = true;
+                    cameraLight.receiveShadow = true;
+                    cameraLight.target.position.set(0, 1, -1);
+                    cameraLight.position.copy(camera.position);
 
-            // RENDERER SETTING....
-            var renderer = $scope.renderer;
-                renderer.setSize(windowWidth, windowHeight);
-                renderer.setPixelRatio(window.devicePixelRatio);
-                renderer.setClearColor(0x222222, 1);
-                renderer.shadowMap.enabled = true;
-                renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-                renderer.gammaInput = true;
-                renderer.gammaOutput = true;
+                scene.add(camera, cameraLight);
 
-        	gl.addEventListener("webglcontextlost", function(event){
-        		event.preventDefault();
-        		alert("context is lost");
-        		destoryGL();
-        	},false);
-        	// console.log(renderer);
-        	gl.appendChild(renderer.domElement);
+                // MAP SETTING...FOR 3D
+                if(Object.keys($scope.map).length > 0) initSkyBox();
+                // MAP SETTING...FOR 2D
 
-            // CONTROL SETTING....
-            var controls = new THREE.OrbitControls(camera, renderer.domElement);
-        		controls.enableDamping = true;
-                controls.dampingFactor = 0.1;
-                controls.rotateSpeed = 0.5;
-                controls.zoomSpeed = 0.5;
-                controls.maxDistance = 100;
-                // controls.autoRotate = true;
-                // controls.autoRotateSpeed = 0.3;
+                // RENDERER SETTING....
+                renderer = $scope.renderer;
+                    renderer.setSize(windowWidth, windowHeight);
+                    renderer.setPixelRatio(window.devicePixelRatio);
+                    renderer.setClearColor(0x222222, 1);
+                    renderer.shadowMap.enabled = true;
+                    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+                    renderer.gammaInput = true;
+                    renderer.gammaOutput = true;
 
-            // EVENT BINDING....
-            window.addEventListener("resize", windowResizeGL, false);
-            angular.element(document).on("keydown",initCamera);
-            animateGL();
+            	gl.addEventListener('webglcontextlost', function(event){
+            		event.preventDefault();
+            		alert('WebGL context is lost');
+            		destroyGL();
+            	},false);
 
+            	gl.appendChild(renderer.domElement);
+
+                // CONTROL SETTING....
+                controls = new THREE.OrbitControls(camera, renderer.domElement);
+            		controls.enableDamping = true;
+                    controls.dampingFactor = 0.1;
+                    controls.rotateSpeed = 0.5;
+                    controls.zoomSpeed = 0.5;
+                    controls.maxDistance = 100;
+                    // controls.autoRotate = true;
+                    // controls.autoRotateSpeed = 0.3;
+
+                // EVENT BINDING....
+                window.addEventListener('resize', windowResizeGL, false);
+                angular.element(document).on('keydown',initCamera);
+                animateGL();
+            }
+
+            $scope.destroyGL = destroyGL;
+            function destroyGL() {
+                cancelAnimationFrame(animationRequest);
+                scene = null;
+                camera = null;
+                controls = null;
+                window.removeEventListener('resize', windowResizeGL);
+                angular.element(document).off('keydown',initCamera);
+            }
+
+
+
+            // PRIVIATE METHOD
+
+            /*VOID*/
             function initCamera(event){
                 if(event.which === 32 && document.body){
                     camera.position.x = -2;
@@ -120,24 +146,20 @@
                 }
             }
 
+            /*VOID*/
             function animateGL(time) {
             	controls.update();
             	animationRequest = requestAnimationFrame(animateGL);
         	    renderGL();
             }
 
+            /*VOID*/
             function renderGL() {
             	renderer.render(scene, camera);
             	cameraLight.position.copy(camera.position);
             }
 
-            function destoryGL() {
-                cancelAnimationFrame(animationRequest);
-                scene = null;
-                camera = null;
-                controls = null;
-            }
-
+            /*VOID*/
             function windowResizeGL(){
             	var windowWidth = $element.find('.webgl-viewer').width(),
                 windowHeight = $element.find('.webgl-viewer').width() * 0.75;
@@ -148,6 +170,7 @@
             	renderer.setSize(windowWidth, windowHeight);
             }
 
+            /*VOID*/
             function initSkyBox() {
                 console.log('initSkyBox');
                 var oldLight = $scope.scene.getObjectByName('2dLight');
@@ -175,6 +198,7 @@
                 scene.add(skybox);
             }
 
+            /*VOID*/
             function init2DMap() {
                 $element.parent().css('background-color',$scope.map.color);
                 if($scope.map.image === '#') $element.parent().css('background-image','none');
@@ -182,6 +206,7 @@
                 clearRendererMap();
             }
 
+            /*VOID*/
             function clearRendererMap() {
                 var skybox = $scope.scene.getObjectByName('skybox');
                 var oldLight = $scope.scene.getObjectByName('2dLight');
@@ -203,6 +228,7 @@
                 }
             }
 
+            /*OBJECT - LIGHT*/
             function lightGenerate(light,index) {
                 var type = light.type,
                 newLight = null;
@@ -244,10 +270,6 @@
 
                 return newLight;
             }
-
-            $rootScope.$on('$stateChangeStart', function() {
-                destoryGL();
-            });
         }
     }
 })();
