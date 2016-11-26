@@ -32,7 +32,7 @@
 
                 return device;
             }
-        }
+        };
 
         return service;
     }

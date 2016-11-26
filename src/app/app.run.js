@@ -20,6 +20,9 @@
         // SET DEVICE INFO...
         $rootScope.deviceInfo = DeviceConfig().get();
 
+        // DISABLED SCROLLING BY SPACE KEY
+        disableScrollBySpace();
+
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event,toState,toParams,fromState,fromParams){
             console.log(toParams);
@@ -34,6 +37,20 @@
 
         $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams) {
             StateAuthentication.detect(toState);
+            scrollToTop();
         });
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }
+
+    function disableScrollBySpace() {
+        window.onkeydown = function(event) {
+            if(event.keyCode === 32 && event.target == document.body) {
+                event.preventDefault();
+                return false;
+            }
+        };
     }
 })();

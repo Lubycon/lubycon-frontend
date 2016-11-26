@@ -113,7 +113,7 @@
             animateGL();
 
             function initCamera(event){
-                if(event.which === 32){
+                if(event.which === 32 && document.body){
                     camera.position.x = -2;
                     camera.position.y = 0.7;
                     camera.position.z = 2.5;
