@@ -4,5 +4,22 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-div	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^<div class="webgl-viewer" tabindex="1">$/;"	function	line:1
-loading	/Users/evan/Dev/lubycon-web-app-front/src/app/components/webGL/viewer.tmpl.html	/^    <loading-icon ng-if="!loadingComplete || true" icon="2"><\/loading-icon>$/;"	function	line:2
+.loading-icon	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^.loading-icon {$/;"	function	line:1
+.loading-icon-1	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^    .loading-icon-1 {$/;"	function	line:19
+@-webkit-keyframes animate1	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^    @-webkit-keyframes animate1 {$/;"	function	line:28
+to	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        to {$/;"	function	line:29
+@keyframes animate1	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^    @keyframes animate1 {$/;"	function	line:34
+to	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        to {$/;"	function	line:35
+.loading-icon-2	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^    .loading-icon-2 {$/;"	function	line:41
+.spinner	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        .spinner {$/;"	function	line:42
+.spinner > div	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        .spinner > div {$/;"	function	line:50
+.spinner .loading-rect2	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        .spinner .loading-rect2 {$/;"	function	line:61
+.spinner .loading-rect3	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        .spinner .loading-rect3 {$/;"	function	line:66
+.spinner .loading-rect4	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        .spinner .loading-rect4 {$/;"	function	line:71
+.spinner .loading-rect5	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        .spinner .loading-rect5 {$/;"	function	line:76
+@-webkit-keyframes sk-stretchdelay	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        @-webkit-keyframes sk-stretchdelay {$/;"	function	line:81
+0%, 40%, 100%	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^            0%, 40%, 100% { -webkit-transform: scaleY(0.4) }$/;"	function	line:82
+20%	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^            20% { -webkit-transform: scaleY(1.0) }$/;"	function	line:83
+@keyframes sk-stretchdelay	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^        @keyframes sk-stretchdelay {$/;"	function	line:86
+0%, 40%, 100%	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^            0%, 40%, 100% {$/;"	function	line:87
+}  20%	/Users/evan/Dev/lubycon-web-app-front/src/app/components/loading_icon/loading_icon.scss	/^            }  20% {$/;"	function	line:90
