@@ -6,8 +6,8 @@
                 ng-class="selected"
                 ng-mouseenter="selected = 'selected'"
                 ng-mouseleave="selected = ''"
-                ng-style="{'background-image':'url(' + item.contentData.image + ')'}"
             >
+                <div class="img" ng-style="{'background-image':'url(' + item.contentData.image + ')'}"></div>
                 <a ui-sref="common.default.contents-view({category: '3d', id: item.contentData.id})">
                     <div class="contents-overlay">
                         <i class="fa fa-search-plus"></i>

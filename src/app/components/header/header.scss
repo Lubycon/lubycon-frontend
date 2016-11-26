@@ -112,6 +112,9 @@
     }
     .navbar-menu:hover {
         background-color: #fff;
+        .dropdown-menu {
+            display: block;
+        }
     }
 
     // DESIGN FOR MENU LISTS
