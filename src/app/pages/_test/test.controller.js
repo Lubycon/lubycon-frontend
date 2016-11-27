@@ -28,7 +28,7 @@
             object;
         var windowWidth, windowHeight;
 
-        var canvas;
+        var canvas, canvas2;
         // EXCEPTION
 
         function webglAvailable() {
@@ -43,10 +43,33 @@
     			return false;
     		}
     	}
-        console.log('==================WEBGL TESTING==================');
+        function webglAvailable2() {
+    		try {
+    			canvas2 = $('.test-webgl-2').find('canvas')[0];
+                console.log(canvas2);
+    			return !!( window.WebGLRenderingContext && (
+    				canvas2.getContext( 'webgl' ) ||
+    				canvas2.getContext( 'experimental-webgl' ) )
+    			);
+    		} catch ( e ) {
+                console.log('webgl avliable excpetion => ',e);
+    			return false;
+    		}
+    	}
+
+        console.log('==================WEBGL TESTING1==================');
         console.log('webGL AVAILABLE => ',webglAvailable());
         console.log('canvas.getContext("webgl") =>',canvas.getContext( 'webgl' ));
         console.log('canvas.getContext("experimental-webgl") =>',canvas.getContext( 'experimental-webgl' ));
+        console.log('canvas.getContext("2d") =>',canvas.getContext( '2d' ));
+        console.log('window.WebGLRenderingContext => ',window.WebGLRenderingContext);
+        console.log('=================================================');
+
+        console.log('==================WEBGL TESTING2==================');
+        console.log('webGL AVAILABLE => ',webglAvailable2());
+        console.log('canvas.getContext("webgl") =>',canvas2.getContext( 'webgl' ));
+        console.log('canvas.getContext("experimental-webgl") =>',canvas2.getContext( 'experimental-webgl' ));
+        console.log('canvas.getContext("2d") =>',canvas2.getContext( '2d' ));
         console.log('window.WebGLRenderingContext => ',window.WebGLRenderingContext);
         console.log('=================================================');
 
