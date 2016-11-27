@@ -101,10 +101,10 @@
                     renderer.setSize(windowWidth, windowHeight);
                     renderer.setPixelRatio(window.devicePixelRatio);
                     renderer.setClearColor(0x222222, 1);
-                    renderer.shadowMap.enabled = true;
-                    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-                    renderer.gammaInput = true;
-                    renderer.gammaOutput = true;
+                    // renderer.shadowMap.enabled = true;
+                    // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+                    // renderer.gammaInput = true;
+                    // renderer.gammaOutput = true;
 
             	gl.addEventListener('webglcontextlost', function(event){
             		event.preventDefault();
