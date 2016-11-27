@@ -28,23 +28,27 @@
             object;
         var windowWidth, windowHeight;
 
-
+        var canvas;
         // EXCEPTION
 
         function webglAvailable() {
     		try {
-    			var canvas = document.createElement( 'canvas' );
+    			canvas = document.createElement( 'canvas' );
     			return !!( window.WebGLRenderingContext && (
     				canvas.getContext( 'webgl' ) ||
     				canvas.getContext( 'experimental-webgl' ) )
     			);
     		} catch ( e ) {
+                console.log('webgl avliable excpetion => ',e);
     			return false;
     		}
     	}
-        console.log('====================================');
+        console.log('==================WEBGL TESTING==================');
         console.log('webGL AVAILABLE => ',webglAvailable());
-        console.log('====================================');
+        console.log('canvas.getContext("webgl") =>',canvas.getContext( 'webgl' ));
+        console.log('canvas.getContext("experimental-webgl") =>',canvas.getContext( 'experimental-webgl' ));
+        console.log('window.WebGLRenderingContext => ',window.WebGLRenderingContext);
+        console.log('=================================================');
 
         // EXCEPTION
 
