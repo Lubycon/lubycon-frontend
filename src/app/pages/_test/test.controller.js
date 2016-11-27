@@ -29,6 +29,26 @@
         var windowWidth, windowHeight;
 
 
+        // EXCEPTION
+
+        function webglAvailable() {
+    		try {
+    			var canvas = document.createElement( 'canvas' );
+    			return !!( window.WebGLRenderingContext && (
+    				canvas.getContext( 'webgl' ) ||
+    				canvas.getContext( 'experimental-webgl' ) )
+    			);
+    		} catch ( e ) {
+    			return false;
+    		}
+    	}
+        console.log('====================================');
+        console.log('webGL AVAILABLE => ',webglAvailable());
+        console.log('====================================');
+
+        // EXCEPTION
+
+
         gl = angular.element('.test-webgl');
         windowWidth = gl.width();
         windowHeight = windowWidth * 0.6;
@@ -70,7 +90,7 @@
 
         // SET renderer
         renderer.setSize(windowWidth, windowHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        if(webglAvailable()) renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setClearColor(0x222222, 1);
         // renderer.shadowMap.enabled = true;
         // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
