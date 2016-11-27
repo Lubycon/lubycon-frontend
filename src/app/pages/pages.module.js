@@ -11,7 +11,8 @@
             'app.pages.editor',
             'app.pages.member',
             'app.pages.certification',
-            'app.pages.company'
+            'app.pages.company',
+            'app.pages.test'
         ]);
 
 })();
