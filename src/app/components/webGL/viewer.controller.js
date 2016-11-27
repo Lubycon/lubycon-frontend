@@ -80,9 +80,7 @@
 
                 // CAMERA SETTING....
                 camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
-                    camera.position.x = -2;
-                    camera.position.y = 1;
-                    camera.position.z = 3;
+                    camera.position.set(-2,1,3);
                     camera.name = 'mainCamera';
                 cameraLight = new THREE.SpotLight(0xffffff,0.1);
                     cameraLight.castShadow = true;
@@ -99,7 +97,8 @@
                 // RENDERER SETTING....
                 renderer = $scope.renderer;
                     renderer.setSize(windowWidth, windowHeight);
-                    renderer.setPixelRatio(window.devicePixelRatio);
+                    // renderer.setPixelRatio(window.devicePixelRatio);
+                    // TESTING...
                     renderer.setClearColor(0x222222, 1);
                     // renderer.shadowMap.enabled = true;
                     // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
