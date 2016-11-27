@@ -29,25 +29,27 @@
         var windowWidth, windowHeight;
 
         // EXCEPTION TESTING....
-        var canvas, canvas2;
+        var canvas;
         function webglAvailable() {
-    		try {
-    			canvas = document.createElement( 'canvas' );
-    			return !!( window.WebGLRenderingContext && (
-    				canvas.getContext( 'webgl' ) ||
-    				canvas.getContext( 'experimental-webgl' ) )
-    			);
-    		} catch ( e ) {
-                console.log('webgl avliable excpetion => ',e);
-    			return false;
-    		}
+            canvas = document.createElement('canvas');
+    		// try {
+    		// 	canvas = document.createElement( 'canvas' );
+    		// 	return !!( window.WebGLRenderingContext && (
+    		// 		canvas.getContext( 'webgl' ) ||
+    		// 		canvas.getContext( 'experimental-webgl' ) )
+    		// 	);
+    		// } catch ( e ) {
+            //     console.log('webgl avliable excpetion => ',e);
+    		// 	return false;
+    		// }
     	}
 
         console.log('==================WEBGL TESTING1==================');
         console.log('webGL AVAILABLE => ',webglAvailable());
-        console.log('canvas.getContext("webgl") =>',canvas.getContext( 'webgl' ));
         console.log('canvas.getContext("experimental-webgl") =>',canvas.getContext( 'experimental-webgl' ));
-        console.log('canvas.getContext("3d") =>',canvas.getContext( '3d' ));
+        console.log('canvas.getContext("webgl") =>',canvas.getContext( 'webgl' ));
+        console.log('canvas.getContext("webgl2") =>',canvas.getContext( 'webgl2' ));
+        console.log('canvas.getContext("2d") =>',canvas.getContext( '2d' ));
         console.log('window.WebGLRenderingContext => ',window.WebGLRenderingContext);
         console.log('=================================================');
         // EXCEPTION TESTING...
