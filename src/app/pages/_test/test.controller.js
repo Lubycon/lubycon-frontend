@@ -26,11 +26,13 @@
             renderer,
             controls,
             object;
+        var windowWidth, windowHeight;
 
-        var windowWidth = 640, windowHeight = 480;
 
-
-        gl = angular.element('.test-webgl')[0];
+        gl = angular.element('.test-webgl');
+        windowWidth = gl.width();
+        windowHeight = windowWidth * 0.6;
+        gl = gl[0];
         scene = new THREE.Scene();
         renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true, antialias: true });
         camera = new THREE.PerspectiveCamera(45, windowWidth/windowHeight, 0.1, 10000);
@@ -38,7 +40,6 @@
 
         // SET camera
         camera.position.set(1, 1, 10);
-        console.log(camera);
         cameraLight.castShadow = true;
         cameraLight.receiveShadow = true;
         cameraLight.target.position.set(0, 0, 0);
@@ -47,7 +48,7 @@
         // SET TEST OBJECT
         var geometry = new THREE.BoxGeometry(1,1,1);
         var material = new THREE.MeshPhongMaterial();
-            material.color = new THREE.Color(25,251,59);
+            material.color = new THREE.Color(72,207,173);
             material.side = THREE.DoubleSide;
             material.transparent = true;
             material.needsUpdate = true;
@@ -70,11 +71,11 @@
         // SET renderer
         renderer.setSize(windowWidth, windowHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setClearColor(0x444444, 1);
-        renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        renderer.gammaInput = true;
-        renderer.gammaOutput = true;
+        renderer.setClearColor(0x222222, 1);
+        // renderer.shadowMap.enabled = true;
+        // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        // renderer.gammaInput = true;
+        // renderer.gammaOutput = true;
 
         gl.appendChild(renderer.domElement);
         animate();
