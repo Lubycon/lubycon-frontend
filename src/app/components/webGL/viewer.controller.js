@@ -97,7 +97,8 @@
                 // RENDERER SETTING....
                 renderer = $scope.renderer;
                     renderer.setSize(windowWidth, windowHeight);
-                    renderer.setPixelRatio(2);
+                    // renderer.setPixelRatio(2);
+                    // IT REMOVED FOR TEST
                     console.log('device pixel ratio =>',window.devicePixelRatio);
                     renderer.setClearColor(0x222222, 1);
                     // renderer.shadowMap.enabled = true;
