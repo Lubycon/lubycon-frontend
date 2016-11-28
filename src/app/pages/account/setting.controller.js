@@ -43,7 +43,7 @@
         vm.cropping = false;
 
         vm.selectBoxOptionsNoSearch = {
-            minimumResultsForSearch: Infinity
+            minimumResultsForSearch: -1
         };
 
 

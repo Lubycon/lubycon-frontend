@@ -31,7 +31,7 @@
             $scope.selectBoxOptions = {
                 containerCssClass: 'black full-width',
                 dropdownCssClass: 'black',
-                minimumResultsForSearch: Infinity
+                minimumResultsForSearch: -1
             };
         }
     }
