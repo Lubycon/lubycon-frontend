@@ -25,7 +25,7 @@
 
         function link($scope, $element) {
             $scope.selectBoxOptions = {
-                minimumResultsForSearch: Infinity,
+                minimumResultsForSearch: -1,
                 containerCssClass: 'ghost full-width',
                 dropdownCssClass: 'ghost'
             };

@@ -10,7 +10,6 @@
             <li ng-repeat="filter in filters">
                 <select
                     ui-select2="selectBoxOptions"
-                    onkeypress="return false;"
                     ng-init="filter.data = filter.data || filter.options[0].id"
                     ng-model="filter.data"
                     ng-options="option.id as option.name for option in filter.options"
