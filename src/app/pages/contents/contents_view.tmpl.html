@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="content-body">
-                    <!-- <ng-bind-html ng-if="vm.viewerType === '2d'" ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html> -->
+                    <ng-bind-html ng-if="vm.viewerType === '2d'" ng-bind-html="vm.convertToHTML(vm.contents.content)"></ng-bind-html>
                     <webgl-viewer
                         ng-if="vm.viewerType === '3d'"
                         scene="vm.scene"
@@ -50,6 +50,7 @@
                     infinite-scroll="vm.onScroll()"
                     infinite-scroll-disabled="vm.scrollDisabled"
                     infinite-scroll-distance="0"
+                    infinite-scroll-use-document-bottom="true"
                 >
                     <comment comments="vm.commentList" get-member="vm.member.id"></comment>
                 </div>

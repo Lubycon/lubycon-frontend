@@ -58,6 +58,12 @@
             });
         }
 
+        vm.onScroll = onScroll;
+        function onScroll() {
+            vm.scrollDisabled = true;
+            getCommentList();
+        }
+
         function loadContent() {
             Restangular.all('contents/' + $stateParams.category + '/' + $stateParams.id + '/data')
             .customGET().then(function(res) {

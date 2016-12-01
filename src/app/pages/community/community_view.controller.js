@@ -53,10 +53,11 @@
             });
         }
 
-        vm.onScroll = function() {
+        vm.onScroll = onScroll;
+        function onScroll() {
             vm.scrollDisabled = true;
             getCommentList();
-        };
+        }
 
         // PRIVATE METHOD
         function getCommentList() {
