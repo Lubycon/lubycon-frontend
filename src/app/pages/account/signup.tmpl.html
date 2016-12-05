@@ -7,7 +7,7 @@
         <img src="assets/images/logo/svg/logo_black.svg" />
     </div>
     <h4>{{'ACCOUNT.SIGNUP' | translate}}</h4>
-    <form ng-submit="vm.signup()" class="signup-form">
+    <form name="signupForm" ng-submit="vm.signup()" class="signup-form">
         <div class="divide20"></div>
         <div class="signup-form-input">
             <div class="input-group col-xs-12 col-sm-12 col-lg-6">
@@ -24,6 +24,8 @@
                 <label>{{'LABEL.PASSWORD' | translate}}</label>
                 <input
                     required
+                    ng-pattern="/^[a-zA-Z0-9]{10,255}$/"
+                    name="password"
                     type="password"
                     class="form-control"
                     ng-model="vm.member.password"

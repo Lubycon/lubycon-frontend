@@ -1,0 +1,24 @@
+// FORM CONTROL
+
+.input-group {
+    border-radius: 0;
+    select {
+        width: 100%;
+    }
+}
+.input-group-addon {
+    color: $glay-color;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+}
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+}
+.form-control:focus {
+    border-color: $mint-color;
+    box-shadow: 0 0 8px rgba(72,207,173,0.6);
+    color: $glay-color;
+}
