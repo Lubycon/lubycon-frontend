@@ -5,6 +5,7 @@
         .module('app.pages.account')
         .controller('SignupController', [
             '$rootScope', '$scope', 'Restangular', 'Authentication', '$state', 'toastr',
+            'FormValidateService',
             'getData',
             SignupController
         ]);
@@ -12,6 +13,7 @@
     /** @ngInject */
     function SignupController(
         $rootScope, $scope, Restangular, Authentication, $state, toastr,
+        FormValidateService,
         getData
     ) {
         var vm = this;
@@ -33,6 +35,9 @@
         };
         vm.rePassword = null;
         vm.countryList = getData.result.country;
+        vm.validator = {
+            nickname: FormValidateService.nickname()
+        };
         vm.signup = signup;
 
         vm.agree = {
