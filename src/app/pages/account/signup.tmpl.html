@@ -1,7 +1,5 @@
 <!-- SIGNUP PAGE -->
 
-<!-- SIGNIN PAGE -->
-
 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 account-page signup-view animated" ng-class="{bounceInDown : !vm.isMobile}">
     <div class="main-logo">
         <img src="assets/images/logo/svg/logo_black.svg" />
@@ -30,7 +28,7 @@
                     ng-model="vm.member.password"
                     ng-pattern="/^[a-zA-Z0-9]{10,255}$/"
                 />
-                {{vm.member.password}} {{vm.rePassword}}
+                {{signupForm.password.$error}}
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.PASSWORD_REPEAT' | translate}}</label>
