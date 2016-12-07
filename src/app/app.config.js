@@ -98,9 +98,8 @@
 
     function cookiesProvider($cookiesProvider) {
         var expires = new Date();
-        expires.setFullYear(expires.getFullYear()+1);
+        expires.setFullYear(expires.getFullYear() + 1);
         $cookiesProvider.defaults.expires = expires;
-        console.log($cookiesProvider.defaults);
     }
 
     function locationProvider($locationProvider) {

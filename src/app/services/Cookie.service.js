@@ -31,11 +31,8 @@
         }
 
         function getDecrypt(key) {
-            console.log('COOKIE GET DECRYPT KEY => ',key);
             key = encode(key);
-            console.log('COOKIE GET DECRIPTED KEY => ',key);
             var value = decodeValue($cookies.get(key));
-            console.log('COOKIE GET DECRYPT VALUE => ',value);
 
             return value;
         }
@@ -46,9 +43,7 @@
         }
 
         function put(key, value, options) {
-            console.log('COOKIE PUT => ',key,value,options);
             key = encode(key);
-            console.log('COOKIE PUT ECRYPTED KEY => ',key);
             return $cookies.putObject(key, value, options);
         }
 
@@ -101,7 +96,6 @@
 
         /*STRING | OBJECT*/
         function decodeValue(value) {
-            console.log(value);
             if(!value) return null;
 
             value = Base64Service.decode(value);

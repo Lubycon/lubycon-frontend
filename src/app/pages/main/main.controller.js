@@ -12,7 +12,6 @@
     function MainController(
         $rootScope, $scope, $timeout, toastr, toastrConfig, API_CONFIG
     ) {
-        console.log("MAIN PAGE IS LOADED");
 
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
@@ -92,7 +91,7 @@
         vm.init = init();
 
         function init(){
-            console.log("init");
+            
         }
 
     }

@@ -4,35 +4,33 @@
     angular
     .module('app')
     .run([
-        'CookieService','$log','$rootScope','$location',
-        'DeviceConfig','StateAuthentication','Authentication','$state',
+        'CookieService','$log','$rootScope','$location', 'USER_AGENT',
+        'StateAuthentication','Authentication','$state', 'HistoryService',
         runBlock
     ]);
 
     /** @ngInject */
     function runBlock(
-            CookieService, $log, $rootScope, $location,
-            DeviceConfig, StateAuthentication, Authentication, $state
+            CookieService, $log, $rootScope, $location, USER_AGENT,
+            StateAuthentication, Authentication, $state, HistoryService
         ) {
-        console.log("APP RUNNING - ");
         console.log($rootScope);
 
         // SET DEVICE INFO...
-        $rootScope.deviceInfo = DeviceConfig().get();
+        $rootScope.deviceInfo = USER_AGENT;
 
         // DISABLED SCROLLING BY SPACE KEY
         disableScrollBySpace();
 
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event,toState,toParams,fromState,fromParams){
-            console.log(toParams);
             fromState.params = fromParams;
             toState.params = toParams;
 
-            $rootScope.clientLocation = {
+            HistoryService.push({
                 from : fromState,
                 to : toState
-            };
+            });
         });
 
         $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams) {

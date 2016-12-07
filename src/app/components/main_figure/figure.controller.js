@@ -5,14 +5,12 @@
         .module('components')
         .controller('FigureController', [
             '$rootScope', '$scope', '$location', '$state', 'Restangular', '$timeout',
-            'DeviceConfig',
             FigureController
         ]);
 
     /* @ngInject */
     function FigureController(
-        $rootScope, $scope, $location, $state, Restangular, $timeout,
-        DeviceConfig
+        $rootScope, $scope, $location, $state, Restangular, $timeout
     ) {
         var vm = this;
         vm.isMobile = $rootScope.deviceInfo.isMobile;
