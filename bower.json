@@ -52,8 +52,8 @@
     "angular-summernote": "^0.8.1",
     "angular-elastic": "^2.5.1",
     "angular-ui-select2": "^0.0.5",
-    "threex.domevents": "*",
-    "ua-parser-js": "^0.7.12"
+    "ua-parser-js": "^0.7.12",
+    "threex.domevents": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",
