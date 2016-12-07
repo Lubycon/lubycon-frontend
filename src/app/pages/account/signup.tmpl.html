@@ -1,7 +1,5 @@
 <!-- SIGNUP PAGE -->
 
-<!-- SIGNIN PAGE -->
-
 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 account-page signup-view animated" ng-class="{bounceInDown : !vm.isMobile}">
     <div class="main-logo">
         <img src="assets/images/logo/svg/logo_black.svg" />
@@ -10,7 +8,7 @@
     <form name="signupForm" ng-submit="vm.signup()" class="signup-form">
         <div class="divide20"></div>
         <div class="signup-form-input">
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.EMAIL' | translate}}</label>
                 <input
                     required
@@ -20,18 +18,19 @@
                     ng-model="vm.member.email"
                 />
             </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.PASSWORD' | translate}}</label>
                 <input
                     required
-                    ng-pattern="/^[a-zA-Z0-9]{10,255}$/"
                     name="password"
                     type="password"
                     class="form-control"
                     ng-model="vm.member.password"
+                    ng-pattern="/^[a-zA-Z0-9]{10,255}$/"
                 />
+                {{signupForm.password.$error}}
             </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.PASSWORD_REPEAT' | translate}}</label>
                 <input
                     required
@@ -40,16 +39,21 @@
                     ng-model="vm.rePassword"
                 />
             </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.NICKNAME' | translate}}</label>
                 <input
                     required
                     type="text"
                     class="form-control"
+                    name="nickname"
+                    ng-minlength="vm.validator.nickname.minLength"
+                    ng-maxlength="vm.validator.nickname.maxLength"
+                    ng-pattern="vm.validator.nickname.pattern"
                     ng-model="vm.member.nickname"
                 />
+                {{signupForm.nickname.$error}} {{vm.member.nickname}}
             </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.COUNTRY' | translate}}</label>
                 <select
                     ui-select2="vm.selectBoxOptions"
@@ -58,7 +62,7 @@
                 >
                 </select>
             </div>
-            <div class="input-group col-xs-12 col-sm-12 col-lg-6">
+            <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <div>
                     <checkbox data-index="0" output="vm.agree.terms" change-event="vm.onChange"></checkbox>
                     <p><a ui-sref="common.noFooter.terms-of-service">{{'LABEL.TERMS_OF_SERVICE' | translate}}</a>{{'SIGNUP.DOCUMENT_NOTICE' | translate}}</p>
