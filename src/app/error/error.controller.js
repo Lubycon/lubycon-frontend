@@ -15,17 +15,16 @@
         console.log("THIS IS ERROR PAGE : " + $stateParams.errorCode);
         var vm = this;
 
-        vm.errorTitle = $stateParams.errorCode;
-
+        vm.errorTitle = $stateParams.errorCode * 1;
+        vm.errorMessage = 'ERROR.' + vm.errorTitle;
         $translate([
-            'ERROR.404',
-            'ERROR.500'
+            vm.errorMessage, 'ERROR.DEFAULT'
         ]).then(function (texts) {
-            vm.errorMessages = {
-                404: texts['ERROR.404'],
-                500: texts['ERROR.500']
+            vm.errorMessage = texts[vm.errorMessage];
+
+            if(/error\./i.test(vm.errorMessage)) {
+                vm.errorMessage = texts['ERROR.DEFAULT'];
             }
-            vm.message = vm.errorMessages[vm.errorTitle * 1];
         });
 
         vm.goHome = goHome;
