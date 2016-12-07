@@ -80,7 +80,7 @@
                 profile: 'http://lorempixel.com/640/640/',
                 userCode: 9,
                 code: 9,
-                name: 'Mohammad Anwar',
+                nickname: 'Mohammad Anwar',
                 job: 'Developer',
                 country: 'United State America',
                 city: 'New York',

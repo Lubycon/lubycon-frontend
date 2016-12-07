@@ -54,12 +54,12 @@
                     </figure>
                     <span>
                         <h4><a ng-href="creators/dashboard/{{vm.member.id}}">
-                                {{vm.member.name}}
+                                {{vm.member.nickname}}
                             </a>
                         </h4>
                         <h5 data-value="job">{{vm.member.job}}</h5>
                         <h5 data-value="location">
-                            <i class="fa fa-map-marker"></i>{{vm.member.city}}, {{vm.member.country}}
+                            <i class="fa fa-map-marker"></i>{{vm.member.city ? vm.member.city + ',' : ''}} {{vm.member.country}}
                         </h5>
                     </span>
                 </div>
