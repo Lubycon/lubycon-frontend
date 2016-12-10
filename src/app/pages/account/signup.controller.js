@@ -5,7 +5,7 @@
         .module('app.pages.account')
         .controller('SignupController', [
             '$rootScope', '$scope', 'Restangular', 'Authentication', '$state', 'toastr',
-            'FormValidateService',
+            'FormValidateService', '$translate',
             'getData',
             SignupController
         ]);
@@ -13,37 +13,54 @@
     /** @ngInject */
     function SignupController(
         $rootScope, $scope, Restangular, Authentication, $state, toastr,
-        FormValidateService,
+        FormValidateService, $translate,
         getData
     ) {
-        var vm = this;
-        var api = Authentication.signUp;
-
-        vm.selectBoxOptions = {
-            containerCssClass: 'full-width',
-            placeholder: '국가를 선택하세요'
-        };
+        var vm = this,
+            api = Authentication.signUp;
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
-        vm.member = {
-            email: null,
-            nickname: null,
-            password: null,
-            country: null,
-            snsCode: '0100',
-            newsletter: false
-        };
-        vm.rePassword = null;
-        vm.countryList = getData.result.country;
-        vm.validator = {
-            nickname: FormValidateService.nickname()
-        };
-        vm.signup = signup;
 
-        vm.agree = {
-            terms: false,
-            privatePolicy: false
+        vm.selectBoxOptions = {
+            containerCssClass: 'full-width'
         };
+
+        vm.init = (init)();
+        function init() {
+            vm.member = {
+                email: null,
+                nickname: null,
+                password: null,
+                country: null,
+                snsCode: '0100',
+                newsletter: false
+            };
+
+            vm.agree = {
+                terms: false,
+                privatePolicy: false
+            };
+
+            vm.validator = {
+                email: {
+                    pattern: FormValidateService.getCondition('email').pattern
+                },
+                password: {
+                    minlength: FormValidateService.getCondition('password').minlength,
+                    maxlength: FormValidateService.getCondition('password').maxlength,
+                    pattern: FormValidateService.getCondition('password').pattern
+                },
+                nickname: {
+                    minlength: FormValidateService.getCondition('nickname').minlength,
+                    maxlength: FormValidateService.getCondition('nickname').maxlength,
+                    pattern: FormValidateService.getCondition('nickname').pattern
+                }
+            };
+
+            vm.rePassword = null;
+            vm.countryList = getData.result.country;
+            vm.signup = signup;
+        }
 
         function signup(){
             console.log(vm.member);

@@ -1,3 +1,13 @@
+/*
+    @title: FormValidate.service.js
+    @desc: lubycon form validator
+    @author: Evan moon
+    @created_at: 2016-12-09
+    @updated_at: 2016-12-09
+*/
+
+
+
 (function () {
     'use strict';
 
@@ -8,35 +18,112 @@
     function FormValidateService($rootScope) {
 
         var service = {
+            getCondition: getCondition,
             getRegx: getRegx,
-            check: check
+            test: test
+        };
+
+        var regxs = {
+            email: /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+            notSpecialWord: /[^\{\}\[\]\/?.,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]$/g,
+            password: /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{0,255}$/g,
+            ignoreRepeatWord: /^(?:(.)(?!\1\1))*$/g,
+            script: /<script[^>]*>(.*?)<\/script>/gi,
+            style: /<style[^>]*>(.*?)<\/style>/gi
         };
 
         return service;
 
         // PUBLIC METHOD
-        function getRegx(name) {
-            return eval(name);
+
+        /*
+            @name: getCondition
+            @desc: returning type condition
+            @params: type(String)
+            @return Object
+        */
+        function getCondition(type) {
+            return eval(type + 'Condition')();
         }
 
-        function check(value, name) {
-            var regx = getRegx(name);
-            return regx.test(value);
+        /*
+            @name: getRegx
+            @desc: returning regx that using this app
+            @params: type(String)
+            @return Regx
+        */
+        function getRegx(type) {
+            return regxs[type];
         }
 
-        // PRIVATE REGX
-        function nickname() {
-            // 4~20자 -,_를 제외한 특수문자 불가
-            return /[^\{\}\[\]\/?.,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]{4,20}$/gi;
+        /*
+            @name: test
+            @desc: testing string using regxs
+            @params: string(String), type(String)
+            @return Object
+        */
+        function test(string, type) {
+            // 'password'
+            // 'nickname'
+            return eval(type + 'Test')(string);
         }
 
-        function password() {
-            // 6~255자 영문 대소문자 && 최소 1개의 숫자 혹은 특수 문자를 포함해야한다.
-            return /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,255}$/gi;
+
+
+
+
+        // PRIVATE METHOD
+
+        /*
+            @name: emailCondition
+            @desc: returning email condition
+            @params: null
+            @return Object
+        */
+        function emailCondition() {
+            return {
+                pattern: {
+                    test: function(value) {
+                        return regxs.email.test(value);
+                    }
+                }
+            };
         }
 
-        function ignoreSpecialWord() {
-            return /[\{\}\[\]\/?.,;:|\)*~`!-_^\+<>@\#$%&\\\=\(\'\"]/gi;
+        /*
+            @name: passwordCondition
+            @desc: returning password condition
+            @params: null
+            @return Object
+        */
+        function passwordCondition() {
+            return {
+                minlength: 8,
+                maxlength: 255,
+                pattern: {
+                    test: function(value) {
+                        return regxs.password.test(value) && regxs.ignoreRepeatWord.test(value);
+                    }
+                }
+            };
+        }
+
+        /*
+            @name: nicknameCondition
+            @desc: returning nickname condition
+            @params: null
+            @return Object
+        */
+        function nicknameCondition() {
+            return {
+                minlength: 4,
+                maxlength: 20,
+                pattern: {
+                    test: function(value) {
+                        return regxs.notSpecialWord.test(value);
+                    }
+                }
+            };
         }
     }
 })();

@@ -70,7 +70,15 @@
         "PREV" : "이전",
         "FINISH" : "완료",
         "CONTINUE" : "계속",
-        "CHANGE" : "변경"
+        "CHANGE" : "변경",
+        "ERROR_MSG" : {
+            "REQUIRED" : "필수 입력 항목입니다",
+            "PATTERN" : "형식에 맞지 않습니다",
+            "SECURITY" : "보안 수준이 너무 낮습니다"
+        },
+        "PLACEHOLDER" : {
+            "COUNTRY" : "국가를 선택하세요"
+        }
     },
     "USER_ACTION" : {
         "BOOKMARK" : "북마크",

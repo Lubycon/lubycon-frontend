@@ -1,9 +1,22 @@
 // FORM CONTROL
 
+input.ng-dirty.ng-invalid {
+    border-color: $red-color;
+    box-shadow: 0 0 8px rgba(236,100,70,0.6);
+    color: $glay-color;
+}
+
 .input-group {
     border-radius: 0;
     select {
         width: 100%;
+    }
+
+    .form-error-message {
+        color: $red-color;
+        font-size: 11px;
+        vertical-align: middle;
+        margin: 0 5px;
     }
 }
 .input-group-addon {

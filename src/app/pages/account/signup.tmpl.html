@@ -12,11 +12,19 @@
                 <label>{{'LABEL.EMAIL' | translate}}</label>
                 <input
                     required
+                    name="email"
                     type="text"
                     class="form-control"
                     placeholder="ex) example@lubycon.com"
                     ng-model="vm.member.email"
+                    ng-pattern="vm.validator.email.pattern"
                 />
+                <p ng-show="signupForm.email.$error.required" class="form-error-message">
+                    {{'FORM.ERROR_MSG.REQUIRED' | translate}}
+                </p>
+                <p ng-show="signupForm.email.$error.pattern" class="form-error-message">
+                    {{'FORM.ERROR_MSG.PATTERN' | translate}}
+                </p>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.PASSWORD' | translate}}</label>
@@ -26,9 +34,16 @@
                     type="password"
                     class="form-control"
                     ng-model="vm.member.password"
-                    ng-pattern="/^[a-zA-Z0-9]{10,255}$/"
+                    ng-minlength="vm.validator.password.minlength"
+                    ng-maxlength="vm.validator.password.maxlength"
+                    ng-pattern="vm.validator.password.pattern"
                 />
-                {{signupForm.password.$error}}
+                <p ng-show="signupForm.password.$error.required" class="form-error-message">
+                    {{'FORM.ERROR_MSG.REQUIRED' | translate}}
+                </p>
+                <p ng-show="signupForm.password.$error.pattern" class="form-error-message">
+                    {{'FORM.ERROR_MSG.SECURITY' | translate}}
+                </p>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.PASSWORD_REPEAT' | translate}}</label>
@@ -46,18 +61,24 @@
                     type="text"
                     class="form-control"
                     name="nickname"
-                    ng-minlength="vm.validator.nickname.minLength"
-                    ng-maxlength="vm.validator.nickname.maxLength"
-                    ng-pattern="vm.validator.nickname.pattern"
                     ng-model="vm.member.nickname"
+                    ng-minlength="vm.validator.nickname.minlength"
+                    ng-maxlength="vm.validator.nickname.maxlength"
+                    ng-pattern="vm.validator.nickname.pattern"
                 />
-                {{signupForm.nickname.$error}} {{vm.member.nickname}}
+                <p ng-show="signupForm.nickname.$error.required" class="form-error-message">
+                    {{'FORM.ERROR_MSG.REQUIRED' | translate}}
+                </p>
+                <p ng-show="signupForm.nickname.$error.pattern" class="form-error-message">
+                    {{'FORM.ERROR_MSG.PATTERN' | translate}}
+                </p>
             </div>
             <div class="input-group col-xs-12 col-sm-12 col-lg-7">
                 <label>{{'LABEL.COUNTRY' | translate}}</label>
                 <select
                     ui-select2="vm.selectBoxOptions"
                     ng-model="vm.member.country"
+                    data-placeholder="{{'FORM.PLACEHOLDER.COUNTRY' | translate}}"
                     ng-options="country.name as country.name for country in vm.countryList"
                 >
                 </select>
