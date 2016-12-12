@@ -1,5 +1,4 @@
 /***********************************
-
 title : Tracker.js
 description: 사용자의 이동경로 및 액션 추적
 created_at: 2016. 10. 20
@@ -25,146 +24,167 @@ author: Evan Moon
         var tracker = {},
             today = $filter('date')(new Date(), 'yyyyMMdd');
 
-        var _TUUID = setTUUID(CookieService.get('TRACKER'));
-        var _OBJECT_INFO = CookieService.get('SHARED_OBJECT') || null; // host/shared/:snsCode/:objectCode/:objectId/:message를 통해 페이지에 접속했을 경우 생성되는 쿠키
+        var _UUID = setUUID(CookieService.get('TRACKER'));
 
-        // PUBLIC
         var service = {
-            stored: {}, // post메소드 호출 시 현재 요청보다 한 스텝 이전 트래킹 데이터를 저장한다
+            stored: {},
             storedCookie: null,
-            init: function() {
-                tracker.actionType = 0;
-            },
-            post : function(toUrl,fromUrl,toParams,fromParams) {
-                console.log('TRACKER POST START','to -> ',toUrl,toParams,'from -> ',fromUrl,fromParams);
-                ///////////////////////////////////////////////////////////////////
-                // common.run.js -> stateChange 이벤트 발생시 호출되는 트래킹 메소드
-                ///////////////////////////////////////////////////////////////////
-
-                this.init();
-
-                tracker.tuuid = _TUUID.id;
-                tracker.clientCurrentUrl = toUrl;
-                tracker.clientPrevUrl = fromUrl;
-
-                var toId = getId(toUrl, toParams),
-                    fromId = getId(fromUrl, fromParams),
-                    memberId = getMemberId();
-                console.log(toId,fromId,memberId,_OBJECT_INFO);
-
-                if(toId) tracker.clientCurrentId = toId * 1;
-                if(fromId) tracker.clientPrevId = fromId * 1;
-                if(memberId) tracker.memberId = memberId * 1;
-
-
-                getCookieData();
-                service.setStore();
-
-                postAPI(tracker).then(function(res) {
-                    trace(tracker);
-                });
-            },
-            setParam: function(params, callback) {
-                /////////////////////////////////////////////////////////
-                // 어떠한 특수 액션이 발생했을때 param을 변경해서 보낸다.
-                // 1회성 리퀘스트이며 이 요청이 끝나면 tracker는 stored에 저장해놨던
-                // 전번 요청으로 init한뒤 추적을 계속한다
-                /////////////////////////////////////////////////////////
-
-                console.log('SET PARAM',params);
-                getCookieData();
-
-                var _data = service.getStore(),
-                    check = true;
-
-                if(typeof params === 'number') {
-                    _data.actionType = params;
-                }
-                else {
-                    var keys = Object.keys(params);
-                    var validation;
-
-                    keys.map(function(v) {
-                        validation = validator(v);
-                        if(!validator(v)) {
-                            check = false;
-                            console.error('Tracker Parameter Exception : "' + v + '" is unavailable value. Therefore this value will be removed from Site Tracker');
-                        }
-                        else _data[v] = params[v];
-                    });
-                }
-
-                if(check) {
-                    postAPI(_data).then(function(res) {
-                        if(callback) callback();
-                        trace(_data, true);
-                    });
-                }
-                else console.error('Site Tracker got error');
-            },
-            getTracker: function() {
-                return tracker;
-            },
-            setStore: function() {
-                this.stored = tracker;
-            },
-            getStore: function() {
-                return angular.copy(this.stored);
-            }
+            init: init,
+            post : post,
+            setParam: setParam,
+            getTracker: getTracker,
+            setStore: setStore,
+            getStore: getStore
         };
+
+        return service;
+
+
+        // PUBLIC METHOD
+
+        /*
+            @name: init
+            @desc: init tracker
+            @params: null
+            @return Void
+        */
+        function init() {
+            tracker.actionType = 0;
+        }
+
+        /*
+            @name: post
+            @desc: Post user trace to server
+            @params: toState(Object), fromState(Object)
+            @return Void
+        */
+        function post(toState, fromState) {
+            console.log('TRACKER POST START','to -> ',toState,'from -> ',fromState);
+            ///////////////////////////////////////////////////////////////////
+            // app.run.js -> stateChange 이벤트 발생시 호출되는 트래킹 메소드
+            ///////////////////////////////////////////////////////////////////
+
+            init();
+
+            tracker.uuid = _UUID.id;
+
+            var memberId = getMemberId();
+
+            service.setStore();
+
+            trace(tracker);
+            // postAPI(tracker).then(function(res) {
+            //     trace(tracker);
+            // });
+        }
+
+        /*
+            @name: setParam
+            @desc: Post specific user actions to the server
+            @params: params(Obejct || Int), Callback(Function)
+            @return Void
+        */
+        function setParam(params, callback) {
+            /////////////////////////////////////////////////////////
+            // 어떠한 특수 액션이 발생했을때 param을 변경해서 보낸다.
+            // 1회성 리퀘스트이며 이 요청이 끝나면 tracker는 stored에 저장해놨던
+            // 전번 요청으로 init한뒤 추적을 계속한다
+            /////////////////////////////////////////////////////////
+
+            console.log('SET PARAM',params);
+            getCookieData();
+
+            var _data = service.getStore(),
+                check = true;
+
+            if(typeof params === 'number') {
+                _data.actionType = params;
+            }
+            else {
+                var keys = Object.keys(params);
+                var validation;
+
+                keys.map(function(v) {
+                    validation = validator(v);
+                    if(!validator(v)) {
+                        check = false;
+                        console.error('Tracker Parameter Exception : "' + v + '" is unavailable value. Therefore this value will be removed from Site Tracker');
+                    }
+                    else _data[v] = params[v];
+                });
+            }
+
+            if(check) {
+                postAPI(_data).then(function(res) {
+                    if(callback) callback();
+                    trace(_data, true);
+                });
+            }
+            else console.error('Tracker got error');
+        }
+
+        /*
+            @name: getTracker
+            @desc: Return Current Tracker
+            @params: null
+            @return Object
+        */
+        function getTracker() {
+            return tracker;
+        }
+
+        /*
+            @name: setStore
+            @desc: Save current Tracker to the service
+            @params: null
+            @return Void
+        */
+        function setStore() {
+            service.stored = tracker;
+        }
+
+        /*
+            @name: getStore
+            @desc: return stored Tracker
+            @params: null
+            @return Object
+        */
+        function getStore() {
+            return angular.copy(service.stored);
+        }
+
+
+
+
 
 
 
         // PRIVATE
-        function debug() {
 
-        }
-
-        function validator(key) { // return --> Boolean
+        /*
+            @name: validator
+            @desc: Check if it is a valid key
+            @params: key(String)
+            @return Boolean
+        */
+        function validator(key) {
             var params = [
-                'actionType',
-                'objectCode',
-                'objectId',
-                'snsCode',
-                'joinYn',
-                'clientCurrentUrl',
-                'clientCurrentId',
-                'clientPrevUrl',
-                'clientPrevId',
-                'tuuid',
-                'messageId',
-                'deviceType',
-                'shareUrl',
-                'parentUrl',
-                'contentId'
+                'action',
+                'currentUrl',
+                'prevUrl',
+                'uuid'
             ];
 
             return params.indexOf(key) > -1 ? true : false;
         }
 
-        function getCookieData() {
-            var data = CookieService.get('SHARED_OBJECT');
-            console.log(data);
-
-            if(data && data.date === today) { // 공유된 게시물을 타고 들어온 사용자 예외처리
-                tracker.objectCode = getObjectCode(data.objectCode);
-                tracker.objectId = data.objectId;
-                tracker.snsCode = data.snsCode;
-                tracker.messageId = data.message;
-
-                if(tracker.objectCode && tracker.objectCode === '0408') {
-                    ///////////////////////////////////////////////////////////////
-                    // 위젯은 messageId필드에 contentId값을 담아서 보낸다.
-                    // messageId를 contentid에 담아주고 messageId는 0으로 바꿔줘야 한다.
-                    ///////////////////////////////////////////////////////////////
-                    tracker.contentId = tracker.messageId;
-                    tracker.messageId = 0;
-                    console.log(tracker.contentId,tracker.messageId);
-                }
-            }
-        }
-
-        function getActionTypeDesc(actionType) { // return -> String
+        /*
+            @name: getActionDesc
+            @desc: return action description
+            @params: action(String)
+            @return String
+        */
+        function getActionDesc(action) {
             /////////////////////////////////////////////////
             // trace 메소드에 사용되는 actionType명세이다.
             // 임의의 코드와 설명문을 등록하면 trace에서 출력된다.
@@ -175,20 +195,32 @@ author: Evan Moon
             }
         }
 
+        /*
+            @name: postAPI
+            @desc: post Tracker to the server
+            @params: tracker(Object)
+            @return Promise
+        */
         function postAPI(tracker) { // return -> Promise
-            // return Restangular.all('site-tracker').customPOST(tracker);
+            return Restangular.all('tracker').customPOST(tracker);
         }
 
-        function setTUUID(tuuid) { // return -> Object
+        /*
+            @name: setUUID
+            @desc: create tracker unique ID
+            @params: uuid(Object)
+            @return Object
+        */
+        function setUUID(uuid) { // return -> Object
             /////////////////////////////////////////////////////////////////////////////
-            // 쿠키에 기존 tuuid가 등록되어있고 그 쿠키의 날짜가 오늘일 경우에만 기존 tuuid를 사용
+            // 쿠키에 기존 uuid가 등록되어있고 그 쿠키의 날짜가 오늘일 경우에만 기존 uuid를 사용
             /////////////////////////////////////////////////////////////////////////////
 
             var result;
-            if(tuuid && tuuid.date === today) {
+            if(uuid && uuid.date === today) {
                 result = {
-                    id: tuuid.id,
-                    date: tuuid.date
+                    id: uuid.id,
+                    date: uuid.date
                 };
             }
             else {
@@ -201,45 +233,41 @@ author: Evan Moon
             return result;
         }
 
-        function getObjectCode(code) { // return -> String
-            switch(code) {
-                case 'member' : return '0401';
-                case 'brand' : return '0402';
-                case 'product' : return '0403';
-                case 'campaign' : return '0404';
-                case 'review' : return '0405';
-                case 'ask' : return '0406';
-                case 'widget' : return '0408';
-                default : return '0400';
-            }
-        }
-
-        function createRandomKey() { // return -> String32
+        /*
+            @name: createRandomKey
+            @desc: Return a 32-digit random number
+            @params: null
+            @return String
+        */
+        function createRandomKey() {
             var randomValue = Math.random() * (Math.pow(10, 21));
             var randomValue2 = Math.random() * (Math.pow(10,11));
             return (randomValue.toFixed(0) + randomValue2.toFixed(0));
         }
 
-        function getId(url,obj) { // return -> String || null
-            ///////////////////////////////////////
-            // URL에서 오브젝트 ID를 검출하는 메소드
-            ///////////////////////////////////////
-            var path = url.split("/"),
-                filteredPath = path.filter(function(v){
-                    return /^:+.*[id]$/i.test(v);
-                }),
-                selector = filteredPath[filteredPath.length - 1] ? filteredPath[filteredPath.length - 1].replace(":","") : null;
-            console.log(filteredPath, selector, obj[selector]);
-            return selector ? obj[selector] : null;
-        }
-
-        function getMemberId() { // return -> String
-            ///////////////////////////////////////
-            // 토큰에서 멤버 ID를 검출하는 메소드
-            ///////////////////////////////////////
-            var header = Restangular.defaultHeaders['X-08liter-Token'],
+        /*
+            @name: getMemberId
+            @desc: Return member ID from the access token
+            @params: null
+            @return String
+        */
+        function getMemberId() {
+            var header = Restangular.defaultHeaders['X-lubycon-Token'],
                 id = header ? header.substring(33) : null;
             return id;
+        }
+
+        /*
+            @name: trace
+            @desc: Prints console.log about Tracker
+            @params: tracker(Object), isCustom(Boolean)
+            @return Void
+        */
+        function trace(tracker, isCustom) {
+            console.log('=====================================[ TRACKER ]===============================');
+            console.log(tracker);
+            if(!isCustom) console.log('====================================[ DEFAULT ACTION ]==============================');
+            else console.log('=================================================================[ ACTION : '+ tracker.action +' -> '+getActionDesc(tracker.action) +' ]');
         }
     }
 })();

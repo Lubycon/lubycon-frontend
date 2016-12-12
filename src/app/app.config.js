@@ -13,7 +13,7 @@
             '$locationProvider', locationProvider
         ])
         .config([
-            'RestangularProvider', 'API_CONFIG', restangularProvider
+            'RestangularProvider', 'API_CONFIG', 'USER_AGENT', restangularProvider
         ])
         .config([
             '$cookiesProvider', cookiesProvider
@@ -33,6 +33,11 @@
             '$window', 'CONSOLE_LOG', '$timeout',
             run
         ]);
+
+
+
+
+
 
     /** @ngInject */
     function httpConfig($httpProvider) {
@@ -109,7 +114,7 @@
         }).hashPrefix('!');
     }
 
-    function restangularProvider(RestangularProvider, API_CONFIG) {
+    function restangularProvider(RestangularProvider, API_CONFIG, USER_AGENT) {
         var _info = (function () {
             var result = { lang: 'en', country: '' };
             result.lang = 'en';
@@ -131,15 +136,18 @@
         }());
 
         var defaultHeaders = {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             'X-lubycon-version': '1.0.0',
             'X-lubycon-language': _info.lang,
+            'X-lubycon-device': 'bs=' + USER_AGENT.browser + ',dvc=' + USER_AGENT.device + ',os=' + USER_AGENT.os,
             'lubycon-dev': API_CONFIG.appkey // REAL IS FALSE
         };
 
         RestangularProvider.setDefaultHeaders(defaultHeaders);
         RestangularProvider.setBaseUrl(API_CONFIG.host);
-        console.log("Server Location : " + API_CONFIG.host);
+
+        console.log('Server Location : ' + API_CONFIG.host);
+        console.log('Restangular DEFAULT HEADER : ', RestangularProvider.defaultHeaders);
     }
 
     function translateConfig($translateProvider, $translatePartialLoaderProvider, APP_LANGUAGES) {

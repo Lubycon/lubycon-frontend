@@ -3,7 +3,8 @@
 
     angular
         .module('app')
-        .constant('USER_AGENT', UserAgentDetection());
+        .constant('USER_AGENT', UserAgentDetection())
+        ;
 
         /* @ngInject */
         function UserAgentDetection() {
@@ -47,7 +48,4 @@
                 })(userAgent);
             }
         }
-
-
-
 })();

@@ -4,14 +4,14 @@
     angular
     .module('app')
     .run([
-        'CookieService','$log','$rootScope','$location', 'USER_AGENT',
+        'CookieService','$log','$rootScope','$location', 'USER_AGENT', 'Tracker',
         'StateAuthentication','Authentication','$state', 'HistoryService',
         runBlock
     ]);
 
     /** @ngInject */
     function runBlock(
-            CookieService, $log, $rootScope, $location, USER_AGENT,
+            CookieService, $log, $rootScope, $location, USER_AGENT, Tracker,
             StateAuthentication, Authentication, $state, HistoryService
         ) {
         console.log($rootScope);
@@ -31,6 +31,8 @@
                 from : fromState,
                 to : toState
             });
+
+            Tracker.post(toState, fromState);
         });
 
         $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams) {
