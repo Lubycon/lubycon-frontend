@@ -13,13 +13,13 @@ author: Evan Moon
         .module('app')
         .factory('Tracker', [
             '$rootScope', 'CookieService', 'Restangular',
-            '$state', '$filter',
+            '$state', '$filter', 'UUIDService',
             Tracker
         ]);
 
 
     function Tracker(
-        $rootScope, CookieService, Restangular, $state, $filter
+        $rootScope, CookieService, Restangular, $state, $filter, UUIDService
     ){
         var tracker = {},
             today = $filter('date')(new Date(), 'yyyyMMdd');
@@ -49,7 +49,7 @@ author: Evan Moon
             @return Void
         */
         function init() {
-            tracker.actionType = 0;
+            tracker.action = 0;
         }
 
         /*
@@ -59,7 +59,6 @@ author: Evan Moon
             @return Void
         */
         function post(toState, fromState) {
-            console.log('TRACKER POST START','to -> ',toState,'from -> ',fromState);
             ///////////////////////////////////////////////////////////////////
             // app.run.js -> stateChange 이벤트 발생시 호출되는 트래킹 메소드
             ///////////////////////////////////////////////////////////////////
@@ -67,15 +66,16 @@ author: Evan Moon
             init();
 
             tracker.uuid = _UUID.id;
+            tracker.prevUrl = fromState.url;
+            tracker.currentUrl = toState.url;
 
             var memberId = getMemberId();
 
             service.setStore();
 
-            trace(tracker);
-            // postAPI(tracker).then(function(res) {
-            //     trace(tracker);
-            // });
+            postAPI(tracker).then(function(res) {
+                trace(tracker);
+            });
         }
 
         /*
@@ -98,7 +98,7 @@ author: Evan Moon
                 check = true;
 
             if(typeof params === 'number') {
-                _data.actionType = params;
+                _data.action = params;
             }
             else {
                 var keys = Object.keys(params);
@@ -225,24 +225,12 @@ author: Evan Moon
             }
             else {
                 result = {
-                    id: createRandomKey(),
+                    id: UUIDService.generate('xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx'),
                     date: today
                 };
                 CookieService.put('TRACKER', result);
             }
             return result;
-        }
-
-        /*
-            @name: createRandomKey
-            @desc: Return a 32-digit random number
-            @params: null
-            @return String
-        */
-        function createRandomKey() {
-            var randomValue = Math.random() * (Math.pow(10, 21));
-            var randomValue2 = Math.random() * (Math.pow(10,11));
-            return (randomValue.toFixed(0) + randomValue2.toFixed(0));
         }
 
         /*
