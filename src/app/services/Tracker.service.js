@@ -92,7 +92,6 @@ author: Evan Moon
             /////////////////////////////////////////////////////////
 
             console.log('SET PARAM',params);
-            getCookieData();
 
             var _data = service.getStore(),
                 check = true;
