@@ -6,7 +6,7 @@
         .controller('SigninController', [
             '$rootScope', '$scope', '$state', '$filter',
             'Restangular', 'Authentication', 'toastr',
-            'FacebookService',
+            'Base64Service', 'FacebookService',
             SigninController
         ]);
 
@@ -14,7 +14,7 @@
     function SigninController(
         $rootScope, $scope, $state, $filter,
         Restangular, Authentication, toastr,
-        FacebookService
+        Base64Service, FacebookService
     ) {
         var vm = this;
 
@@ -32,7 +32,7 @@
             else if(signType === 'facebook') {
                 FacebookService.get('userData').then(function(res) {
                     vm.signInfo.email = res.email;
-                    vm.signInfo.password = res.id;
+                    vm.signInfo.password = Base64Service.encode(res.id);
                     vm.signInfo.snsCode = '0101';
 
                     postData(vm.signInfo);
