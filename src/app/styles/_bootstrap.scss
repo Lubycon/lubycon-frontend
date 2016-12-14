@@ -12,7 +12,7 @@
     border-radius: 0;
     padding: 10px 15px;
     font-weight: 200;
-    background: #bbb;
+    background: #aaa;
     color: #fff;
     transition: width 0.25s, opacity 0.25s ease-in-out;
     outline: 0 !important;
@@ -55,4 +55,8 @@
     &.selected {
         background: $mint-color;
     }
+}
+.btn-facebook {
+    background: $facebook-color;
+    color: #fff;
 }

@@ -38,18 +38,19 @@
     }])
     .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {
-        // THIS IS SERVER LOCATION SWITCH
-        // port = { APACHE: 8888, mySql: 8889 }
         'host': 'http://52.199.147.215/v1', // TEST SERVER
-        'content': 'http://localhost:8888/contents/', // MY LOCAL
         'appkey': 'lubycon-back'
     })
-    .constant('SNSKEY', {
+    .constant('SNS_KEYS', {
+        // facebook: isLocalHost ? localhost_key : aws_key
+        'facebook': location.host.search('localhost') > -1 ? '235565303522189' : '235563266855726'
+    })
+    .constant('SNS_NAME', {
     // THIS IS GLOBAL SNSKEY FOR APP
         'email':'0100',
         'facebook':'0101',
         'google':'0102',
-        'instagrma':'0103'
+        'instagram':'0103'
     })
     .constant(); // ADD NEW CONSTANT
 

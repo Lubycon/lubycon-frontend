@@ -6,13 +6,15 @@
     .run([
         'CookieService','$log','$rootScope','$location', 'USER_AGENT', 'Tracker',
         'StateAuthentication','Authentication','$state', 'HistoryService', '$anchorScroll',
+        'FacebookService',
         runBlock
     ]);
 
     /** @ngInject */
     function runBlock(
             CookieService, $log, $rootScope, $location, USER_AGENT, Tracker,
-            StateAuthentication, Authentication, $state, HistoryService, $anchorScroll
+            StateAuthentication, Authentication, $state, HistoryService, $anchorScroll,
+            FacebookService
         ) {
         console.log($rootScope);
 
@@ -21,6 +23,9 @@
 
         // DISABLED SCROLLING BY SPACE KEY
         disableScrollBySpace();
+
+        // INIT FACEBOOK SDK
+        FacebookService.init();
 
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
@@ -41,7 +46,7 @@
 
             Tracker.post(toState, fromState);
             StateAuthentication.detect(toState);
-            
+
             $anchorScroll();
         });
     }

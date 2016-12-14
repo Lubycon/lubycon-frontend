@@ -73,9 +73,17 @@
             }
         }
         .btn {
+            position: relative;
             width: 100%;
             &:hover {
                 @include elasticAction(100%);
+            }
+
+            i {
+                position: absolute;
+                left: 12px;
+                top: 11px;
+                font-size: 18px;
             }
         }
     }

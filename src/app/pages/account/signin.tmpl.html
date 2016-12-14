@@ -4,8 +4,8 @@
     <div class="main-logo">
         <img src="assets/images/logo/svg/logo_black.svg" />
     </div>
-    <h4>{{'ACCOUNT.SIGNIN' | translate}}</h4>
-    <form ng-submit="vm.signin()" class="signin-form">
+    <h4>{{'ACCOUNT.SIGNIN.TITLE' | translate}}</h4>
+    <form class="signin-form">
         <div class="divide20"></div>
         <div class="signin-form-input">
             <div class="input-group">
@@ -13,7 +13,6 @@
                     <i class="fa fa-user" ng-class="{selected : vm.emailFocused}"></i>
                 </span>
                 <input
-                    required
                     type="email"
                     class="form-control"
                     placeholder="{{'LABEL.EMAIL' | translate}}"
@@ -27,7 +26,6 @@
                     <i class="fa fa-key" ng-class="{selected : vm.passwordFocused}"></i>
                 </span>
                 <input
-                    required
                     type="password"
                     class="form-control"
                     placeholder="{{'LABEL.PASSWORD' | translate}}"
@@ -38,9 +36,19 @@
             </div>
         </div>
         <div class="divide20"></div>
-        <button class="btn btn-mint" type="submit">{{'ACCOUNT.SIGNIN' | translate}}</button>
+        <button class="btn" ng-click="vm.signin('email')">
+            <i class="fa fa-envelope-o"></i>
+            {{'ACCOUNT.SIGNIN.EMAIL' | translate}}
+        </button>
         <div class="divide10"></div>
-        <a class="btn" ui-sref="common.noFooter.signup">{{'ACCOUNT.SIGNUP' | translate}}</a>
+        <button class="btn btn-facebook" ng-click="vm.signin('facebook')">
+            <i class="fa fa-facebook"></i>
+            {{'ACCOUNT.SIGNIN.FACEBOOK' | translate}}
+        </button>
+        <div class="divide10"></div>
+        <button class="btn btn-mint" ui-sref="common.noFooter.signup">
+            {{'ACCOUNT.SIGNUP' | translate}}
+        </button>
     </form>
     <div class="signin-action-input">
         <a ui-sref="common.default.findPassword" class="forgot-password">{{'ACCOUNT.FIND_PASSWORD' | translate}}</a>

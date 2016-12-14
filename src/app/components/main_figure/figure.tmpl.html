@@ -4,7 +4,7 @@
             <span class="main-text">{{vm.mainText}}</span>
             <div>
                 <a class="btn btn-ghost" ui-sref="common.figure.contents({ category: '3d' })">{{'FIGURE.MORE_CONTENTS' | translate}}</a>
-                <a ng-show="!$root.memberState.sign" class="btn btn-mint" ui-sref="common.noFooter.signin">{{'ACCOUNT.SIGNIN' | translate}}</a>
+                <a ng-show="!$root.memberState.sign" class="btn btn-mint" ui-sref="common.noFooter.signin">{{'ACCOUNT.SIGNIN.TITLE' | translate}}</a>
                 <a ng-show="$root.memberState.sign && $root.memberState.condition === 'inactive'"
                     class="btn btn-mint"
                     ui-sref="common.noFooter.cert({type:'signup'})"
