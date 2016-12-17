@@ -28,7 +28,7 @@
             if(typeof Pusher !== 'undefined') initPusher();
             else {
                 interval = $interval(function() {
-                    console.log(count);
+                    console.log('pusher sdk load : ', count);
                     if(count > 500) {
                         $interval.cancel(interval);
                         console.error('Pusher SDK loading is failed');
