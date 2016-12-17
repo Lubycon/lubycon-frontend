@@ -3,7 +3,7 @@
 
     angular
         .module('services')
-        .factory('ArrayService', ['$rootScope',ArrayService]);
+        .factory('ArrayService', ['$rootScope', ArrayService]);
 
     function ArrayService($rootScope) {
 

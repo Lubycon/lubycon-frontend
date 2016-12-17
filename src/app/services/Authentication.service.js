@@ -6,20 +6,16 @@
         .factory('Authentication', [
             'CookieService', '$rootScope', '$rootScope', 'Restangular',
             '$window', '$location', 'toastr', '$state', '$filter',
-            'HistoryService',
+            'HistoryService', 'AppSettingService',
             Authentication
         ]);
 
     function Authentication(
         CookieService, $cookies, $rootScope, Restangular,
         $window, $location, toastr, $state, $filter,
-        HistoryService
+        HistoryService, AppSettingService
     ) {
-        console.log(Restangular);
         var defaultHeaders = Restangular.defaultHeaders;
-        Restangular.setDefaultHeaders(defaultHeaders);
-        console.log(defaultHeaders);
-
         var service = {
             signIn: Restangular.service('members/signin'),
             signUp: Restangular.service('members/signup'),
@@ -65,7 +61,7 @@
 
             // SET HTTP HEADER...
             defaultHeaders = Restangular.defaultHeaders;
-            defaultHeaders["X-lubycon-Token"] = oauthdata;
+            defaultHeaders["X-lubycon-token"] = oauthdata;
             Restangular.setDefaultHeaders(defaultHeaders);
 
             // GET MEMBER DATA...
@@ -76,9 +72,9 @@
                         CookieService.put('member', $rootScope.member);
 
                         if(isExistBackState) {
-                            console.log($rootScope.clientLocation);
-                            var stateName = $rootScope.clientLocation.from.name,
-                                stateParams = $rootScope.clientLocation.from.params;
+                            console.log(HistoryService.get());
+                            var stateName = HistoryService.get().from.name,
+                                stateParams = HistoryService.get().from.params;
 
                             if(stateParams) $state.go(stateName,stateParams);
                             else $state.go(stateName);

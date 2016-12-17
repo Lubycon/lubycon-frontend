@@ -28,10 +28,7 @@
             authenticationDetect
         ])
         .run([
-            '$rootScope', '$location', '$state',
-            'CookieService', 'Restangular', 'commonLayout',
-            '$window', 'CONSOLE_LOG', '$timeout',
-            run
+            '$window', 'CONSOLE_LOG', run
         ]);
 
 
@@ -42,49 +39,7 @@
     /** @ngInject */
     function httpConfig($httpProvider) {
         $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
-
         $httpProvider.interceptors.push('httpInterceptor');
-    }
-
-    function authenticationDetect($rootScope, $state, CookieService, Restangular, $translate, Authentication) {
-
-        var defaultHeaders = angular.extend({}, Restangular.defaultHeaders, {
-            "Content-Type": "application/json",
-            'X-lubycon-version': '1.0.0'
-        });
-
-        console.log('authentication init start');
-
-        Restangular.setDefaultHeaders(defaultHeaders);
-
-        var oauthData = CookieService.getDecrypt('oauth');
-        var memberState = CookieService.getDecrypt('memberState');
-        console.log(oauthData,memberState);
-
-        if(oauthData && memberState && memberState.sign) {
-            defaultHeaders['X-lubycon-Token'] = oauthData;
-            Restangular.setDefaultHeaders(defaultHeaders);
-            $rootScope.memberState = memberState;
-
-            console.log(Restangular.defaultHeaders);
-
-            Restangular.one('members/simple').customGET().then(function (res) {
-                if(res.status.code === '0000') {
-                    $rootScope.member = res.result;
-                    CookieService.put('member', $rootScope.user);
-                }
-                else {
-                    Authentication.clearCredentials('reload');
-                }
-            });
-        }
-        else {
-            Restangular.setDefaultHeaders(defaultHeaders);
-            $rootScope.memberState = {
-                sign: false
-            };
-            CookieService.putEncrypt('memberState',$rootScope.memberState);
-        }
     }
 
     function toastSetting(toastrConfig) {
@@ -97,7 +52,6 @@
         toastrConfig.progressBar = false;
         toastrConfig.maxOpened = 10;
         toastrConfig.autoDismiss = false;
-
         toastrConfig.showEasing = 'swing';
     }
 
@@ -147,7 +101,6 @@
         RestangularProvider.setBaseUrl(API_CONFIG.host);
 
         console.log('Server Location : ' + API_CONFIG.host);
-        console.log('Restangular DEFAULT HEADER : ', RestangularProvider.defaultHeaders);
     }
 
     function translateConfig($translateProvider, $translatePartialLoaderProvider, APP_LANGUAGES) {
@@ -193,17 +146,54 @@
         $translateProvider.registerAvailableLanguageKeys(languageKeys, {
             'ko_KR': 'ko',
             'en_US': 'en', 'en_UK': 'en'
-        })
-        .determinePreferredLanguage();
+        }).determinePreferredLanguage();
 
         $translateProvider.useLocalStorage();
     }
 
-    function run(
-        $rootScope, $location, $state, CookieService, Restangular,
-        commonLayout,
-        $window, CONSOLE_LOG , $timeout
+    // RUN ---------------------------------->
+
+    function authenticationDetect(
+        $rootScope, $state, CookieService, Restangular, $translate, Authentication
     ) {
+
+        var defaultHeaders = angular.extend({}, Restangular.defaultHeaders, {
+            'Content-Type': 'application/json',
+            'X-lubycon-version': '1.0.0'
+        });
+
+        Restangular.setDefaultHeaders(defaultHeaders);
+
+        var oauthData = CookieService.getDecrypt('oauth');
+        var memberState = CookieService.getDecrypt('memberState');
+
+        if(oauthData && memberState && memberState.sign) {
+            defaultHeaders['X-lubycon-Token'] = oauthData;
+            Restangular.setDefaultHeaders(defaultHeaders);
+            $rootScope.memberState = memberState;
+
+            console.log(Restangular.defaultHeaders);
+
+            Restangular.one('members/simple').customGET().then(function (res) {
+                if(res.status.code === '0000') {
+                    $rootScope.member = res.result;
+                    CookieService.put('member', $rootScope.user);
+                }
+                else {
+                    Authentication.clearCredentials('reload');
+                }
+            });
+        }
+        else {
+            Restangular.setDefaultHeaders(defaultHeaders);
+            $rootScope.memberState = {
+                sign: false
+            };
+            CookieService.putEncrypt('memberState',$rootScope.memberState);
+        }
+    }
+
+    function run($window, CONSOLE_LOG) {
         // CONSOLE LOG SWITCH
         if(CONSOLE_LOG === false) {
             var console = {};

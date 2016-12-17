@@ -6,7 +6,7 @@
     .run([
         'CookieService','$log','$rootScope','$location', 'USER_AGENT', 'Tracker',
         'StateAuthentication','Authentication','$state', 'HistoryService', '$anchorScroll',
-        'FacebookService', 'PushService',
+        'AppSettingService',
         runBlock
     ]);
 
@@ -14,21 +14,18 @@
     function runBlock(
             CookieService, $log, $rootScope, $location, USER_AGENT, Tracker,
             StateAuthentication, Authentication, $state, HistoryService, $anchorScroll,
-            FacebookService, PushService
+            AppSettingService
         ) {
-        console.log($rootScope);
+        console.log('$rootScope : ', $rootScope);
 
         // SET DEVICE INFO...
         $rootScope.deviceInfo = USER_AGENT;
 
+        // SET APP SETTING...
+        AppSettingService.init();
+
         // DISABLED SCROLLING BY SPACE KEY
         disableScrollBySpace();
-
-        // INIT FACEBOOK SDK
-        FacebookService.init();
-
-        // INIT PUSH SDK
-        PushService.init();
 
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){

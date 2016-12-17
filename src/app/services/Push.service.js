@@ -8,12 +8,16 @@
     function PushService($rootScope, $interval) {
 
         var service = {
-            init: init
+
         };
 
+        init();
         return service;
 
         // PUBLIC METHOD
+
+
+        // PRIVATE METHOD
 
         /*
             @name: init
@@ -28,7 +32,6 @@
             if(typeof Pusher !== 'undefined') initPusher();
             else {
                 interval = $interval(function() {
-                    console.log('pusher sdk load : ', count);
                     if(count > 500) {
                         $interval.cancel(interval);
                         console.error('Pusher SDK loading is failed');
@@ -43,8 +46,6 @@
             }
         }
 
-        // PRIVATE METHOD
-
         /*
             @name: initPusher
             @desc: init Pusher config
@@ -52,7 +53,7 @@
             @return Void
         */
         function initPusher() {
-            Pusher.logToConsole = true;
+            Pusher.logToConsole = false;
 
             var pusher = new Pusher('fd5230aae8574f4d60cc', {
                 cluster: 'ap1',

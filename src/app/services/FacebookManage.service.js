@@ -18,7 +18,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('services')
         .factory('FacebookService', FacebookService)
     ;
 
@@ -28,7 +28,6 @@
     ) {
 
         var service = {
-            init: init,
             login: login,
             logout: logout,
             get: get,
@@ -43,6 +42,7 @@
             version: 'v2.8'
         };
 
+        init();
         return service;
 
         // PUBLIC METHODS //
