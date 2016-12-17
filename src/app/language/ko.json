@@ -8,7 +8,8 @@
         "SIGNIN" : {
             "TITLE" : "로그인",
             "EMAIL" : "이메일로 로그인",
-            "FACEBOOK" : "페이스북으로 계속 하기"
+            "FACEBOOK" : "페이스북으로 계속 하기",
+            "GOOGLE" : "구글로 계속 하기"
         },
         "SIGNUP" : "회원가입",
         "SIGNOUT" : "로그아웃",

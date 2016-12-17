@@ -75,6 +75,15 @@
         .btn {
             position: relative;
             width: 100%;
+            &.sns-btn {
+                width: 50%;
+                font-size: 12px;
+                text-align: center;
+                &:hover {
+                    @include elasticAction(50%);
+                }
+            }
+
             &:hover {
                 @include elasticAction(100%);
             }
@@ -83,7 +92,7 @@
                 position: absolute;
                 left: 12px;
                 top: 11px;
-                font-size: 18px;
+                font-size: 15px;
             }
         }
     }

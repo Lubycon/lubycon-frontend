@@ -6,7 +6,7 @@
         .controller('SigninController', [
             '$rootScope', '$scope', '$state', '$filter',
             'Restangular', 'Authentication', 'toastr',
-            'Base64Service', 'FacebookService',
+            'Base64Service', 'FacebookService', 'GoogleService',
             'SNS_NAME',
             SigninController
         ]);
@@ -15,7 +15,7 @@
     function SigninController(
         $rootScope, $scope, $state, $filter,
         Restangular, Authentication, toastr,
-        Base64Service, FacebookService,
+        Base64Service, FacebookService, GoogleService,
         SNS_NAME
     ) {
         var vm = this;
@@ -43,6 +43,19 @@
                     vm.signInfo.snsCode = '0101';
 
                     vm._snsTemp = res;
+                    vm._snsTemp.snsName = $filter('translate')('SNS_NAME.' + vm.signInfo.snsCode);
+
+                    postData(vm.signInfo);
+                });
+            }
+            else if(signType === 'google') {
+                GoogleService.get('userData').then(function(res) {
+                    vm.signInfo.email = res.emails[0].value;
+                    vm.signInfo.password = Base64Service.encode(res.id);
+                    vm.signInfo.snsCode = '0102';
+
+                    vm._snsTemp = res;
+                    vm._snsTemp.name = res.displayName;
                     vm._snsTemp.snsName = $filter('translate')('SNS_NAME.' + vm.signInfo.snsCode);
 
                     postData(vm.signInfo);
@@ -105,6 +118,15 @@
                         country: vm._snsTemp.locale.split('_')[1],
                         newsletter: false,
                         snsCode: vm.signInfo.snsCode
+                    };
+                break;
+                case 'google' :
+                    console.log(sns);
+                    output = {
+                        email: vm._snsTemp.email,
+                        nickname: vm._snsTemp.name.replace(/\s/g,''),
+                        password:  Base64Service.encode(vm._snsTemp.id),
+                        country: null
                     };
                 break;
             }

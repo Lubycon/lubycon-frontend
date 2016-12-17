@@ -6,7 +6,7 @@
     .run([
         'CookieService','$log','$rootScope','$location', 'USER_AGENT', 'Tracker',
         'StateAuthentication','Authentication','$state', 'HistoryService', '$anchorScroll',
-        'AppSettingService',
+        'AppSettingService', 'GoogleService',
         runBlock
     ]);
 
@@ -14,7 +14,7 @@
     function runBlock(
             CookieService, $log, $rootScope, $location, USER_AGENT, Tracker,
             StateAuthentication, Authentication, $state, HistoryService, $anchorScroll,
-            AppSettingService
+            AppSettingService, GoogleService
         ) {
         console.log('$rootScope : ', $rootScope);
 
@@ -23,6 +23,9 @@
 
         // SET APP SETTING...
         AppSettingService.init();
+
+        // GOOGLE SDK INIT...
+        GoogleService.init();
 
         // DISABLED SCROLLING BY SPACE KEY
         disableScrollBySpace();

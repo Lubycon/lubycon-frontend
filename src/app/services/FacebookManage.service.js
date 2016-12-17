@@ -19,7 +19,11 @@
 
     angular
         .module('services')
-        .factory('FacebookService', FacebookService)
+        .factory('FacebookService', [
+            '$q', 'CookieService', '$filter',
+            '$interval', '$window', 'SNS_KEYS', '$rootScope',
+            FacebookService
+        ])
     ;
 
     function FacebookService(

@@ -41,10 +41,17 @@
             {{'ACCOUNT.SIGNIN.EMAIL' | translate}}
         </button>
         <div class="divide10"></div>
-        <button class="btn btn-facebook" ng-click="vm.signin('facebook')">
-            <i class="fa fa-facebook"></i>
-            {{'ACCOUNT.SIGNIN.FACEBOOK' | translate}}
-        </button>
+        <div class="btn-group full-width">
+            <button class="btn btn-facebook sns-btn" ng-click="vm.signin('facebook')">
+                <i class="fa fa-facebook"></i>
+                {{'ACCOUNT.SIGNIN.FACEBOOK' | translate}}
+            </button>
+            <button class="btn btn-google sns-btn" ng-click="vm.signin('google')">
+                <i class="fa fa-google-plus"></i>
+                {{'ACCOUNT.SIGNIN.GOOGLE' | translate}}
+            </button>
+        </div>
+
         <div class="divide10"></div>
         <button class="btn btn-mint" ui-sref="common.noFooter.signup">
             {{'ACCOUNT.SIGNUP' | translate}}

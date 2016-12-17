@@ -81,6 +81,16 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'fb-sdk-js'));
     </script>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://apis.google.com/js/client:plusone.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'google-plus-sdk-js'));
+    </script>
     <!--SDK LOAD END-->
     <!--PUSHER LOAD START-->
     <script>
