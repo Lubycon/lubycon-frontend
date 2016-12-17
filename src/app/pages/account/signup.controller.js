@@ -16,8 +16,7 @@
         FormValidateService, $translate,
         getData
     ) {
-        var vm = this,
-            api = Authentication.signUp;
+        var vm = this;
 
         vm.isMobile = $rootScope.deviceInfo.isMobile;
 
@@ -67,7 +66,7 @@
             var passwordCheck = vm.member.password === vm.rePassword;
 
             if(validator()) {
-                api.post(
+                Authentication.signUp.post(
                     vm.member, undefined, undefined, {'Content-Type':'application/json'}
                 ).then(function(res) {
                     console.log(res);

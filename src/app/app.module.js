@@ -38,7 +38,7 @@
     }])
     .constant('CONSOLE_LOG', true) // REAL SERVER -> false
     .constant('API_CONFIG', {
-        'host': 'http://52.199.147.215/v1', // TEST SERVER
+        'host': 'http://api.lubycon.com/v1', // TEST SERVER
         'appkey': 'lubycon-back'
     })
     .constant('SNS_KEYS', {

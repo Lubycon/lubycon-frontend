@@ -54,3 +54,35 @@
         <a ui-sref="common.default.findPassword" class="forgot-password">{{'ACCOUNT.FIND_PASSWORD' | translate}}</a>
     </div>
 </div>
+
+<!-- SNS LOGIN MODAL -->
+<div id="snsLogin" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" data-dismiss="modal">
+                    <i class="fa fa-close" ></i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <h4>안녕하세요 {{vm._snsTemp.name}}!</h4>
+                <p>{{'SNS_NAME.' + vm.signInfo.snsCode | translate}} 로그인을 처음 진행하시네요</p>
+                <p>회원가입을 진행하시면 LUBYCON
+                    <a ui-sref="common.noFooter.terms-of-service" target="_blank">이용약관</a> 및
+                    <a ui-sref="common.noFooter.private-policy" target="_blank">개인정보보호정책</a>에 동의하는 것으로 간주됩니다
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button
+                        class="btn btn-mint"
+                        ng-click="vm.snsSignin()"
+                    >
+                        {{'FORM.CONTINUE' | translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SNS LOGIN MODAL -->

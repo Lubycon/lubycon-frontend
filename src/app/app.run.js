@@ -32,7 +32,8 @@
 
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
-
+            // HIDE MODAL IN PREV PAGE
+            hideModalWindow();
         });
 
         $rootScope.$on('$stateChangeSuccess',function(event,toState,toParams,fromState,fromParams) {
@@ -61,6 +62,12 @@
                 return false;
             }
         };
+    }
+
+    function hideModalWindow() {
+        angular.element('.modal[role="dialog"]').modal('hide');
+        angular.element('body').removeClass('modal modal-open');
+        angular.element('.modal-backdrop').remove();
     }
 
     function generateURL(param) {

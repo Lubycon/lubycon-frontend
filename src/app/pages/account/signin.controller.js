@@ -24,6 +24,8 @@
             snsCode: null
         };
 
+        vm._snsTemp = null;
+
         // PUBLIC METHOD
 
         vm.signin = signin;
@@ -38,10 +40,35 @@
                     vm.signInfo.password = Base64Service.encode(res.id);
                     vm.signInfo.snsCode = '0101';
 
+                    vm._snsTemp = res;
+
                     postData(vm.signInfo);
                 });
             }
             else console.error('signType is not exist');
+        }
+
+        vm.snsSignin = snsSignin;
+        function snsSignin() {
+            console.log('SNS SIGN IN');
+
+            Authentication.signUp.post({
+                email: vm._snsTemp.email,
+                nickname: vm._snsTemp.name.replace(/\s/g,''),
+                password: Base64Service.encode(vm._snsTemp.id),
+                country: vm._snsTemp.locale.split('_')[1],
+                newsletter: false,
+                snsCode: vm.signInfo.snsCode
+            }, undefined, undefined, {'Content-Type':'application/json'})
+            .then(function(res) {
+                console.log(res);
+                if(res.status.code === "0000") {
+                    Authentication.setCredentials(res.result.token,'inactive');
+                }
+                else {
+                    console.log('sign up is failed!!!!',res);
+                }
+            });
         }
 
 
@@ -58,7 +85,12 @@
                     Authentication.setCredentials(res.result.token,res.result.condition);
                 }
                 else {
-                    toastr.error($filter('translate')('ERROR.SIGNIN'));
+                    if(vm.signInfo.snsCode === '0100') { // EMAIL LOGIN
+                        toastr.error($filter('translate')('ERROR.SIGNIN'));
+                    }
+                    else { // SNS LOGIN -> AUTOMATICALLY SIGNUP
+                        angular.element('#snsLogin').modal();
+                    }
                 }
             });
         }
