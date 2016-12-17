@@ -58,7 +58,7 @@
                 interval;
 
             if(typeof FB !== 'undefined') FB.init(appInfo);
-            else if(!window.NOT_FB) {
+            else {
                 interval = $interval(function() {
                     if(count > 500) {
                         $interval.cancel(interval);

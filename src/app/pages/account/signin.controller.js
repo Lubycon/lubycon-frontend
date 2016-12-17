@@ -28,7 +28,10 @@
 
         vm.signin = signin;
         function signin(signType){
-            if(signType === 'email') postData(vm.signInfo);
+            if(signType === 'email') {
+                vm.signInfo.snsCode = '0100';
+                postData(vm.signInfo);
+            }
             else if(signType === 'facebook') {
                 FacebookService.get('userData').then(function(res) {
                     vm.signInfo.email = res.email;

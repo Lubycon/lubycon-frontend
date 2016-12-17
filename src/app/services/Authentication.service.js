@@ -5,13 +5,15 @@
         .module('services')
         .factory('Authentication', [
             'CookieService', '$rootScope', '$rootScope', 'Restangular',
-            '$window', '$location', 'toastr', '$state',
+            '$window', '$location', 'toastr', '$state', '$filter',
+            'HistoryService',
             Authentication
         ]);
 
     function Authentication(
         CookieService, $cookies, $rootScope, Restangular,
-        $window, $location, toastr, $state
+        $window, $location, toastr, $state, $filter,
+        HistoryService
     ) {
         console.log(Restangular);
         var defaultHeaders = Restangular.defaultHeaders;
@@ -39,10 +41,10 @@
 
             // SET DESCTINATION
             if(memberState) {
-                isExistBackState = $rootScope.clientLocation.from.url !== '^';
+                isExistBackState = HistoryService.get().from.url !== '^';
 
                 if(memberState === 'inactive') {
-                    toastr.warning('아직 인증이 끝나지 않았습니다. 이 메세지를 클릭하시면 인증페이지로 이동합니다.',{
+                    toastr.warning($filter('translate')('TOAST.ACCOUNT.NOT_AUTHENTICATE'),{
                         closeDuration: 10000,
                         onTap: function() {
                             $location.path('/certs/code/signup');

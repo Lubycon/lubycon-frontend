@@ -82,6 +82,18 @@
         }(document, 'script', 'fb-sdk-js'));
     </script>
     <!--SDK LOAD END-->
+    <!--PUSHER LOAD START-->
+    <script>
+        (function(d, s, id) {
+            var ajs, pjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://js.pusher.com/3.2/pusher.min.js";
+            pjs.parentNode.insertBefore(js, pjs);
+        }(document, 'script', 'pusher-js'));
+    </script>
+    <!--PUSHER LOAD END-->
     <!--start webGL -->
     <script src="/assets/js/webGL/OrbitControls.js"></script>
     <script src="/assets/js/webGL/TransformControls.js"></script>

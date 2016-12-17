@@ -6,7 +6,7 @@
     .run([
         'CookieService','$log','$rootScope','$location', 'USER_AGENT', 'Tracker',
         'StateAuthentication','Authentication','$state', 'HistoryService', '$anchorScroll',
-        'FacebookService',
+        'FacebookService', 'PushService',
         runBlock
     ]);
 
@@ -14,7 +14,7 @@
     function runBlock(
             CookieService, $log, $rootScope, $location, USER_AGENT, Tracker,
             StateAuthentication, Authentication, $state, HistoryService, $anchorScroll,
-            FacebookService
+            FacebookService, PushService
         ) {
         console.log($rootScope);
 
@@ -26,6 +26,9 @@
 
         // INIT FACEBOOK SDK
         FacebookService.init();
+
+        // INIT PUSH SDK
+        PushService.init();
 
         // SET ROUTE INFO...
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){

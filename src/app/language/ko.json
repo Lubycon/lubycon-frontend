@@ -1,4 +1,9 @@
 {
+    "TOAST" : {
+        "ACCOUNT" : {
+            "NOT_AUTHENTICATE" : "아직 인증이 끝나지 않았습니다<br>이 메세지를 클릭하시면 인증페이지로 이동합니다"
+        }
+    },
     "ACCOUNT" : {
         "SIGNIN" : {
             "TITLE" : "로그인",
