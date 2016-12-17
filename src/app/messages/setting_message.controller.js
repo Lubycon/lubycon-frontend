@@ -26,16 +26,16 @@
 
         vm.success = $stateParams.success;
 
-        if(!vm.success){
+        if(vm.success){
             vm.message.icon = 'fa-thumbs-o-up';
             vm.message.iconColor = 'mint';
             vm.message.title = 'SUCCESS';
             vm.message.content = 'Your setting is successful uploaded. Thank you!';
             vm.message.buttons = [
-                {
-                    func: goToMyDashboard,
-                    content: 'CHECK MY DASHBOARD'
-                },
+                // {
+                //     func: goToMyDashboard,
+                //     content: 'CHECK MY DASHBOARD'
+                // },
                 {
                     func: goToMain,
                     content: 'CONTINUE'

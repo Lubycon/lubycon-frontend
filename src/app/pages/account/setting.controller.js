@@ -5,15 +5,17 @@
         .module('app.pages.account')
         .controller('AccountSettingController', [
             '$rootScope', '$scope', '$state',
-            '$stateParams', 'Restangular',
-            'API_CONFIG', '$filter',
-            'getMember','getData', AccountSettingController
+            '$stateParams', 'Restangular', 'AppSettingService',
+            'API_CONFIG', '$filter', 'Authentication',
+            'getMember','getData',
+            AccountSettingController
         ]);
 
     /** @ngInject */
     function AccountSettingController(
         $rootScope, $scope, $state, $stateParams,
-        Restangular, API_CONFIG, $filter,
+        Restangular, AppSettingService,
+        API_CONFIG, $filter, Authentication,
         getMember, getData
     ) {
 
@@ -28,14 +30,14 @@
 
         vm.publicOption = vm.data.publicOption;
 
-        vm.publicOptionList = ['Public','Private'];
-        vm.languageLevelList = ['Beginner','Advanced','Fluent'];
+        vm.publicOptionList = ['Public', 'Private'];
+        vm.languageLevelList = ['Beginner', 'Advanced', 'Fluent'];
 
         console.log(getData);
         vm.countryList = getData.result.country;
         vm.jobList = getData.result.job;
 
-        vm.historyKind = ['Work Experience','Education','Awards'];
+        vm.historyKind = ['Work Experience', 'Education', 'Awards'];
         vm.yearList = [];
         vm.monthList = [];
 
@@ -46,6 +48,9 @@
             minimumResultsForSearch: -1
         };
 
+
+
+        // PUBLIC METHOD
 
         vm.init = (init)();
         function init() {
@@ -125,10 +130,24 @@
             console.log(vm.data.history);
             console.log(vm.data);
 
-            Restangular.all('members/detail/' + $stateParams.memberId).customPOST(vm.data).then(function(res) {
-                console.log(res);
+            Restangular.all('members/detail/' + $stateParams.memberId)
+            .customPOST(vm.data).then(function(res) {
+                if(res.status.code === '0000') {
+                    console.log(res);
+                    Authentication.updateCredentials($rootScope.memberState.condition, {
+                        name: 'common.noFooter.settingMessage',
+                        params: {
+                            success: true
+                        }
+                    });
+                }
+                else $state.go('common.noFooter.settingMessage', { success: false });
             });
         };
+
+
+
+        // PRIVATE METHOD
 
         function encodeDate(date) {
             date = new Date(date);

@@ -46,8 +46,6 @@
         function set(key, value) {
             var defaultHeaders = Restangular.defaultHeaders;
 
-            $rootScope.setting[key] = value;
-
             var headerParam = ['country', 'language'],
                 headerKey,
                 _temp = {};
@@ -55,11 +53,12 @@
             if(headerParam.indexOf(key) > -1) {
                 headerKey = 'X-lubycon-' + key;
                 _temp[headerKey] = value;
+                if(key === 'country') _temp['X-lubycon-language'] = setLanguage(value);
 
                 defaultHeaders = angular.extend({}, Restangular.defaultHeaders, _temp);
             }
 
-            console.log(defaultHeaders);
+            Restangular.setDefaultHeaders(defaultHeaders);
         }
 
         // PRIVATE METHOD
@@ -76,6 +75,13 @@
 
             Restangular.setDefaultHeaders(defaultHeaders);
             console.log(Restangular.defaultHeaders);
+        }
+
+        function setLanguage(country) {
+            switch(country) {
+                case 'KR': return 'ko';
+                default: return 'en';
+            }
         }
     }
 })();

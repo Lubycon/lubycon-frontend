@@ -35,7 +35,7 @@
             var oauthdata = token;
             var isExistBackState;
 
-            // SET DESCTINATION
+            // SET DESTINATION
             if(memberState) {
                 isExistBackState = HistoryService.get().from.url !== '^';
 
@@ -59,7 +59,7 @@
             CookieService.putEncrypt('oauth', oauthdata);
             CookieService.putEncrypt('memberState', $rootScope.memberState);
 
-            // SET HTTP HEADER...
+            // SET TOKEN IN HTTP HEADER...
             defaultHeaders = Restangular.defaultHeaders;
             defaultHeaders["X-lubycon-token"] = oauthdata;
             Restangular.setDefaultHeaders(defaultHeaders);
@@ -69,6 +69,8 @@
                 function (res) {
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
+                        console.log($rootScope.member);
+                        AppSettingService.set('country',$rootScope.member.country.alpha2Code);
                         CookieService.put('member', $rootScope.member);
 
                         if(isExistBackState) {
@@ -76,7 +78,7 @@
                             var stateName = HistoryService.get().from.name,
                                 stateParams = HistoryService.get().from.params;
 
-                            if(stateParams) $state.go(stateName,stateParams);
+                            if(stateParams) $state.go(stateName, stateParams);
                             else $state.go(stateName);
                         }
                         else $state.go('common.figure.main');
@@ -99,7 +101,7 @@
             if(reload === 'reload') $window.location.reload();
         }
 
-        function updateCredentials(memberState,destination) {
+        function updateCredentials(memberState, state) {
             $rootScope.memberState.condition = memberState;
             CookieService.putEncrypt('memberState', $rootScope.memberState);
 
@@ -108,8 +110,9 @@
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
                         CookieService.put('member', $rootScope.member);
+                        AppSettingService.set('country',$rootScope.member.country.alpha2Code);
 
-                        if(destination) $location.path(destination);
+                        if(state) $state.go(state.name, state.params);
                         else return false;
                     }
                     else {
@@ -136,6 +139,8 @@
                     delete $rootScope.memberState.condition;
 
                     CookieService.putEncrypt('memberState',$rootScope.memberState);
+
+                    AppSettingService.set('country',$rootScope.setting.country_code);
                     if(reload === 'reload') {
                         $location.path(target);
                         $window.location.reload();

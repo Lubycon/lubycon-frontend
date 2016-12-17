@@ -88,7 +88,7 @@
                     ui-select2
                     class="half-width"
                     ng-model="vm.member.country"
-                    ng-options="country.name as country.name for country in vm.countryList"
+                    ng-options="country.alpha2Code as country.name for country in vm.countryList"
                 >
                 </select>
                 <input

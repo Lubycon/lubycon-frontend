@@ -25,6 +25,7 @@
         .run([
             '$rootScope', '$state', 'CookieService',
             'Restangular', '$translate', 'Authentication',
+            'AppSettingService',
             authenticationDetect
         ])
         .run([
@@ -154,7 +155,9 @@
     // RUN ---------------------------------->
 
     function authenticationDetect(
-        $rootScope, $state, CookieService, Restangular, $translate, Authentication
+        $rootScope, $state, CookieService,
+        Restangular, $translate, Authentication,
+        AppSettingService
     ) {
 
         var defaultHeaders = angular.extend({}, Restangular.defaultHeaders, {
@@ -177,7 +180,8 @@
             Restangular.one('members/simple').customGET().then(function (res) {
                 if(res.status.code === '0000') {
                     $rootScope.member = res.result;
-                    CookieService.put('member', $rootScope.user);
+                    CookieService.put('member', $rootScope.member);
+                    AppSettingService.set('country',$rootScope.member.country.alpha2Code);
                 }
                 else {
                     Authentication.clearCredentials('reload');
