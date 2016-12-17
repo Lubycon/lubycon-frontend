@@ -65,12 +65,9 @@
                 </a>
             </div>
             <div class="modal-body">
-                <h4>안녕하세요 {{vm._snsTemp.name}}!</h4>
-                <p>{{'SNS_NAME.' + vm.signInfo.snsCode | translate}} 로그인을 처음 진행하시네요</p>
-                <p>회원가입을 진행하시면 LUBYCON
-                    <a ui-sref="common.noFooter.terms-of-service" target="_blank">이용약관</a> 및
-                    <a ui-sref="common.noFooter.private-policy" target="_blank">개인정보보호정책</a>에 동의하는 것으로 간주됩니다
-                </p>
+                <h4 translate="SIGNUP.SNS_MENT.1" translate-values="{value: vm._snsTemp.name}"></h4>
+                <p translate="SIGNUP.SNS_MENT.2" translate-values="{value: vm._snsTemp.snsName}"></p>
+                <p translate="SIGNUP.SNS_MENT.3"></p>
             </div>
             <div class="modal-footer">
                 <div class="btn-group">

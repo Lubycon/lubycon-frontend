@@ -8,7 +8,7 @@
         "SIGNIN" : {
             "TITLE" : "로그인",
             "EMAIL" : "이메일로 로그인",
-            "FACEBOOK" : "페이스북으로 로그인"
+            "FACEBOOK" : "페이스북으로 계속 하기"
         },
         "SIGNUP" : "회원가입",
         "SIGNOUT" : "로그아웃",
@@ -22,7 +22,12 @@
     },
     "SIGNUP" : {
         "DOCUMENT_NOTICE" : "을 읽었고 이에 동의합니다",
-        "NEWSLETTER_NOTICE" : "뉴스레터 이메일 수신에 동의하세요?"
+        "NEWSLETTER_NOTICE" : "뉴스레터 이메일 수신에 동의하세요?",
+        "SNS_MENT" : {
+            "1" : "안녕하세요 {{value}}!",
+            "2" : "{{value}} 로그인을 처음 진행하세네요",
+            "3" : "회원가입을 진행하시면 LUBYCON <a href=\"/docs/terms\" target=\"_blank\">이용약관</a> 및 <a href=\"/docs/privatepolicy\" target=\"_blank\">개인정보이용정책</a>에 동의하는 것으로 간주됩니다"
+        }
     },
     "LABEL" : {
         "EMAIL" : "이메일",

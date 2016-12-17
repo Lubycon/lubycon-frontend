@@ -47,10 +47,9 @@
     })
     .constant('SNS_NAME', {
     // THIS IS GLOBAL SNSKEY FOR APP
-        'email':'0100',
-        'facebook':'0101',
-        'google':'0102',
-        'instagram':'0103'
+        '0100':'email',
+        '0101':'facebook',
+        '0102':'google'
     })
     .constant(); // ADD NEW CONSTANT
 

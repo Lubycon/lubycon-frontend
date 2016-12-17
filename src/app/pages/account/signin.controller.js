@@ -7,6 +7,7 @@
             '$rootScope', '$scope', '$state', '$filter',
             'Restangular', 'Authentication', 'toastr',
             'Base64Service', 'FacebookService',
+            'SNS_NAME',
             SigninController
         ]);
 
@@ -14,7 +15,8 @@
     function SigninController(
         $rootScope, $scope, $state, $filter,
         Restangular, Authentication, toastr,
-        Base64Service, FacebookService
+        Base64Service, FacebookService,
+        SNS_NAME
     ) {
         var vm = this;
 
@@ -41,6 +43,7 @@
                     vm.signInfo.snsCode = '0101';
 
                     vm._snsTemp = res;
+                    vm._snsTemp.snsName = $filter('translate')('SNS_NAME.' + vm.signInfo.snsCode);
 
                     postData(vm.signInfo);
                 });
@@ -50,16 +53,11 @@
 
         vm.snsSignin = snsSignin;
         function snsSignin() {
-            console.log('SNS SIGN IN');
+            console.log('SNS SIGN IN', generateSNSMemberData(SNS_NAME[vm.signInfo.snsCode]));
 
-            Authentication.signUp.post({
-                email: vm._snsTemp.email,
-                nickname: vm._snsTemp.name.replace(/\s/g,''),
-                password: Base64Service.encode(vm._snsTemp.id),
-                country: vm._snsTemp.locale.split('_')[1],
-                newsletter: false,
-                snsCode: vm.signInfo.snsCode
-            }, undefined, undefined, {'Content-Type':'application/json'})
+            Authentication.signUp.post(
+                generateSNSMemberData(SNS_NAME[vm.signInfo.snsCode]),
+                undefined, undefined, {'Content-Type':'application/json'})
             .then(function(res) {
                 console.log(res);
                 if(res.status.code === "0000") {
@@ -93,6 +91,25 @@
                     }
                 }
             });
+        }
+
+        function generateSNSMemberData(sns) {
+            var output = {};
+
+            switch(sns) {
+                case 'facebook' :
+                    output = {
+                        email: vm._snsTemp.email,
+                        nickname: vm._snsTemp.name.replace(/\s/g,''),
+                        password: Base64Service.encode(vm._snsTemp.id),
+                        country: vm._snsTemp.locale.split('_')[1],
+                        newsletter: false,
+                        snsCode: vm.signInfo.snsCode
+                    };
+                break;
+            }
+
+            return output;
         }
     }
 })();
