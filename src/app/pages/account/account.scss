@@ -94,6 +94,48 @@
         }
     }
 }
+.signin-modal {
+    .modal-header {
+        border: none;
+        i {
+            position: absolute;
+            right: 20px;
+            font-size: 25px;
+        }
+    }
+    .modal-body {
+        text-align: center;
+        img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            span {
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+        p {
+            text-align: center;
+            a {
+                color: $mint-color;
+                text-decoration: underline;
+            }
+        }
+    }
+    .modal-footer {
+        border: none;
+        .btn-group {
+            width: 100%;
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}
 
 // SIGN UP...
 .signup-view {

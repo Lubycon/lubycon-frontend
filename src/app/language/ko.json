@@ -24,8 +24,8 @@
         "DOCUMENT_NOTICE" : "을 읽었고 이에 동의합니다",
         "NEWSLETTER_NOTICE" : "뉴스레터 이메일 수신에 동의하세요?",
         "SNS_MENT" : {
-            "1" : "안녕하세요 {{value}}!",
-            "2" : "{{value}} 로그인을 처음 진행하세네요",
+            "1" : "안녕하세요 <span>\"{{value}}\"</span>",
+            "2" : "{{value}} 로그인을 처음 진행하시네요",
             "3" : "회원가입을 진행하시면 LUBYCON <a href=\"/docs/terms\" target=\"_blank\">이용약관</a> 및 <a href=\"/docs/privatepolicy\" target=\"_blank\">개인정보이용정책</a>에 동의하는 것으로 간주됩니다"
         }
     },
