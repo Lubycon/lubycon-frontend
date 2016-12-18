@@ -57,7 +57,10 @@
                     vm.signInfo.snsCode = '0102';
 
                     vm._snsTemp = res;
-                    vm._snsTemp.name = GoogleService.getPrimaryData(res.names).displayName;
+                    vm._snsTemp.name = res.nicknames ?
+                        GoogleService.getPrimaryData(res.nicknames).value : 
+                        GoogleService.getPrimaryData(res.names).displayName;
+
                     vm._snsTemp.locale = GoogleService.getPrimaryData(vm._snsTemp.locales).value;
                     vm._snsTemp.snsName = $filter('translate')('SNS_NAME.' + vm.signInfo.snsCode);
 

@@ -71,24 +71,19 @@
         function login() {
             var defer = $q.defer();
             var scope = [
-                "https://www.googleapis.com/auth/plus.login",
-                "https://www.googleapis.com/auth/plus.profile.emails.read",
-                "https://www.googleapis.com/auth/profile.language.read"
+                'https://www.googleapis.com/auth/plus.login',
+                'https://www.googleapis.com/auth/userinfo.email'
             ];
 
-            $window.googleLoginCallback = function(res) {
-                if(res) {
-                    defer.resolve(res);
-                }
-                else defer.reject(res);
-            };
-
-            gapi.auth.signIn({
-                clientid: SNS_KEYS.google.client_id,
-                cookiepolicy: "single_host_origin",
-                requestvisibleactions: "http://schemas.google.com/AddActivity",
+            gapi.auth.authorize({
+                client_id: SNS_KEYS.google.client_id,
                 scope: scope.join(' '),
-                callback: "googleLoginCallback"
+                cookiepolicy: "single_host_origin",
+                immediate: false,
+                authuser: ''
+            }, function(res) {
+                if(res) defer.resolve(res);
+                else defer.reject(res);
             });
 
             return defer.promise;
