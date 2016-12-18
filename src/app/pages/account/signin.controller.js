@@ -58,7 +58,7 @@
 
                     vm._snsTemp = res;
                     vm._snsTemp.name = res.nicknames ?
-                        GoogleService.getPrimaryData(res.nicknames).value : 
+                        GoogleService.getPrimaryData(res.nicknames).value :
                         GoogleService.getPrimaryData(res.names).displayName;
 
                     vm._snsTemp.locale = GoogleService.getPrimaryData(vm._snsTemp.locales).value;
@@ -137,6 +137,7 @@
                     };
                 break;
             }
+            console.log(output);
 
             return output;
         }
