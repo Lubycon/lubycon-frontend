@@ -49,13 +49,16 @@
                 });
             }
             else if(signType === 'google') {
-                GoogleService.get('userData').then(function(res) {
-                    vm.signInfo.email = res.emails[0].value;
-                    vm.signInfo.password = Base64Service.encode(res.id);
+                GoogleService.get('user').then(function(res) {
+                    var userEmail = GoogleService.getPrimaryData(res.emailAddresses);
+
+                    vm.signInfo.email = userEmail.value;
+                    vm.signInfo.password = Base64Service.encode(userEmail.metadata.source.id);
                     vm.signInfo.snsCode = '0102';
 
                     vm._snsTemp = res;
-                    vm._snsTemp.name = res.displayName;
+                    vm._snsTemp.name = GoogleService.getPrimaryData(res.names).displayName;
+                    vm._snsTemp.locale = GoogleService.getPrimaryData(vm._snsTemp.locales).value;
                     vm._snsTemp.snsName = $filter('translate')('SNS_NAME.' + vm.signInfo.snsCode);
 
                     postData(vm.signInfo);
@@ -112,21 +115,22 @@
             switch(sns) {
                 case 'facebook' :
                     output = {
-                        email: vm._snsTemp.email,
+                        email: vm.signInfo.email,
+                        password: vm.signInfo.password,
+                        snsCode: vm.signInfo.snsCode,
                         nickname: vm._snsTemp.name.replace(/\s/g,''),
-                        password: Base64Service.encode(vm._snsTemp.id),
                         country: vm._snsTemp.locale.split('_')[1],
-                        newsletter: false,
-                        snsCode: vm.signInfo.snsCode
+                        newsletter: false
                     };
                 break;
                 case 'google' :
-                    console.log(sns);
                     output = {
-                        email: vm._snsTemp.email,
+                        email: vm.signInfo.email,
+                        password: vm.signInfo.password,
+                        snsCode: vm.signInfo.snsCode,
                         nickname: vm._snsTemp.name.replace(/\s/g,''),
-                        password:  Base64Service.encode(vm._snsTemp.id),
-                        country: null
+                        country: vm._snsTemp.locale.split('-')[1],
+                        newsletter: false
                     };
                 break;
             }

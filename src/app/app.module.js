@@ -44,7 +44,10 @@
     .constant('SNS_KEYS', {
         // facebook: isLocalHost ? localhost_key : aws_key
         'facebook': location.host.search('localhost') > -1 ? '235565303522189' : '235563266855726',
-        'google': '146842299447-53e5q3m36g8tmgtfr78eel9nib3517pi.apps.googleusercontent.com'
+        'google': {
+            'client_id':  '146842299447-53e5q3m36g8tmgtfr78eel9nib3517pi.apps.googleusercontent.com',
+            'api_key' : 'AIzaSyDNPbU5T_E7dPpRxPCTZ-VAGyUi69_Fh1Q'
+        }
     })
     .constant('SNS_NAME', {
     // THIS IS GLOBAL SNSKEY FOR APP
