@@ -3,21 +3,20 @@
 
     angular
         .module('services')
-        .factory('PushService', ['$rootScope', '$interval', PushService]);
+        .factory('PushService', [
+            '$rootScope', '$interval', 'toastr',
+            PushService
+        ]);
 
-    function PushService($rootScope, $interval) {
+    function PushService($rootScope, $interval, toastr) {
 
         var service = {
-
+            init: init
         };
 
-        init();
         return service;
 
         // PUBLIC METHOD
-
-
-        // PRIVATE METHOD
 
         /*
             @name: init
@@ -32,6 +31,7 @@
             if(typeof Pusher !== 'undefined') initPusher();
             else {
                 interval = $interval(function() {
+                    console.log(count);
                     if(count > 500) {
                         $interval.cancel(interval);
                         console.error('Pusher SDK loading is failed');
@@ -46,6 +46,8 @@
             }
         }
 
+        // PRIVATE METHOD
+
         /*
             @name: initPusher
             @desc: init Pusher config
@@ -53,16 +55,28 @@
             @return Void
         */
         function initPusher() {
-            Pusher.logToConsole = false;
+            Pusher.logToConsole = true;
 
             var pusher = new Pusher('fd5230aae8574f4d60cc', {
                 cluster: 'ap1',
                 encrypted: true
             });
 
-            var channel = pusher.subscribe('lubycon-notifications');
+            var publicChannel = pusher.subscribe('lubycon-public'),
+                channel;
+
+            if($rootScope.member) {
+                channel = pusher.subscribe('lubycon-private-'+$rootScope.member.id);
+                console.log('PUSH CHANNEL -> ', 'lubycon-private-'+$rootScope.member.id);
+            }
+
+
             channel.bind('pushEvent', function(data) {
-                console.log(data);
+                console.log('private : ',data);
+            });
+
+            publicChannel.bind('pushEvent', function(data) {
+                console.log('public : ',data);
             });
         }
     }

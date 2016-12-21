@@ -4,3 +4,10 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+PushService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^    function PushService($rootScope, $interval, toastr) {$/;"	function	line:11
+PushService.service.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        var service = {$/;"	property	line:13
+init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function init() {$/;"	function	line:27
+PushService.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function init() {$/;"	function	line:27
+initPusher	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function initPusher() {$/;"	function	line:57
+PushService.initPusher	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function initPusher() {$/;"	function	line:57
+PushService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^    function PushService($rootScope, $interval, toastr) {$/;"	function	line:11

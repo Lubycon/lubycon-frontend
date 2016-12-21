@@ -132,7 +132,7 @@
                         password: vm.signInfo.password,
                         snsCode: vm.signInfo.snsCode,
                         nickname: vm._snsTemp.name.replace(/\s/g,''),
-                        country: vm._snsTemp.locale.split('-')[1],
+                        country: vm._snsTemp.locale.split('-')[1], // locale에 country값이 안들어옴. 확인할 것
                         newsletter: false
                     };
                 break;
