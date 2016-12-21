@@ -111,15 +111,6 @@ script	/Users/evan/Dev/lubycon-web-app-front/src/index.html	/^    <script src="\
 script	/Users/evan/Dev/lubycon-web-app-front/src/index.html	/^    <script src="\/assets\/js\/webGL\/DirectionalLightHelper.js"><\/script>$/;"	function	line:82
 script	/Users/evan/Dev/lubycon-web-app-front/src/index.html	/^    <script src="\/assets\/js\/webGL\/SpotLightHelper.js"><\/script>$/;"	function	line:83
 script	/Users/evan/Dev/lubycon-web-app-front/src/index.html	/^    <script src="\/assets\/js\/webGL\/PointLightHelper.js"><\/script>$/;"	function	line:84
-runBlock	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function runBlock($/;"	function	line:14
-disableScrollBySpace	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:61
-onkeydown	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^        window.onkeydown = function(event) {$/;"	function	line:62
-window.onkeydown	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:61
-disableScrollBySpace	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:61
-hideModalWindow	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function hideModalWindow() {$/;"	function	line:70
-hideModalWindow	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function hideModalWindow() {$/;"	function	line:70
-generateURL	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function generateURL(param) {$/;"	function	line:76
-generateURL	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function generateURL(param) {$/;"	function	line:76
 PushService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^    function PushService($rootScope, $interval, toastr) {$/;"	function	line:11
 PushService.service.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        var service = {$/;"	property	line:13
 init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function init() {$/;"	function	line:27
@@ -127,3 +118,43 @@ PushService.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.ser
 initPusher	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function initPusher() {$/;"	function	line:57
 PushService.initPusher	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function initPusher() {$/;"	function	line:57
 PushService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^    function PushService($rootScope, $interval, toastr) {$/;"	function	line:11
+FacebookService.service.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        var service = {$/;"	property	line:34
+FacebookService.service.login	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^            init: init,$/;"	property	line:35
+FacebookService.service.logout	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^            login: login,$/;"	property	line:36
+FacebookService.service.get	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^            logout: logout,$/;"	property	line:37
+FacebookService.service.put	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^            get: get,$/;"	property	line:38
+FacebookService.appInfo.appId	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        var appInfo = {$/;"	property	line:42
+init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function init() {$/;"	function	line:60
+FacebookService.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function init() {$/;"	function	line:60
+login	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function login() {$/;"	function	line:87
+FacebookService.login	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function login() {$/;"	function	line:87
+logout	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function logout() {$/;"	function	line:118
+FacebookService.logout	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function logout() {$/;"	function	line:118
+get	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function get(functionName) {$/;"	function	line:135
+FacebookService.get	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function get(functionName) {$/;"	function	line:135
+put	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function put(functionName, params) {$/;"	function	line:156
+FacebookService.put	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function put(functionName, params) {$/;"	function	line:156
+getLoginStatus	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function getLoginStatus() {$/;"	function	line:193
+FacebookService.getLoginStatus	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function getLoginStatus() {$/;"	function	line:193
+userData	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function userData(auth) {$/;"	function	line:209
+FacebookService.userData	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function userData(auth) {$/;"	function	line:209
+share	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function share(auth, params) {$/;"	function	line:234
+FacebookService.share	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function share(auth, params) {$/;"	function	line:234
+setStore	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function setStore(data) {$/;"	function	line:252
+FacebookService.setStore	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function setStore(data) {$/;"	function	line:252
+getStore	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function getStore() {$/;"	function	line:262
+FacebookService.getStore	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function getStore() {$/;"	function	line:262
+FacebookService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^    function FacebookService($/;"	function	line:29
+call	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function call(functionName, auth, params) {$/;"	function	line:272
+call	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function call(functionName, auth, params) {$/;"	function	line:272
+getAPIType	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function getAPIType(functionName) {$/;"	function	line:282
+getAPIType	/Users/evan/Dev/lubycon-web-app-front/src/app/services/FacebookManage.service.js	/^        function getAPIType(functionName) {$/;"	function	line:282
+runBlock	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function runBlock($/;"	function	line:14
+disableScrollBySpace	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:64
+onkeydown	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^        window.onkeydown = function(event) {$/;"	function	line:65
+window.onkeydown	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:64
+disableScrollBySpace	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:64
+hideModalWindow	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function hideModalWindow() {$/;"	function	line:73
+hideModalWindow	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function hideModalWindow() {$/;"	function	line:73
+generateURL	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function generateURL(param) {$/;"	function	line:79
+generateURL	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function generateURL(param) {$/;"	function	line:79

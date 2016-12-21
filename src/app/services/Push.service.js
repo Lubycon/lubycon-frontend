@@ -31,13 +31,13 @@
             if(typeof Pusher !== 'undefined') initPusher();
             else {
                 interval = $interval(function() {
-                    console.log(count);
-                    if(count > 500) {
+                    if(count > 1500) {
                         $interval.cancel(interval);
                         console.error('Pusher SDK loading is failed');
                         return false;
                     }
                     if(typeof Pusher !== 'undefined') {
+                        console.log('PUSHER SDK IS LOADED');
                         initPusher();
                         $interval.cancel(interval);
                     }
@@ -62,18 +62,17 @@
                 encrypted: true
             });
 
-            var publicChannel = pusher.subscribe('lubycon-public'),
+            var publicChannel = pusher.subscribe('public'),
                 channel;
 
             if($rootScope.member) {
-                channel = pusher.subscribe('lubycon-private-'+$rootScope.member.id);
-                console.log('PUSH CHANNEL -> ', 'lubycon-private-'+$rootScope.member.id);
+                channel = pusher.subscribe('private-'+$rootScope.member.id);
+                console.log('PUSH CHANNEL -> ', 'private-'+$rootScope.member.id);
+                channel.bind('pushEvent', function(data) {
+                    console.log('private : ',data);
+                });
             }
 
-
-            channel.bind('pushEvent', function(data) {
-                console.log('private : ',data);
-            });
 
             publicChannel.bind('pushEvent', function(data) {
                 console.log('public : ',data);

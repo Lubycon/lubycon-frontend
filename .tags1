@@ -4,10 +4,12 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-PushService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^    function PushService($rootScope, $interval, toastr) {$/;"	function	line:11
-PushService.service.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        var service = {$/;"	property	line:13
-init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function init() {$/;"	function	line:27
-PushService.init	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function init() {$/;"	function	line:27
-initPusher	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function initPusher() {$/;"	function	line:57
-PushService.initPusher	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^        function initPusher() {$/;"	function	line:57
-PushService	/Users/evan/Dev/lubycon-web-app-front/src/app/services/Push.service.js	/^    function PushService($rootScope, $interval, toastr) {$/;"	function	line:11
+runBlock	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function runBlock($/;"	function	line:14
+disableScrollBySpace	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:64
+onkeydown	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^        window.onkeydown = function(event) {$/;"	function	line:65
+window.onkeydown	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:64
+disableScrollBySpace	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function disableScrollBySpace() {$/;"	function	line:64
+hideModalWindow	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function hideModalWindow() {$/;"	function	line:73
+hideModalWindow	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function hideModalWindow() {$/;"	function	line:73
+generateURL	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function generateURL(param) {$/;"	function	line:79
+generateURL	/Users/evan/Dev/lubycon-web-app-front/src/app/app.run.js	/^    function generateURL(param) {$/;"	function	line:79

@@ -6,7 +6,7 @@
     .run([
         'CookieService','$log','$rootScope','$location', 'USER_AGENT', 'Tracker',
         'StateAuthentication','Authentication','$state', 'HistoryService', '$anchorScroll',
-        'PushService', 'AppSettingService', 'GoogleService',
+        'PushService', 'AppSettingService', 'GoogleService', 'FacebookService',
         runBlock
     ]);
 
@@ -14,7 +14,7 @@
     function runBlock(
             CookieService, $log, $rootScope, $location, USER_AGENT, Tracker,
             StateAuthentication, Authentication, $state, HistoryService, $anchorScroll,
-            PushService, AppSettingService, GoogleService
+            PushService, AppSettingService, GoogleService, FacebookService
         ) {
         console.log('$rootScope : ', $rootScope);
 
@@ -26,6 +26,9 @@
 
         // PUSHER SDK INIT
         PushService.init();
+
+        // FACEBOOK SDK INIT
+        FacebookService.init();
 
         // GOOGLE SDK INIT...
         GoogleService.init();

@@ -32,6 +32,7 @@
     ) {
 
         var service = {
+            init: init,
             login: login,
             logout: logout,
             get: get,
@@ -46,7 +47,6 @@
             version: 'v2.8'
         };
 
-        init();
         return service;
 
         // PUBLIC METHODS //
