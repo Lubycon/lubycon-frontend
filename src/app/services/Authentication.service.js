@@ -70,7 +70,7 @@
                     if(res.status.code === '0000') {
                         $rootScope.member = res.result;
                         console.log($rootScope.member);
-                        AppSettingService.set('country',$rootScope.member.country.alpha2Code);
+                        if($rootScope.member.country) AppSettingService.set('country', $rootScope.member.country.alpha2Code);
                         CookieService.put('member', $rootScope.member);
 
                         if(isExistBackState) {

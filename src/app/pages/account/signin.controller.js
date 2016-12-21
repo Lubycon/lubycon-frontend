@@ -27,6 +27,7 @@
         };
 
         vm._snsTemp = null;
+        vm.isBusy = false;
 
         // PUBLIC METHOD
 

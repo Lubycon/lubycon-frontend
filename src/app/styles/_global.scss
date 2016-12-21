@@ -49,4 +49,14 @@ label {
     overflow: hidden;
 }
 
-// INFINITE SCROLL WRAPPER
+// LOADING WRAPPER
+.loading-div {
+    &#loading-element {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        min-height: 100vh;
+        background: rgba(255,255,255,0.8);
+        z-index: 1;
+    }
+}

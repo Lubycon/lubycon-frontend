@@ -4,127 +4,18 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-TOAST	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "TOAST" : {$/;"	function	line:2
-ACCOUNT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "ACCOUNT" : {$/;"	function	line:3
-NOT_AUTHENTICATE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "NOT_AUTHENTICATE" : "아직 인증이 끝나지 않았습니다<br>이 메세지를 클릭하시면 인증페이지로 이동합니다"$/;"	function	line:4
-ACCOUNT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "ACCOUNT" : {$/;"	function	line:7
-SIGNIN	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SIGNIN" : {$/;"	function	line:8
-TITLE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "TITLE" : "로그인",$/;"	function	line:9
-EMAIL	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "EMAIL" : "이메일로 로그인",$/;"	function	line:10
-FACEBOOK	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "FACEBOOK" : "페이스북으로 계속 하기",$/;"	function	line:11
-GOOGLE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "GOOGLE" : "구글로 계속 하기"$/;"	function	line:12
-SIGNUP	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SIGNUP" : "회원가입",$/;"	function	line:14
-SIGNOUT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SIGNOUT" : "로그아웃",$/;"	function	line:15
-SIGNDROP	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SIGNDROP" : "회원탈퇴",$/;"	function	line:16
-FIND_PASSWORD	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "FIND_PASSWORD" : "혹시 비밀번호를 잊으셨나요?",$/;"	function	line:18
-SETTING	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SETTING" : "내 정보 수정하기",$/;"	function	line:19
-PASSWORD_SETTING	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PASSWORD_SETTING" : "비밀번호 변경",$/;"	function	line:20
-AUTHENTICATION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "AUTHENTICATION" : "인증",$/;"	function	line:21
-AUTHENTICATION_MENT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "AUTHENTICATION_MENT" : "인증하기"$/;"	function	line:22
-SIGNUP	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "SIGNUP" : {$/;"	function	line:24
-DOCUMENT_NOTICE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DOCUMENT_NOTICE" : "을 읽었고 이에 동의합니다",$/;"	function	line:25
-NEWSLETTER_NOTICE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "NEWSLETTER_NOTICE" : "뉴스레터 이메일 수신에 동의하세요?",$/;"	function	line:26
-SNS_MENT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SNS_MENT" : {$/;"	function	line:27
-1	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "1" : "안녕하세요 <span>\\"{{value}}\\"님<\/span>",$/;"	function	line:28
-2	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "2" : "{{value}} 로그인을 처음 진행하시네요",$/;"	function	line:29
-3	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "3" : "회원가입을 진행하시면 LUBYCON <a href=\\"\/docs\/terms\\" target=\\"_blank\\">이용약관<\/a> 및 <a href=\\"\/docs\/privatepolicy\\" target=\\"_blank\\">개인정보이용정책<\/a>에 동의하는 것으로 간주됩니다"$/;"	function	line:30
-LABEL	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "LABEL" : {$/;"	function	line:33
-EMAIL	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "EMAIL" : "이메일",$/;"	function	line:34
-PASSWORD	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PASSWORD" : "비밀번호",$/;"	function	line:35
-PASSWORD_REPEAT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PASSWORD_REPEAT" : "비밀번호 재입력",$/;"	function	line:36
-NICKNAME	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "NICKNAME" : "닉네임",$/;"	function	line:38
-LOCATION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "LOCATION" : "지역",$/;"	function	line:39
-COUNTRY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "COUNTRY" : "국가",$/;"	function	line:40
-CITY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CITY" : "도시",$/;"	function	line:41
-JOB	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "JOB" : "직업",$/;"	function	line:42
-POSITION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "POSITION" : "소속",$/;"	function	line:43
-LANGUAGE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "LANGUAGE" : "언어",$/;"	function	line:44
-DESCRIPTION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DESCRIPTION" : "소개",$/;"	function	line:45
-PROFILE_PIC	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PROFILE_PIC" : "프로필 사진",$/;"	function	line:46
-MOBILE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "MOBILE" : "모바일",$/;"	function	line:48
-FAX	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "FAX" : "팩스",$/;"	function	line:49
-WEBSITE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "WEBSITE" : "웹사이트",$/;"	function	line:50
-TITLE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "TITLE" : "제목",$/;"	function	line:52
-CATEGORY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CATEGORY" : "카테고리",$/;"	function	line:53
-TAG	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "TAG" : "태그",$/;"	function	line:54
-DESCRIPTION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DESCRIPTION" : "컨텐츠 설명",$/;"	function	line:55
-CC	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CC" : "크리에이티브 커먼스",$/;"	function	line:56
-TERMS_OF_SERVICE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "TERMS_OF_SERVICE" : "이용약관",$/;"	function	line:58
-PRIVATE_POLICE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PRIVATE_POLICE" : "개인정보보호정책"$/;"	function	line:59
-SNS_NAME	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "SNS_NAME" : {$/;"	function	line:61
-0100	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "0100" : "이메일",$/;"	function	line:62
-0101	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "0101" : "페이스북",$/;"	function	line:63
-0102	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "0102" : "구글"$/;"	function	line:64
-LICENSE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "LICENSE" : {$/;"	function	line:66
-1000	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "1000" : "크리에이티브 커먼스 라이센스",$/;"	function	line:67
-1100	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "1100" : "상업적 이용불가",$/;"	function	line:68
-1110	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "1110" : "상업적이용 \/ 임의수정 및 배포 불가",$/;"	function	line:69
-1010	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "1010" : "임의수정 및 배포 불가",$/;"	function	line:70
-1001	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "1001" : "수정판 배포 가능",$/;"	function	line:71
-1101	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "1101" : "상업적이용 불가 \/ 수정판 배포 가능",$/;"	function	line:72
-0	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "0" : "라이센스 없음",$/;"	function	line:73
-DESCRIPTION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DESCRIPTION" : {$/;"	function	line:74
-CC	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "CC" : "크리에이티브 커먼스 라이센스 사용",$/;"	function	line:75
-BY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "BY" : "자유롭게 공유, 수정가능. 단 제작자를 표기해야합니다",$/;"	function	line:76
-NC	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "NC" : "상업적으로 사용할 수 없습니다",$/;"	function	line:77
-ND	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "ND" : "개인적으로 수정한 작품을 배포할 수 없습니다.",$/;"	function	line:78
-SA	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "SA" : "자유롭게 공유 그리고 수정가능. 단 원작과 같은 라이센스이어야합니다",$/;"	function	line:79
-WITHOUT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "WITHOUT" : "제작자 동의없이 사용할 수 없습니다"$/;"	function	line:80
-FORM	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "FORM" : {$/;"	function	line:83
-SUBMIT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SUBMIT" : "등록",$/;"	function	line:84
-CONFIRM	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CONFIRM" : "확인",$/;"	function	line:85
-CANCLE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CANCLE" : "취소",$/;"	function	line:86
-DELETE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DELETE" : "삭제",$/;"	function	line:87
-MODIFY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "MODIFY" : "수정",$/;"	function	line:88
-NEXT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "NEXT" : "다음",$/;"	function	line:89
-PREV	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PREV" : "이전",$/;"	function	line:90
-FINISH	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "FINISH" : "완료",$/;"	function	line:91
-CONTINUE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CONTINUE" : "계속",$/;"	function	line:92
-CHANGE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CHANGE" : "변경",$/;"	function	line:93
-ERROR_MSG	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "ERROR_MSG" : {$/;"	function	line:94
-REQUIRED	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "REQUIRED" : "필수 입력 항목입니다",$/;"	function	line:95
-PATTERN	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "PATTERN" : "형식에 맞지 않습니다",$/;"	function	line:96
-SECURITY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "SECURITY" : "보안 수준이 너무 낮습니다"$/;"	function	line:97
-PLACEHOLDER	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "PLACEHOLDER" : {$/;"	function	line:99
-COUNTRY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "COUNTRY" : "국가를 선택하세요"$/;"	function	line:100
-USER_ACTION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "USER_ACTION" : {$/;"	function	line:103
-BOOKMARK	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "BOOKMARK" : "북마크",$/;"	function	line:104
-LIKE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "LIKE" : "좋아요"$/;"	function	line:105
-SETTING	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "SETTING" : {$/;"	function	line:107
-BASIC_INFO	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "BASIC_INFO" : "기본정보",$/;"	function	line:108
-HISTORY	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "HISTORY" : "발자취",$/;"	function	line:109
-CONTACT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "CONTACT" : "연락처",$/;"	function	line:110
-HISTORY_PLACEHOLDER	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "HISTORY_PLACEHOLDER" : {$/;"	function	line:111
-KIND	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "KIND" : "분류",$/;"	function	line:112
-YEAR	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "YEAR" : "년도",$/;"	function	line:113
-MONTH	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "MONTH" : "월",$/;"	function	line:114
-CONTENT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^            "CONTENT" : "무슨 일을 하셨나요?"$/;"	function	line:115
-ERROR	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "ERROR" : {$/;"	function	line:118
-DEFAULT	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DEFAULT" : "알 수 없는 오류가 발생하였습니다",$/;"	function	line:119
-400	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "400" : "잘못된 요청입니다",$/;"	function	line:120
-403	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "403" : "허가되지 않은 접근 입니다",$/;"	function	line:121
-404	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "404" : "페이지를 찾을 수 없습니다",$/;"	function	line:122
-408	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "408" : "요청시간이 초과되었습니다",$/;"	function	line:123
-409	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "409" : "이미 처리된 요청입니다",$/;"	function	line:124
-411	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "411" : "필수 항목이 누락되었습니다",$/;"	function	line:125
-413	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "413" : "허용된 용량을 초과하였습니다",$/;"	function	line:126
-414	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "414" : "요청한 URI 길이가 너무 깁니다",$/;"	function	line:127
-415	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "415" : "지원하지 않는 포맷입니다",$/;"	function	line:128
-422	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "422" : "형식에 맞지않는 요청입니다",$/;"	function	line:129
-424	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "424" : "잘못된 HTTP 메소드를 요청하였습니다",$/;"	function	line:130
-429	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "429" : "너무 많은 요청을 보냈습니다",$/;"	function	line:131
-500	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "500" : "인터널 서버 에러",$/;"	function	line:132
-502	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "502" : "서버가 응답하지 않습니다",$/;"	function	line:133
-504	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "504" : "요청 시간이 초과하였습니다",$/;"	function	line:134
-507	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "507" : "서버 내부 용량이 부족합니다",$/;"	function	line:135
-SIGNIN	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SIGNIN" : "로그인에 실패하였습니다.<br>이메일과 비밀번호를 다시 한번 확인해주세요"$/;"	function	line:136
-CONTENTS_VIEW	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "CONTENTS_VIEW" : {$/;"	function	line:138
-DESCRIPTION	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DESCRIPTION" : "제작자 설명"$/;"	function	line:139
-FIGURE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "FIGURE" : {$/;"	function	line:141
-MORE_CONTENTS	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "MORE_CONTENTS" : "더 많은 작품 보러가기",$/;"	function	line:142
-MODEL_UPLOAD	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "MODEL_UPLOAD" : "3D모델 업로드하기"$/;"	function	line:143
-EDITOR	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^    "EDITOR" : {$/;"	function	line:145
-FILE_UPLOAD	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "FILE_UPLOAD" : "모델 업로드",$/;"	function	line:146
-THUMBNAIL	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "THUMBNAIL" : "썸네일 편집",$/;"	function	line:147
-SETTINGS	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "SETTINGS" : "컨텐츠 세팅",$/;"	function	line:148
-DOWNLOADABLE	/Users/evan/Dev/lubycon-web-app-front/src/app/language/ko.json	/^        "DOWNLOADABLE" : "다운로드"$/;"	function	line:149
+vm.signInfo.email	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        vm.signInfo = {$/;"	property	line:23
+vm.signInfo.password	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^            email: null,$/;"	property	line:24
+vm.signInfo.snsCode	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^            password: null,$/;"	property	line:25
+signin	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function signin(signType){$/;"	function	line:35
+SigninController.signin	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function signin(signType){$/;"	function	line:35
+snsSignin	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function snsSignin() {$/;"	function	line:73
+SigninController.snsSignin	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function snsSignin() {$/;"	function	line:73
+postData	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function postData(data) {$/;"	function	line:95
+SigninController.postData	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function postData(data) {$/;"	function	line:95
+generateSNSMemberData	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function generateSNSMemberData(sns) {$/;"	function	line:114
+switch	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^            switch(sns) {$/;"	function	line:117
+SigninController.case.email	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^                    output = {$/;"	property	line:119
+case.email	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^                    output = {$/;"	property	line:128
+SigninController.generateSNSMemberData	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^        function generateSNSMemberData(sns) {$/;"	function	line:114
+SigninController	/Users/evan/Dev/lubycon-web-app-front/src/app/pages/account/signin.controller.js	/^    function SigninController($/;"	function	line:15

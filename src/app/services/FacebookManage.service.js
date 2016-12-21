@@ -64,12 +64,13 @@
             if(typeof FB !== 'undefined') FB.init(appInfo);
             else {
                 interval = $interval(function() {
-                    if(count > 500) {
+                    if(count > 1500) {
                         $interval.cancel(interval);
                         console.error('Facebook SDK loading is failed');
                         return false;
                     }
                     if(typeof FB !== 'undefined') {
+                        console.log('FACEBOOK SDK IS LOADED');
                         FB.init(appInfo);
                         $interval.cancel(interval);
                     }

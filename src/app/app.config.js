@@ -181,7 +181,7 @@
                 if(res.status.code === '0000') {
                     $rootScope.member = res.result;
                     CookieService.put('member', $rootScope.member);
-                    AppSettingService.set('country',$rootScope.member.country.alpha2Code);
+                    if($rootScope.member.country) AppSettingService.set('country',$rootScope.member.country.alpha2Code);
                 }
                 else {
                     Authentication.clearCredentials('reload');

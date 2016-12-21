@@ -48,12 +48,13 @@
             if(typeof gapi !== 'undefined') return false;
             else {
                 interval = $interval(function() {
-                    if(count > 500) {
+                    if(count > 1500) {
                         $interval.cancel(interval);
                         console.error('Google SDK loading is failed');
                         return false;
                     }
                     if(typeof gapi !== 'undefined') {
+                        console.log('GOOGLE PLUS SDK IS LOADED');
                         $interval.cancel(interval);
                         return false;
                     }
