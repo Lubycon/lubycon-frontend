@@ -121,6 +121,7 @@
                         password: vm.signInfo.password,
                         snsCode: vm.signInfo.snsCode,
                         nickname: vm._snsTemp.name.replace(/\s/g,''),
+                        country: $rootScope.setting.country_code,
                         newsletter: false
                     };
                 break;
@@ -130,6 +131,7 @@
                         password: vm.signInfo.password,
                         snsCode: vm.signInfo.snsCode,
                         nickname: vm._snsTemp.name.replace(/\s/g,''),
+                        country: $rootScope.setting.country_code,
                         newsletter: false
                     };
                 break;

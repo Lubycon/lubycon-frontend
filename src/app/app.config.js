@@ -178,7 +178,7 @@
             console.log(Restangular.defaultHeaders);
 
             Restangular.one('members/simple').customGET().then(function (res) {
-                if(res.status.code === '0000') {
+                if(res && res.status && res.status.code === '0000') {
                     $rootScope.member = res.result;
                     CookieService.put('member', $rootScope.member);
                     if($rootScope.member.country) AppSettingService.set('country',$rootScope.member.country.alpha2Code);
