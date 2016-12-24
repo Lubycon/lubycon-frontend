@@ -4,8 +4,8 @@
     angular
         .module('app.pages.editor')
         .controller('Editor3dController', [
-            '$rootScope','$scope','$filter','$compile','$timeout','toastr',
-            'ModelLoadService','FileControlService','LightGenerateService',
+            '$rootScope', '$scope', '$filter', '$compile', '$timeout', 'toastr',
+            'ModelLoadService', 'FileControlService', 'LightGenerateService',
             'ModelControlService', 'Restangular', '$state', 'EditorService',
             'get3dMaps','get2dMaps','getCategory','getCreativeCommons', 'getTools',
             Editor3dController
@@ -117,8 +117,7 @@
         };
 
         vm.postData = function() {
-            console.log(vm.model);
-            console.time('Data submit');
+            // console.time('Data submit');
 
             // LIGHT REDEFINE...
             vm.selectedLight.map(function(v){
@@ -155,7 +154,7 @@
                     }
                 }
             };
-            console.log(vm.editorData);
+            if(!validator(vm.editorData)) return false;
 
             Restangular.all('contents/3d').customPOST(vm.editorData)
             .then(function(res) {
@@ -293,6 +292,33 @@
                 // NOTHING....
             }
             else return false;
+        }
+
+        function validator(data) {
+            var bool = true,
+                msg = null,
+                validations = [{
+                    msg: 'CONTENT',
+                    value: !!data.content
+                },{
+                    msg: 'TITLE',
+                    value: !!data.setting.title
+                },{
+                    msg: 'CATEGORY',
+                    value: data.setting.category.length > 0
+                },{
+                    msg: 'DESCRIPTION',
+                    value: !!data.setting.description
+                }];
+
+            bool = validations.every(function(v) {
+                msg = v.msg;
+                return v.value;
+            });
+
+            if(!bool && msg) toastr.error($filter('translate')('EDITOR.VALIDATION.' + msg));
+
+            return bool;
         }
     }
 })();

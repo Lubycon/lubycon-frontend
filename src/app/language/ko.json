@@ -146,6 +146,12 @@
         "FILE_UPLOAD" : "모델 업로드",
         "THUMBNAIL" : "썸네일 편집",
         "SETTINGS" : "컨텐츠 세팅",
-        "DOWNLOADABLE" : "다운로드"
+        "DOWNLOADABLE" : "다운로드",
+        "VALIDATION" : {
+            "TITLE" : "컨텐츠 제목을 적어주세요",
+            "CATEGORY" : "카테고리는 최소 1개 이상 최대 3개 이하로 선택하셔야 합니다",
+            "DESCRIPTION" : "컨텐츠 설명을 적어주세요",
+            "CONTENT" : "모델 데이터가 없습니다"
+        }
     }
 }

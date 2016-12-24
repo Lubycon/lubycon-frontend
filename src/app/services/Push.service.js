@@ -55,9 +55,15 @@
             @return Void
         */
         function initPusher() {
-            Pusher.logToConsole = true;
+            Pusher.logToConsole = false;
 
             var pusher = new Pusher('fd5230aae8574f4d60cc', {
+                authEndpoint: '/pusher_auth.php',
+                auth: {
+                    headers: {
+                        'X-CSRF-Token': "SOME_CSRF_TOKEN"
+                    }
+                },
                 cluster: 'ap1',
                 encrypted: true
             });
@@ -65,13 +71,13 @@
             var publicChannel = pusher.subscribe('public'),
                 channel;
 
-            if($rootScope.member) {
-                channel = pusher.subscribe('private-'+$rootScope.member.id);
-                console.log('PUSH CHANNEL -> ', 'private-'+$rootScope.member.id);
-                channel.bind('pushEvent', function(data) {
-                    console.log('private : ',data);
-                });
-            }
+            // if($rootScope.member) {
+            //     channel = pusher.subscribe('private-'+$rootScope.member.id);
+            //     console.log('PUSH CHANNEL -> ', 'private-'+$rootScope.member.id);
+            //     channel.bind('pushEvent', function(data) {
+            //         console.log('private : ',data);
+            //     });
+            // }
 
 
             publicChannel.bind('pushEvent', function(data) {

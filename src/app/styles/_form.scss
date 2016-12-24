@@ -43,3 +43,14 @@ input.ng-dirty.ng-invalid {
 .half-width {
     width: 50%;
 }
+
+.cropper-view-box {
+    outline: 1px solid $mint-color;
+    outline-color: rgba(72,207,173,0.6);
+}
+.cropper-line {
+    background-color: $mint-color;
+}
+.cropper-point {
+    background-color: $mint-color;
+}

@@ -8,6 +8,7 @@
         display: inline-block;
         width: 20px;
         height: 20px;
+        padding-left: 1px;
         text-align: center;
         border-radius: 50%;
         .fa-circle {
@@ -24,6 +25,7 @@
     }
     &.black .radio-body {
         border: 1px solid $glay-color;
+        background: #333;
     }
     &.white .radio-body {
         border: 1px solid #222;
