@@ -79,7 +79,7 @@
                     ui-select2="vm.selectBoxOptions"
                     ng-model="vm.member.country"
                     data-placeholder="{{'FORM.PLACEHOLDER.COUNTRY' | translate}}"
-                    ng-options="country.name as country.name for country in vm.countryList"
+                    ng-options="country.alpha2Code as country.name for country in vm.countryList"
                 >
                 </select>
             </div>
