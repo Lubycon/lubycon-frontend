@@ -38,7 +38,7 @@
 
                 if(oldModel) $scope.scene.remove(oldModel);
 
-                if(newValue && (newValue.constructor.name === 'Mesh' || newValue.constructor.name === 'Group')) {
+                if(newValue && newValue.type && (newValue.type === 'Mesh' || newValue.type === 'Group')) {
                     $scope.scene.add(newValue);
                 }
                 else if(newValue && newValue.constructor.name === 'Object') { // JSON일 경우

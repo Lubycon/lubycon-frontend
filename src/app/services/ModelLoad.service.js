@@ -53,8 +53,8 @@
                 // console.log('group data',groupData);
                 // console.log(i,eachModel,eachModel.geometry,eachModel.material);
 
-                if(eachModel.material.constructor.name === 'MeshPhongMaterial') usedMaterials.push(eachModel.material);
-                else if(eachModel.material.constructor.name === 'MultiMaterial'){
+                if(eachModel.material.type === 'MeshPhongMaterial') usedMaterials.push(eachModel.material);
+                else if(eachModel.material.type === 'MultiMaterial'){
                     for(var mi = 0; mi < eachModel.material.materials.length; mi++) {
                         usedMaterials.push(eachModel.material.materials[mi]);
                     }
