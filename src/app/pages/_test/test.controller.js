@@ -71,49 +71,56 @@
         cameraLight.target.position.set(0, 0, 0);
         cameraLight.position.copy(camera.position);
 
-        // SET TEST OBJECT
-        var geometry = new THREE.BoxGeometry(1,1,1);
-        var material = new THREE.MeshPhongMaterial();
-            material.color = new THREE.Color(72,207,173);
-            material.side = THREE.DoubleSide;
-            material.transparent = true;
-            material.needsUpdate = true;
-        object = new THREE.Mesh(geometry, material);
-            object.position.set(0,0,0);
+        // TEXTURE TEST
+        var tLoader = new THREE.TextureLoader();
+        tLoader.load('assets/images/country/200.png', function(res) {
+            // SET TEST OBJECT
+            var geometry = new THREE.BoxGeometry(1,1,1);
+            var material = new THREE.MeshPhongMaterial();
+                material.map = res;
+                material.color = new THREE.Color(255,255,255);
+                material.side = THREE.DoubleSide;
+                material.transparent = true;
+                material.needsUpdate = true;
+            object = new THREE.Mesh(geometry, material);
+                object.position.set(0,0,0);
 
-        // SET CONTROL
-        controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.1;
-            controls.rotateSpeed = 0.5;
-            controls.zoomSpeed = 0.5;
-            controls.maxDistance = 100;
-            controls.autoRotate = true;
-            controls.autoRotateSpeed = 0.6;
+            // SET CONTROL
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.1;
+                controls.rotateSpeed = 0.5;
+                controls.zoomSpeed = 0.5;
+                controls.maxDistance = 100;
+                controls.autoRotate = true;
+                controls.autoRotateSpeed = 0.6;
 
-        // ADD SCENE
-        scene.add(camera, cameraLight, object);
+            // ADD SCENE
+            scene.add(camera, cameraLight, object);
 
-        // SET renderer
-        renderer.setSize(windowWidth, windowHeight);
-        if(webglAvailable()) renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setClearColor(0x222222, 1);
-        // renderer.shadowMap.enabled = true;
-        // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        // renderer.gammaInput = true;
-        // renderer.gammaOutput = true;
+            // SET renderer
+            renderer.setSize(windowWidth, windowHeight);
+            if(webglAvailable()) renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setClearColor(0x222222, 1);
+            // renderer.shadowMap.enabled = true;
+            // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            // renderer.gammaInput = true;
+            // renderer.gammaOutput = true;
 
-        gl.appendChild(renderer.domElement);
-        animate();
+            gl.appendChild(renderer.domElement);
+            animate();
 
-        function animate() {
-            controls.update();
-            animationRequest = requestAnimationFrame(animate);
-            render();
-        }
-        function render() {
-            renderer.render(scene, camera);
-            cameraLight.position.copy(camera.position);
-        }
+            function animate() {
+                controls.update();
+                animationRequest = requestAnimationFrame(animate);
+                render();
+            }
+            function render() {
+                renderer.render(scene, camera);
+                cameraLight.position.copy(camera.position);
+            }
+        });
+
+
     }
 })();

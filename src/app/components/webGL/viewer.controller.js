@@ -33,11 +33,12 @@
                 else if(newValue.type === '2d') $scope.init2DMap();
             },true);
 
+            var count = 0;
             $scope.$watch('model',function(newValue,oldValue) {
                 var oldModel = $scope.scene.getObjectByName('mainObject');
 
                 if(oldModel) $scope.scene.remove(oldModel);
-
+                console.log(newValue);
                 if(newValue && newValue.type && (newValue.type === 'Mesh' || newValue.type === 'Group')) {
                     $scope.scene.add(newValue);
                 }
@@ -53,7 +54,7 @@
             });
 
             THREE.DefaultLoadingManager.onLoad = function(loaded, total) {
-                console.log('loading complete',$scope);
+                console.log('loading complete',$scope, loaded, total);
                 $scope.loadingComplete = true;
                 $scope.$apply();
             };
