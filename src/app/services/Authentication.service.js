@@ -4,14 +4,14 @@
     angular
         .module('services')
         .factory('Authentication', [
-            'CookieService', '$rootScope', '$rootScope', 'Restangular',
+            'CookieService', '$rootScope', 'Restangular',
             '$window', '$location', 'toastr', '$state', '$filter',
             'HistoryService', 'AppSettingService',
             Authentication
         ]);
 
     function Authentication(
-        CookieService, $cookies, $rootScope, Restangular,
+        CookieService, $rootScope, Restangular,
         $window, $location, toastr, $state, $filter,
         HistoryService, AppSettingService
     ) {
