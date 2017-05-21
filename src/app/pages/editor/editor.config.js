@@ -31,7 +31,7 @@
                         return $http.get('/data/editor/3dTools.json').then();
                     }
                 },
-                authenticate: 'active'
+                authenticate: 'all'
             })
             ;
     }
